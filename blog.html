@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog &amp; Insights — EATO Fine Dining Restaurant &amp; Cafe</title>
+<meta name="description" content="Explore EATO's blog for mouthwatering recipes, culinary trends, behind-the-scenes kitchen stories, and the latest restaurant news.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  /* Scoped to blog.html — category filter toggle pills, not in shared stylesheet */
+  .filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 32px auto 0;
+  }
+  .filter-pill {
+    padding: 10px 20px;
+    border-radius: var(--radius-pill);
+    border: 1.5px solid var(--color-abu-stroke);
+    background: var(--color-white);
+    font-weight: 600;
+    font-size: var(--fs-body);
+    color: var(--color-dark-stroke);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .filter-pill:hover { border-color: var(--color-red); color: var(--color-red); }
+  .filter-pill[aria-pressed="true"] { background: var(--color-red); border-color: var(--color-red); color: #fff; }
+  .filter-status { margin-top: 20px; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="EATO — go to homepage">
+      <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
+      EATO
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a class="btn btn-primary" href="reservation.html">Book Reservation</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <div class="page-hero">
+    <div class="container">
+      <h1>Savor Stories, Discover Flavors, Join Our Journey</h1>
+      <p class="text-muted" style="max-width:640px; margin:16px auto 0;">Dive into our blog to discover fascinating stories, culinary adventures, and tips that celebrate our passion for great food.</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> / Blog</nav>
+    </div>
+  </div>
+
+  <!-- Blog listing -->
+  <section class="section-bg-dark section-glow" aria-labelledby="blog-heading">
+    <div class="container text-center">
+      <h2 id="blog-heading">Delicious Insights, Culinary Tips, and Restaurant News</h2>
+      <p class="text-muted" style="max-width:600px; margin:16px auto 0;">Explore our blog for mouthwatering recipes, expert tips, and the latest updates from our restaurant to enhance your dining experience.</p>
+
+      <form class="search-bar" role="search" data-validate data-success-message="Searching articles…">
+        <label class="sr-only" for="blog-search">What do you want to know?</label>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="blog-search" name="q" placeholder="What do you want to know?">
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+
+      <div class="filter-pills" role="group" aria-label="Filter articles by category">
+        <button class="filter-pill" type="button" data-filter="all" aria-pressed="true">All Articles</button>
+        <button class="filter-pill" type="button" data-filter="food-trends" aria-pressed="false">Food Trends</button>
+        <button class="filter-pill" type="button" data-filter="recipes" aria-pressed="false">Recipes</button>
+        <button class="filter-pill" type="button" data-filter="behind-the-scenes" aria-pressed="false">Behind the Scenes</button>
+        <button class="filter-pill" type="button" data-filter="events-offers" aria-pressed="false">Events &amp; Offers</button>
+      </div>
+      <p class="filter-status text-muted" id="filter-status" role="status" aria-live="polite">9 articles found.</p>
+    </div>
+
+    <div class="container" style="margin-top:48px; text-align:left;">
+
+      <article class="blog-featured" data-category="food-trends">
+        <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=800&q=80" alt="Fresh cheeseburger with lettuce, tomato, and a grilled beef patty"></div>
+        <div>
+          <div class="blog-meta">
+            <span class="tag">Food Trends</span>
+            <span class="tag">6 Min Read</span>
+          </div>
+          <h3>The rise of plant-based dining in restaurants reflects health trends and environmental sustainability awareness among consumers</h3>
+          <p class="text-muted" style="margin-top:16px;">In recent years, there has been a significant shift towards plant-based dining, driven by health-conscious consumers and growing awareness of environmental sustainability. Here's how EATO's kitchen is embracing the movement without compromising on flavor.</p>
+          <a class="btn-link" href="blog.html" style="margin-top:20px; display:inline-flex;">Read Article
+            <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <div class="blog-list">
+        <article class="blog-row" data-category="food-trends">
+          <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=500&q=80" alt="Grilled chicken breast plated with roasted vegetables and lemon"></div>
+          <div>
+            <div class="blog-meta">
+              <span class="tag">Food Trends</span>
+              <span class="tag">7 Min Read</span>
+            </div>
+            <h3 class="h6">Exploring seasonal menus enhances dining experiences by featuring fresh ingredients and unique flavor profiles</h3>
+            <p class="text-muted" style="margin-top:8px;">Seasonal menus are an exciting way to elevate the dining experience by showcasing the freshest ingredients available at different times of the year, supporting local farmers along the way.</p>
+          </div>
+        </article>
+        <article class="blog-row" data-category="recipes">
+          <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=500&q=80" alt="Cheeseburger and fries combo served in a metal basket"></div>
+          <div>
+            <div class="blog-meta">
+              <span class="tag">Recipes</span>
+              <span class="tag">8 Min Read</span>
+            </div>
+            <h3 class="h6">Recreate our Ocean Symphony Risotto at home with this step-by-step chef's guide</h3>
+            <p class="text-muted" style="margin-top:8px;">Our head chef breaks down the technique behind the saffron-infused risotto, lobster stock, and the finishing touches that make it a signature dish.</p>
+          </div>
+        </article>
+        <article class="blog-row" data-category="behind-the-scenes">
+          <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=500&q=80" alt="EATO chef plating a dish under warm kitchen lighting"></div>
+          <div>
+            <div class="blog-meta">
+              <span class="tag">Behind the Scenes</span>
+              <span class="tag">4 Min Read</span>
+            </div>
+            <h3 class="h6">Meet the pastry team behind our Velvet Chocolate Lava Cake</h3>
+            <p class="text-muted" style="margin-top:8px;">A look at the early mornings, precise tempering, and creative testing that go into one of our most-ordered desserts.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="grid grid-3" style="margin-top:48px;">
+        <article class="card" data-category="events-offers">
+          <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&q=80" alt="Elegant table set with wine glasses for an anniversary celebration at EATO"></div>
+          <div class="card-body">
+            <div class="blog-meta">
+              <span class="tag">Events &amp; Offers</span>
+              <span class="tag">5 Min Read</span>
+            </div>
+            <h3 class="h6">Celebrate anniversaries: planning the perfect EATO evening</h3>
+            <p style="margin-top:8px;">From table setting to surprise desserts, here's how our team helps guests mark milestone moments.</p>
+          </div>
+        </article>
+        <article class="card" data-category="food-trends">
+          <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=500&q=80" alt="Crispy golden French fries on a dark plate"></div>
+          <div class="card-body">
+            <div class="blog-meta">
+              <span class="tag">Food Trends</span>
+              <span class="tag">5 Min Read</span>
+            </div>
+            <h3 class="h6">Five seasonal ingredients our chefs are obsessed with this month</h3>
+            <p style="margin-top:8px;">Heirloom tomatoes, stone fruit, and fresh herbs are shaping this season's specials — here's why.</p>
+          </div>
+        </article>
+        <article class="card" data-category="behind-the-scenes">
+          <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&q=80" alt="Smoked beef ribs sliced and served on a wooden board"></div>
+          <div class="card-body">
+            <div class="blog-meta">
+              <span class="tag">Behind the Scenes</span>
+              <span class="tag">7 Min Read</span>
+            </div>
+            <h3 class="h6">How we source our Wagyu: a trip to the farm</h3>
+            <p style="margin-top:8px;">We visit the small family farm that supplies the Wagyu behind our Truffle-infused Wagyu Delight.</p>
+          </div>
+        </article>
+        <article class="card" data-category="recipes">
+          <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=500&q=80" alt="Crispy fried chicken wings served with barbecue dipping sauce"></div>
+          <div class="card-body">
+            <div class="blog-meta">
+              <span class="tag">Recipes</span>
+              <span class="tag">4 Min Read</span>
+            </div>
+            <h3 class="h6">Three easy appetizers to try before your next reservation</h3>
+            <p style="margin-top:8px;">Simple starters inspired by our menu that you can put together in under twenty minutes.</p>
+          </div>
+        </article>
+        <article class="card" data-category="events-offers">
+          <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500&q=80" alt="Long table of guests dining together at an EATO corporate gathering"></div>
+          <div class="card-body">
+            <div class="blog-meta">
+              <span class="tag">Events &amp; Offers</span>
+              <span class="tag">5 Min Read</span>
+            </div>
+            <h3 class="h6">Why our guests keep booking EATO for corporate events</h3>
+            <p style="margin-top:8px;">A flexible private room, custom set menus, and a team that handles the details start to finish.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="text-center mt-lg">
+        <button class="btn btn-outline" type="button">Load More Articles</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-bg-rust section-glow" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="faq-heading">Your Questions Answered, Enjoy a Seamless Experience!</h2>
+        <div>
+          <p style="margin-bottom:16px;">Explore our FAQs to find answers to common inquiries, ensuring a smooth and enjoyable dining experience for all our guests.</p>
+          <a class="btn btn-outline" href="faq.html">See More</a>
+        </div>
+      </div>
+      <div class="split-media-content">
+        <div class="accordion" id="blog-faq">
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="bf-t1" aria-expanded="true" aria-controls="bf-p1">
+                What are your restaurant's hours of operation?
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="bf-p1" role="region" aria-labelledby="bf-t1">
+              <div class="accordion-panel-inner">Our restaurant is open Monday to Sunday from 11:00 AM to 10:00 PM.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="bf-t2" aria-expanded="false" aria-controls="bf-p2">
+                Do I need a reservation to dine?
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="bf-p2" role="region" aria-labelledby="bf-t2">
+              <div class="accordion-panel-inner">Walk-ins are always welcome, but we recommend booking ahead for weekends and evenings to guarantee your table.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="bf-t3" aria-expanded="false" aria-controls="bf-p3">
+                Can I modify my reservation after booking?
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="bf-p3" role="region" aria-labelledby="bf-t3">
+              <div class="accordion-panel-inner">Yes — contact us at least 2 hours before your reservation time and we'll be happy to adjust it.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="bf-t4" aria-expanded="false" aria-controls="bf-p4">
+                Do you offer takeout or delivery services?
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="bf-p4" role="region" aria-labelledby="bf-t4">
+              <div class="accordion-panel-inner">Yes, takeout is available in-house and we partner with major delivery platforms for delivery orders.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="bf-t5" aria-expanded="false" aria-controls="bf-p5">
+                Are there vegetarian or gluten-free options available?
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="bf-p5" role="region" aria-labelledby="bf-t5">
+              <div class="accordion-panel-inner">Absolutely — our menu is clearly marked with vegetarian, vegan, and gluten-free choices.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="bf-t6" aria-expanded="false" aria-controls="bf-p6">
+                Can I host a private event at your restaurant?
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="bf-p6" role="region" aria-labelledby="bf-t6">
+              <div class="accordion-panel-inner">Yes — our private dining room and outdoor terrace are available for birthdays, corporate gatherings, and special celebrations. Visit our Events &amp; Private Dining page to check availability.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="bf-t7" aria-expanded="false" aria-controls="bf-p7">
+                Do you accommodate requests for celebrations?
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="bf-p7" role="region" aria-labelledby="bf-t7">
+              <div class="accordion-panel-inner">We do — let us know in advance and we'll help arrange a personalized cake, table decorations, or a special menu addition to mark the occasion.</div>
+            </div>
+          </div>
+        </div>
+        <img class="ph-img hide-mobile" style="border-radius:24px;" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=900&q=80" alt="Upscale EATO interior with leather booths and warm pendant lighting near the bar">
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial quote -->
+  <section class="section-bg-dark quote-section" aria-labelledby="quote-heading">
+    <div class="container">
+      <span class="quote-mark" aria-hidden="true">&#8220;</span>
+      <h2 id="quote-heading" class="quote-text">The food was absolutely outstanding, and the service was exceptional! Every detail contributed to an unforgettable evening. Can't wait to return for another amazing experience.</h2>
+      <div class="carousel" data-carousel data-per-view="1" data-carousel-label="Guest testimonials">
+        <div class="carousel-viewport">
+          <ul class="carousel-track" style="justify-content:center; width:100%;">
+            <li style="list-style:none;">
+              <div class="avatar-row">
+                <img class="avatar-side" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=220&q=80" alt="Portrait of a previous EATO guest">
+                <img class="avatar-active" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=320&q=80" alt="Portrait of Sarah Hamilton, EATO guest">
+                <img class="avatar-side" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=220&q=80" alt="Portrait of a following EATO guest">
+              </div>
+              <p class="avatar-caption">Sarah Hamilton</p>
+            </li>
+          </ul>
+        </div>
+        <div class="carousel-controls controls-center">
+          <button class="btn-icon" type="button" data-carousel-prev aria-label="Previous testimonial" style="border-color:#3a3a3a; color:#fff;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          </button>
+          <button class="btn-icon" type="button" data-carousel-next aria-label="Next testimonial" style="border-color:#3a3a3a; color:#fff;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="index.html" aria-label="EATO — go to homepage" style="color:#fff;">
+          <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
+          EATO
+        </a>
+        <p>We drive real results — more flavor, more moments, and more reasons to come back for another unforgettable meal.</p>
+        <form data-validate aria-label="Newsletter signup" data-success-message="Thanks — you're subscribed for exclusive offers and updates!">
+          <div class="field newsletter-field">
+            <label class="sr-only" for="newsletter-email">Email address</label>
+            <div class="newsletter-form">
+              <input type="email" id="newsletter-email" name="email" placeholder="Enter your email address" data-rules="required email" data-error-email="Please enter a valid email address.">
+              <button class="btn-icon" type="submit" aria-label="Subscribe to newsletter">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+            <span class="error-message" role="alert"></span>
+          </div>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+        <p style="margin-top:24px; color:#b8b8b8;">3891 Ranchview Dr. Richardson, California 62639</p>
+        <ul class="footer-social" style="margin-top:16px; list-style:none; padding:0;">
+          <li><a class="btn-icon" href="#" aria-label="EATO on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-3.5-.8-3-1.2-4.9-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.4 1.5 2.7 1.7.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.6.8 1.9 1 .3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg></a></li>
+          <li><a class="btn-icon" href="#" aria-label="EATO on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/></svg></a></li>
+          <li><a class="btn-icon" href="#" aria-label="EATO on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg></a></li>
+          <li><a class="btn-icon" href="#" aria-label="EATO on Twitter"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M4 4l7.5 9.1L4.3 20H6l6-6.7L16.7 20H20l-8-9.7L19.4 4H17.7l-5.6 6.2L7.3 4z"/></svg></a></li>
+        </ul>
+      </div>
+      <nav class="footer-col" aria-label="Explore">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Blog &amp; Insights</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="About">
+        <h3>About</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Events &amp; Private Dining</a></li>
+          <li><a href="reviews.html">Customer Reviews</a></li>
+          <li><a href="offers.html">Special Offers</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Support">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="reservation.html">Reservation</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="countdown.html">Limited-Time Offer</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Eato. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+<script>
+(function () {
+  "use strict";
+  document.addEventListener("DOMContentLoaded", function () {
+    var pills = document.querySelectorAll(".filter-pill");
+    var articles = document.querySelectorAll("[data-category]");
+    var status = document.getElementById("filter-status");
+
+    function applyFilter(filter) {
+      var visible = 0;
+      articles.forEach(function (article) {
+        var match = filter === "all" || article.dataset.category === filter;
+        article.hidden = !match;
+        if (match) visible++;
+      });
+      if (status) {
+        status.textContent = visible + (visible === 1 ? " article found." : " articles found.");
+      }
+    }
+
+    pills.forEach(function (pill) {
+      pill.addEventListener("click", function () {
+        pills.forEach(function (p) { p.setAttribute("aria-pressed", "false"); });
+        pill.setAttribute("aria-pressed", "true");
+        applyFilter(pill.dataset.filter);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

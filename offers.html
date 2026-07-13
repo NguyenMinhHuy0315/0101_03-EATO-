@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Offers &amp; Loyalty Program — EATO Fine Dining Restaurant &amp; Cafe</title>
+<meta name="description" content="Browse EATO's current promotions and discover EATO Rewards — our loyalty program with points, member tiers, and exclusive perks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  /* Scoped to offers.html — offer badges, benefit lists, tier highlight, not in shared stylesheet */
+  .offer-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    background: var(--color-red);
+    color: var(--color-white);
+    font-size: var(--fs-small);
+    font-weight: 700;
+  }
+  .offer-expiry {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    font-size: var(--fs-small);
+    color: var(--color-text-muted);
+  }
+  .benefit-list { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+  .benefit-list li { display: flex; align-items: flex-start; gap: 10px; color: var(--color-text-muted); }
+  .benefit-list svg { flex-shrink: 0; margin-top: 3px; color: var(--color-red); }
+  .tier-card { position: relative; padding: 32px; }
+  .tier-card.is-featured { border-color: var(--color-red); box-shadow: var(--shadow-card); }
+  .tier-points { color: var(--color-red); font-weight: 700; margin-top: 6px; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="EATO — go to homepage">
+      <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
+      EATO
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a class="btn btn-primary" href="reservation.html">Book Reservation</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <div class="page-hero">
+    <div class="container">
+      <h1>Unlock Rewards, Enjoy More, Stay Loyal, Save Big!</h1>
+      <p class="text-muted" style="max-width:640px; margin:16px auto 0;">Browse our current promotions and join EATO Rewards for points, member perks, and savings on every visit.</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> / Special Offers &amp; Loyalty</nav>
+    </div>
+  </div>
+
+  <!-- Current offers -->
+  <section class="section-bg-dark section-glow" aria-labelledby="offers-heading">
+    <div class="container">
+      <div class="text-center" style="max-width:750px; margin:0 auto 56px;">
+        <h2 id="offers-heading">Current Offers &amp; Promotions</h2>
+        <p class="text-muted" style="margin-top:16px;">From first-visit discounts to limited-time flash sales, here's every way to save at EATO right now.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80" alt="Double smash cheeseburger with pickles and onions on a wooden board"></div>
+          <div class="card-body">
+            <span class="offer-badge">20% Off</span>
+            <h3 class="h6" style="margin-top:16px;">Exclusive Welcome Discount</h3>
+            <p>Enjoy 20% off your first order, whether you dine in or order online.</p>
+            <p class="offer-expiry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+              For new guests — no expiration
+            </p>
+            <a class="btn-link" href="reservation.html" style="margin-top:16px; display:inline-flex;">Book Reservation
+              <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=500&q=80" alt="Grilled chicken breast plated with roasted vegetables and lemon"></div>
+          <div class="card-body">
+            <span class="offer-badge">15% Off</span>
+            <h3 class="h6" style="margin-top:16px;">Weekday Lunch Special</h3>
+            <p>Save 15% on lunch orders Monday through Friday, 11:00 AM to 2:00 PM.</p>
+            <p class="offer-expiry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+              Every weekday — no expiration
+            </p>
+            <a class="btn-link" href="menu.html" style="margin-top:16px; display:inline-flex;">View Menu
+              <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500&q=80" alt="Bowl of seasoned French fries served overhead"></div>
+          <div class="card-body">
+            <span class="offer-badge">Complimentary</span>
+            <h3 class="h6" style="margin-top:16px;">Chef's Tasting Perk</h3>
+            <p>Receive a complimentary chef's amuse-bouche with any five-course tasting menu.</p>
+            <p class="offer-expiry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+              Valid through September 30, 2026
+            </p>
+            <a class="btn-link" href="reservation.html" style="margin-top:16px; display:inline-flex;">Reserve a Table
+              <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&q=80" alt="Gourmet burgers with sesame buns served with cola bottles"></div>
+          <div class="card-body">
+            <span class="offer-badge">On the House</span>
+            <h3 class="h6" style="margin-top:16px;">Birthday Treat</h3>
+            <p>The birthday guest gets a free dessert with any reservation made during their birthday month.</p>
+            <p class="offer-expiry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+              Valid during your birthday month
+            </p>
+            <a class="btn-link" href="reservation.html" style="margin-top:16px; display:inline-flex;">Book Reservation
+              <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="card" style="border-color:var(--color-red);">
+          <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=500&q=80" alt="Grilled steak served with a side of crispy fries"></div>
+          <div class="card-body">
+            <span class="offer-badge">Limited Time</span>
+            <h3 class="h6" style="margin-top:16px;">Flash Wine Sale</h3>
+            <p>30% off a curated list of wines by the bottle — this week only, while supplies last.</p>
+            <p class="offer-expiry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+              Ends July 20, 2026
+            </p>
+            <a class="btn-link" href="countdown.html" style="margin-top:16px; display:inline-flex;">See Countdown &amp; Claim
+              <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=500&q=80" alt="Friends toasting with wine glasses at an EATO celebration"></div>
+          <div class="card-body">
+            <span class="offer-badge">$15 Credit</span>
+            <h3 class="h6" style="margin-top:16px;">Refer a Friend</h3>
+            <p>Invite a friend who's never dined with us — you both get $15 off after their first visit.</p>
+            <p class="offer-expiry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+              Ongoing — for EATO Rewards members
+            </p>
+            <a class="btn-link" href="#loyalty-join" style="margin-top:16px; display:inline-flex;">Join EATO Rewards
+              <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How the loyalty program works -->
+  <section class="section-bg-rust section-glow" aria-labelledby="loyalty-heading">
+    <div class="container">
+      <div class="text-center" style="max-width:750px; margin:0 auto 64px;">
+        <h2 id="loyalty-heading">How EATO Rewards Works</h2>
+        <p class="text-muted" style="margin-top:16px;">A simple points system that turns every meal into your next reward — no cards to carry, no fees to pay.</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="feature-item" style="flex-direction:column; text-align:center; align-items:center;">
+          <span class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="16" y1="11" x2="22" y2="11"/></svg>
+          </span>
+          <div>
+            <h3 class="h6">1. Sign Up</h3>
+            <p>Create a free EATO Rewards account online or at the host stand in under a minute.</p>
+          </div>
+        </div>
+        <div class="feature-item" style="flex-direction:column; text-align:center; align-items:center;">
+          <span class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
+          </span>
+          <div>
+            <h3 class="h6">2. Dine &amp; Earn</h3>
+            <p>Earn 1 point for every $1 spent on food and beverage, tracked automatically to your account.</p>
+          </div>
+        </div>
+        <div class="feature-item" style="flex-direction:column; text-align:center; align-items:center;">
+          <span class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 12h18"/><path d="M12 8v13"/><path d="M12 8c-1.5-4-6-4-6-1.2S9 8 12 8z"/><path d="M12 8c1.5-4 6-4 6-1.2S15 8 12 8z"/></svg>
+          </span>
+          <div>
+            <h3 class="h6">3. Redeem Rewards</h3>
+            <p>Turn points into dining credit, complimentary dishes, or exclusive experiences whenever you're ready.</p>
+          </div>
+        </div>
+        <div class="feature-item" style="flex-direction:column; text-align:center; align-items:center;">
+          <span class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 17 9 11 13 15 21 6"/><polyline points="14 6 21 6 21 13"/></svg>
+          </span>
+          <div>
+            <h3 class="h6">4. Level Up</h3>
+            <p>Reach point milestones to unlock higher membership tiers and even better perks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Membership tiers -->
+  <section class="section-bg-dark section-glow" aria-labelledby="tiers-heading">
+    <div class="container">
+      <div class="text-center" style="max-width:750px; margin:0 auto 56px;">
+        <h2 id="tiers-heading">Membership Tiers</h2>
+        <p class="text-muted" style="margin-top:16px;">The more you dine, the more you unlock. Every point earned brings you closer to the next tier.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card tier-card">
+          <h3>EATO Starter</h3>
+          <p class="tier-points">0–249 points</p>
+          <ul class="benefit-list">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Free dessert on your birthday</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Member-only email offers</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>1 point earned per $1 spent</span>
+            </li>
+          </ul>
+        </article>
+        <article class="card tier-card">
+          <h3>EATO Insider</h3>
+          <p class="tier-points">250–749 points</p>
+          <ul class="benefit-list">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>All Starter perks, plus:</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Priority reservations on busy nights</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Complimentary weekend valet</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Double points on your dining anniversary</span>
+            </li>
+          </ul>
+        </article>
+        <article class="card tier-card is-featured">
+          <span class="offer-badge">Top Tier</span>
+          <h3 style="margin-top:16px;">EATO Connoisseur</h3>
+          <p class="tier-points">750+ points</p>
+          <ul class="benefit-list">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>All Insider perks, plus:</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Private chef's table invitations, twice a year</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Dedicated concierge reservation line</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Early access to seasonal tasting menus</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join the loyalty program -->
+  <section class="section-bg-red section-glow" id="loyalty-join" aria-labelledby="join-heading">
+    <div class="container">
+      <div class="split-media-content">
+        <div>
+          <h2 id="join-heading">Join EATO Rewards Today</h2>
+          <p class="text-muted" style="margin-top:16px;">Sign up in seconds — start earning points on your very next visit and unlock member-only offers along the way.</p>
+          <form data-validate data-success-message="You're in! Check your email to activate your loyalty rewards." style="margin-top:32px; max-width:480px;">
+            <div class="form-status" role="status" aria-live="polite"></div>
+            <div class="field">
+              <label for="loy-name">Full Name</label>
+              <input type="text" id="loy-name" name="name" data-rules="required minlength:2" data-error-required="Please enter your full name.">
+              <span class="error-message" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="loy-email">Email Address</label>
+              <input type="email" id="loy-email" name="email" data-rules="required email" data-error-email="Please enter a valid email address.">
+              <span class="error-message" role="alert"></span>
+            </div>
+            <button class="btn btn-primary" type="submit">Join the Program</button>
+          </form>
+          <a class="btn-link" href="countdown.html" style="margin-top:24px; display:inline-flex;">
+            View Our Limited-Time Countdown Offer
+            <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <img class="ph-img hide-mobile" style="border-radius:24px;" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80" alt="Modern EATO restaurant dining room with warm ambient lighting">
+      </div>
+    </div>
+  </section>
+
+  <!-- Events cross-promo -->
+  <section class="section-bg-rust section-glow" aria-labelledby="events-teaser-heading">
+    <div class="container">
+      <div class="split-media-content">
+        <img class="ph-img hide-mobile" style="border-radius:24px;" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80" alt="Elegant table set with wine glasses for a special celebration at EATO">
+        <div>
+          <span class="tag">Events &amp; Private Dining</span>
+          <h2 id="events-teaser-heading" style="margin-top:20px;">Join us in celebrating life's special moments with exceptional food and unforgettable experiences together!</h2>
+          <p class="text-muted" style="margin-top:16px;">Whether it's a birthday, anniversary, corporate gathering, or any special occasion, our restaurant offers the perfect setting for your event.</p>
+          <a class="btn btn-outline mt-lg" href="events.html">See More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-bg-rust section-glow" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="faq-heading">Your Questions Answered, Enjoy a Seamless Experience!</h2>
+        <div>
+          <p style="margin-bottom:16px;">Explore our FAQs to find answers to common inquiries, ensuring a smooth and enjoyable dining experience for all our guests.</p>
+          <a class="btn btn-outline" href="faq.html">See More</a>
+        </div>
+      </div>
+      <div class="split-media-content">
+        <div class="accordion" id="offers-faq">
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="of-t1" aria-expanded="true" aria-controls="of-p1">
+                What are your restaurant's hours of operation?
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="of-p1" role="region" aria-labelledby="of-t1">
+              <div class="accordion-panel-inner">Our restaurant is open Monday to Sunday from 11:00 AM to 10:00 PM.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="of-t2" aria-expanded="false" aria-controls="of-p2">
+                Do I need a reservation to dine?
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="of-p2" role="region" aria-labelledby="of-t2">
+              <div class="accordion-panel-inner">Walk-ins are always welcome, but we recommend booking ahead for weekends and evenings to guarantee your table.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="of-t3" aria-expanded="false" aria-controls="of-p3">
+                How do I check my EATO Rewards points balance?
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="of-p3" role="region" aria-labelledby="of-t3">
+              <div class="accordion-panel-inner">Once you join, we'll email you a link to your rewards dashboard where you can track points, tier progress, and available redemptions at any time.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="of-t4" aria-expanded="false" aria-controls="of-p4">
+                Can offers and rewards points be combined?
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="of-p4" role="region" aria-labelledby="of-t4">
+              <div class="accordion-panel-inner">Most current offers can be combined with points earning, though redeemed rewards can't be stacked with another discount on the same order. Ask your server for details.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="of-t5" aria-expanded="false" aria-controls="of-p5">
+                Are there vegetarian or gluten-free options available?
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="of-p5" role="region" aria-labelledby="of-t5">
+              <div class="accordion-panel-inner">Absolutely — our menu is clearly marked with vegetarian, vegan, and gluten-free choices.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="of-t6" aria-expanded="false" aria-controls="of-p6">
+                Can I host a private event at your restaurant?
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="of-p6" role="region" aria-labelledby="of-t6">
+              <div class="accordion-panel-inner">Yes — our private dining room and outdoor terrace are available for birthdays, corporate gatherings, and special celebrations. Visit our Events &amp; Private Dining page to check availability.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="of-t7" aria-expanded="false" aria-controls="of-p7">
+                Do you accommodate requests for celebrations?
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="of-p7" role="region" aria-labelledby="of-t7">
+              <div class="accordion-panel-inner">We do — let us know in advance and we'll help arrange a personalized cake, table decorations, or a special menu addition to mark the occasion.</div>
+            </div>
+          </div>
+        </div>
+        <img class="ph-img hide-mobile" style="border-radius:24px;" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=900&q=80" alt="Upscale EATO restaurant interior with leather booths near the host stand">
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial quote -->
+  <section class="section-bg-dark quote-section" aria-labelledby="quote-heading">
+    <div class="container">
+      <span class="quote-mark" aria-hidden="true">&#8220;</span>
+      <h2 id="quote-heading" class="quote-text">The food was absolutely outstanding, and the service was exceptional! Every detail contributed to an unforgettable evening. Can't wait to return for another amazing experience.</h2>
+      <div class="carousel" data-carousel data-per-view="1" data-carousel-label="Guest testimonials">
+        <div class="carousel-viewport">
+          <ul class="carousel-track" style="justify-content:center; width:100%;">
+            <li style="list-style:none;">
+              <div class="avatar-row">
+                <img class="avatar-side" src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=220&q=80" alt="Portrait of a previous EATO guest">
+                <img class="avatar-active" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=320&q=80" alt="Portrait of Sarah Hamilton, EATO guest">
+                <img class="avatar-side" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=220&q=80" alt="Portrait of a following EATO guest">
+              </div>
+              <p class="avatar-caption">Sarah Hamilton</p>
+            </li>
+          </ul>
+        </div>
+        <div class="carousel-controls controls-center">
+          <button class="btn-icon" type="button" data-carousel-prev aria-label="Previous testimonial" style="border-color:#3a3a3a; color:#fff;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          </button>
+          <button class="btn-icon" type="button" data-carousel-next aria-label="Next testimonial" style="border-color:#3a3a3a; color:#fff;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="index.html" aria-label="EATO — go to homepage" style="color:#fff;">
+          <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
+          EATO
+        </a>
+        <p>We drive real results — more flavor, more moments, and more reasons to come back for another unforgettable meal.</p>
+        <form data-validate aria-label="Newsletter signup" data-success-message="Thanks — you're subscribed for exclusive offers and updates!">
+          <div class="field newsletter-field">
+            <label class="sr-only" for="newsletter-email">Email address</label>
+            <div class="newsletter-form">
+              <input type="email" id="newsletter-email" name="email" placeholder="Enter your email address" data-rules="required email" data-error-email="Please enter a valid email address.">
+              <button class="btn-icon" type="submit" aria-label="Subscribe to newsletter">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+            <span class="error-message" role="alert"></span>
+          </div>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+        <p style="margin-top:24px; color:#b8b8b8;">3891 Ranchview Dr. Richardson, California 62639</p>
+        <ul class="footer-social" style="margin-top:16px; list-style:none; padding:0;">
+          <li><a class="btn-icon" href="#" aria-label="EATO on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-3.5-.8-3-1.2-4.9-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.4 1.5 2.7 1.7.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.6.8 1.9 1 .3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg></a></li>
+          <li><a class="btn-icon" href="#" aria-label="EATO on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/></svg></a></li>
+          <li><a class="btn-icon" href="#" aria-label="EATO on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg></a></li>
+          <li><a class="btn-icon" href="#" aria-label="EATO on Twitter"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M4 4l7.5 9.1L4.3 20H6l6-6.7L16.7 20H20l-8-9.7L19.4 4H17.7l-5.6 6.2L7.3 4z"/></svg></a></li>
+        </ul>
+      </div>
+      <nav class="footer-col" aria-label="Explore">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Blog &amp; Insights</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="About">
+        <h3>About</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Events &amp; Private Dining</a></li>
+          <li><a href="reviews.html">Customer Reviews</a></li>
+          <li><a href="offers.html">Special Offers</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Support">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="reservation.html">Reservation</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="countdown.html">Limited-Time Offer</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Eato. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

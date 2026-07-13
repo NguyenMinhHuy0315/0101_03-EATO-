@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Limited-Time Offer &amp; Countdown | EATO</title>
+<meta name="description" content="Something exciting is coming to EATO. Count down to our grand opening, discover an exclusive first-time guest discount, and claim your seat before time runs out.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  /* Scoped to countdown.html — new component, not in shared stylesheet */
+  .countdown {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+  }
+  .countdown-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 110px;
+    padding: 24px 16px;
+    background: var(--color-white);
+    border: 1px solid var(--color-abu-stroke);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+  }
+  .countdown-number {
+    font-size: clamp(2.25rem, 3vw + 1rem, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-red);
+    font-variant-numeric: tabular-nums;
+  }
+  .countdown-label {
+    font-size: var(--fs-small);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-dark-stroke);
+  }
+  .countdown-colon {
+    display: none;
+  }
+  .offer-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 40px;
+  }
+  @media (max-width: 599px) {
+    .offer-highlight-grid { grid-template-columns: 1fr; }
+    .countdown-unit { min-width: 84px; padding: 18px 10px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="EATO — go to homepage">
+      <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
+      EATO
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a class="btn btn-primary" href="reservation.html">Book Reservation</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge-pill" style="margin-bottom:24px;">
+          <span class="badge-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7C9 7 7.5 4.5 9 2.5S12 2 12 7z"/><path d="M12 7c3 0 4.5-2.5 3-4.5S12 2 12 7z"/></svg>
+          </span>
+          Limited-Time Offer
+        </div>
+        <h1>Something Exciting Is Coming—Stay Tuned for More!</h1>
+        <p class="lede">We're working on something amazing! Sign up for updates and be the first to know when we launch.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="menu.html">View Menu</a>
+          <a class="btn btn-white" href="about.html">
+            Explore More
+          </a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img class="ph-img" style="border-radius:24px;" src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=800&q=80" alt="Gourmet burger with sesame bun served with cola, a preview of EATO's grand opening menu">
+      </div>
+    </div>
+    <div class="container">
+      <div class="offer-highlight-grid">
+        <div class="stat-item">
+          <span class="stat-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21c-4-1-8-5-8-11 6 0 10 4 11 8 3-4 7-2 9-6-1 9-6 11-12 9z"/></svg>
+          </span>
+          <span class="stack" style="text-align:left;">
+            <span class="stat-number" style="font-size:1.25rem;">100% High Quality</span>
+            <span class="stat-label">Best quality raw materials</span>
+          </span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><polyline points="8.5 13.5 7 22 12 19 17 22 15.5 13.5"/></svg>
+          </span>
+          <span class="stack" style="text-align:left;">
+            <span class="stat-number" style="font-size:1.25rem;">Michelin Star</span>
+            <span class="stat-label">Recognized culinary excellence</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- First-time guest offer -->
+  <section class="section-bg-dark section-glow" aria-labelledby="offer-heading">
+    <div class="container">
+      <div class="split-media-content">
+        <img class="ph-img hide-mobile" style="border-radius:24px;" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=900&q=80" alt="EATO dining room with leather booths, set and ready to welcome first-time guests">
+        <div>
+          <h2 id="offer-heading">A Special Treat for First-Time Guests!</h2>
+          <p class="text-muted" style="margin-top:16px;">Are you visiting our restaurant for the first time? We have a special treat just for you! Enjoy an exclusive 20% discount on your very first order, whether you choose to dine in or order online. It's our way of saying welcome and thank you for trying our delicious dishes. From mouthwatering appetizers to delightful main courses, every bite is crafted to impress.</p>
+          <div class="feature-list" style="margin-top:32px; gap:28px;">
+            <div class="feature-item">
+              <span class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="2"/><circle cx="15" cy="15" r="2"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+              </span>
+              <div>
+                <h3 class="h6">Exclusive Welcome Discount</h3>
+                <p>Enjoy 20% off your first order, whether you dine in or order online.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 13a4 4 0 0 1 1-7.8 5 5 0 0 1 9.7-1.7A4 4 0 0 1 18 13v4H6v-4z"/><line x1="6" y1="20" x2="18" y2="20"/></svg>
+              </span>
+              <div>
+                <h3 class="h6">Savor Our Signature Dishes</h3>
+                <p>Made with fresh ingredients and crafted by our expert culinary team.</p>
+              </div>
+            </div>
+          </div>
+          <a class="btn btn-primary mt-lg" href="reservation.html">Book Reservation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Countdown -->
+  <section class="section-bg-rust section-glow" aria-labelledby="countdown-heading">
+    <div class="container text-center">
+      <h2 id="countdown-heading">The Wait Is Almost Over — Our Grand Opening Is Near!</h2>
+      <p class="text-muted" style="max-width:560px; margin:16px auto 0;">Sign up now to be the first to know! This introductory offer disappears the moment our doors open, so grab your spot before the clock runs out.</p>
+
+      <div aria-live="off">
+        <p class="sr-only">This offer ends in approximately 45 days.</p>
+        <div class="countdown" data-countdown="2026-08-26T23:59:59">
+          <div class="countdown-unit"><span class="countdown-number" data-cd-days>00</span><span class="countdown-label">Days</span></div>
+          <div class="countdown-unit"><span class="countdown-number" data-cd-hours>00</span><span class="countdown-label">Hours</span></div>
+          <div class="countdown-unit"><span class="countdown-number" data-cd-minutes>00</span><span class="countdown-label">Minutes</span></div>
+          <div class="countdown-unit"><span class="countdown-number" data-cd-seconds>00</span><span class="countdown-label">Seconds</span></div>
+        </div>
+      </div>
+
+      <a class="btn btn-primary" href="reservation.html" style="margin-top:8px;">Claim This Offer</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="index.html" aria-label="EATO — go to homepage" style="color:#fff;">
+          <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
+          EATO
+        </a>
+        <p>We drive real results — more flavor, more moments, and more reasons to come back for another unforgettable meal.</p>
+        <form data-validate aria-label="Newsletter signup" data-success-message="Thanks — you're subscribed for exclusive offers and updates!">
+          <div class="field newsletter-field">
+            <label class="sr-only" for="newsletter-email">Email address</label>
+            <div class="newsletter-form">
+              <input type="email" id="newsletter-email" name="email" placeholder="Enter your email address" data-rules="required email" data-error-email="Please enter a valid email address.">
+              <button class="btn-icon" type="submit" aria-label="Subscribe to newsletter">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+            <span class="error-message" role="alert"></span>
+          </div>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+        <p style="margin-top:24px; color:#b8b8b8;">3891 Ranchview Dr. Richardson, California 62639</p>
+        <ul class="footer-social" style="margin-top:16px; list-style:none; padding:0;">
+          <li><a class="btn-icon" href="#" aria-label="EATO on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-3.5-.8-3-1.2-4.9-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.4 1.5 2.7 1.7.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.6.8 1.9 1 .3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg></a></li>
+          <li><a class="btn-icon" href="#" aria-label="EATO on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/></svg></a></li>
+          <li><a class="btn-icon" href="#" aria-label="EATO on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg></a></li>
+          <li><a class="btn-icon" href="#" aria-label="EATO on Twitter"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M4 4l7.5 9.1L4.3 20H6l6-6.7L16.7 20H20l-8-9.7L19.4 4H17.7l-5.6 6.2L7.3 4z"/></svg></a></li>
+        </ul>
+      </div>
+      <nav class="footer-col" aria-label="Explore">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Blog &amp; Insights</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="About">
+        <h3>About</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Events &amp; Private Dining</a></li>
+          <li><a href="reviews.html">Customer Reviews</a></li>
+          <li><a href="offers.html">Special Offers</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Support">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="reservation.html">Reservation</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="countdown.html">Limited-Time Offer</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Eato. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
