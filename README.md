@@ -6,7 +6,7 @@
 | Thành viên | Vai trò |
 |---|---|
 | NguyenMinhHuy0315 | Thành viên 1 |
-| TranThaiBao-alt | Thành viên 2 - Menu & Product Detail |
+| TranThaiBao-alt | Thành viên 2  |
 | Lê Đặng Hồng Ân | Thành viên 3 |
 | Nguyễn Dương Quốc Bảo | Thành viên 4 |
 
