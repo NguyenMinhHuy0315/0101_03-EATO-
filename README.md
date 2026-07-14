@@ -5,10 +5,10 @@
 ## 👥 Thành viên nhóm
 | Thành viên | Vai trò |
 |---|---|
-| NguyenMinhHuy0315 | Thành viên 1 |
-| TranThaiBao-alt | Thành viên 2  |
-| Lê Đặng Hồng Ân | Thành viên 3 |
-| Nguyễn Dương Quốc Bảo | Thành viên 4 |
+| Nguyễn Minh Huy - 2274802010315 | Thành viên 1 |
+| Trần Thái Bảo - 2474802010041 | Thành viên 2  |
+| Lê Đặng Hồng Ân - 2474802010017 | Thành viên 3 |
+| Nguyễn Dương Quốc Bảo - 2474802010030 | Thành viên 4 |
 
 ## 🌐 Website
 [Xem website tại đây]() Chưa có
