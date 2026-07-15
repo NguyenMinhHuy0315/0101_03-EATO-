@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reservation — EATO Fine Dining Restaurant &amp; Cafe</title>
 <meta name="description" content="Book your table at EATO in moments. Reserve a date, time, and party size online and enjoy exceptional flavors, warm ambiance, and outstanding service.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reservation — EATO Fine Dining Restaurant &amp; Cafe">
+<meta property="og:description" content="Book your table at EATO in moments. Reserve a date, time, and party size online and enjoy exceptional flavors, warm ambiance, and outstanding service.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=1200&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reservation — EATO Fine Dining Restaurant &amp; Cafe">
+<meta name="twitter:description" content="Book your table at EATO in moments. Reserve a date, time, and party size online and enjoy exceptional flavors, warm ambiance, and outstanding service.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=1200&q=80">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,8 +27,12 @@
   @media (max-width: 899px) {
     .reservation-layout { grid-template-columns: 1fr; }
   }
-  .info-panel {
+  .info-panel,
+  .form-card {
     background: var(--color-white);
+    color: #1a1a1a;
+    --color-text-muted: #5c5c5c;
+    --color-abu-stroke: #ebebeb;
     border: 1px solid var(--color-abu-stroke);
     border-radius: var(--radius-lg);
     padding: 32px;
@@ -28,9 +40,6 @@
   .info-panel .feature-list { gap: 28px; }
   .info-panel .feature-item .feature-icon { width: 48px; height: 48px; }
   .form-card {
-    background: var(--color-white);
-    border: 1px solid var(--color-abu-stroke);
-    border-radius: var(--radius-lg);
     padding: 40px;
   }
   @media (max-width: 599px) {
@@ -203,7 +212,7 @@
           <p class="text-muted" style="margin-top:20px;" data-vi="Dù là sinh nhật, kỷ niệm, họp mặt doanh nghiệp hay bất kỳ dịp đặc biệt nào, nhà hàng của chúng tôi mang đến không gian hoàn hảo cho sự kiện của bạn." data-en="Whether it's a birthday, anniversary, corporate gathering, or any special occasion, our restaurant offers the perfect setting for your event.">Dù là sinh nhật, kỷ niệm, họp mặt doanh nghiệp hay bất kỳ dịp đặc biệt nào, nhà hàng của chúng tôi mang đến không gian hoàn hảo cho sự kiện của bạn.</p>
           <a class="btn btn-outline mt-lg" href="events.html" data-vi="Xem Thêm" data-en="See More">Xem Thêm</a>
         </div>
-        <img class="ph-img" style="border-radius:24px;" src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80" alt="Guests raising a toast with wine glasses during a private celebration at EATO">
+        <img loading="lazy" class="ph-img" style="border-radius:24px;" src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80" alt="Guests raising a toast with wine glasses during a private celebration at EATO">
       </div>
     </div>
   </section>
@@ -298,7 +307,7 @@
             </div>
           </div>
         </div>
-        <img class="ph-img hide-mobile" style="border-radius:24px;" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80" alt="Elegant table setting with wine glasses ready for reserved guests at EATO">
+        <img loading="lazy" class="ph-img hide-mobile" style="border-radius:24px;" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80" alt="Elegant table setting with wine glasses ready for reserved guests at EATO">
       </div>
     </div>
   </section>
@@ -313,9 +322,9 @@
           <ul class="carousel-track" style="justify-content:center; width:100%;">
             <li style="list-style:none;">
               <div class="avatar-row">
-                <img class="avatar-side" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=220&q=80" alt="Portrait of a previous EATO guest">
-                <img class="avatar-active" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=320&q=80" alt="Portrait of Sarah Hamilton, EATO guest">
-                <img class="avatar-side" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=220&q=80" alt="Portrait of a following EATO guest">
+                <img loading="lazy" class="avatar-side" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=220&q=80" alt="Portrait of a previous EATO guest">
+                <img loading="lazy" class="avatar-active" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=320&q=80" alt="Portrait of Sarah Hamilton, EATO guest">
+                <img loading="lazy" class="avatar-side" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=220&q=80" alt="Portrait of a following EATO guest">
               </div>
               <p class="avatar-caption">Sarah Hamilton</p>
             </li>

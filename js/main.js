@@ -548,6 +548,35 @@
     var timer = setInterval(tick, 1000);
   }
 
+  /* -------------------------------------------------------
+     Hero parallax
+     Subtle scroll-linked translate on the hero photo (index.html,
+     countdown.html — the only pages with an above-the-fold hero
+     image; other pages' page-hero is text-only). transform-only,
+     rAF-throttled, and skipped entirely under reduced motion.
+     ------------------------------------------------------- */
+  function initHeroParallax() {
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var img = document.querySelector(".hero-media img");
+    if (!img) return;
+
+    var ticking = false;
+    function update() {
+      var rect = img.parentElement.getBoundingClientRect();
+      var offset = Math.max(-24, Math.min(24, rect.top * -0.1));
+      img.style.transform = "translateY(" + offset.toFixed(1) + "px) scale(1.12)";
+      ticking = false;
+    }
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    update();
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initI18n();
     initNavToggle();
@@ -557,5 +586,6 @@
     initCountdown();
     initScrollReveal();
     initPageTransitions();
+    initHeroParallax();
   });
 })();
