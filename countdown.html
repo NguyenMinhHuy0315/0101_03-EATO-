@@ -66,6 +66,14 @@
     .offer-highlight-grid { grid-template-columns: 1fr; }
     .countdown-unit { min-width: 84px; padding: 18px 10px; }
   }
+  /* Countdown page hero uses the rust brand color (per latest Figma export)
+     instead of the shared red .hero, to visually set this promo page apart
+     from the rest of the red-branded site. Scoped here so other pages that
+     reuse .hero are unaffected. Primary CTA stays red for contrast against
+     the rust background (source: "View Menu" button is red on rust). */
+  .hero { background: var(--color-rust); }
+  .hero .btn-primary { background: var(--color-red); border-color: var(--color-red); }
+  .hero .btn-primary:hover { background: var(--color-red-dark); border-color: var(--color-red-dark); }
 </style>
 </head>
 <body>
@@ -113,8 +121,25 @@
           <a class="btn btn-white" href="about.html" data-vi="Khám Phá Thêm" data-en="Explore More">Khám Phá Thêm</a>
         </div>
       </div>
-      <div class="hero-media">
-        <img class="ph-img" style="border-radius:24px;" src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=800&q=80" alt="Gourmet burger with sesame bun served with cola, a preview of EATO's grand opening menu">
+      <div class="hero-media-wrap">
+        <div class="hero-media">
+          <img class="ph-img" style="border-radius:24px;" src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=800&q=80" alt="Gourmet burger with sesame bun served with cola, a preview of EATO's grand opening menu">
+        </div>
+        <div class="hero-badge hero-badge-quality hide-mobile">
+          <span class="hero-badge-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><polyline points="8.5 13.5 7 22 12 19 17 22 15.5 13.5"/></svg>
+          </span>
+          <span>
+            <span class="hero-badge-title" data-vi="Chất Lượng 100%" data-en="100% High Quality">Chất Lượng 100%</span>
+            <span class="hero-badge-subtitle" data-vi="Nguyên liệu tốt nhất" data-en="Best quality raw materials">Nguyên liệu tốt nhất</span>
+          </span>
+        </div>
+        <div class="hero-badge hero-badge-award hide-mobile">
+          <span class="hero-badge-icon">
+            <svg class="icon-star" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg>
+          </span>
+          <span class="hero-badge-title" data-vi="Sao Michelin" data-en="Michelin Star">Sao Michelin</span>
+        </div>
       </div>
     </div>
     <div class="container">
@@ -133,7 +158,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><polyline points="8.5 13.5 7 22 12 19 17 22 15.5 13.5"/></svg>
           </span>
           <span class="stack" style="text-align:left;">
-            <span class="stat-number" style="font-size:1.25rem;">Michelin Star</span>
+            <span class="stat-number" style="font-size:1.25rem;" data-vi="Sao Michelin" data-en="Michelin Star">Sao Michelin</span>
             <span class="stat-label" data-vi="Xuất sắc ẩm thực được công nhận" data-en="Recognized culinary excellence">Xuất sắc ẩm thực được công nhận</span>
           </span>
         </div>
