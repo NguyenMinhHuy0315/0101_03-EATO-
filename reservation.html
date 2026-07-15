@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,7 +54,7 @@
 </style>
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to main content</a>
+<a class="skip-link" href="#main-content" data-vi="Bỏ qua để đến nội dung chính" data-en="Skip to main content">Bỏ qua để đến nội dung chính</a>
 
 <header class="site-header">
   <div class="header-inner">
@@ -63,12 +63,16 @@
       EATO
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-      <a class="btn btn-primary" href="reservation.html">Book Reservation</a>
+      <a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a>
+      <a href="menu.html" data-vi="Thực đơn" data-en="Menu">Thực đơn</a>
+      <a href="about.html" data-vi="Về chúng tôi" data-en="About Us">Về chúng tôi</a>
+      <a href="contact.html" data-vi="Liên hệ" data-en="Contact Us">Liên hệ</a>
+      <a class="btn btn-primary" href="reservation.html" data-vi="Đặt bàn" data-en="Book Reservation">Đặt bàn</a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Language switcher">
+      <button type="button" class="lang-btn" data-lang-btn="vi" aria-pressed="true">VI</button>
+      <button type="button" class="lang-btn" data-lang-btn="en" aria-pressed="false">EN</button>
+    </div>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -79,9 +83,9 @@
 
   <div class="page-hero">
     <div class="container">
-      <h1>Reserve Your Table, Savor Every Moment with Us</h1>
-      <p class="text-muted" style="max-width:620px; margin:16px auto 0;">Book your table in moments and enjoy exceptional flavors, warm ambiance, and attentive service.</p>
-      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> / Reservation</nav>
+      <h1 data-vi="Đặt Bàn Của Bạn, Tận Hưởng Từng Khoảnh Khắc Cùng Chúng Tôi" data-en="Reserve Your Table, Savor Every Moment with Us">Đặt Bàn Của Bạn, Tận Hưởng Từng Khoảnh Khắc Cùng Chúng Tôi</h1>
+      <p class="text-muted" style="max-width:620px; margin:16px auto 0;" data-vi="Đặt bàn chỉ trong chốc lát và tận hưởng hương vị tuyệt vời, không gian ấm cúng và dịch vụ chu đáo." data-en="Book your table in moments and enjoy exceptional flavors, warm ambiance, and attentive service.">Đặt bàn chỉ trong chốc lát và tận hưởng hương vị tuyệt vời, không gian ấm cúng và dịch vụ chu đáo.</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a> / <span data-vi="Đặt Bàn" data-en="Reservation">Đặt Bàn</span></nav>
     </div>
   </div>
 
@@ -89,21 +93,21 @@
   <section class="section-bg-dark section-glow" aria-labelledby="reserve-heading">
     <div class="container">
       <div class="text-center" style="max-width:700px; margin:0 auto 56px;">
-        <h2 id="reserve-heading">Secure Your Spot, Indulge in Culinary Delights</h2>
-        <p class="text-muted" style="margin-top:16px;">Make a reservation today to experience exquisite dishes, attentive service, and a welcoming atmosphere perfect for any occasion.</p>
+        <h2 id="reserve-heading" data-vi="Giữ Chỗ Của Bạn, Đắm Chìm Trong Ẩm Thực Tinh Tế" data-en="Secure Your Spot, Indulge in Culinary Delights">Giữ Chỗ Của Bạn, Đắm Chìm Trong Ẩm Thực Tinh Tế</h2>
+        <p class="text-muted" style="margin-top:16px;" data-vi="Đặt bàn ngay hôm nay để trải nghiệm những món ăn tinh tế, dịch vụ chu đáo và không gian ấm áp hoàn hảo cho mọi dịp." data-en="Make a reservation today to experience exquisite dishes, attentive service, and a welcoming atmosphere perfect for any occasion.">Đặt bàn ngay hôm nay để trải nghiệm những món ăn tinh tế, dịch vụ chu đáo và không gian ấm áp hoàn hảo cho mọi dịp.</p>
       </div>
 
       <div class="reservation-layout">
         <aside class="info-panel" aria-labelledby="info-heading">
-          <h3 id="info-heading" class="h5" style="margin-bottom:24px;">Reservation Details</h3>
+          <h3 id="info-heading" class="h5" style="margin-bottom:24px;" data-vi="Chi Tiết Đặt Bàn" data-en="Reservation Details">Chi Tiết Đặt Bàn</h3>
           <div class="feature-list">
             <div class="feature-item">
               <span class="feature-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg>
               </span>
               <div>
-                <h3 class="h6">Opening Hours</h3>
-                <p>Monday – Sunday<br>11:00 AM – 10:00 PM</p>
+                <h3 class="h6" data-vi="Giờ Mở Cửa" data-en="Opening Hours">Giờ Mở Cửa</h3>
+                <p data-vi="Thứ Hai – Chủ Nhật<br>11:00 – 22:00" data-en="Monday – Sunday<br>11:00 AM – 10:00 PM">Thứ Hai – Chủ Nhật<br>11:00 – 22:00</p>
               </div>
             </div>
             <div class="feature-item">
@@ -111,8 +115,8 @@
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.9-9.3-9.7A5.4 5.4 0 0 1 12 6a5.4 5.4 0 0 1 9.3 5.3C19 16.1 12 21 12 21z"/><circle cx="12" cy="11" r="2.5"/></svg>
               </span>
               <div>
-                <h3 class="h6">Address</h3>
-                <p>3891 Ranchview Dr.<br>Richardson, California 62639</p>
+                <h3 class="h6" data-vi="Địa Chỉ" data-en="Address">Địa Chỉ</h3>
+                <p>123 Nguyễn Văn Linh<br>Quận 7, TP. Hồ Chí Minh</p>
               </div>
             </div>
             <div class="feature-item">
@@ -120,69 +124,69 @@
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"/></svg>
               </span>
               <div>
-                <h3 class="h6">Phone</h3>
+                <h3 class="h6" data-vi="Điện Thoại" data-en="Phone">Điện Thoại</h3>
                 <p>+1 (555) 214-7732</p>
               </div>
             </div>
           </div>
-          <p class="text-muted" style="margin-top:32px;">Reservations for parties of 8 or more should call us directly to arrange seating. We hold tables for 15 minutes past the booked time.</p>
+          <p class="text-muted" style="margin-top:32px;" data-vi="Đối với nhóm từ 8 khách trở lên, vui lòng gọi trực tiếp để sắp xếp chỗ ngồi. Chúng tôi giữ bàn trong 15 phút sau giờ đã đặt." data-en="Reservations for parties of 8 or more should call us directly to arrange seating. We hold tables for 15 minutes past the booked time.">Đối với nhóm từ 8 khách trở lên, vui lòng gọi trực tiếp để sắp xếp chỗ ngồi. Chúng tôi giữ bàn trong 15 phút sau giờ đã đặt.</p>
         </aside>
 
         <div class="form-card">
-          <form data-validate data-success-message="Your reservation request has been received — we'll confirm shortly by email.">
+          <form data-validate data-success-message-vi="Yêu cầu đặt bàn của bạn đã được ghi nhận — chúng tôi sẽ xác nhận sớm qua email." data-success-message-en="Your reservation request has been received — we'll confirm shortly by email.">
             <div class="form-status" role="status" aria-live="polite"></div>
 
             <div class="grid grid-2">
               <div class="field">
-                <label for="res-name">Full Name</label>
-                <input type="text" id="res-name" name="name" data-rules="required minlength:2" data-error-required="Please enter your full name." data-error-minlength="Please enter at least 2 characters.">
+                <label for="res-name" data-vi="Họ Và Tên" data-en="Full Name">Họ Và Tên</label>
+                <input type="text" id="res-name" name="name" data-rules="required minlength:2" data-error-required-vi="Vui lòng nhập họ và tên của bạn." data-error-required-en="Please enter your full name." data-error-minlength-vi="Vui lòng nhập ít nhất 2 ký tự." data-error-minlength-en="Please enter at least 2 characters.">
                 <span class="error-message" role="alert"></span>
               </div>
               <div class="field">
-                <label for="res-email">Email Address</label>
-                <input type="email" id="res-email" name="email" data-rules="required email" data-error-required="Please enter your email address." data-error-email="Please enter a valid email address.">
+                <label for="res-email" data-vi="Địa Chỉ Email" data-en="Email Address">Địa Chỉ Email</label>
+                <input type="email" id="res-email" name="email" data-rules="required email" data-error-required-vi="Vui lòng nhập địa chỉ email của bạn." data-error-required-en="Please enter your email address." data-error-email-vi="Vui lòng nhập địa chỉ email hợp lệ." data-error-email-en="Please enter a valid email address.">
                 <span class="error-message" role="alert"></span>
               </div>
             </div>
 
             <div class="field">
-              <label for="res-phone">Phone Number</label>
-              <input type="tel" id="res-phone" name="phone" data-rules="required phone" data-error-required="Please enter your phone number." data-error-phone="Please enter a valid phone number.">
+              <label for="res-phone" data-vi="Số Điện Thoại" data-en="Phone Number">Số Điện Thoại</label>
+              <input type="tel" id="res-phone" name="phone" data-rules="required phone" data-error-required-vi="Vui lòng nhập số điện thoại của bạn." data-error-required-en="Please enter your phone number." data-error-phone-vi="Vui lòng nhập số điện thoại hợp lệ." data-error-phone-en="Please enter a valid phone number.">
               <span class="error-message" role="alert"></span>
             </div>
 
             <div class="grid grid-3">
               <div class="field">
-                <label for="res-date">Date</label>
-                <input type="date" id="res-date" name="date" data-rules="required" data-error-required="Please choose a reservation date.">
+                <label for="res-date" data-vi="Ngày" data-en="Date">Ngày</label>
+                <input type="date" id="res-date" name="date" data-rules="required" data-error-required-vi="Vui lòng chọn ngày đặt bàn." data-error-required-en="Please choose a reservation date.">
                 <span class="error-message" role="alert"></span>
               </div>
               <div class="field">
-                <label for="res-time">Time</label>
-                <input type="time" id="res-time" name="time" data-rules="required" data-error-required="Please choose a reservation time.">
+                <label for="res-time" data-vi="Giờ" data-en="Time">Giờ</label>
+                <input type="time" id="res-time" name="time" data-rules="required" data-error-required-vi="Vui lòng chọn giờ đặt bàn." data-error-required-en="Please choose a reservation time.">
                 <span class="error-message" role="alert"></span>
               </div>
               <div class="field">
-                <label for="res-guests">Guests</label>
-                <input type="number" id="res-guests" name="guests" min="1" max="20" data-rules="required" data-error-required="Please enter the number of guests.">
+                <label for="res-guests" data-vi="Số Khách" data-en="Guests">Số Khách</label>
+                <input type="number" id="res-guests" name="guests" min="1" max="20" data-rules="required" data-error-required-vi="Vui lòng nhập số lượng khách." data-error-required-en="Please enter the number of guests.">
                 <span class="error-message" role="alert"></span>
               </div>
             </div>
 
             <div class="field">
-              <label for="res-notes">Special Requests <span class="text-muted" style="font-weight:400;">(Optional)</span></label>
-              <textarea id="res-notes" name="notes" placeholder="Dietary restrictions, seating preferences, celebrations, or any other comments…"></textarea>
+              <label for="res-notes" data-vi-html="Yêu Cầu Đặc Biệt &lt;span class=&quot;text-muted&quot; style=&quot;font-weight:400;&quot;&gt;(Không bắt buộc)&lt;/span&gt;" data-en-html="Special Requests &lt;span class=&quot;text-muted&quot; style=&quot;font-weight:400;&quot;&gt;(Optional)&lt;/span&gt;">Yêu Cầu Đặc Biệt <span class="text-muted" style="font-weight:400;">(Không bắt buộc)</span></label>
+              <textarea id="res-notes" name="notes" placeholder="Chế độ ăn kiêng, vị trí ngồi ưa thích, dịp kỷ niệm hoặc bất kỳ ghi chú nào khác…" data-vi-placeholder="Chế độ ăn kiêng, vị trí ngồi ưa thích, dịp kỷ niệm hoặc bất kỳ ghi chú nào khác…" data-en-placeholder="Dietary restrictions, seating preferences, celebrations, or any other comments…"></textarea>
             </div>
 
             <div class="field consent-field">
               <div class="consent-row">
-                <input type="checkbox" id="res-consent" name="consent" data-rules="checked" data-error-required="Please confirm you agree to our reservation policies.">
-                <label for="res-consent">I confirm my reservation and agree to the restaurant's policies.</label>
+                <input type="checkbox" id="res-consent" name="consent" data-rules="checked" data-error-required-vi="Vui lòng xác nhận bạn đồng ý với chính sách đặt bàn của chúng tôi." data-error-required-en="Please confirm you agree to our reservation policies.">
+                <label for="res-consent" data-vi="Tôi xác nhận đặt bàn và đồng ý với chính sách của nhà hàng." data-en="I confirm my reservation and agree to the restaurant's policies.">Tôi xác nhận đặt bàn và đồng ý với chính sách của nhà hàng.</label>
               </div>
               <span class="error-message" role="alert"></span>
             </div>
 
-            <button class="btn btn-primary" type="submit">Confirm Reservation</button>
+            <button class="btn btn-primary" type="submit" data-vi="Xác Nhận Đặt Bàn" data-en="Confirm Reservation">Xác Nhận Đặt Bàn</button>
           </form>
         </div>
       </div>
@@ -194,10 +198,10 @@
     <div class="container">
       <div class="split-media-content">
         <div>
-          <span class="tag">Events &amp; Private Dining</span>
-          <h2 id="events-heading" style="margin-top:20px;">Join us in celebrating life's special moments with exceptional food and unforgettable experiences together!</h2>
-          <p class="text-muted" style="margin-top:20px;">Whether it's a birthday, anniversary, corporate gathering, or any special occasion, our restaurant offers the perfect setting for your event.</p>
-          <a class="btn btn-outline mt-lg" href="events.html">See More</a>
+          <span class="tag" data-vi="Sự Kiện &amp; Tiệc Riêng" data-en="Events &amp; Private Dining">Sự Kiện &amp; Tiệc Riêng</span>
+          <h2 id="events-heading" style="margin-top:20px;" data-vi="Cùng chúng tôi tôn vinh những khoảnh khắc đặc biệt trong đời với món ăn xuất sắc và trải nghiệm khó quên!" data-en="Join us in celebrating life's special moments with exceptional food and unforgettable experiences together!">Cùng chúng tôi tôn vinh những khoảnh khắc đặc biệt trong đời với món ăn xuất sắc và trải nghiệm khó quên!</h2>
+          <p class="text-muted" style="margin-top:20px;" data-vi="Dù là sinh nhật, kỷ niệm, họp mặt doanh nghiệp hay bất kỳ dịp đặc biệt nào, nhà hàng của chúng tôi mang đến không gian hoàn hảo cho sự kiện của bạn." data-en="Whether it's a birthday, anniversary, corporate gathering, or any special occasion, our restaurant offers the perfect setting for your event.">Dù là sinh nhật, kỷ niệm, họp mặt doanh nghiệp hay bất kỳ dịp đặc biệt nào, nhà hàng của chúng tôi mang đến không gian hoàn hảo cho sự kiện của bạn.</p>
+          <a class="btn btn-outline mt-lg" href="events.html" data-vi="Xem Thêm" data-en="See More">Xem Thêm</a>
         </div>
         <img class="ph-img" style="border-radius:24px;" src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80" alt="Guests raising a toast with wine glasses during a private celebration at EATO">
       </div>
@@ -208,10 +212,10 @@
   <section class="section-bg-rust section-glow" aria-labelledby="res-faq-heading">
     <div class="container">
       <div class="section-head">
-        <h2 id="res-faq-heading">Your Questions Answered, Enjoy a Seamless Experience!</h2>
+        <h2 id="res-faq-heading" data-vi="Giải Đáp Mọi Thắc Mắc, Tận Hưởng Trải Nghiệm Trọn Vẹn!" data-en="Your Questions Answered, Enjoy a Seamless Experience!">Giải Đáp Mọi Thắc Mắc, Tận Hưởng Trải Nghiệm Trọn Vẹn!</h2>
         <div>
-          <p style="margin-bottom:16px;">Explore our FAQs to find answers to common inquiries, ensuring a smooth and enjoyable dining experience for all our guests.</p>
-          <a class="btn btn-outline" href="faq.html">See More</a>
+          <p style="margin-bottom:16px;" data-vi="Khám phá phần Câu Hỏi Thường Gặp để tìm câu trả lời cho các thắc mắc phổ biến, đảm bảo trải nghiệm ẩm thực suôn sẻ và trọn vẹn cho mọi thực khách." data-en="Explore our FAQs to find answers to common inquiries, ensuring a smooth and enjoyable dining experience for all our guests.">Khám phá phần Câu Hỏi Thường Gặp để tìm câu trả lời cho các thắc mắc phổ biến, đảm bảo trải nghiệm ẩm thực suôn sẻ và trọn vẹn cho mọi thực khách.</p>
+          <a class="btn btn-outline" href="faq.html" data-vi="Xem Thêm" data-en="See More">Xem Thêm</a>
         </div>
       </div>
       <div class="split-media-content">
@@ -219,78 +223,78 @@
           <div class="accordion-item">
             <h3>
               <button class="accordion-trigger" id="rf-t1" aria-expanded="true" aria-controls="rf-p1">
-                What are your restaurant's hours of operation?
+                <span data-vi="Nhà hàng mở cửa vào những giờ nào?" data-en="What are your restaurant's hours of operation?">Nhà hàng mở cửa vào những giờ nào?</span>
                 <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
             </h3>
             <div class="accordion-panel" id="rf-p1" role="region" aria-labelledby="rf-t1">
-              <div class="accordion-panel-inner">Our restaurant is open Monday to Sunday from 11:00 AM to 10:00 PM.</div>
+              <div class="accordion-panel-inner" data-vi="Nhà hàng chúng tôi mở cửa từ Thứ Hai đến Chủ Nhật, từ 11:00 đến 22:00." data-en="Our restaurant is open Monday to Sunday from 11:00 AM to 10:00 PM.">Nhà hàng chúng tôi mở cửa từ Thứ Hai đến Chủ Nhật, từ 11:00 đến 22:00.</div>
             </div>
           </div>
           <div class="accordion-item">
             <h3>
               <button class="accordion-trigger" id="rf-t2" aria-expanded="false" aria-controls="rf-p2">
-                Do I need a reservation to dine?
+                <span data-vi="Tôi có cần đặt bàn trước khi đến dùng bữa không?" data-en="Do I need a reservation to dine?">Tôi có cần đặt bàn trước khi đến dùng bữa không?</span>
                 <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
             </h3>
             <div class="accordion-panel" id="rf-p2" role="region" aria-labelledby="rf-t2">
-              <div class="accordion-panel-inner">Walk-ins are always welcome, but we recommend booking ahead for weekends and evenings to guarantee your table.</div>
+              <div class="accordion-panel-inner" data-vi="Chúng tôi luôn chào đón khách vãng lai, nhưng khuyến khích đặt bàn trước vào cuối tuần và buổi tối để đảm bảo có chỗ." data-en="Walk-ins are always welcome, but we recommend booking ahead for weekends and evenings to guarantee your table.">Chúng tôi luôn chào đón khách vãng lai, nhưng khuyến khích đặt bàn trước vào cuối tuần và buổi tối để đảm bảo có chỗ.</div>
             </div>
           </div>
           <div class="accordion-item">
             <h3>
               <button class="accordion-trigger" id="rf-t3" aria-expanded="false" aria-controls="rf-p3">
-                Can I modify my reservation after booking?
+                <span data-vi="Tôi có thể thay đổi đặt bàn sau khi đã đặt không?" data-en="Can I modify my reservation after booking?">Tôi có thể thay đổi đặt bàn sau khi đã đặt không?</span>
                 <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
             </h3>
             <div class="accordion-panel" id="rf-p3" role="region" aria-labelledby="rf-t3">
-              <div class="accordion-panel-inner">Yes — contact us at least 2 hours before your reservation time and we'll be happy to adjust it.</div>
+              <div class="accordion-panel-inner" data-vi="Có — vui lòng liên hệ với chúng tôi ít nhất 2 giờ trước giờ đặt bàn và chúng tôi sẽ hỗ trợ điều chỉnh." data-en="Yes — contact us at least 2 hours before your reservation time and we'll be happy to adjust it.">Có — vui lòng liên hệ với chúng tôi ít nhất 2 giờ trước giờ đặt bàn và chúng tôi sẽ hỗ trợ điều chỉnh.</div>
             </div>
           </div>
           <div class="accordion-item">
             <h3>
               <button class="accordion-trigger" id="rf-t4" aria-expanded="false" aria-controls="rf-p4">
-                Do you offer takeout or delivery services?
+                <span data-vi="Nhà hàng có dịch vụ mang đi hoặc giao hàng không?" data-en="Do you offer takeout or delivery services?">Nhà hàng có dịch vụ mang đi hoặc giao hàng không?</span>
                 <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
             </h3>
             <div class="accordion-panel" id="rf-p4" role="region" aria-labelledby="rf-t4">
-              <div class="accordion-panel-inner">Yes, takeout is available in-house and we partner with major delivery platforms for delivery orders.</div>
+              <div class="accordion-panel-inner" data-vi="Có, chúng tôi có dịch vụ mang đi tại chỗ và hợp tác với các nền tảng giao hàng lớn." data-en="Yes, takeout is available in-house and we partner with major delivery platforms for delivery orders.">Có, chúng tôi có dịch vụ mang đi tại chỗ và hợp tác với các nền tảng giao hàng lớn.</div>
             </div>
           </div>
           <div class="accordion-item">
             <h3>
               <button class="accordion-trigger" id="rf-t5" aria-expanded="false" aria-controls="rf-p5">
-                Are there vegetarian or gluten-free options available?
+                <span data-vi="Nhà hàng có món chay hoặc không chứa gluten không?" data-en="Are there vegetarian or gluten-free options available?">Nhà hàng có món chay hoặc không chứa gluten không?</span>
                 <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
             </h3>
             <div class="accordion-panel" id="rf-p5" role="region" aria-labelledby="rf-t5">
-              <div class="accordion-panel-inner">Absolutely — our menu is clearly marked with vegetarian, vegan, and gluten-free choices.</div>
+              <div class="accordion-panel-inner" data-vi="Chắc chắn rồi — thực đơn của chúng tôi có ghi chú rõ ràng các món chay, thuần chay và không chứa gluten." data-en="Absolutely — our menu is clearly marked with vegetarian, vegan, and gluten-free choices.">Chắc chắn rồi — thực đơn của chúng tôi có ghi chú rõ ràng các món chay, thuần chay và không chứa gluten.</div>
             </div>
           </div>
           <div class="accordion-item">
             <h3>
               <button class="accordion-trigger" id="rf-t6" aria-expanded="false" aria-controls="rf-p6">
-                Can I host a private event at your restaurant?
+                <span data-vi="Tôi có thể tổ chức sự kiện riêng tại nhà hàng không?" data-en="Can I host a private event at your restaurant?">Tôi có thể tổ chức sự kiện riêng tại nhà hàng không?</span>
                 <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
             </h3>
             <div class="accordion-panel" id="rf-p6" role="region" aria-labelledby="rf-t6">
-              <div class="accordion-panel-inner">Yes — our private dining room accommodates up to 40 guests for celebrations, corporate events, and more.</div>
+              <div class="accordion-panel-inner" data-vi="Có — phòng tiệc riêng của chúng tôi có thể phục vụ tới 40 khách cho các buổi kỷ niệm, sự kiện doanh nghiệp và nhiều hơn nữa." data-en="Yes — our private dining room accommodates up to 40 guests for celebrations, corporate events, and more.">Có — phòng tiệc riêng của chúng tôi có thể phục vụ tới 40 khách cho các buổi kỷ niệm, sự kiện doanh nghiệp và nhiều hơn nữa.</div>
             </div>
           </div>
           <div class="accordion-item">
             <h3>
               <button class="accordion-trigger" id="rf-t7" aria-expanded="false" aria-controls="rf-p7">
-                Do you accommodate requests for celebrations?
+                <span data-vi="Nhà hàng có hỗ trợ các yêu cầu cho dịp kỷ niệm không?" data-en="Do you accommodate requests for celebrations?">Nhà hàng có hỗ trợ các yêu cầu cho dịp kỷ niệm không?</span>
                 <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
             </h3>
             <div class="accordion-panel" id="rf-p7" role="region" aria-labelledby="rf-t7">
-              <div class="accordion-panel-inner">Of course — let us know in advance and we'll arrange a custom cake, decorations, or a special menu for your occasion.</div>
+              <div class="accordion-panel-inner" data-vi="Tất nhiên rồi — hãy cho chúng tôi biết trước và chúng tôi sẽ chuẩn bị bánh theo yêu cầu, trang trí hoặc thực đơn đặc biệt cho dịp của bạn." data-en="Of course — let us know in advance and we'll arrange a custom cake, decorations, or a special menu for your occasion.">Tất nhiên rồi — hãy cho chúng tôi biết trước và chúng tôi sẽ chuẩn bị bánh theo yêu cầu, trang trí hoặc thực đơn đặc biệt cho dịp của bạn.</div>
             </div>
           </div>
         </div>
@@ -303,7 +307,7 @@
   <section class="section-bg-dark quote-section" aria-labelledby="quote-heading">
     <div class="container">
       <span class="quote-mark" aria-hidden="true">&#8220;</span>
-      <h2 id="quote-heading" class="quote-text">The food was absolutely outstanding, and the service was exceptional! Every detail contributed to an unforgettable evening. Can't wait to return for another amazing experience.</h2>
+      <h2 id="quote-heading" class="quote-text" data-vi="Đồ ăn thực sự xuất sắc, và dịch vụ thì tuyệt vời! Từng chi tiết nhỏ đều góp phần tạo nên một buổi tối khó quên. Không thể chờ để quay lại trải nghiệm thêm lần nữa." data-en="The food was absolutely outstanding, and the service was exceptional! Every detail contributed to an unforgettable evening. Can't wait to return for another amazing experience.">Đồ ăn thực sự xuất sắc, và dịch vụ thì tuyệt vời! Từng chi tiết nhỏ đều góp phần tạo nên một buổi tối khó quên. Không thể chờ để quay lại trải nghiệm thêm lần nữa.</h2>
       <div class="carousel" data-carousel data-per-view="1" data-carousel-label="Guest testimonials">
         <div class="carousel-viewport">
           <ul class="carousel-track" style="justify-content:center; width:100%;">
@@ -339,12 +343,12 @@
           <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
           EATO
         </a>
-        <p>We drive real results — more flavor, more moments, and more reasons to come back for another unforgettable meal.</p>
-        <form data-validate aria-label="Newsletter signup" data-success-message="Thanks — you're subscribed for exclusive offers and updates!">
+        <p data-vi="Chúng tôi mang đến giá trị thực sự — nhiều hương vị hơn, nhiều khoảnh khắc hơn và nhiều lý do hơn để bạn quay lại thưởng thức một bữa ăn khó quên." data-en="We drive real results — more flavor, more moments, and more reasons to come back for another unforgettable meal.">Chúng tôi mang đến giá trị thực sự — nhiều hương vị hơn, nhiều khoảnh khắc hơn và nhiều lý do hơn để bạn quay lại thưởng thức một bữa ăn khó quên.</p>
+        <form data-validate aria-label="Newsletter signup" data-success-message-vi="Cảm ơn — bạn đã đăng ký nhận ưu đãi và cập nhật độc quyền!" data-success-message-en="Thanks — you're subscribed for exclusive offers and updates!">
           <div class="field newsletter-field">
-            <label class="sr-only" for="newsletter-email">Email address</label>
+            <label class="sr-only" for="newsletter-email" data-vi="Địa chỉ email" data-en="Email address">Địa chỉ email</label>
             <div class="newsletter-form">
-              <input type="email" id="newsletter-email" name="email" placeholder="Enter your email address" data-rules="required email" data-error-email="Please enter a valid email address.">
+              <input type="email" id="newsletter-email" name="email" placeholder="Nhập địa chỉ email của bạn" data-vi-placeholder="Nhập địa chỉ email của bạn" data-en-placeholder="Enter your email address" data-rules="required email" data-error-email-vi="Vui lòng nhập địa chỉ email hợp lệ." data-error-email-en="Please enter a valid email address.">
               <button class="btn-icon" type="submit" aria-label="Subscribe to newsletter">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </button>
@@ -353,7 +357,7 @@
           </div>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
-        <p style="margin-top:24px; color:#b8b8b8;">3891 Ranchview Dr. Richardson, California 62639</p>
+        <p style="margin-top:24px; color:#b8b8b8;">123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</p>
         <ul class="footer-social" style="margin-top:16px; list-style:none; padding:0;">
           <li><a class="btn-icon" href="#" aria-label="EATO on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-3.5-.8-3-1.2-4.9-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.4 1.5 2.7 1.7.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.6.8 1.9 1 .3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg></a></li>
           <li><a class="btn-icon" href="#" aria-label="EATO on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/></svg></a></li>
@@ -362,38 +366,38 @@
         </ul>
       </div>
       <nav class="footer-col" aria-label="Explore">
-        <h3>Explore</h3>
+        <h3 data-vi="Khám Phá" data-en="Explore">Khám Phá</h3>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="blog.html">Blog &amp; Insights</a></li>
+          <li><a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a></li>
+          <li><a href="menu.html" data-vi="Thực đơn" data-en="Menu">Thực đơn</a></li>
+          <li><a href="gallery.html" data-vi="Thư viện ảnh" data-en="Gallery">Thư viện ảnh</a></li>
+          <li><a href="blog.html" data-vi="Blog &amp; Kiến Thức" data-en="Blog &amp; Insights">Blog &amp; Kiến Thức</a></li>
         </ul>
       </nav>
       <nav class="footer-col" aria-label="About">
-        <h3>About</h3>
+        <h3 data-vi="Giới Thiệu" data-en="About">Giới Thiệu</h3>
         <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="events.html">Events &amp; Private Dining</a></li>
-          <li><a href="reviews.html">Customer Reviews</a></li>
-          <li><a href="offers.html">Special Offers</a></li>
+          <li><a href="about.html" data-vi="Về chúng tôi" data-en="About Us">Về chúng tôi</a></li>
+          <li><a href="events.html" data-vi="Sự Kiện &amp; Tiệc Riêng" data-en="Events &amp; Private Dining">Sự Kiện &amp; Tiệc Riêng</a></li>
+          <li><a href="reviews.html" data-vi="Đánh Giá Khách Hàng" data-en="Customer Reviews">Đánh Giá Khách Hàng</a></li>
+          <li><a href="offers.html" data-vi="Ưu Đãi Đặc Biệt" data-en="Special Offers">Ưu Đãi Đặc Biệt</a></li>
         </ul>
       </nav>
       <nav class="footer-col" aria-label="Support">
-        <h3>Support</h3>
+        <h3 data-vi="Hỗ Trợ" data-en="Support">Hỗ Trợ</h3>
         <ul>
-          <li><a href="reservation.html">Reservation</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="countdown.html">Limited-Time Offer</a></li>
+          <li><a href="reservation.html" data-vi="Đặt Bàn" data-en="Reservation">Đặt Bàn</a></li>
+          <li><a href="faq.html" data-vi="Câu Hỏi Thường Gặp" data-en="FAQ">Câu Hỏi Thường Gặp</a></li>
+          <li><a href="contact.html" data-vi="Liên Hệ" data-en="Contact Us">Liên Hệ</a></li>
+          <li><a href="countdown.html" data-vi="Ưu Đãi Có Hạn" data-en="Limited-Time Offer">Ưu Đãi Có Hạn</a></li>
         </ul>
       </nav>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Eato. All rights reserved.</p>
+      <p>&copy; 2026 Eato. <span data-vi="Bảo lưu mọi quyền." data-en="All rights reserved.">Bảo lưu mọi quyền.</span></p>
       <div class="legal-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="#" data-vi="Chính Sách Bảo Mật" data-en="Privacy Policy">Chính Sách Bảo Mật</a>
+        <a href="#" data-vi="Điều Khoản Dịch Vụ" data-en="Terms of Service">Điều Khoản Dịch Vụ</a>
       </div>
     </div>
   </div>

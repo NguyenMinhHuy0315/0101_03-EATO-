@@ -224,6 +224,29 @@
      Applies to any <form data-validate>. Validates on submit
      and re-validates a field on blur once it has been touched.
      ------------------------------------------------------- */
+  function currentLang() {
+    return document.documentElement.lang === "en" ? "en" : "vi";
+  }
+
+  // Bilingual fallback copy for validation/status messages that a form
+  // doesn't override via data-*-vi / data-*-en attributes.
+  var VALIDATION_DEFAULTS = {
+    required: { vi: "Trường này là bắt buộc.", en: "This field is required." },
+    email: { vi: "Vui lòng nhập địa chỉ email hợp lệ.", en: "Please enter a valid email address." },
+    phone: { vi: "Vui lòng nhập số điện thoại hợp lệ.", en: "Please enter a valid phone number." },
+    formError: { vi: "Vui lòng kiểm tra lại các trường được đánh dấu bên dưới và thử lại.", en: "Please correct the highlighted fields below and try again." },
+    formSuccess: { vi: "Cảm ơn! Yêu cầu của bạn đã được gửi thành công.", en: "Thanks! Your submission was received successfully." }
+  };
+
+  function bilingualAttr(el, base, fallbackKey) {
+    var lang = currentLang();
+    var vi = el.dataset[base + "Vi"];
+    var en = el.dataset[base + "En"];
+    if (vi && en) return lang === "vi" ? vi : en;
+    var fb = VALIDATION_DEFAULTS[fallbackKey];
+    return fb ? fb[lang] : "";
+  }
+
   function initFormValidation() {
     var forms = document.querySelectorAll("form[data-validate]");
 
@@ -246,7 +269,7 @@
 
         if (!allValid) {
           if (status) {
-            status.textContent = "Please correct the highlighted fields below and try again.";
+            status.textContent = bilingualAttr(form, "formError", "formError");
             status.className = "form-status is-error";
           }
           if (firstInvalid) firstInvalid.focus();
@@ -254,8 +277,7 @@
         }
 
         if (status) {
-          status.textContent = form.dataset.successMessage ||
-            "Thanks! Your submission was received successfully.";
+          status.textContent = bilingualAttr(form, "successMessage", "formSuccess");
           status.className = "form-status is-success";
         }
         form.reset();
@@ -282,31 +304,34 @@
         var wrap = field.closest(".field");
         var errorEl = wrap ? wrap.querySelector(".error-message") : null;
         var value = field.value.trim();
+        var lang = currentLang();
         var message = "";
 
         for (var i = 0; i < rules.length; i++) {
           var rule = rules[i];
           if (rule === "required" && !value) {
-            message = field.dataset.errorRequired || "This field is required.";
+            message = bilingualAttr(field, "errorRequired", "required");
             break;
           }
           if (rule === "email" && value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-            message = field.dataset.errorEmail || "Please enter a valid email address.";
+            message = bilingualAttr(field, "errorEmail", "email");
             break;
           }
           if (rule === "phone" && value && !/^[+]?[\d\s().-]{7,}$/.test(value)) {
-            message = field.dataset.errorPhone || "Please enter a valid phone number.";
+            message = bilingualAttr(field, "errorPhone", "phone");
             break;
           }
           if (rule.indexOf("minlength:") === 0 && value) {
             var min = parseInt(rule.split(":")[1], 10);
             if (value.length < min) {
-              message = field.dataset.errorMinlength || ("Please enter at least " + min + " characters.");
+              var viM = field.dataset.errorMinlengthVi, enM = field.dataset.errorMinlengthEn;
+              message = (viM && enM) ? (lang === "vi" ? viM : enM) :
+                (lang === "vi" ? ("Vui lòng nhập ít nhất " + min + " ký tự.") : ("Please enter at least " + min + " characters."));
               break;
             }
           }
           if (rule === "checked" && field.type === "checkbox" && !field.checked) {
-            message = field.dataset.errorRequired || "This field is required.";
+            message = bilingualAttr(field, "errorRequired", "required");
             break;
           }
         }
@@ -437,6 +462,56 @@
   }
 
   /* -------------------------------------------------------
+     Bilingual support (VI default / EN toggle)
+     Elements carry both language strings on data attributes:
+       data-vi / data-en                       -> textContent
+       data-vi-html / data-en-html              -> innerHTML (only for
+                                                    text runs that need
+                                                    inline markup)
+       data-vi-placeholder / data-en-placeholder -> placeholder attr
+       data-vi-aria / data-en-aria               -> aria-label attr
+     Preference is remembered in localStorage; falls back to
+     Vietnamese for first-time visitors.
+     ------------------------------------------------------- */
+  function initI18n() {
+    var STORAGE_KEY = "eato-lang";
+    var buttons = document.querySelectorAll("[data-lang-btn]");
+    if (!buttons.length) return;
+
+    function applyLanguage(lang) {
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-vi][data-en]").forEach(function (el) {
+        el.textContent = lang === "vi" ? el.dataset.vi : el.dataset.en;
+      });
+      document.querySelectorAll("[data-vi-html][data-en-html]").forEach(function (el) {
+        el.innerHTML = lang === "vi" ? el.dataset.viHtml : el.dataset.enHtml;
+      });
+      document.querySelectorAll("[data-vi-placeholder][data-en-placeholder]").forEach(function (el) {
+        el.setAttribute("placeholder", lang === "vi" ? el.dataset.viPlaceholder : el.dataset.enPlaceholder);
+      });
+      document.querySelectorAll("[data-vi-aria][data-en-aria]").forEach(function (el) {
+        el.setAttribute("aria-label", lang === "vi" ? el.dataset.viAria : el.dataset.enAria);
+      });
+
+      buttons.forEach(function (btn) {
+        btn.setAttribute("aria-pressed", String(btn.dataset.langBtn === lang));
+      });
+      try { localStorage.setItem(STORAGE_KEY, lang); } catch (err) {}
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        applyLanguage(btn.dataset.langBtn);
+      });
+    });
+
+    var saved = null;
+    try { saved = localStorage.getItem(STORAGE_KEY); } catch (err) {}
+    applyLanguage(saved === "en" ? "en" : "vi");
+  }
+
+  /* -------------------------------------------------------
      Countdown timer (Special Offer / Countdown page)
      ------------------------------------------------------- */
   function initCountdown() {
@@ -474,6 +549,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    initI18n();
     initNavToggle();
     initAccordions();
     initCarousels();

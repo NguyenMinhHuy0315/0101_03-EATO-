@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,7 +57,7 @@
 </style>
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to main content</a>
+<a class="skip-link" href="#main-content" data-vi="Bỏ qua để đến nội dung chính" data-en="Skip to main content">Bỏ qua để đến nội dung chính</a>
 
 <header class="site-header">
   <div class="header-inner">
@@ -66,12 +66,16 @@
       EATO
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-      <a class="btn btn-primary" href="reservation.html">Book Reservation</a>
+      <a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a>
+      <a href="menu.html" data-vi="Thực đơn" data-en="Menu">Thực đơn</a>
+      <a href="about.html" data-vi="Về chúng tôi" data-en="About Us">Về chúng tôi</a>
+      <a href="contact.html" data-vi="Liên hệ" data-en="Contact Us">Liên hệ</a>
+      <a class="btn btn-primary" href="reservation.html" data-vi="Đặt bàn" data-en="Book Reservation">Đặt bàn</a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Language switcher">
+      <button type="button" class="lang-btn" data-lang-btn="vi" aria-pressed="true">VI</button>
+      <button type="button" class="lang-btn" data-lang-btn="en" aria-pressed="false">EN</button>
+    </div>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -85,11 +89,11 @@
         <img class="ph-img" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Empty restaurant dining room with warm ambient lighting, representing a page that could not be found">
       </div>
       <p class="error-code" aria-hidden="true">404</p>
-      <h1>Page Not Found</h1>
-      <p class="lede">Oops! Looks like this page has vanished. Don't worry, though — you can head back to our homepage or browse our menu instead.</p>
+      <h1 data-vi="Không Tìm Thấy Trang" data-en="Page Not Found">Không Tìm Thấy Trang</h1>
+      <p class="lede" data-vi="Rất tiếc! Có vẻ như trang này đã biến mất. Đừng lo, bạn có thể quay lại trang chủ hoặc xem thực đơn của chúng tôi." data-en="Oops! Looks like this page has vanished. Don't worry, though — you can head back to our homepage or browse our menu instead.">Rất tiếc! Có vẻ như trang này đã biến mất. Đừng lo, bạn có thể quay lại trang chủ hoặc xem thực đơn của chúng tôi.</p>
       <div class="error-actions">
-        <a class="btn btn-primary" href="index.html">Back to Homepage</a>
-        <a class="btn btn-outline" href="menu.html">Browse Our Menu</a>
+        <a class="btn btn-primary" href="index.html" data-vi="Về Trang Chủ" data-en="Back to Homepage">Về Trang Chủ</a>
+        <a class="btn btn-outline" href="menu.html" data-vi="Xem Thực Đơn" data-en="Browse Our Menu">Xem Thực Đơn</a>
       </div>
     </div>
   </section>

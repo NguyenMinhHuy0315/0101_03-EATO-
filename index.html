@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to main content</a>
+<a class="skip-link" href="#main-content" data-vi="Bỏ qua để đến nội dung chính" data-en="Skip to main content">Bỏ qua để đến nội dung chính</a>
 
 <header class="site-header">
   <div class="header-inner">
@@ -20,12 +20,16 @@
       EATO
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Primary">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-      <a class="btn btn-primary" href="reservation.html">Book Reservation</a>
+      <a href="index.html" aria-current="page" data-vi="Trang chủ" data-en="Home">Trang chủ</a>
+      <a href="menu.html" data-vi="Thực đơn" data-en="Menu">Thực đơn</a>
+      <a href="about.html" data-vi="Về chúng tôi" data-en="About Us">Về chúng tôi</a>
+      <a href="contact.html" data-vi="Liên hệ" data-en="Contact Us">Liên hệ</a>
+      <a class="btn btn-primary" href="reservation.html" data-vi="Đặt bàn" data-en="Book Reservation">Đặt bàn</a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Language switcher">
+      <button type="button" class="lang-btn" data-lang-btn="vi" aria-pressed="true">VI</button>
+      <button type="button" class="lang-btn" data-lang-btn="en" aria-pressed="false">EN</button>
+    </div>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -42,15 +46,13 @@
           <span class="badge-icon">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><polyline points="8.5 13.5 7 22 12 19 17 22 15.5 13.5"/></svg>
           </span>
-          Number 1 Restaurant in the World
+          <span data-vi="Nhà Hàng Số 1 Thế Giới" data-en="Number 1 Restaurant in the World">Nhà Hàng Số 1 Thế Giới</span>
         </div>
-        <h1>Savor the rich flavors, delight in every bite, enjoy the experience!</h1>
-        <p class="lede">Experience a delightful fusion of flavors, crafted with passion and served with warmth for an unforgettable dining journey.</p>
+        <h1 data-vi="Đắm chìm trong hương vị đậm đà, thích thú từng miếng ăn, tận hưởng trải nghiệm!" data-en="Savor the rich flavors, delight in every bite, enjoy the experience!">Đắm chìm trong hương vị đậm đà, thích thú từng miếng ăn, tận hưởng trải nghiệm!</h1>
+        <p class="lede" data-vi="Trải nghiệm sự hòa quyện tuyệt vời của hương vị, được chế biến bằng đam mê và phục vụ bằng sự nồng ấm cho một hành trình ẩm thực khó quên." data-en="Experience a delightful fusion of flavors, crafted with passion and served with warmth for an unforgettable dining journey.">Trải nghiệm sự hòa quyện tuyệt vời của hương vị, được chế biến bằng đam mê và phục vụ bằng sự nồng ấm cho một hành trình ẩm thực khó quên.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="menu.html">View Menu</a>
-          <a class="btn btn-white" href="about.html">
-            Explore More
-          </a>
+          <a class="btn btn-primary" href="menu.html" data-vi="Xem thực đơn" data-en="View Menu">Xem thực đơn</a>
+          <a class="btn btn-white" href="about.html" data-vi="Khám phá thêm" data-en="Explore More">Khám phá thêm</a>
         </div>
       </div>
       <div class="hero-media">
@@ -62,8 +64,8 @@
   <!-- Stats -->
   <section class="section-bg-rust section-glow">
     <div class="container text-center">
-      <h2>A culinary destination where passion meets perfection, serving exquisite flavors and impeccable service</h2>
-      <p class="text-muted" style="max-width:820px; margin:24px auto 0;">Experience a world of culinary excellence where passion and precision come together, offering meticulously crafted flavors, exceptional service, and a dining journey that delights the senses with every bite.</p>
+      <h2 data-vi="Điểm đến ẩm thực nơi đam mê gặp gỡ sự hoàn hảo, mang đến hương vị tinh tế và dịch vụ hoàn hảo" data-en="A culinary destination where passion meets perfection, serving exquisite flavors and impeccable service">Điểm đến ẩm thực nơi đam mê gặp gỡ sự hoàn hảo, mang đến hương vị tinh tế và dịch vụ hoàn hảo</h2>
+      <p class="text-muted" style="max-width:820px; margin:24px auto 0;" data-vi="Trải nghiệm thế giới ẩm thực đỉnh cao nơi đam mê và sự tỉ mỉ hòa quyện, mang đến hương vị được chăm chút kỹ lưỡng, dịch vụ xuất sắc và hành trình ẩm thực làm say đắm mọi giác quan trong từng miếng ăn." data-en="Experience a world of culinary excellence where passion and precision come together, offering meticulously crafted flavors, exceptional service, and a dining journey that delights the senses with every bite.">Trải nghiệm thế giới ẩm thực đỉnh cao nơi đam mê và sự tỉ mỉ hòa quyện, mang đến hương vị được chăm chút kỹ lưỡng, dịch vụ xuất sắc và hành trình ẩm thực làm say đắm mọi giác quan trong từng miếng ăn.</p>
       <div class="stat-grid">
         <div class="stat-item">
           <span class="stat-icon">
@@ -71,7 +73,7 @@
           </span>
           <span class="stack" style="text-align:left;">
             <span class="stat-number">100%</span>
-            <span class="stat-label">Guest Satisfaction Rate</span>
+            <span class="stat-label" data-vi="Tỷ lệ hài lòng của khách hàng" data-en="Guest Satisfaction Rate">Tỷ lệ hài lòng của khách hàng</span>
           </span>
         </div>
         <div class="stat-item">
@@ -80,7 +82,7 @@
           </span>
           <span class="stack" style="text-align:left;">
             <span class="stat-number">1000+</span>
-            <span class="stat-label">Happy Customers Served Daily</span>
+            <span class="stat-label" data-vi="Khách hàng hài lòng mỗi ngày" data-en="Happy Customers Served Daily">Khách hàng hài lòng mỗi ngày</span>
           </span>
         </div>
         <div class="stat-item">
@@ -89,7 +91,7 @@
           </span>
           <span class="stack" style="text-align:left;">
             <span class="stat-number">50+</span>
-            <span class="stat-label">Unique Dishes on Our Menu</span>
+            <span class="stat-label" data-vi="Món ăn độc đáo trong thực đơn" data-en="Unique Dishes on Our Menu">Món ăn độc đáo trong thực đơn</span>
           </span>
         </div>
       </div>
@@ -101,8 +103,8 @@
     <div class="container">
       <div class="section-head">
         <div>
-          <h2 id="menu-heading">Our Signature Menu</h2>
-          <p>Experience our signature menu, a masterpiece of flavors crafted with premium ingredients, culinary expertise, and an artistic touch to delight.</p>
+          <h2 id="menu-heading" data-vi="Thực Đơn Đặc Trưng" data-en="Our Signature Menu">Thực Đơn Đặc Trưng</h2>
+          <p data-vi="Trải nghiệm thực đơn đặc trưng của chúng tôi, một kiệt tác hương vị được chế biến từ nguyên liệu cao cấp, kỹ năng ẩm thực điêu luyện và sự tinh tế đầy nghệ thuật." data-en="Experience our signature menu, a masterpiece of flavors crafted with premium ingredients, culinary expertise, and an artistic touch to delight.">Trải nghiệm thực đơn đặc trưng của chúng tôi, một kiệt tác hương vị được chế biến từ nguyên liệu cao cấp, kỹ năng ẩm thực điêu luyện và sự tinh tế đầy nghệ thuật.</p>
         </div>
         <div class="carousel-controls" style="margin-bottom:0;" data-carousel-controls="menu-carousel">
           <button class="btn-icon" type="button" data-carousel-prev aria-label="Previous dish">
@@ -121,14 +123,14 @@
               <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=700&q=80" alt="Double smash cheeseburger with pickles and onions stacked on a wooden board"></div>
               <div class="card-body">
                 <h3 class="h6">Truffle-infused Wagyu Delight</h3>
-                <p>Succulent Wagyu steak drizzled with aromatic truffle sauce, served with buttery mashed potatoes.</p>
+                <p data-vi="Bò Wagyu mềm ngọt rưới sốt truffle thơm lừng, ăn kèm khoai tây nghiền béo ngậy." data-en="Succulent Wagyu steak drizzled with aromatic truffle sauce, served with buttery mashed potatoes.">Bò Wagyu mềm ngọt rưới sốt truffle thơm lừng, ăn kèm khoai tây nghiền béo ngậy.</p>
               </div>
             </li>
             <li class="dish-card card">
               <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=700&q=80" alt="Cheeseburger and fries combo served in a rustic metal basket"></div>
               <div class="card-body">
                 <h3 class="h6">Ocean Symphony Risotto</h3>
-                <p>Creamy saffron-infused risotto with fresh lobster, scallops, and prawns, finished with parmesan and herbs.</p>
+                <p data-vi="Risotto kem nghệ tây với tôm hùm, sò điệp và tôm tươi, hoàn thiện với phô mai parmesan và thảo mộc." data-en="Creamy saffron-infused risotto with fresh lobster, scallops, and prawns, finished with parmesan and herbs.">Risotto kem nghệ tây với tôm hùm, sò điệp và tôm tươi, hoàn thiện với phô mai parmesan và thảo mộc.</p>
                 <div class="dish-foot">
                   <span class="rating" aria-label="Rated 5 out of 5">
                     <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg>
@@ -141,28 +143,28 @@
               <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1562967914-608f82629710?w=700&q=80" alt="Platter of crispy fried chicken tenders with dipping sauce"></div>
               <div class="card-body">
                 <h3 class="h6">Golden Crispy Duck Confit</h3>
-                <p>Slow-cooked duck leg with a crackling skin, served alongside a rich red-wine reduction.</p>
+                <p data-vi="Đùi vịt nấu chậm với lớp da giòn rụm, ăn kèm sốt rượu vang đỏ đậm đà." data-en="Slow-cooked duck leg with a crackling skin, served alongside a rich red-wine reduction.">Đùi vịt nấu chậm với lớp da giòn rụm, ăn kèm sốt rượu vang đỏ đậm đà.</p>
               </div>
             </li>
             <li class="dish-card card">
               <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=700&q=80" alt="Bacon cheeseburger with fresh lettuce and melted cheese"></div>
               <div class="card-body">
                 <h3 class="h6">Velvet Chocolate Lava Cake</h3>
-                <p>Warm chocolate cake with a molten center, paired with vanilla bean ice cream and berries.</p>
+                <p data-vi="Bánh chocolate ấm nóng với nhân chảy, ăn kèm kem vani và trái berry." data-en="Warm chocolate cake with a molten center, paired with vanilla bean ice cream and berries.">Bánh chocolate ấm nóng với nhân chảy, ăn kèm kem vani và trái berry.</p>
               </div>
             </li>
             <li class="dish-card card">
               <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1544025162-d76694265947?w=700&q=80" alt="Smoked beef ribs sliced and served on a wooden board"></div>
               <div class="card-body">
                 <h3 class="h6">Herb-Crusted Rack of Lamb</h3>
-                <p>Tender lamb rack in a rosemary-garlic crust, served with roasted root vegetables and jus.</p>
+                <p data-vi="Sườn cừu mềm phủ lớp vỏ hương thảo-tỏi, ăn kèm rau củ nướng và nước sốt tự nhiên." data-en="Tender lamb rack in a rosemary-garlic crust, served with roasted root vegetables and jus.">Sườn cừu mềm phủ lớp vỏ hương thảo-tỏi, ăn kèm rau củ nướng và nước sốt tự nhiên.</p>
               </div>
             </li>
             <li class="dish-card card">
               <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=700&q=80" alt="Crispy fried chicken wings served with barbecue dipping sauce"></div>
               <div class="card-body">
                 <h3 class="h6">Charred Spanish Octopus</h3>
-                <p>Tender charred octopus with smoked paprika, citrus gremolata, and crispy fingerling potatoes.</p>
+                <p data-vi="Bạch tuộc nướng mềm với ớt bột xông khói, gremolata cam quýt và khoai tây baby giòn." data-en="Tender charred octopus with smoked paprika, citrus gremolata, and crispy fingerling potatoes.">Bạch tuộc nướng mềm với ớt bột xông khói, gremolata cam quýt và khoai tây baby giòn.</p>
               </div>
             </li>
           </ul>
@@ -175,8 +177,8 @@
   <section class="section-bg-dark section-glow" aria-labelledby="quality-heading">
     <div class="container">
       <div class="text-center" style="max-width:750px; margin:0 auto 64px;">
-        <h2 id="quality-heading">Unmatched Quality, Exceptional Service, Memorable Experience</h2>
-        <p class="text-muted" style="margin-top:16px;">We blend premium ingredients, expert craftsmanship, and warm hospitality to create a dining experience that exceeds expectations every time.</p>
+        <h2 id="quality-heading" data-vi="Chất Lượng Vượt Trội, Dịch Vụ Xuất Sắc, Trải Nghiệm Đáng Nhớ" data-en="Unmatched Quality, Exceptional Service, Memorable Experience">Chất Lượng Vượt Trội, Dịch Vụ Xuất Sắc, Trải Nghiệm Đáng Nhớ</h2>
+        <p class="text-muted" style="margin-top:16px;" data-vi="Chúng tôi kết hợp nguyên liệu cao cấp, tay nghề điêu luyện và sự hiếu khách nồng hậu để tạo nên trải nghiệm ẩm thực vượt xa mong đợi mỗi lần ghé thăm." data-en="We blend premium ingredients, expert craftsmanship, and warm hospitality to create a dining experience that exceeds expectations every time.">Chúng tôi kết hợp nguyên liệu cao cấp, tay nghề điêu luyện và sự hiếu khách nồng hậu để tạo nên trải nghiệm ẩm thực vượt xa mong đợi mỗi lần ghé thăm.</p>
       </div>
       <div class="split-media-content">
         <div class="feature-list">
@@ -185,8 +187,8 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21c-4-1-8-5-8-11 6 0 10 4 11 8 3-4 7-2 9-6-1 9-6 11-12 9z"/></svg>
             </span>
             <div>
-              <h3 class="h6">Exceptional Quality Ingredients</h3>
-              <p>We source only the finest, freshest ingredients to ensure every dish bursts with flavor and nutrition.</p>
+              <h3 class="h6" data-vi="Nguyên Liệu Chất Lượng Vượt Trội" data-en="Exceptional Quality Ingredients">Nguyên Liệu Chất Lượng Vượt Trội</h3>
+              <p data-vi="Chúng tôi chỉ chọn những nguyên liệu tươi ngon nhất để đảm bảo mỗi món ăn đều đậm đà hương vị và dinh dưỡng." data-en="We source only the finest, freshest ingredients to ensure every dish bursts with flavor and nutrition.">Chúng tôi chỉ chọn những nguyên liệu tươi ngon nhất để đảm bảo mỗi món ăn đều đậm đà hương vị và dinh dưỡng.</p>
             </div>
           </div>
           <div class="feature-item">
@@ -194,8 +196,8 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 13a4 4 0 0 1 1-7.8 5 5 0 0 1 9.7-1.7A4 4 0 0 1 18 13v4H6v-4z"/><line x1="6" y1="20" x2="18" y2="20"/></svg>
             </span>
             <div>
-              <h3 class="h6">Expert Culinary Team</h3>
-              <p>Our skilled chefs bring creativity and passion to every plate, crafting unique and delicious dishes.</p>
+              <h3 class="h6" data-vi="Đội Ngũ Đầu Bếp Chuyên Nghiệp" data-en="Expert Culinary Team">Đội Ngũ Đầu Bếp Chuyên Nghiệp</h3>
+              <p data-vi="Các đầu bếp tài năng của chúng tôi mang đến sự sáng tạo và đam mê trong từng món ăn, tạo nên những món ăn độc đáo và ngon miệng." data-en="Our skilled chefs bring creativity and passion to every plate, crafting unique and delicious dishes.">Các đầu bếp tài năng của chúng tôi mang đến sự sáng tạo và đam mê trong từng món ăn, tạo nên những món ăn độc đáo và ngon miệng.</p>
             </div>
           </div>
         </div>
@@ -209,8 +211,8 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.5-9.3-9A5 5 0 0 1 12 6a5 5 0 0 1 9.3 5c-2.3 4.5-9.3 9-9.3 9z"/></svg>
             </span>
             <div>
-              <h3 class="h6">Impeccable Service</h3>
-              <p>Attentive, friendly staff dedicated to making every visit feel warm, effortless, and memorable.</p>
+              <h3 class="h6" data-vi="Dịch Vụ Hoàn Hảo" data-en="Impeccable Service">Dịch Vụ Hoàn Hảo</h3>
+              <p data-vi="Đội ngũ nhân viên tận tâm, thân thiện luôn nỗ lực mang đến cảm giác ấm áp, thoải mái và đáng nhớ cho mỗi lần ghé thăm." data-en="Attentive, friendly staff dedicated to making every visit feel warm, effortless, and memorable.">Đội ngũ nhân viên tận tâm, thân thiện luôn nỗ lực mang đến cảm giác ấm áp, thoải mái và đáng nhớ cho mỗi lần ghé thăm.</p>
             </div>
           </div>
           <div class="feature-item">
@@ -218,14 +220,14 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M4 12h4M16 12h4M6.5 6.5l2.8 2.8M14.7 14.7l2.8 2.8M6.5 17.5l2.8-2.8M14.7 9.3l2.8-2.8"/></svg>
             </span>
             <div>
-              <h3 class="h6">Inviting Atmosphere</h3>
-              <p>A beautifully designed space that sets the mood for celebrations, dates, and everyday indulgence.</p>
+              <h3 class="h6" data-vi="Không Gian Ấm Cúng" data-en="Inviting Atmosphere">Không Gian Ấm Cúng</h3>
+              <p data-vi="Không gian được thiết kế tinh tế, tạo nên bầu không khí lý tưởng cho những buổi tiệc, hẹn hò và tận hưởng mỗi ngày." data-en="A beautifully designed space that sets the mood for celebrations, dates, and everyday indulgence.">Không gian được thiết kế tinh tế, tạo nên bầu không khí lý tưởng cho những buổi tiệc, hẹn hò và tận hưởng mỗi ngày.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="text-center mt-lg">
-        <a class="btn btn-primary" href="reservation.html">Reserve Now</a>
+        <a class="btn btn-primary" href="reservation.html" data-vi="Đặt Bàn Ngay" data-en="Reserve Now">Đặt Bàn Ngay</a>
       </div>
     </div>
   </section>
@@ -234,8 +236,8 @@
   <section class="section-bg-rust section-glow" aria-labelledby="team-heading">
     <div class="container">
       <div class="text-center" style="max-width:750px; margin:0 auto 56px;">
-        <h2 id="team-heading">Passionate Chefs, Dedicated Team – Crafting Culinary Excellence</h2>
-        <p class="text-muted" style="margin-top:16px;">Our talented chefs and dedicated team work together to create unforgettable dining experiences with passion, precision, and creativity.</p>
+        <h2 id="team-heading" data-vi="Đầu Bếp Đam Mê, Đội Ngũ Tận Tâm – Kiến Tạo Sự Xuất Sắc Trong Ẩm Thực" data-en="Passionate Chefs, Dedicated Team – Crafting Culinary Excellence">Đầu Bếp Đam Mê, Đội Ngũ Tận Tâm – Kiến Tạo Sự Xuất Sắc Trong Ẩm Thực</h2>
+        <p class="text-muted" style="margin-top:16px;" data-vi="Đội ngũ đầu bếp tài năng và nhân viên tận tâm của chúng tôi cùng nhau tạo nên những trải nghiệm ẩm thực khó quên bằng đam mê, sự tỉ mỉ và sáng tạo." data-en="Our talented chefs and dedicated team work together to create unforgettable dining experiences with passion, precision, and creativity.">Đội ngũ đầu bếp tài năng và nhân viên tận tâm của chúng tôi cùng nhau tạo nên những trải nghiệm ẩm thực khó quên bằng đam mê, sự tỉ mỉ và sáng tạo.</p>
       </div>
       <div class="carousel" data-carousel data-per-view="4" data-carousel-label="Meet the team">
         <div class="carousel-viewport">
@@ -244,42 +246,42 @@
               <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&q=80" alt="Portrait of James Carter, Head Chef at EATO"></div>
               <div class="card-body">
                 <p class="person-name">James Carter</p>
-                <p class="person-role">Head Chef</p>
+                <p class="person-role" data-vi="Bếp Trưởng" data-en="Head Chef">Bếp Trưởng</p>
               </div>
             </li>
             <li class="person-card card">
               <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80" alt="Portrait of Olivia Martinez, Pastry Chef at EATO"></div>
               <div class="card-body">
                 <p class="person-name">Olivia Martinez</p>
-                <p class="person-role">Pastry Chef</p>
+                <p class="person-role" data-vi="Đầu Bếp Bánh" data-en="Pastry Chef">Đầu Bếp Bánh</p>
               </div>
             </li>
             <li class="person-card card">
               <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80" alt="Portrait of Daniel Wong, Restaurant Manager at EATO"></div>
               <div class="card-body">
                 <p class="person-name">Daniel Wong</p>
-                <p class="person-role">Restaurant Manager</p>
+                <p class="person-role" data-vi="Quản Lý Nhà Hàng" data-en="Restaurant Manager">Quản Lý Nhà Hàng</p>
               </div>
             </li>
             <li class="person-card card">
               <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80" alt="Portrait of John Smith, Senior Partner at EATO"></div>
               <div class="card-body">
                 <p class="person-name">John Smith</p>
-                <p class="person-role">Senior Partner</p>
+                <p class="person-role" data-vi="Đối Tác Cấp Cao" data-en="Senior Partner">Đối Tác Cấp Cao</p>
               </div>
             </li>
             <li class="person-card card">
               <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&q=80" alt="Portrait of Maria Lopez, Sommelier at EATO"></div>
               <div class="card-body">
                 <p class="person-name">Maria Lopez</p>
-                <p class="person-role">Sommelier</p>
+                <p class="person-role" data-vi="Chuyên Gia Rượu Vang" data-en="Sommelier">Chuyên Gia Rượu Vang</p>
               </div>
             </li>
             <li class="person-card card">
               <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=600&q=80" alt="Portrait of Ethan Brooks, Sous Chef at EATO"></div>
               <div class="card-body">
                 <p class="person-name">Ethan Brooks</p>
-                <p class="person-role">Sous Chef</p>
+                <p class="person-role" data-vi="Bếp Phó" data-en="Sous Chef">Bếp Phó</p>
               </div>
             </li>
           </ul>
@@ -295,7 +297,7 @@
       </div>
       <div class="text-center mt-lg">
         <a class="btn-link" href="about.html" style="display:inline-flex;">
-          Discover More
+          <span data-vi="Khám Phá Thêm" data-en="Discover More">Khám Phá Thêm</span>
           <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
@@ -305,7 +307,7 @@
   <!-- Events -->
   <section class="section-bg-dark section-glow" aria-labelledby="events-heading">
     <div class="container text-center">
-      <h2 id="events-heading" style="max-width:900px; margin:0 auto;">Unforgettable Moments, Beautifully Crafted, Memories That Last Forever</h2>
+      <h2 id="events-heading" style="max-width:900px; margin:0 auto;" data-vi="Khoảnh Khắc Khó Quên, Được Chăm Chút Tinh Tế, Kỷ Niệm Mãi Vẹn Nguyên" data-en="Unforgettable Moments, Beautifully Crafted, Memories That Last Forever">Khoảnh Khắc Khó Quên, Được Chăm Chút Tinh Tế, Kỷ Niệm Mãi Vẹn Nguyên</h2>
       <div class="gallery-cluster" style="margin-top:56px;">
         <img class="ph-img" src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=500&q=80" alt="Guests raising a toast with wine glasses for a celebration at EATO">
         <img class="ph-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&q=80" alt="Elegant table setting with wine glasses for an anniversary dinner">
@@ -313,23 +315,23 @@
         <img class="ph-img" src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=500&q=80" alt="Guests dining together outdoors during a private event">
       </div>
       <div style="max-width:420px; margin:40px auto 0; text-align:left;">
-        <h3 class="h6">Elegant Anniversary Dinner</h3>
-        <p class="text-muted" style="margin-top:8px;">A beautifully curated private dining experience celebrating a couple's milestone anniversary — a gourmet five-course meal, candlelit ambiance, and live acoustic music.</p>
+        <h3 class="h6" data-vi="Bữa Tối Kỷ Niệm Sang Trọng" data-en="Elegant Anniversary Dinner">Bữa Tối Kỷ Niệm Sang Trọng</h3>
+        <p class="text-muted" style="margin-top:8px;" data-vi="Trải nghiệm ẩm thực riêng tư được chăm chút tỉ mỉ để kỷ niệm cột mốc quan trọng của một cặp đôi — bữa ăn năm món tinh tế, không gian ánh nến lãng mạn và nhạc acoustic trực tiếp." data-en="A beautifully curated private dining experience celebrating a couple's milestone anniversary — a gourmet five-course meal, candlelit ambiance, and live acoustic music.">Trải nghiệm ẩm thực riêng tư được chăm chút tỉ mỉ để kỷ niệm cột mốc quan trọng của một cặp đôi — bữa ăn năm món tinh tế, không gian ánh nến lãng mạn và nhạc acoustic trực tiếp.</p>
       </div>
-      <a class="btn btn-outline mt-lg" href="events.html">See More</a>
+      <a class="btn btn-outline mt-lg" href="events.html" data-vi="Xem Thêm" data-en="See More">Xem Thêm</a>
     </div>
   </section>
 
   <!-- Blog -->
   <section class="section-bg-dark section-glow" aria-labelledby="blog-heading">
     <div class="container text-center">
-      <h2 id="blog-heading">Delicious Insights, Culinary Tips, and Restaurant News</h2>
-      <p class="text-muted" style="max-width:600px; margin:16px auto 0;">Explore our blog for mouthwatering recipes, expert tips, and the latest updates from our restaurant to enhance your dining experience.</p>
-      <form class="search-bar" role="search" data-validate data-success-message="Searching articles…">
-        <label class="sr-only" for="blog-search">What do you want to know?</label>
+      <h2 id="blog-heading" data-vi="Kiến Thức Ẩm Thực, Mẹo Nấu Ăn Và Tin Tức Nhà Hàng" data-en="Delicious Insights, Culinary Tips, and Restaurant News">Kiến Thức Ẩm Thực, Mẹo Nấu Ăn Và Tin Tức Nhà Hàng</h2>
+      <p class="text-muted" style="max-width:600px; margin:16px auto 0;" data-vi="Khám phá blog của chúng tôi với những công thức hấp dẫn, mẹo hay từ chuyên gia và cập nhật mới nhất từ nhà hàng để nâng tầm trải nghiệm ẩm thực của bạn." data-en="Explore our blog for mouthwatering recipes, expert tips, and the latest updates from our restaurant to enhance your dining experience.">Khám phá blog của chúng tôi với những công thức hấp dẫn, mẹo hay từ chuyên gia và cập nhật mới nhất từ nhà hàng để nâng tầm trải nghiệm ẩm thực của bạn.</p>
+      <form class="search-bar" role="search" data-validate data-success-message-vi="Đang tìm kiếm bài viết…" data-success-message-en="Searching articles…">
+        <label class="sr-only" for="blog-search" data-vi="Bạn muốn tìm hiểu điều gì?" data-en="What do you want to know?">Bạn muốn tìm hiểu điều gì?</label>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="search" id="blog-search" name="q" placeholder="What do you want to know?">
-        <button class="btn btn-primary" type="submit">Search</button>
+        <input type="search" id="blog-search" name="q" placeholder="Bạn muốn tìm hiểu điều gì?" data-vi-placeholder="Bạn muốn tìm hiểu điều gì?" data-en-placeholder="What do you want to know?">
+        <button class="btn btn-primary" type="submit" data-vi="Tìm Kiếm" data-en="Search">Tìm Kiếm</button>
       </form>
     </div>
     <div class="container" style="margin-top:64px; text-align:left;">
@@ -337,12 +339,13 @@
         <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=800&q=80" alt="Grilled chicken breast plated with roasted vegetables and lemon"></div>
         <div>
           <div class="blog-meta">
-            <span class="tag">Food Trends</span>
-            <span class="tag">6 Min Read</span>
+            <span class="tag" data-vi="Xu Hướng Ẩm Thực" data-en="Food Trends">Xu Hướng Ẩm Thực</span>
+            <span class="tag" data-vi="Đọc 6 Phút" data-en="6 Min Read">Đọc 6 Phút</span>
           </div>
-          <h3>The rise of plant-based dining in restaurants reflects health trends and environmental sustainability awareness among consumers</h3>
-          <p class="text-muted" style="margin-top:16px;">In recent years, there has been a significant shift towards plant-based dining, driven by health-conscious consumers and growing awareness of environmental sustainability.</p>
-          <a class="btn-link" href="blog.html" style="margin-top:20px; display:inline-flex;">Read Article
+          <h3 data-vi="Sự trỗi dậy của ẩm thực thuần thực vật tại các nhà hàng phản ánh xu hướng sức khỏe và nhận thức về bền vững môi trường của người tiêu dùng" data-en="The rise of plant-based dining in restaurants reflects health trends and environmental sustainability awareness among consumers">Sự trỗi dậy của ẩm thực thuần thực vật tại các nhà hàng phản ánh xu hướng sức khỏe và nhận thức về bền vững môi trường của người tiêu dùng</h3>
+          <p class="text-muted" style="margin-top:16px;" data-vi="Trong những năm gần đây, đã có sự chuyển dịch đáng kể sang ẩm thực thuần thực vật, được thúc đẩy bởi người tiêu dùng quan tâm đến sức khỏe và nhận thức ngày càng tăng về bền vững môi trường." data-en="In recent years, there has been a significant shift towards plant-based dining, driven by health-conscious consumers and growing awareness of environmental sustainability.">Trong những năm gần đây, đã có sự chuyển dịch đáng kể sang ẩm thực thuần thực vật, được thúc đẩy bởi người tiêu dùng quan tâm đến sức khỏe và nhận thức ngày càng tăng về bền vững môi trường.</p>
+          <a class="btn-link" href="blog.html" style="margin-top:20px; display:inline-flex;">
+            <span data-vi="Đọc Bài Viết" data-en="Read Article">Đọc Bài Viết</span>
             <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
@@ -352,38 +355,38 @@
           <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1622021142947-da7dedc7c39a?w=500&q=80" alt="Chef preparing food in a professional restaurant kitchen"></div>
           <div>
             <div class="blog-meta">
-              <span class="tag">Food Trends</span>
-              <span class="tag">6 Min Read</span>
+              <span class="tag" data-vi="Xu Hướng Ẩm Thực" data-en="Food Trends">Xu Hướng Ẩm Thực</span>
+              <span class="tag" data-vi="Đọc 6 Phút" data-en="6 Min Read">Đọc 6 Phút</span>
             </div>
-            <h3 class="h6">In recent years, there has been a significant shift towards plant-based dining.</h3>
-            <p class="text-muted" style="margin-top:8px;">Driven by health-conscious consumers and growing awareness of environmental sustainability.</p>
+            <h3 class="h6" data-vi="Trong những năm gần đây, đã có sự chuyển dịch đáng kể sang ẩm thực thuần thực vật." data-en="In recent years, there has been a significant shift towards plant-based dining.">Trong những năm gần đây, đã có sự chuyển dịch đáng kể sang ẩm thực thuần thực vật.</h3>
+            <p class="text-muted" style="margin-top:8px;" data-vi="Được thúc đẩy bởi người tiêu dùng quan tâm sức khỏe và nhận thức ngày càng tăng về bền vững môi trường." data-en="Driven by health-conscious consumers and growing awareness of environmental sustainability.">Được thúc đẩy bởi người tiêu dùng quan tâm sức khỏe và nhận thức ngày càng tăng về bền vững môi trường.</p>
           </div>
         </article>
         <article class="blog-row">
           <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=500&q=80" alt="Crispy golden French fries on a dark plate"></div>
           <div>
             <div class="blog-meta">
-              <span class="tag">Food Trends</span>
-              <span class="tag">6 Min Read</span>
+              <span class="tag" data-vi="Xu Hướng Ẩm Thực" data-en="Food Trends">Xu Hướng Ẩm Thực</span>
+              <span class="tag" data-vi="Đọc 6 Phút" data-en="6 Min Read">Đọc 6 Phút</span>
             </div>
-            <h3 class="h6">In recent years, there has been a significant shift towards plant-based dining.</h3>
-            <p class="text-muted" style="margin-top:8px;">Driven by health-conscious consumers and growing awareness of environmental sustainability.</p>
+            <h3 class="h6" data-vi="Trong những năm gần đây, đã có sự chuyển dịch đáng kể sang ẩm thực thuần thực vật." data-en="In recent years, there has been a significant shift towards plant-based dining.">Trong những năm gần đây, đã có sự chuyển dịch đáng kể sang ẩm thực thuần thực vật.</h3>
+            <p class="text-muted" style="margin-top:8px;" data-vi="Được thúc đẩy bởi người tiêu dùng quan tâm sức khỏe và nhận thức ngày càng tăng về bền vững môi trường." data-en="Driven by health-conscious consumers and growing awareness of environmental sustainability.">Được thúc đẩy bởi người tiêu dùng quan tâm sức khỏe và nhận thức ngày càng tăng về bền vững môi trường.</p>
           </div>
         </article>
         <article class="blog-row">
           <div class="card-media"><img class="ph-img" src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=500&q=80" alt="Whole roasted chicken in a cast iron skillet"></div>
           <div>
             <div class="blog-meta">
-              <span class="tag">Food Trends</span>
-              <span class="tag">6 Min Read</span>
+              <span class="tag" data-vi="Xu Hướng Ẩm Thực" data-en="Food Trends">Xu Hướng Ẩm Thực</span>
+              <span class="tag" data-vi="Đọc 6 Phút" data-en="6 Min Read">Đọc 6 Phút</span>
             </div>
-            <h3 class="h6">In recent years, there has been a significant shift towards plant-based dining.</h3>
-            <p class="text-muted" style="margin-top:8px;">Driven by health-conscious consumers and growing awareness of environmental sustainability.</p>
+            <h3 class="h6" data-vi="Trong những năm gần đây, đã có sự chuyển dịch đáng kể sang ẩm thực thuần thực vật." data-en="In recent years, there has been a significant shift towards plant-based dining.">Trong những năm gần đây, đã có sự chuyển dịch đáng kể sang ẩm thực thuần thực vật.</h3>
+            <p class="text-muted" style="margin-top:8px;" data-vi="Được thúc đẩy bởi người tiêu dùng quan tâm sức khỏe và nhận thức ngày càng tăng về bền vững môi trường." data-en="Driven by health-conscious consumers and growing awareness of environmental sustainability.">Được thúc đẩy bởi người tiêu dùng quan tâm sức khỏe và nhận thức ngày càng tăng về bền vững môi trường.</p>
           </div>
         </article>
       </div>
       <div class="text-center mt-lg">
-        <a class="btn btn-outline" href="blog.html">See More Articles</a>
+        <a class="btn btn-outline" href="blog.html" data-vi="Xem Thêm Bài Viết" data-en="See More Articles">Xem Thêm Bài Viết</a>
       </div>
     </div>
   </section>
@@ -392,10 +395,10 @@
   <section class="section-bg-rust section-glow" aria-labelledby="faq-heading">
     <div class="container">
       <div class="section-head">
-        <h2 id="faq-heading">Your Questions Answered, Enjoy a Seamless Experience!</h2>
+        <h2 id="faq-heading" data-vi="Giải Đáp Mọi Thắc Mắc, Tận Hưởng Trải Nghiệm Trọn Vẹn!" data-en="Your Questions Answered, Enjoy a Seamless Experience!">Giải Đáp Mọi Thắc Mắc, Tận Hưởng Trải Nghiệm Trọn Vẹn!</h2>
         <div>
-          <p style="margin-bottom:16px;">Explore our FAQs to find answers to common inquiries, ensuring a smooth and enjoyable dining experience for all our guests.</p>
-          <a class="btn btn-outline" href="faq.html">See More</a>
+          <p style="margin-bottom:16px;" data-vi="Khám phá phần Câu Hỏi Thường Gặp để tìm câu trả lời cho các thắc mắc phổ biến, đảm bảo trải nghiệm ẩm thực suôn sẻ và trọn vẹn cho mọi thực khách." data-en="Explore our FAQs to find answers to common inquiries, ensuring a smooth and enjoyable dining experience for all our guests.">Khám phá phần Câu Hỏi Thường Gặp để tìm câu trả lời cho các thắc mắc phổ biến, đảm bảo trải nghiệm ẩm thực suôn sẻ và trọn vẹn cho mọi thực khách.</p>
+          <a class="btn btn-outline" href="faq.html" data-vi="Xem Thêm" data-en="See More">Xem Thêm</a>
         </div>
       </div>
       <div class="split-media-content">
@@ -403,56 +406,56 @@
           <div class="accordion-item">
             <h3>
               <button class="accordion-trigger" id="hf-t1" aria-expanded="true" aria-controls="hf-p1">
-                What are your restaurant's hours of operation?
+                <span data-vi="Nhà hàng mở cửa vào những giờ nào?" data-en="What are your restaurant's hours of operation?">Nhà hàng mở cửa vào những giờ nào?</span>
                 <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
             </h3>
             <div class="accordion-panel" id="hf-p1" role="region" aria-labelledby="hf-t1">
-              <div class="accordion-panel-inner">Our restaurant is open Monday to Sunday from 11:00 AM to 10:00 PM.</div>
+              <div class="accordion-panel-inner" data-vi="Nhà hàng chúng tôi mở cửa từ Thứ Hai đến Chủ Nhật, từ 11:00 đến 22:00." data-en="Our restaurant is open Monday to Sunday from 11:00 AM to 10:00 PM.">Nhà hàng chúng tôi mở cửa từ Thứ Hai đến Chủ Nhật, từ 11:00 đến 22:00.</div>
             </div>
           </div>
           <div class="accordion-item">
             <h3>
               <button class="accordion-trigger" id="hf-t2" aria-expanded="false" aria-controls="hf-p2">
-                Do I need a reservation to dine?
+                <span data-vi="Tôi có cần đặt bàn trước khi đến dùng bữa không?" data-en="Do I need a reservation to dine?">Tôi có cần đặt bàn trước khi đến dùng bữa không?</span>
                 <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
             </h3>
             <div class="accordion-panel" id="hf-p2" role="region" aria-labelledby="hf-t2">
-              <div class="accordion-panel-inner">Walk-ins are always welcome, but we recommend booking ahead for weekends and evenings to guarantee your table.</div>
+              <div class="accordion-panel-inner" data-vi="Chúng tôi luôn chào đón khách vãng lai, nhưng khuyến khích đặt bàn trước vào cuối tuần và buổi tối để đảm bảo có chỗ." data-en="Walk-ins are always welcome, but we recommend booking ahead for weekends and evenings to guarantee your table.">Chúng tôi luôn chào đón khách vãng lai, nhưng khuyến khích đặt bàn trước vào cuối tuần và buổi tối để đảm bảo có chỗ.</div>
             </div>
           </div>
           <div class="accordion-item">
             <h3>
               <button class="accordion-trigger" id="hf-t3" aria-expanded="false" aria-controls="hf-p3">
-                Can I modify my reservation after booking?
+                <span data-vi="Tôi có thể thay đổi đặt bàn sau khi đã đặt không?" data-en="Can I modify my reservation after booking?">Tôi có thể thay đổi đặt bàn sau khi đã đặt không?</span>
                 <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
             </h3>
             <div class="accordion-panel" id="hf-p3" role="region" aria-labelledby="hf-t3">
-              <div class="accordion-panel-inner">Yes — contact us at least 2 hours before your reservation time and we'll be happy to adjust it.</div>
+              <div class="accordion-panel-inner" data-vi="Có — vui lòng liên hệ với chúng tôi ít nhất 2 giờ trước giờ đặt bàn và chúng tôi sẽ hỗ trợ điều chỉnh." data-en="Yes — contact us at least 2 hours before your reservation time and we'll be happy to adjust it.">Có — vui lòng liên hệ với chúng tôi ít nhất 2 giờ trước giờ đặt bàn và chúng tôi sẽ hỗ trợ điều chỉnh.</div>
             </div>
           </div>
           <div class="accordion-item">
             <h3>
               <button class="accordion-trigger" id="hf-t4" aria-expanded="false" aria-controls="hf-p4">
-                Do you offer takeout or delivery services?
+                <span data-vi="Nhà hàng có dịch vụ mang đi hoặc giao hàng không?" data-en="Do you offer takeout or delivery services?">Nhà hàng có dịch vụ mang đi hoặc giao hàng không?</span>
                 <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
             </h3>
             <div class="accordion-panel" id="hf-p4" role="region" aria-labelledby="hf-t4">
-              <div class="accordion-panel-inner">Yes, takeout is available in-house and we partner with major delivery platforms for delivery orders.</div>
+              <div class="accordion-panel-inner" data-vi="Có, chúng tôi có dịch vụ mang đi tại chỗ và hợp tác với các nền tảng giao hàng lớn." data-en="Yes, takeout is available in-house and we partner with major delivery platforms for delivery orders.">Có, chúng tôi có dịch vụ mang đi tại chỗ và hợp tác với các nền tảng giao hàng lớn.</div>
             </div>
           </div>
           <div class="accordion-item">
             <h3>
               <button class="accordion-trigger" id="hf-t5" aria-expanded="false" aria-controls="hf-p5">
-                Are there vegetarian or gluten-free options available?
+                <span data-vi="Nhà hàng có món chay hoặc không chứa gluten không?" data-en="Are there vegetarian or gluten-free options available?">Nhà hàng có món chay hoặc không chứa gluten không?</span>
                 <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
             </h3>
             <div class="accordion-panel" id="hf-p5" role="region" aria-labelledby="hf-t5">
-              <div class="accordion-panel-inner">Absolutely — our menu is clearly marked with vegetarian, vegan, and gluten-free choices.</div>
+              <div class="accordion-panel-inner" data-vi="Chắc chắn rồi — thực đơn của chúng tôi có ghi chú rõ ràng các món chay, thuần chay và không chứa gluten." data-en="Absolutely — our menu is clearly marked with vegetarian, vegan, and gluten-free choices.">Chắc chắn rồi — thực đơn của chúng tôi có ghi chú rõ ràng các món chay, thuần chay và không chứa gluten.</div>
             </div>
           </div>
         </div>
@@ -465,12 +468,12 @@
   <section class="section-bg-dark quote-section" aria-labelledby="quote-heading">
     <div class="container">
       <span class="quote-mark" aria-hidden="true">&#8220;</span>
-      <h2 id="quote-heading" class="sr-only">Guest Testimonials</h2>
+      <h2 id="quote-heading" class="sr-only" data-vi="Đánh Giá Của Khách Hàng" data-en="Guest Testimonials">Đánh Giá Của Khách Hàng</h2>
       <div class="carousel" data-carousel data-per-view="1" data-carousel-label="Guest testimonials">
         <div class="carousel-viewport">
           <ul class="carousel-track is-full-slide">
             <li>
-              <p class="quote-text">The food was absolutely outstanding, and the service was exceptional! Every detail contributed to an unforgettable evening. Can't wait to return for another amazing experience.</p>
+              <p class="quote-text" data-vi="Đồ ăn thực sự xuất sắc, và dịch vụ thì tuyệt vời! Từng chi tiết nhỏ đều góp phần tạo nên một buổi tối khó quên. Không thể chờ để quay lại trải nghiệm thêm lần nữa." data-en="The food was absolutely outstanding, and the service was exceptional! Every detail contributed to an unforgettable evening. Can't wait to return for another amazing experience.">Đồ ăn thực sự xuất sắc, và dịch vụ thì tuyệt vời! Từng chi tiết nhỏ đều góp phần tạo nên một buổi tối khó quên. Không thể chờ để quay lại trải nghiệm thêm lần nữa.</p>
               <div class="avatar-row">
                 <img class="avatar-side" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=220&q=80" alt="Portrait of a previous EATO guest">
                 <img class="avatar-active" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=320&q=80" alt="Portrait of Sarah Hamilton, EATO guest">
@@ -479,7 +482,7 @@
               <p class="avatar-caption">Sarah Hamilton</p>
             </li>
             <li>
-              <p class="quote-text">From the warm welcome to the last bite of dessert, everything felt effortless. The tasting menu told a real story and the wine pairings were spot on.</p>
+              <p class="quote-text" data-vi="Từ lúc được chào đón nồng nhiệt cho đến miếng tráng miệng cuối cùng, mọi thứ đều diễn ra suôn sẻ. Thực đơn nếm thử kể một câu chuyện thực sự và các cặp rượu vang được kết hợp hoàn hảo." data-en="From the warm welcome to the last bite of dessert, everything felt effortless. The tasting menu told a real story and the wine pairings were spot on.">Từ lúc được chào đón nồng nhiệt cho đến miếng tráng miệng cuối cùng, mọi thứ đều diễn ra suôn sẻ. Thực đơn nếm thử kể một câu chuyện thực sự và các cặp rượu vang được kết hợp hoàn hảo.</p>
               <div class="avatar-row">
                 <img class="avatar-side" src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=220&q=80" alt="Portrait of a previous EATO guest">
                 <img class="avatar-active" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=320&q=80" alt="Portrait of Marcus Lee, EATO guest">
@@ -488,7 +491,7 @@
               <p class="avatar-caption">Marcus Lee</p>
             </li>
             <li>
-              <p class="quote-text">We hosted our anniversary dinner here and the team went above and beyond. Beautiful plating, attentive service, and a room that felt made for the occasion.</p>
+              <p class="quote-text" data-vi="Chúng tôi đã tổ chức bữa tối kỷ niệm tại đây và đội ngũ nhân viên đã làm việc hết mình. Cách trình bày món ăn đẹp mắt, dịch vụ chu đáo và không gian như được tạo ra riêng cho dịp đặc biệt này." data-en="We hosted our anniversary dinner here and the team went above and beyond. Beautiful plating, attentive service, and a room that felt made for the occasion.">Chúng tôi đã tổ chức bữa tối kỷ niệm tại đây và đội ngũ nhân viên đã làm việc hết mình. Cách trình bày món ăn đẹp mắt, dịch vụ chu đáo và không gian như được tạo ra riêng cho dịp đặc biệt này.</p>
               <div class="avatar-row">
                 <img class="avatar-side" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=220&q=80" alt="Portrait of a previous EATO guest">
                 <img class="avatar-active" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=320&q=80" alt="Portrait of Priya Nair, EATO guest">
@@ -520,12 +523,12 @@
           <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
           EATO
         </a>
-        <p>We drive real results — more flavor, more moments, and more reasons to come back for another unforgettable meal.</p>
-        <form data-validate aria-label="Newsletter signup" data-success-message="Thanks — you're subscribed for exclusive offers and updates!">
+        <p data-vi="Chúng tôi mang đến giá trị thực sự — nhiều hương vị hơn, nhiều khoảnh khắc hơn và nhiều lý do hơn để bạn quay lại thưởng thức một bữa ăn khó quên." data-en="We drive real results — more flavor, more moments, and more reasons to come back for another unforgettable meal.">Chúng tôi mang đến giá trị thực sự — nhiều hương vị hơn, nhiều khoảnh khắc hơn và nhiều lý do hơn để bạn quay lại thưởng thức một bữa ăn khó quên.</p>
+        <form data-validate aria-label="Newsletter signup" data-success-message-vi="Cảm ơn — bạn đã đăng ký nhận ưu đãi và cập nhật độc quyền!" data-success-message-en="Thanks — you're subscribed for exclusive offers and updates!">
           <div class="field newsletter-field">
-            <label class="sr-only" for="newsletter-email">Email address</label>
+            <label class="sr-only" for="newsletter-email" data-vi="Địa chỉ email" data-en="Email address">Địa chỉ email</label>
             <div class="newsletter-form">
-              <input type="email" id="newsletter-email" name="email" placeholder="Enter your email address" data-rules="required email" data-error-email="Please enter a valid email address.">
+              <input type="email" id="newsletter-email" name="email" placeholder="Nhập địa chỉ email của bạn" data-vi-placeholder="Nhập địa chỉ email của bạn" data-en-placeholder="Enter your email address" data-rules="required email" data-error-email-vi="Vui lòng nhập địa chỉ email hợp lệ." data-error-email-en="Please enter a valid email address.">
               <button class="btn-icon" type="submit" aria-label="Subscribe to newsletter">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </button>
@@ -534,7 +537,7 @@
           </div>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
-        <p style="margin-top:24px; color:#b8b8b8;">3891 Ranchview Dr. Richardson, California 62639</p>
+        <p style="margin-top:24px; color:#b8b8b8;">123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</p>
         <ul class="footer-social" style="margin-top:16px; list-style:none; padding:0;">
           <li><a class="btn-icon" href="#" aria-label="EATO on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-3.5-.8-3-1.2-4.9-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.4 1.5 2.7 1.7.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.6.8 1.9 1 .3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg></a></li>
           <li><a class="btn-icon" href="#" aria-label="EATO on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/></svg></a></li>
@@ -543,38 +546,38 @@
         </ul>
       </div>
       <nav class="footer-col" aria-label="Explore">
-        <h3>Explore</h3>
+        <h3 data-vi="Khám Phá" data-en="Explore">Khám Phá</h3>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="blog.html">Blog &amp; Insights</a></li>
+          <li><a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a></li>
+          <li><a href="menu.html" data-vi="Thực đơn" data-en="Menu">Thực đơn</a></li>
+          <li><a href="gallery.html" data-vi="Thư viện ảnh" data-en="Gallery">Thư viện ảnh</a></li>
+          <li><a href="blog.html" data-vi="Blog &amp; Kiến Thức" data-en="Blog &amp; Insights">Blog &amp; Kiến Thức</a></li>
         </ul>
       </nav>
       <nav class="footer-col" aria-label="About">
-        <h3>About</h3>
+        <h3 data-vi="Giới Thiệu" data-en="About">Giới Thiệu</h3>
         <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="events.html">Events &amp; Private Dining</a></li>
-          <li><a href="reviews.html">Customer Reviews</a></li>
-          <li><a href="offers.html">Special Offers</a></li>
+          <li><a href="about.html" data-vi="Về chúng tôi" data-en="About Us">Về chúng tôi</a></li>
+          <li><a href="events.html" data-vi="Sự Kiện &amp; Tiệc Riêng" data-en="Events &amp; Private Dining">Sự Kiện &amp; Tiệc Riêng</a></li>
+          <li><a href="reviews.html" data-vi="Đánh Giá Khách Hàng" data-en="Customer Reviews">Đánh Giá Khách Hàng</a></li>
+          <li><a href="offers.html" data-vi="Ưu Đãi Đặc Biệt" data-en="Special Offers">Ưu Đãi Đặc Biệt</a></li>
         </ul>
       </nav>
       <nav class="footer-col" aria-label="Support">
-        <h3>Support</h3>
+        <h3 data-vi="Hỗ Trợ" data-en="Support">Hỗ Trợ</h3>
         <ul>
-          <li><a href="reservation.html">Reservation</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="countdown.html">Limited-Time Offer</a></li>
+          <li><a href="reservation.html" data-vi="Đặt Bàn" data-en="Reservation">Đặt Bàn</a></li>
+          <li><a href="faq.html" data-vi="Câu Hỏi Thường Gặp" data-en="FAQ">Câu Hỏi Thường Gặp</a></li>
+          <li><a href="contact.html" data-vi="Liên Hệ" data-en="Contact Us">Liên Hệ</a></li>
+          <li><a href="countdown.html" data-vi="Ưu Đãi Có Hạn" data-en="Limited-Time Offer">Ưu Đãi Có Hạn</a></li>
         </ul>
       </nav>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Eato. All rights reserved.</p>
+      <p>&copy; 2026 Eato. <span data-vi="Bảo lưu mọi quyền." data-en="All rights reserved.">Bảo lưu mọi quyền.</span></p>
       <div class="legal-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="#" data-vi="Chính Sách Bảo Mật" data-en="Privacy Policy">Chính Sách Bảo Mật</a>
+        <a href="#" data-vi="Điều Khoản Dịch Vụ" data-en="Terms of Service">Điều Khoản Dịch Vụ</a>
       </div>
     </div>
   </div>
