@@ -107,7 +107,7 @@
               </span>
               <div>
                 <h3 class="h6" data-vi="Giờ Mở Cửa" data-en="Opening Hours">Giờ Mở Cửa</h3>
-                <p data-vi="Thứ Hai – Chủ Nhật<br>11:00 – 22:00" data-en="Monday – Sunday<br>11:00 AM – 10:00 PM">Thứ Hai – Chủ Nhật<br>11:00 – 22:00</p>
+                <p data-vi-html="Thứ Hai – Chủ Nhật&lt;br&gt;11:00 – 22:00" data-en-html="Monday – Sunday&lt;br&gt;11:00 AM – 10:00 PM">Thứ Hai – Chủ Nhật<br>11:00 – 22:00</p>
               </div>
             </div>
             <div class="feature-item">
@@ -125,7 +125,7 @@
               </span>
               <div>
                 <h3 class="h6" data-vi="Điện Thoại" data-en="Phone">Điện Thoại</h3>
-                <p>+1 (555) 214-7732</p>
+                <p>0123 456 789</p>
               </div>
             </div>
           </div>
@@ -157,24 +157,24 @@
 
             <div class="grid grid-3">
               <div class="field">
-                <label for="res-date" data-vi="Ngày" data-en="Date">Ngày</label>
+                <label for="res-date" data-vi="Ngày Đặt Bàn" data-en="Reservation Date">Ngày Đặt Bàn</label>
                 <input type="date" id="res-date" name="date" data-rules="required" data-error-required-vi="Vui lòng chọn ngày đặt bàn." data-error-required-en="Please choose a reservation date.">
                 <span class="error-message" role="alert"></span>
               </div>
               <div class="field">
-                <label for="res-time" data-vi="Giờ" data-en="Time">Giờ</label>
+                <label for="res-time" data-vi="Giờ Đặt Bàn" data-en="Reservation Time">Giờ Đặt Bàn</label>
                 <input type="time" id="res-time" name="time" data-rules="required" data-error-required-vi="Vui lòng chọn giờ đặt bàn." data-error-required-en="Please choose a reservation time.">
                 <span class="error-message" role="alert"></span>
               </div>
               <div class="field">
-                <label for="res-guests" data-vi="Số Khách" data-en="Guests">Số Khách</label>
+                <label for="res-guests" data-vi="Số Người" data-en="Number of Guests">Số Người</label>
                 <input type="number" id="res-guests" name="guests" min="1" max="20" data-rules="required" data-error-required-vi="Vui lòng nhập số lượng khách." data-error-required-en="Please enter the number of guests.">
                 <span class="error-message" role="alert"></span>
               </div>
             </div>
 
             <div class="field">
-              <label for="res-notes" data-vi-html="Yêu Cầu Đặc Biệt &lt;span class=&quot;text-muted&quot; style=&quot;font-weight:400;&quot;&gt;(Không bắt buộc)&lt;/span&gt;" data-en-html="Special Requests &lt;span class=&quot;text-muted&quot; style=&quot;font-weight:400;&quot;&gt;(Optional)&lt;/span&gt;">Yêu Cầu Đặc Biệt <span class="text-muted" style="font-weight:400;">(Không bắt buộc)</span></label>
+              <label for="res-notes" data-vi-html="Ghi Chú Đặc Biệt &lt;span class=&quot;text-muted&quot; style=&quot;font-weight:400;&quot;&gt;(Không bắt buộc)&lt;/span&gt;" data-en-html="Special Notes &lt;span class=&quot;text-muted&quot; style=&quot;font-weight:400;&quot;&gt;(Optional)&lt;/span&gt;">Ghi Chú Đặc Biệt <span class="text-muted" style="font-weight:400;">(Không bắt buộc)</span></label>
               <textarea id="res-notes" name="notes" placeholder="Chế độ ăn kiêng, vị trí ngồi ưa thích, dịp kỷ niệm hoặc bất kỳ ghi chú nào khác…" data-vi-placeholder="Chế độ ăn kiêng, vị trí ngồi ưa thích, dịp kỷ niệm hoặc bất kỳ ghi chú nào khác…" data-en-placeholder="Dietary restrictions, seating preferences, celebrations, or any other comments…"></textarea>
             </div>
 
