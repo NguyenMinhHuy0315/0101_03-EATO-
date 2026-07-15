@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,7 +61,7 @@
 </style>
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to main content</a>
+<a class="skip-link" href="#main-content" data-vi="Bỏ qua để đến nội dung chính" data-en="Skip to main content">Bỏ qua để đến nội dung chính</a>
 
 <header class="site-header">
   <div class="header-inner">
@@ -70,12 +70,16 @@
       EATO
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-      <a class="btn btn-primary" href="reservation.html">Book Reservation</a>
+      <a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a>
+      <a href="menu.html" data-vi="Thực đơn" data-en="Menu">Thực đơn</a>
+      <a href="about.html" data-vi="Về chúng tôi" data-en="About Us">Về chúng tôi</a>
+      <a href="contact.html" data-vi="Liên hệ" data-en="Contact Us">Liên hệ</a>
+      <a class="btn btn-primary" href="reservation.html" data-vi="Đặt bàn" data-en="Book Reservation">Đặt bàn</a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Language switcher">
+      <button type="button" class="lang-btn" data-lang-btn="vi" aria-pressed="true">VI</button>
+      <button type="button" class="lang-btn" data-lang-btn="en" aria-pressed="false">EN</button>
+    </div>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -92,15 +96,13 @@
           <span class="badge-icon">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7C9 7 7.5 4.5 9 2.5S12 2 12 7z"/><path d="M12 7c3 0 4.5-2.5 3-4.5S12 2 12 7z"/></svg>
           </span>
-          Limited-Time Offer
+          <span data-vi="Ưu Đãi Có Thời Hạn" data-en="Limited-Time Offer">Ưu Đãi Có Thời Hạn</span>
         </div>
-        <h1>Something Exciting Is Coming—Stay Tuned for More!</h1>
-        <p class="lede">We're working on something amazing! Sign up for updates and be the first to know when we launch.</p>
+        <h1 data-vi="Điều Thú Vị Sắp Đến — Hãy Đón Chờ Nhé!" data-en="Something Exciting Is Coming—Stay Tuned for More!">Điều Thú Vị Sắp Đến — Hãy Đón Chờ Nhé!</h1>
+        <p class="lede" data-vi="Chúng tôi đang chuẩn bị điều gì đó tuyệt vời! Đăng ký nhận cập nhật để là người đầu tiên biết khi chúng tôi khai trương." data-en="We're working on something amazing! Sign up for updates and be the first to know when we launch.">Chúng tôi đang chuẩn bị điều gì đó tuyệt vời! Đăng ký nhận cập nhật để là người đầu tiên biết khi chúng tôi khai trương.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="menu.html">View Menu</a>
-          <a class="btn btn-white" href="about.html">
-            Explore More
-          </a>
+          <a class="btn btn-primary" href="menu.html" data-vi="Xem Thực Đơn" data-en="View Menu">Xem Thực Đơn</a>
+          <a class="btn btn-white" href="about.html" data-vi="Khám Phá Thêm" data-en="Explore More">Khám Phá Thêm</a>
         </div>
       </div>
       <div class="hero-media">
@@ -114,8 +116,8 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21c-4-1-8-5-8-11 6 0 10 4 11 8 3-4 7-2 9-6-1 9-6 11-12 9z"/></svg>
           </span>
           <span class="stack" style="text-align:left;">
-            <span class="stat-number" style="font-size:1.25rem;">100% High Quality</span>
-            <span class="stat-label">Best quality raw materials</span>
+            <span class="stat-number" style="font-size:1.25rem;" data-vi="Chất Lượng 100%" data-en="100% High Quality">Chất Lượng 100%</span>
+            <span class="stat-label" data-vi="Nguyên liệu chất lượng tốt nhất" data-en="Best quality raw materials">Nguyên liệu chất lượng tốt nhất</span>
           </span>
         </div>
         <div class="stat-item">
@@ -124,7 +126,7 @@
           </span>
           <span class="stack" style="text-align:left;">
             <span class="stat-number" style="font-size:1.25rem;">Michelin Star</span>
-            <span class="stat-label">Recognized culinary excellence</span>
+            <span class="stat-label" data-vi="Xuất sắc ẩm thực được công nhận" data-en="Recognized culinary excellence">Xuất sắc ẩm thực được công nhận</span>
           </span>
         </div>
       </div>
@@ -137,16 +139,16 @@
       <div class="split-media-content">
         <img class="ph-img hide-mobile" style="border-radius:24px;" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=900&q=80" alt="EATO dining room with leather booths, set and ready to welcome first-time guests">
         <div>
-          <h2 id="offer-heading">A Special Treat for First-Time Guests!</h2>
-          <p class="text-muted" style="margin-top:16px;">Are you visiting our restaurant for the first time? We have a special treat just for you! Enjoy an exclusive 20% discount on your very first order, whether you choose to dine in or order online. It's our way of saying welcome and thank you for trying our delicious dishes. From mouthwatering appetizers to delightful main courses, every bite is crafted to impress.</p>
+          <h2 id="offer-heading" data-vi="Ưu Đãi Đặc Biệt Dành Cho Khách Lần Đầu!" data-en="A Special Treat for First-Time Guests!">Ưu Đãi Đặc Biệt Dành Cho Khách Lần Đầu!</h2>
+          <p class="text-muted" style="margin-top:16px;" data-vi="Bạn ghé thăm nhà hàng của chúng tôi lần đầu tiên? Chúng tôi có một ưu đãi đặc biệt dành riêng cho bạn! Tận hưởng mức giảm giá 20% độc quyền cho đơn hàng đầu tiên, dù bạn dùng bữa tại chỗ hay đặt hàng trực tuyến. Đây là cách chúng tôi nói lời chào mừng và cảm ơn bạn đã thử món ăn ngon của chúng tôi. Từ món khai vị hấp dẫn đến món chính tuyệt vời, từng miếng ăn đều được chế biến để gây ấn tượng." data-en="Are you visiting our restaurant for the first time? We have a special treat just for you! Enjoy an exclusive 20% discount on your very first order, whether you choose to dine in or order online. It's our way of saying welcome and thank you for trying our delicious dishes. From mouthwatering appetizers to delightful main courses, every bite is crafted to impress.">Bạn ghé thăm nhà hàng của chúng tôi lần đầu tiên? Chúng tôi có một ưu đãi đặc biệt dành riêng cho bạn! Tận hưởng mức giảm giá 20% độc quyền cho đơn hàng đầu tiên, dù bạn dùng bữa tại chỗ hay đặt hàng trực tuyến. Đây là cách chúng tôi nói lời chào mừng và cảm ơn bạn đã thử món ăn ngon của chúng tôi. Từ món khai vị hấp dẫn đến món chính tuyệt vời, từng miếng ăn đều được chế biến để gây ấn tượng.</p>
           <div class="feature-list" style="margin-top:32px; gap:28px;">
             <div class="feature-item">
               <span class="feature-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="2"/><circle cx="15" cy="15" r="2"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
               </span>
               <div>
-                <h3 class="h6">Exclusive Welcome Discount</h3>
-                <p>Enjoy 20% off your first order, whether you dine in or order online.</p>
+                <h3 class="h6" data-vi="Ưu Đãi Chào Mừng Đặc Biệt" data-en="Exclusive Welcome Discount">Ưu Đãi Chào Mừng Đặc Biệt</h3>
+                <p data-vi="Nhận ưu đãi 20% cho đơn hàng đầu tiên, dù bạn dùng bữa tại chỗ hay đặt hàng trực tuyến." data-en="Enjoy 20% off your first order, whether you dine in or order online.">Nhận ưu đãi 20% cho đơn hàng đầu tiên, dù bạn dùng bữa tại chỗ hay đặt hàng trực tuyến.</p>
               </div>
             </div>
             <div class="feature-item">
@@ -154,12 +156,12 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 13a4 4 0 0 1 1-7.8 5 5 0 0 1 9.7-1.7A4 4 0 0 1 18 13v4H6v-4z"/><line x1="6" y1="20" x2="18" y2="20"/></svg>
               </span>
               <div>
-                <h3 class="h6">Savor Our Signature Dishes</h3>
-                <p>Made with fresh ingredients and crafted by our expert culinary team.</p>
+                <h3 class="h6" data-vi="Thưởng Thức Món Đặc Trưng" data-en="Savor Our Signature Dishes">Thưởng Thức Món Đặc Trưng</h3>
+                <p data-vi="Được chế biến từ nguyên liệu tươi ngon bởi đội ngũ đầu bếp chuyên nghiệp của chúng tôi." data-en="Made with fresh ingredients and crafted by our expert culinary team.">Được chế biến từ nguyên liệu tươi ngon bởi đội ngũ đầu bếp chuyên nghiệp của chúng tôi.</p>
               </div>
             </div>
           </div>
-          <a class="btn btn-primary mt-lg" href="reservation.html">Book Reservation</a>
+          <a class="btn btn-primary mt-lg" href="reservation.html" data-vi="Đặt Bàn" data-en="Book Reservation">Đặt Bàn</a>
         </div>
       </div>
     </div>
@@ -168,20 +170,20 @@
   <!-- Countdown -->
   <section class="section-bg-rust section-glow" aria-labelledby="countdown-heading">
     <div class="container text-center">
-      <h2 id="countdown-heading">The Wait Is Almost Over — Our Grand Opening Is Near!</h2>
-      <p class="text-muted" style="max-width:560px; margin:16px auto 0;">Sign up now to be the first to know! This introductory offer disappears the moment our doors open, so grab your spot before the clock runs out.</p>
+      <h2 id="countdown-heading" data-vi="Sắp Đến Giờ Rồi — Ngày Khai Trương Đang Đến Gần!" data-en="The Wait Is Almost Over — Our Grand Opening Is Near!">Sắp Đến Giờ Rồi — Ngày Khai Trương Đang Đến Gần!</h2>
+      <p class="text-muted" style="max-width:560px; margin:16px auto 0;" data-vi="Đăng ký ngay để là người đầu tiên biết! Ưu đãi khai trương này sẽ biến mất ngay khi chúng tôi mở cửa, vì vậy hãy nhanh tay trước khi hết giờ." data-en="Sign up now to be the first to know! This introductory offer disappears the moment our doors open, so grab your spot before the clock runs out.">Đăng ký ngay để là người đầu tiên biết! Ưu đãi khai trương này sẽ biến mất ngay khi chúng tôi mở cửa, vì vậy hãy nhanh tay trước khi hết giờ.</p>
 
       <div aria-live="off">
-        <p class="sr-only">This offer ends in approximately 45 days.</p>
+        <p class="sr-only" data-vi="Ưu đãi này kết thúc trong khoảng 45 ngày nữa." data-en="This offer ends in approximately 45 days.">Ưu đãi này kết thúc trong khoảng 45 ngày nữa.</p>
         <div class="countdown" data-countdown="2026-08-26T23:59:59">
-          <div class="countdown-unit"><span class="countdown-number" data-cd-days>00</span><span class="countdown-label">Days</span></div>
-          <div class="countdown-unit"><span class="countdown-number" data-cd-hours>00</span><span class="countdown-label">Hours</span></div>
-          <div class="countdown-unit"><span class="countdown-number" data-cd-minutes>00</span><span class="countdown-label">Minutes</span></div>
-          <div class="countdown-unit"><span class="countdown-number" data-cd-seconds>00</span><span class="countdown-label">Seconds</span></div>
+          <div class="countdown-unit"><span class="countdown-number" data-cd-days>00</span><span class="countdown-label" data-vi="Ngày" data-en="Days">Ngày</span></div>
+          <div class="countdown-unit"><span class="countdown-number" data-cd-hours>00</span><span class="countdown-label" data-vi="Giờ" data-en="Hours">Giờ</span></div>
+          <div class="countdown-unit"><span class="countdown-number" data-cd-minutes>00</span><span class="countdown-label" data-vi="Phút" data-en="Minutes">Phút</span></div>
+          <div class="countdown-unit"><span class="countdown-number" data-cd-seconds>00</span><span class="countdown-label" data-vi="Giây" data-en="Seconds">Giây</span></div>
         </div>
       </div>
 
-      <a class="btn btn-primary" href="reservation.html" style="margin-top:8px;">Claim This Offer</a>
+      <a class="btn btn-primary" href="reservation.html" style="margin-top:8px;" data-vi="Nhận Ưu Đãi Này" data-en="Claim This Offer">Nhận Ưu Đãi Này</a>
     </div>
   </section>
 
@@ -195,12 +197,12 @@
           <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
           EATO
         </a>
-        <p>We drive real results — more flavor, more moments, and more reasons to come back for another unforgettable meal.</p>
-        <form data-validate aria-label="Newsletter signup" data-success-message="Thanks — you're subscribed for exclusive offers and updates!">
+        <p data-vi="Chúng tôi mang đến giá trị thực sự — nhiều hương vị hơn, nhiều khoảnh khắc hơn và nhiều lý do hơn để bạn quay lại thưởng thức một bữa ăn khó quên." data-en="We drive real results — more flavor, more moments, and more reasons to come back for another unforgettable meal.">Chúng tôi mang đến giá trị thực sự — nhiều hương vị hơn, nhiều khoảnh khắc hơn và nhiều lý do hơn để bạn quay lại thưởng thức một bữa ăn khó quên.</p>
+        <form data-validate aria-label="Newsletter signup" data-success-message-vi="Cảm ơn — bạn đã đăng ký nhận ưu đãi và cập nhật độc quyền!" data-success-message-en="Thanks — you're subscribed for exclusive offers and updates!">
           <div class="field newsletter-field">
-            <label class="sr-only" for="newsletter-email">Email address</label>
+            <label class="sr-only" for="newsletter-email" data-vi="Địa chỉ email" data-en="Email address">Địa chỉ email</label>
             <div class="newsletter-form">
-              <input type="email" id="newsletter-email" name="email" placeholder="Enter your email address" data-rules="required email" data-error-email="Please enter a valid email address.">
+              <input type="email" id="newsletter-email" name="email" placeholder="Nhập địa chỉ email của bạn" data-vi-placeholder="Nhập địa chỉ email của bạn" data-en-placeholder="Enter your email address" data-rules="required email" data-error-email-vi="Vui lòng nhập địa chỉ email hợp lệ." data-error-email-en="Please enter a valid email address.">
               <button class="btn-icon" type="submit" aria-label="Subscribe to newsletter">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </button>
@@ -209,7 +211,7 @@
           </div>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
-        <p style="margin-top:24px; color:#b8b8b8;">3891 Ranchview Dr. Richardson, California 62639</p>
+        <p style="margin-top:24px; color:#b8b8b8;">123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</p>
         <ul class="footer-social" style="margin-top:16px; list-style:none; padding:0;">
           <li><a class="btn-icon" href="#" aria-label="EATO on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-3.5-.8-3-1.2-4.9-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.4 1.5 2.7 1.7.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.6.8 1.9 1 .3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg></a></li>
           <li><a class="btn-icon" href="#" aria-label="EATO on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/></svg></a></li>
@@ -218,38 +220,38 @@
         </ul>
       </div>
       <nav class="footer-col" aria-label="Explore">
-        <h3>Explore</h3>
+        <h3 data-vi="Khám Phá" data-en="Explore">Khám Phá</h3>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="blog.html">Blog &amp; Insights</a></li>
+          <li><a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a></li>
+          <li><a href="menu.html" data-vi="Thực đơn" data-en="Menu">Thực đơn</a></li>
+          <li><a href="gallery.html" data-vi="Thư viện ảnh" data-en="Gallery">Thư viện ảnh</a></li>
+          <li><a href="blog.html" data-vi="Blog &amp; Kiến Thức" data-en="Blog &amp; Insights">Blog &amp; Kiến Thức</a></li>
         </ul>
       </nav>
       <nav class="footer-col" aria-label="About">
-        <h3>About</h3>
+        <h3 data-vi="Giới Thiệu" data-en="About">Giới Thiệu</h3>
         <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="events.html">Events &amp; Private Dining</a></li>
-          <li><a href="reviews.html">Customer Reviews</a></li>
-          <li><a href="offers.html">Special Offers</a></li>
+          <li><a href="about.html" data-vi="Về chúng tôi" data-en="About Us">Về chúng tôi</a></li>
+          <li><a href="events.html" data-vi="Sự Kiện &amp; Tiệc Riêng" data-en="Events &amp; Private Dining">Sự Kiện &amp; Tiệc Riêng</a></li>
+          <li><a href="reviews.html" data-vi="Đánh Giá Khách Hàng" data-en="Customer Reviews">Đánh Giá Khách Hàng</a></li>
+          <li><a href="offers.html" data-vi="Ưu Đãi Đặc Biệt" data-en="Special Offers">Ưu Đãi Đặc Biệt</a></li>
         </ul>
       </nav>
       <nav class="footer-col" aria-label="Support">
-        <h3>Support</h3>
+        <h3 data-vi="Hỗ Trợ" data-en="Support">Hỗ Trợ</h3>
         <ul>
-          <li><a href="reservation.html">Reservation</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="countdown.html">Limited-Time Offer</a></li>
+          <li><a href="reservation.html" data-vi="Đặt Bàn" data-en="Reservation">Đặt Bàn</a></li>
+          <li><a href="faq.html" data-vi="Câu Hỏi Thường Gặp" data-en="FAQ">Câu Hỏi Thường Gặp</a></li>
+          <li><a href="contact.html" data-vi="Liên Hệ" data-en="Contact Us">Liên Hệ</a></li>
+          <li><a href="countdown.html" data-vi="Ưu Đãi Có Hạn" data-en="Limited-Time Offer">Ưu Đãi Có Hạn</a></li>
         </ul>
       </nav>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Eato. All rights reserved.</p>
+      <p>&copy; 2026 Eato. <span data-vi="Bảo lưu mọi quyền." data-en="All rights reserved.">Bảo lưu mọi quyền.</span></p>
       <div class="legal-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="#" data-vi="Chính Sách Bảo Mật" data-en="Privacy Policy">Chính Sách Bảo Mật</a>
+        <a href="#" data-vi="Điều Khoản Dịch Vụ" data-en="Terms of Service">Điều Khoản Dịch Vụ</a>
       </div>
     </div>
   </div>

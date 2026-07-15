@@ -511,6 +511,30 @@ h6, .h6 { font-size: var(--fs-h6); line-height: var(--lh-h6); font-weight: 500; 
 }
 
 /* =========================================================
+   Language switcher
+   ========================================================= */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1.5px solid var(--color-abu-stroke);
+  border-radius: var(--radius-pill);
+  flex-shrink: 0;
+}
+.lang-btn {
+  padding: 7px 13px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.lang-btn:hover { color: var(--color-red); }
+.lang-btn[aria-pressed="true"] { background: var(--color-red); color: var(--color-white); }
+.lang-btn[aria-pressed="true"]:hover { color: var(--color-white); }
+
+/* =========================================================
    Footer
    ========================================================= */
 .site-footer {

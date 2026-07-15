@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to main content</a>
+<a class="skip-link" href="#main-content" data-vi="Bỏ qua để đến nội dung chính" data-en="Skip to main content">Bỏ qua để đến nội dung chính</a>
 
 <header class="site-header">
   <div class="header-inner">
@@ -20,12 +20,16 @@
       EATO
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html" aria-current="page">Contact Us</a>
-      <a class="btn btn-primary" href="reservation.html">Book Reservation</a>
+      <a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a>
+      <a href="menu.html" data-vi="Thực đơn" data-en="Menu">Thực đơn</a>
+      <a href="about.html" data-vi="Về chúng tôi" data-en="About Us">Về chúng tôi</a>
+      <a href="contact.html" aria-current="page" data-vi="Liên hệ" data-en="Contact Us">Liên hệ</a>
+      <a class="btn btn-primary" href="reservation.html" data-vi="Đặt bàn" data-en="Book Reservation">Đặt bàn</a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Language switcher">
+      <button type="button" class="lang-btn" data-lang-btn="vi" aria-pressed="true">VI</button>
+      <button type="button" class="lang-btn" data-lang-btn="en" aria-pressed="false">EN</button>
+    </div>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -36,9 +40,9 @@
 
   <div class="page-hero">
     <div class="container">
-      <h1>Let's Connect – We're Here to Help You!</h1>
-      <p class="text-muted" style="max-width:640px; margin:16px auto 0;">Reach out with any questions or concerns — our team is ready to assist you quickly and efficiently. Contact us today!</p>
-      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> / Contact Us</nav>
+      <h1 data-vi="Kết Nối Với Chúng Tôi – Chúng Tôi Luôn Sẵn Sàng Hỗ Trợ Bạn!" data-en="Let's Connect – We're Here to Help You!">Kết Nối Với Chúng Tôi – Chúng Tôi Luôn Sẵn Sàng Hỗ Trợ Bạn!</h1>
+      <p class="text-muted" style="max-width:640px; margin:16px auto 0;" data-vi="Liên hệ với chúng tôi nếu bạn có bất kỳ câu hỏi hay thắc mắc nào — đội ngũ của chúng tôi luôn sẵn sàng hỗ trợ bạn nhanh chóng và hiệu quả. Liên hệ ngay hôm nay!" data-en="Reach out with any questions or concerns — our team is ready to assist you quickly and efficiently. Contact us today!">Liên hệ với chúng tôi nếu bạn có bất kỳ câu hỏi hay thắc mắc nào — đội ngũ của chúng tôi luôn sẵn sàng hỗ trợ bạn nhanh chóng và hiệu quả. Liên hệ ngay hôm nay!</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a> / <span data-vi="Liên Hệ" data-en="Contact Us">Liên Hệ</span></nav>
     </div>
   </div>
 
@@ -46,40 +50,40 @@
   <section class="section-bg-rust section-glow" aria-labelledby="methods-heading">
     <div class="container">
       <div class="text-center" style="max-width:750px; margin:0 auto 56px;">
-        <h2 id="methods-heading">Get in Touch – Your Support Starts Here!</h2>
-        <p class="text-muted" style="margin-top:16px;">Whether you need assistance, have inquiries, or just want to say hello, we're here to listen and respond promptly.</p>
+        <h2 id="methods-heading" data-vi="Kết Nối Với Chúng Tôi – Hỗ Trợ Bắt Đầu Từ Đây!" data-en="Get in Touch – Your Support Starts Here!">Kết Nối Với Chúng Tôi – Hỗ Trợ Bắt Đầu Từ Đây!</h2>
+        <p class="text-muted" style="margin-top:16px;" data-vi="Dù bạn cần hỗ trợ, có thắc mắc hay chỉ muốn chào hỏi, chúng tôi luôn sẵn sàng lắng nghe và phản hồi nhanh chóng." data-en="Whether you need assistance, have inquiries, or just want to say hello, we're here to listen and respond promptly.">Dù bạn cần hỗ trợ, có thắc mắc hay chỉ muốn chào hỏi, chúng tôi luôn sẵn sàng lắng nghe và phản hồi nhanh chóng.</p>
       </div>
       <div class="grid grid-4">
         <div class="text-center">
           <span class="feature-icon" style="margin:0 auto 20px;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/></svg>
           </span>
-          <h3 class="h6">Follow our Instagram</h3>
-          <p class="text-muted" style="margin-top:8px;">Speak to our supportive crew</p>
+          <h3 class="h6" data-vi="Theo Dõi Instagram Của Chúng Tôi" data-en="Follow our Instagram">Theo Dõi Instagram Của Chúng Tôi</h3>
+          <p class="text-muted" style="margin-top:8px;" data-vi="Trò chuyện cùng đội ngũ hỗ trợ của chúng tôi" data-en="Speak to our supportive crew">Trò chuyện cùng đội ngũ hỗ trợ của chúng tôi</p>
           <p style="font-weight:600; margin-top:8px;">@Eatorestaurantind</p>
         </div>
         <div class="text-center">
           <span class="feature-icon" style="margin:0 auto 20px;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-4.5 7.5 8.5 8.5 0 0 1-8.7-.4L3 20l1.5-4.5a8.38 8.38 0 0 1-.9-3.8A8.5 8.5 0 0 1 12 3.2a8.5 8.5 0 0 1 9 8.3z"/></svg>
           </span>
-          <h3 class="h6">Chat to Support</h3>
-          <p class="text-muted" style="margin-top:8px;">Speak to our supportive crew</p>
+          <h3 class="h6" data-vi="Trò Chuyện Với Hỗ Trợ" data-en="Chat to Support">Trò Chuyện Với Hỗ Trợ</h3>
+          <p class="text-muted" style="margin-top:8px;" data-vi="Trò chuyện cùng đội ngũ hỗ trợ của chúng tôi" data-en="Speak to our supportive crew">Trò chuyện cùng đội ngũ hỗ trợ của chúng tôi</p>
           <p style="font-weight:600; margin-top:8px;">helloeato@mail.com</p>
         </div>
         <div class="text-center">
           <span class="feature-icon" style="margin:0 auto 20px;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </span>
-          <h3 class="h6">Visit Us</h3>
-          <p class="text-muted" style="margin-top:8px;">Speak to our supportive crew</p>
-          <p style="font-weight:600; margin-top:8px;">3891 Ranchview Dr. Richardson, California 62639</p>
+          <h3 class="h6" data-vi="Ghé Thăm Chúng Tôi" data-en="Visit Us">Ghé Thăm Chúng Tôi</h3>
+          <p class="text-muted" style="margin-top:8px;" data-vi="Trò chuyện cùng đội ngũ hỗ trợ của chúng tôi" data-en="Speak to our supportive crew">Trò chuyện cùng đội ngũ hỗ trợ của chúng tôi</p>
+          <p style="font-weight:600; margin-top:8px;">123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</p>
         </div>
         <div class="text-center">
           <span class="feature-icon" style="margin:0 auto 20px;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </span>
-          <h3 class="h6">Call Us</h3>
-          <p class="text-muted" style="margin-top:8px;">Speak to our supportive crew</p>
+          <h3 class="h6" data-vi="Gọi Cho Chúng Tôi" data-en="Call Us">Gọi Cho Chúng Tôi</h3>
+          <p class="text-muted" style="margin-top:8px;" data-vi="Trò chuyện cùng đội ngũ hỗ trợ của chúng tôi" data-en="Speak to our supportive crew">Trò chuyện cùng đội ngũ hỗ trợ của chúng tôi</p>
           <p style="font-weight:600; margin-top:8px;">+1 (555) 231-2891</p>
         </div>
       </div>
@@ -89,10 +93,10 @@
   <!-- Map -->
   <section class="section-bg-dark section-glow" aria-labelledby="map-heading">
     <div class="container text-center">
-      <h2 id="map-heading" style="max-width:750px; margin:0 auto;">Navigate Easily – Find Us with Google Maps!</h2>
-      <p class="text-muted" style="max-width:600px; margin:16px auto 0;">Get real-time directions and explore our location effortlessly, for a seamless and hassle-free trip to EATO.</p>
+      <h2 id="map-heading" style="max-width:750px; margin:0 auto;" data-vi="Dễ Dàng Tìm Đường – Xác Định Vị Trí Với Google Maps!" data-en="Navigate Easily – Find Us with Google Maps!">Dễ Dàng Tìm Đường – Xác Định Vị Trí Với Google Maps!</h2>
+      <p class="text-muted" style="max-width:600px; margin:16px auto 0;" data-vi="Nhận chỉ đường theo thời gian thực và khám phá vị trí của chúng tôi dễ dàng, cho một chuyến đi đến EATO suôn sẻ." data-en="Get real-time directions and explore our location effortlessly, for a seamless and hassle-free trip to EATO.">Nhận chỉ đường theo thời gian thực và khám phá vị trí của chúng tôi dễ dàng, cho một chuyến đi đến EATO suôn sẻ.</p>
       <img class="ph-img" style="border-radius:24px; max-width:820px; margin:40px auto 16px; aspect-ratio:16/7;" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1000&q=80" alt="Upscale EATO restaurant interior, the destination guests are navigating to">
-      <p class="text-muted">3891 Ranchview Dr. Richardson, California 62639</p>
+      <p class="text-muted">123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</p>
     </div>
   </section>
 
@@ -107,7 +111,7 @@
               <span class="feature-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </span>
-              <span>3891 Ranchview Dr. Richardson, California 62639</span>
+              <span>123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</span>
             </li>
             <li class="row gap-md">
               <span class="feature-icon">
@@ -125,43 +129,48 @@
               <span class="feature-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg>
               </span>
-              <span>Monday–Sunday, 11:00 AM – 10:00 PM</span>
+              <span data-vi="Thứ Hai–Chủ Nhật, 11:00 – 22:00" data-en="Monday–Sunday, 11:00 AM – 10:00 PM">Thứ Hai–Chủ Nhật, 11:00 – 22:00</span>
             </li>
           </ul>
         </div>
         <div>
-          <h2 id="contact-form-heading">Get in Touch with us</h2>
-          <p class="text-muted" style="margin:16px 0 32px;">Have questions, need assistance, or just want to say hello? We're here to help! Reach out to us via phone, email, or our contact form, and our team will respond promptly to ensure you get the support and information you need.</p>
+          <h2 id="contact-form-heading" data-vi="Kết Nối Với Chúng Tôi" data-en="Get in Touch with us">Kết Nối Với Chúng Tôi</h2>
+          <p class="text-muted" style="margin:16px 0 32px;" data-vi="Bạn có câu hỏi, cần hỗ trợ hay chỉ muốn chào hỏi? Chúng tôi luôn sẵn sàng! Liên hệ qua điện thoại, email hoặc biểu mẫu liên hệ, đội ngũ của chúng tôi sẽ phản hồi nhanh chóng để đảm bảo bạn nhận được sự hỗ trợ và thông tin cần thiết." data-en="Have questions, need assistance, or just want to say hello? We're here to help! Reach out to us via phone, email, or our contact form, and our team will respond promptly to ensure you get the support and information you need.">Bạn có câu hỏi, cần hỗ trợ hay chỉ muốn chào hỏi? Chúng tôi luôn sẵn sàng! Liên hệ qua điện thoại, email hoặc biểu mẫu liên hệ, đội ngũ của chúng tôi sẽ phản hồi nhanh chóng để đảm bảo bạn nhận được sự hỗ trợ và thông tin cần thiết.</p>
 
-          <form data-validate data-success-message="Thanks for reaching out — our team will get back to you within 1 business day.">
+          <form data-validate data-success-message-vi="Cảm ơn đã liên hệ — đội ngũ của chúng tôi sẽ phản hồi trong vòng 1 ngày làm việc." data-success-message-en="Thanks for reaching out — our team will get back to you within 1 business day.">
             <div class="form-status" role="status" aria-live="polite" tabindex="-1"></div>
             <div class="field">
-              <label for="c-name">Full Name</label>
-              <input type="text" id="c-name" name="name" data-rules="required minlength:2" data-error-required="Please enter your full name.">
+              <label for="c-name" data-vi="Họ Và Tên" data-en="Full Name">Họ Và Tên</label>
+              <input type="text" id="c-name" name="name" data-rules="required minlength:2" data-error-required-vi="Vui lòng nhập họ và tên của bạn." data-error-required-en="Please enter your full name.">
               <span class="error-message" role="alert"></span>
             </div>
             <div class="field">
-              <label for="c-email">Email address</label>
-              <input type="email" id="c-email" name="email" placeholder="Where can we reach you?" data-rules="required email" data-error-required="Please enter your email address." data-error-email="Please enter a valid email address.">
+              <label for="c-email" data-vi="Địa chỉ email" data-en="Email address">Địa chỉ email</label>
+              <input type="email" id="c-email" name="email" placeholder="Chúng tôi có thể liên hệ bạn qua đâu?" data-vi-placeholder="Chúng tôi có thể liên hệ bạn qua đâu?" data-en-placeholder="Where can we reach you?" data-rules="required email" data-error-required-vi="Vui lòng nhập địa chỉ email của bạn." data-error-required-en="Please enter your email address." data-error-email-vi="Vui lòng nhập địa chỉ email hợp lệ." data-error-email-en="Please enter a valid email address.">
               <span class="error-message" role="alert"></span>
             </div>
             <div class="field">
-              <label for="c-phone">Phone <span class="hint">(optional)</span></label>
-              <input type="tel" id="c-phone" name="phone" data-rules="phone" data-error-phone="Please enter a valid phone number.">
+              <label for="c-phone" data-vi-html="Điện Thoại &lt;span class=&quot;hint&quot;&gt;(không bắt buộc)&lt;/span&gt;" data-en-html="Phone &lt;span class=&quot;hint&quot;&gt;(optional)&lt;/span&gt;">Điện Thoại <span class="hint">(không bắt buộc)</span></label>
+              <input type="tel" id="c-phone" name="phone" data-rules="phone" data-error-phone-vi="Vui lòng nhập số điện thoại hợp lệ." data-error-phone-en="Please enter a valid phone number.">
               <span class="error-message" role="alert"></span>
             </div>
             <div class="field">
-              <label for="c-subject">Subject</label>
-              <input type="text" id="c-subject" name="subject" data-rules="required" data-error-required="Please enter a subject.">
+              <label for="c-subject" data-vi="Chủ Đề" data-en="Subject">Chủ Đề</label>
+              <input type="text" id="c-subject" name="subject" data-rules="required" data-error-required-vi="Vui lòng nhập chủ đề." data-error-required-en="Please enter a subject.">
               <span class="error-message" role="alert"></span>
             </div>
             <div class="field">
-              <label for="c-message">Message</label>
-              <textarea id="c-message" name="message" data-rules="required minlength:10" data-error-required="Please enter a message." data-error-minlength="Please enter at least 10 characters."></textarea>
+              <label for="c-message" data-vi="Tin Nhắn" data-en="Message">Tin Nhắn</label>
+              <textarea id="c-message" name="message" data-rules="required minlength:10" data-error-required-vi="Vui lòng nhập nội dung tin nhắn." data-error-required-en="Please enter a message." data-error-minlength-vi="Vui lòng nhập ít nhất 10 ký tự." data-error-minlength-en="Please enter at least 10 characters."></textarea>
               <span class="error-message" role="alert"></span>
             </div>
-            <button class="btn btn-primary" type="submit">Send Message</button>
-            <p class="text-muted" style="font-size:var(--fs-small); margin-top:16px;">By contacting us, you agree to our <a href="#" style="text-decoration:underline;">Terms of Service</a> and <a href="#" style="text-decoration:underline;">Privacy Policy</a>.</p>
+            <button class="btn btn-primary" type="submit" data-vi="Gửi Tin Nhắn" data-en="Send Message">Gửi Tin Nhắn</button>
+            <p class="text-muted" style="font-size:var(--fs-small); margin-top:16px;">
+              <span data-vi="Khi liên hệ với chúng tôi, bạn đồng ý với" data-en="By contacting us, you agree to our">Khi liên hệ với chúng tôi, bạn đồng ý với</span>
+              <a href="#" style="text-decoration:underline;" data-vi="Điều Khoản Dịch Vụ" data-en="Terms of Service">Điều Khoản Dịch Vụ</a>
+              <span data-vi="và" data-en="and">và</span>
+              <a href="#" style="text-decoration:underline;" data-vi="Chính Sách Bảo Mật" data-en="Privacy Policy">Chính Sách Bảo Mật</a>.
+            </p>
           </form>
         </div>
       </div>
@@ -178,12 +187,12 @@
           <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
           EATO
         </a>
-        <p>We drive real results — more flavor, more moments, and more reasons to come back for another unforgettable meal.</p>
-        <form data-validate aria-label="Newsletter signup" data-success-message="Thanks — you're subscribed for exclusive offers and updates!">
+        <p data-vi="Chúng tôi mang đến giá trị thực sự — nhiều hương vị hơn, nhiều khoảnh khắc hơn và nhiều lý do hơn để bạn quay lại thưởng thức một bữa ăn khó quên." data-en="We drive real results — more flavor, more moments, and more reasons to come back for another unforgettable meal.">Chúng tôi mang đến giá trị thực sự — nhiều hương vị hơn, nhiều khoảnh khắc hơn và nhiều lý do hơn để bạn quay lại thưởng thức một bữa ăn khó quên.</p>
+        <form data-validate aria-label="Newsletter signup" data-success-message-vi="Cảm ơn — bạn đã đăng ký nhận ưu đãi và cập nhật độc quyền!" data-success-message-en="Thanks — you're subscribed for exclusive offers and updates!">
           <div class="field newsletter-field">
-            <label class="sr-only" for="newsletter-email">Email address</label>
+            <label class="sr-only" for="newsletter-email" data-vi="Địa chỉ email" data-en="Email address">Địa chỉ email</label>
             <div class="newsletter-form">
-              <input type="email" id="newsletter-email" name="email" placeholder="Enter your email address" data-rules="required email" data-error-email="Please enter a valid email address.">
+              <input type="email" id="newsletter-email" name="email" placeholder="Nhập địa chỉ email của bạn" data-vi-placeholder="Nhập địa chỉ email của bạn" data-en-placeholder="Enter your email address" data-rules="required email" data-error-email-vi="Vui lòng nhập địa chỉ email hợp lệ." data-error-email-en="Please enter a valid email address.">
               <button class="btn-icon" type="submit" aria-label="Subscribe to newsletter">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </button>
@@ -192,7 +201,7 @@
           </div>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
-        <p style="margin-top:24px; color:#b8b8b8;">3891 Ranchview Dr. Richardson, California 62639</p>
+        <p style="margin-top:24px; color:#b8b8b8;">123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</p>
         <ul class="footer-social" style="margin-top:16px; list-style:none; padding:0;">
           <li><a class="btn-icon" href="#" aria-label="EATO on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-3.5-.8-3-1.2-4.9-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.4 1.5 2.7 1.7.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.6.8 1.9 1 .3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg></a></li>
           <li><a class="btn-icon" href="#" aria-label="EATO on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/></svg></a></li>
@@ -201,38 +210,38 @@
         </ul>
       </div>
       <nav class="footer-col" aria-label="Explore">
-        <h3>Explore</h3>
+        <h3 data-vi="Khám Phá" data-en="Explore">Khám Phá</h3>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="blog.html">Blog &amp; Insights</a></li>
+          <li><a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a></li>
+          <li><a href="menu.html" data-vi="Thực đơn" data-en="Menu">Thực đơn</a></li>
+          <li><a href="gallery.html" data-vi="Thư viện ảnh" data-en="Gallery">Thư viện ảnh</a></li>
+          <li><a href="blog.html" data-vi="Blog &amp; Kiến Thức" data-en="Blog &amp; Insights">Blog &amp; Kiến Thức</a></li>
         </ul>
       </nav>
       <nav class="footer-col" aria-label="About">
-        <h3>About</h3>
+        <h3 data-vi="Giới Thiệu" data-en="About">Giới Thiệu</h3>
         <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="events.html">Events &amp; Private Dining</a></li>
-          <li><a href="reviews.html">Customer Reviews</a></li>
-          <li><a href="offers.html">Special Offers</a></li>
+          <li><a href="about.html" data-vi="Về chúng tôi" data-en="About Us">Về chúng tôi</a></li>
+          <li><a href="events.html" data-vi="Sự Kiện &amp; Tiệc Riêng" data-en="Events &amp; Private Dining">Sự Kiện &amp; Tiệc Riêng</a></li>
+          <li><a href="reviews.html" data-vi="Đánh Giá Khách Hàng" data-en="Customer Reviews">Đánh Giá Khách Hàng</a></li>
+          <li><a href="offers.html" data-vi="Ưu Đãi Đặc Biệt" data-en="Special Offers">Ưu Đãi Đặc Biệt</a></li>
         </ul>
       </nav>
       <nav class="footer-col" aria-label="Support">
-        <h3>Support</h3>
+        <h3 data-vi="Hỗ Trợ" data-en="Support">Hỗ Trợ</h3>
         <ul>
-          <li><a href="reservation.html">Reservation</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="countdown.html">Limited-Time Offer</a></li>
+          <li><a href="reservation.html" data-vi="Đặt Bàn" data-en="Reservation">Đặt Bàn</a></li>
+          <li><a href="faq.html" data-vi="Câu Hỏi Thường Gặp" data-en="FAQ">Câu Hỏi Thường Gặp</a></li>
+          <li><a href="contact.html" data-vi="Liên Hệ" data-en="Contact Us">Liên Hệ</a></li>
+          <li><a href="countdown.html" data-vi="Ưu Đãi Có Hạn" data-en="Limited-Time Offer">Ưu Đãi Có Hạn</a></li>
         </ul>
       </nav>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Eato. All rights reserved.</p>
+      <p>&copy; 2026 Eato. <span data-vi="Bảo lưu mọi quyền." data-en="All rights reserved.">Bảo lưu mọi quyền.</span></p>
       <div class="legal-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="#" data-vi="Chính Sách Bảo Mật" data-en="Privacy Policy">Chính Sách Bảo Mật</a>
+        <a href="#" data-vi="Điều Khoản Dịch Vụ" data-en="Terms of Service">Điều Khoản Dịch Vụ</a>
       </div>
     </div>
   </div>
