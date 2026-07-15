@@ -66,6 +66,14 @@
     .offer-highlight-grid { grid-template-columns: 1fr; }
     .countdown-unit { min-width: 84px; padding: 18px 10px; }
   }
+  /* Countdown page hero uses the rust brand color (per latest Figma export)
+     instead of the shared red .hero, to visually set this promo page apart
+     from the rest of the red-branded site. Scoped here so other pages that
+     reuse .hero are unaffected. Primary CTA stays red for contrast against
+     the rust background (source: "View Menu" button is red on rust). */
+  .hero { background: var(--color-rust); }
+  .hero .btn-primary { background: var(--color-red); border-color: var(--color-red); }
+  .hero .btn-primary:hover { background: var(--color-red-dark); border-color: var(--color-red-dark); }
 </style>
 </head>
 <body>
@@ -150,7 +158,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><polyline points="8.5 13.5 7 22 12 19 17 22 15.5 13.5"/></svg>
           </span>
           <span class="stack" style="text-align:left;">
-            <span class="stat-number" style="font-size:1.25rem;">Michelin Star</span>
+            <span class="stat-number" style="font-size:1.25rem;" data-vi="Sao Michelin" data-en="Michelin Star">Sao Michelin</span>
             <span class="stat-label" data-vi="Xuất sắc ẩm thực được công nhận" data-en="Recognized culinary excellence">Xuất sắc ẩm thực được công nhận</span>
           </span>
         </div>
