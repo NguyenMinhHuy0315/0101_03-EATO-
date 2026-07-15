@@ -246,11 +246,12 @@ section { padding-block: var(--section-pad-y); }
    section theme they're dropped into (matches Figma: image cards keep a
    light body even on black/red/rust sections). */
 .card, .field input, .field select, .field textarea,
-.badge-pill, .accordion-trigger[aria-expanded] {
+.badge-pill, .accordion-trigger[aria-expanded], .hero-badge {
   --color-text-muted: #5c5c5c;
   --color-abu-stroke: #ebebeb;
 }
 .card { color: var(--color-black); }
+.hero-badge { color: var(--color-black); }
 
 .section-bg-dark .btn-outline,
 .section-bg-red .btn-outline,
@@ -799,7 +800,7 @@ legend { font-weight: 600; margin-bottom: 12px; padding: 0; }
 .hide-mobile { }
 .hide-desktop { display: none; }
 @media (max-width: 767px) {
-  .hide-mobile { display: none; }
+  .hide-mobile { display: none !important; }
   .hide-desktop { display: initial; }
 }
 
@@ -823,6 +824,11 @@ legend { font-weight: 600; margin-bottom: 12px; padding: 0; }
 .page-hero::before { width: 480px; height: 480px; left: -160px; top: -220px; background: rgba(255, 255, 255, 0.1); }
 .page-hero::after { width: 420px; height: 420px; right: -140px; bottom: -200px; background: rgba(0, 0, 0, 0.14); }
 .page-hero .container { position: relative; z-index: 1; }
+/* Variant for pages with a hero photo: two-column grid (reusing .hero-grid,
+   applied via class="container hero-grid" on the same element), text
+   left-aligned instead of the plain text-only hero's centered layout —
+   matching .hero's existing (unforced) alignment at every breakpoint. */
+.page-hero.has-media .container { text-align: left; }
 .page-hero .breadcrumb {
   display: inline-flex;
   gap: 8px;
@@ -876,6 +882,37 @@ legend { font-weight: 600; margin-bottom: 12px; padding: 0; }
   .hero-grid { grid-template-columns: 1fr; }
   .hero-media { order: -1; }
 }
+
+/* Floating quality/award badge cards layered over a hero photo (Figma:
+   "100% High Quality" top-left, "Michelin Star" bottom-right). Live in an
+   unclipped wrapper around .hero-media so they can hang slightly over its
+   edge without being cut off by .hero-media's own overflow:hidden. */
+.hero-media-wrap { position: relative; }
+.hero-badge {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 200px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-black);
+  box-shadow: var(--shadow-card);
+}
+.hero-badge-icon {
+  width: 40px; height: 40px;
+  flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--color-red);
+  color: var(--color-white);
+}
+.hero-badge-title { display: block; font-weight: 700; font-size: var(--fs-small); line-height: 1.25; }
+.hero-badge-subtitle { display: block; color: var(--color-text-muted); font-size: 0.75rem; margin-top: 2px; }
+.hero-badge-quality { top: 28px; left: -20px; }
+.hero-badge-award { bottom: 28px; right: -20px; }
 
 .badge-pill {
   display: inline-flex;

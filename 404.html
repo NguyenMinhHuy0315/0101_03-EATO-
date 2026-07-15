@@ -24,8 +24,25 @@
     display: flex;
     align-items: center;
     padding-block: 96px;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(120% 180% at 15% -20%, var(--color-red) 0%, var(--color-rust) 62%, var(--color-rust) 100%);
+    color: var(--color-white);
+    --color-text-muted: rgba(255, 255, 255, 0.78);
   }
+  .error-page::before,
+  .error-page::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    pointer-events: none;
+  }
+  .error-page::before { width: 480px; height: 480px; left: -160px; top: -160px; background: rgba(255, 255, 255, 0.1); }
+  .error-page::after { width: 420px; height: 420px; right: -140px; bottom: -160px; background: rgba(0, 0, 0, 0.14); }
   .error-content {
+    position: relative;
+    z-index: 1;
     max-width: 640px;
     margin-inline: auto;
     text-align: center;
@@ -44,7 +61,7 @@
     font-size: clamp(4rem, 8vw, 7rem);
     font-weight: 700;
     line-height: 1;
-    color: var(--color-red);
+    color: rgba(255, 255, 255, 0.35);
     letter-spacing: -0.02em;
     margin-bottom: 8px;
   }
