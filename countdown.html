@@ -53,17 +53,7 @@
     text-transform: uppercase;
     color: var(--color-dark-stroke);
   }
-  .countdown-colon {
-    display: none;
-  }
-  .offer-highlight-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-    margin-top: 40px;
-  }
   @media (max-width: 599px) {
-    .offer-highlight-grid { grid-template-columns: 1fr; }
     .countdown-unit { min-width: 84px; padding: 18px 10px; }
   }
   /* Countdown page hero uses the rust brand color (per latest Figma export)
@@ -142,28 +132,6 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="offer-highlight-grid">
-        <div class="stat-item">
-          <span class="stat-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21c-4-1-8-5-8-11 6 0 10 4 11 8 3-4 7-2 9-6-1 9-6 11-12 9z"/></svg>
-          </span>
-          <span class="stack" style="text-align:left;">
-            <span class="stat-number" style="font-size:1.25rem;" data-vi="Chất Lượng 100%" data-en="100% High Quality">Chất Lượng 100%</span>
-            <span class="stat-label" data-vi="Nguyên liệu chất lượng tốt nhất" data-en="Best quality raw materials">Nguyên liệu chất lượng tốt nhất</span>
-          </span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><polyline points="8.5 13.5 7 22 12 19 17 22 15.5 13.5"/></svg>
-          </span>
-          <span class="stack" style="text-align:left;">
-            <span class="stat-number" style="font-size:1.25rem;" data-vi="Sao Michelin" data-en="Michelin Star">Sao Michelin</span>
-            <span class="stat-label" data-vi="Xuất sắc ẩm thực được công nhận" data-en="Recognized culinary excellence">Xuất sắc ẩm thực được công nhận</span>
-          </span>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- First-time guest offer -->
@@ -201,7 +169,7 @@
   </section>
 
   <!-- Countdown -->
-  <section class="section-bg-rust section-glow" aria-labelledby="countdown-heading">
+  <section class="section-bg-dark section-glow" aria-labelledby="countdown-heading">
     <div class="container text-center">
       <h2 id="countdown-heading" data-vi="Sắp Đến Giờ Rồi — Ngày Khai Trương Đang Đến Gần!" data-en="The Wait Is Almost Over — Our Grand Opening Is Near!">Sắp Đến Giờ Rồi — Ngày Khai Trương Đang Đến Gần!</h2>
       <p class="text-muted" style="max-width:560px; margin:16px auto 0;" data-vi="Đăng ký ngay để là người đầu tiên biết! Ưu đãi khai trương này sẽ biến mất ngay khi chúng tôi mở cửa, vì vậy hãy nhanh tay trước khi hết giờ." data-en="Sign up now to be the first to know! This introductory offer disappears the moment our doors open, so grab your spot before the clock runs out.">Đăng ký ngay để là người đầu tiên biết! Ưu đãi khai trương này sẽ biến mất ngay khi chúng tôi mở cửa, vì vậy hãy nhanh tay trước khi hết giờ.</p>
@@ -217,6 +185,131 @@
       </div>
 
       <a class="btn btn-primary" href="reservation.html" style="margin-top:8px;" data-vi="Nhận Ưu Đãi Này" data-en="Claim This Offer">Nhận Ưu Đãi Này</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-bg-rust section-glow" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="faq-heading" data-vi="Giải Đáp Mọi Thắc Mắc, Tận Hưởng Trải Nghiệm Trọn Vẹn!" data-en="Your Questions Answered, Enjoy a Seamless Experience!">Giải Đáp Mọi Thắc Mắc, Tận Hưởng Trải Nghiệm Trọn Vẹn!</h2>
+        <div>
+          <p style="margin-bottom:16px;" data-vi="Khám phá phần Câu Hỏi Thường Gặp để tìm câu trả lời cho các thắc mắc phổ biến, đảm bảo trải nghiệm ẩm thực suôn sẻ và trọn vẹn cho mọi thực khách." data-en="Explore our FAQs to find answers to common inquiries, ensuring a smooth and enjoyable dining experience for all our guests.">Khám phá phần Câu Hỏi Thường Gặp để tìm câu trả lời cho các thắc mắc phổ biến, đảm bảo trải nghiệm ẩm thực suôn sẻ và trọn vẹn cho mọi thực khách.</p>
+          <a class="btn btn-outline" href="faq.html" data-vi="Xem Thêm" data-en="See More">Xem Thêm</a>
+        </div>
+      </div>
+      <div class="split-media-content">
+        <div class="accordion" id="countdown-faq">
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="cdf-t1" aria-expanded="true" aria-controls="cdf-p1">
+                <span data-vi="Nhà hàng mở cửa vào những giờ nào?" data-en="What are your restaurant's hours of operation?">Nhà hàng mở cửa vào những giờ nào?</span>
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="cdf-p1" role="region" aria-labelledby="cdf-t1">
+              <div class="accordion-panel-inner" data-vi="Nhà hàng chúng tôi mở cửa từ Thứ Hai đến Chủ Nhật, từ 11:00 đến 22:00." data-en="Our restaurant is open Monday to Sunday from 11:00 AM to 10:00 PM.">Nhà hàng chúng tôi mở cửa từ Thứ Hai đến Chủ Nhật, từ 11:00 đến 22:00.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="cdf-t2" aria-expanded="false" aria-controls="cdf-p2">
+                <span data-vi="Tôi có cần đặt bàn trước khi đến dùng bữa không?" data-en="Do I need a reservation to dine?">Tôi có cần đặt bàn trước khi đến dùng bữa không?</span>
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="cdf-p2" role="region" aria-labelledby="cdf-t2">
+              <div class="accordion-panel-inner" data-vi="Chúng tôi luôn chào đón khách vãng lai, nhưng khuyến khích đặt bàn trước vào cuối tuần và buổi tối để đảm bảo có chỗ." data-en="Walk-ins are always welcome, but we recommend booking ahead for weekends and evenings to guarantee your table.">Chúng tôi luôn chào đón khách vãng lai, nhưng khuyến khích đặt bàn trước vào cuối tuần và buổi tối để đảm bảo có chỗ.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="cdf-t3" aria-expanded="false" aria-controls="cdf-p3">
+                <span data-vi="Tôi có thể thay đổi đặt bàn sau khi đã đặt không?" data-en="Can I modify my reservation after booking?">Tôi có thể thay đổi đặt bàn sau khi đã đặt không?</span>
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="cdf-p3" role="region" aria-labelledby="cdf-t3">
+              <div class="accordion-panel-inner" data-vi="Có — vui lòng liên hệ với chúng tôi ít nhất 2 giờ trước giờ đặt bàn và chúng tôi sẽ hỗ trợ điều chỉnh." data-en="Yes — contact us at least 2 hours before your reservation time and we'll be happy to adjust it.">Có — vui lòng liên hệ với chúng tôi ít nhất 2 giờ trước giờ đặt bàn và chúng tôi sẽ hỗ trợ điều chỉnh.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="cdf-t4" aria-expanded="false" aria-controls="cdf-p4">
+                <span data-vi="Nhà hàng có dịch vụ mang đi hoặc giao hàng không?" data-en="Do you offer takeout or delivery services?">Nhà hàng có dịch vụ mang đi hoặc giao hàng không?</span>
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="cdf-p4" role="region" aria-labelledby="cdf-t4">
+              <div class="accordion-panel-inner" data-vi="Có, chúng tôi có dịch vụ mang đi tại chỗ và hợp tác với các nền tảng giao hàng lớn." data-en="Yes, takeout is available in-house and we partner with major delivery platforms for delivery orders.">Có, chúng tôi có dịch vụ mang đi tại chỗ và hợp tác với các nền tảng giao hàng lớn.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="cdf-t5" aria-expanded="false" aria-controls="cdf-p5">
+                <span data-vi="Nhà hàng có món chay hoặc không chứa gluten không?" data-en="Are there vegetarian or gluten-free options available?">Nhà hàng có món chay hoặc không chứa gluten không?</span>
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="cdf-p5" role="region" aria-labelledby="cdf-t5">
+              <div class="accordion-panel-inner" data-vi="Chắc chắn rồi — thực đơn của chúng tôi có ghi chú rõ ràng các món chay, thuần chay và không chứa gluten." data-en="Absolutely — our menu is clearly marked with vegetarian, vegan, and gluten-free choices.">Chắc chắn rồi — thực đơn của chúng tôi có ghi chú rõ ràng các món chay, thuần chay và không chứa gluten.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="cdf-t6" aria-expanded="false" aria-controls="cdf-p6">
+                <span data-vi="Tôi có thể tổ chức sự kiện riêng tại nhà hàng không?" data-en="Can I host a private event at your restaurant?">Tôi có thể tổ chức sự kiện riêng tại nhà hàng không?</span>
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="cdf-p6" role="region" aria-labelledby="cdf-t6">
+              <div class="accordion-panel-inner" data-vi="Có — hãy ghé thăm trang Sự Kiện &amp; Tiệc Riêng để khám phá các gói dịch vụ và gửi yêu cầu cho buổi tiệc của bạn." data-en="Yes — visit our Events &amp; Private Dining page to explore packages and submit an inquiry for your celebration.">Có — hãy ghé thăm trang Sự Kiện &amp; Tiệc Riêng để khám phá các gói dịch vụ và gửi yêu cầu cho buổi tiệc của bạn.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" id="cdf-t7" aria-expanded="false" aria-controls="cdf-p7">
+                <span data-vi="Nhà hàng có hỗ trợ các yêu cầu cho dịp kỷ niệm không?" data-en="Do you accommodate requests for celebrations?">Nhà hàng có hỗ trợ các yêu cầu cho dịp kỷ niệm không?</span>
+                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="cdf-p7" role="region" aria-labelledby="cdf-t7">
+              <div class="accordion-panel-inner" data-vi="Tất nhiên rồi — hãy cho chúng tôi biết về sinh nhật, kỷ niệm hay cột mốc quan trọng khi đặt bàn và chúng tôi sẽ thêm những điểm nhấn đặc biệt." data-en="Of course — let us know about birthdays, anniversaries, or milestones when booking and we'll add a special touch.">Tất nhiên rồi — hãy cho chúng tôi biết về sinh nhật, kỷ niệm hay cột mốc quan trọng khi đặt bàn và chúng tôi sẽ thêm những điểm nhấn đặc biệt.</div>
+            </div>
+          </div>
+        </div>
+        <img loading="lazy" class="ph-img hide-mobile" style="border-radius:24px;" src="https://images.unsplash.com/photo-1587574293340-e0011c4e8ecf?w=900&q=80" alt="Lively outdoor terrace with string lights where guests will dine together at EATO">
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial quote -->
+  <section class="section-bg-dark quote-section" aria-labelledby="quote-heading">
+    <div class="container">
+      <span class="quote-mark" aria-hidden="true">&#8220;</span>
+      <h2 id="quote-heading" class="quote-text" data-vi="Đồ ăn thực sự xuất sắc, và dịch vụ thì tuyệt vời! Từng chi tiết nhỏ đều góp phần tạo nên một buổi tối khó quên. Không thể chờ để quay lại trải nghiệm thêm lần nữa." data-en="The food was absolutely outstanding, and the service was exceptional! Every detail contributed to an unforgettable evening. Can't wait to return for another amazing experience.">Đồ ăn thực sự xuất sắc, và dịch vụ thì tuyệt vời! Từng chi tiết nhỏ đều góp phần tạo nên một buổi tối khó quên. Không thể chờ để quay lại trải nghiệm thêm lần nữa.</h2>
+      <div class="carousel" data-carousel data-per-view="1" data-carousel-label="Guest testimonials">
+        <div class="carousel-viewport">
+          <ul class="carousel-track" style="justify-content:center; width:100%;">
+            <li style="list-style:none;">
+              <div class="avatar-row">
+                <img loading="lazy" class="avatar-side" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=220&q=80" alt="Portrait of a previous EATO guest">
+                <img loading="lazy" class="avatar-active" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=320&q=80" alt="Portrait of Sarah Hamilton, EATO guest">
+                <img loading="lazy" class="avatar-side" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=220&q=80" alt="Portrait of a following EATO guest">
+              </div>
+              <p class="avatar-caption">Sarah Hamilton</p>
+            </li>
+          </ul>
+        </div>
+        <div class="carousel-controls controls-center">
+          <button class="btn-icon" type="button" data-carousel-prev aria-label="Previous testimonial" style="border-color:#3a3a3a; color:#fff;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          </button>
+          <button class="btn-icon" type="button" data-carousel-next aria-label="Next testimonial" style="border-color:#3a3a3a; color:#fff;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -276,7 +369,7 @@
           <li><a href="reservation.html" data-vi="Đặt Bàn" data-en="Reservation">Đặt Bàn</a></li>
           <li><a href="faq.html" data-vi="Câu Hỏi Thường Gặp" data-en="FAQ">Câu Hỏi Thường Gặp</a></li>
           <li><a href="contact.html" data-vi="Liên Hệ" data-en="Contact Us">Liên Hệ</a></li>
-          <li><a href="countdown.html" data-vi="Ưu Đãi Có Hạn" data-en="Limited-Time Offer">Ưu Đãi Có Hạn</a></li>
+          <li><a href="countdown.html" aria-current="page" data-vi="Ưu Đãi Có Hạn" data-en="Limited-Time Offer">Ưu Đãi Có Hạn</a></li>
         </ul>
       </nav>
     </div>
