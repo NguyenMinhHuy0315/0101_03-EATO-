@@ -1,452 +1,607 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reservation — EATO Fine Dining Restaurant &amp; Cafe</title>
-<meta name="description" content="Book your table at EATO in moments. Reserve a date, time, and party size online and enjoy exceptional flavors, warm ambiance, and outstanding service.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Reservation — EATO Fine Dining Restaurant &amp; Cafe">
-<meta property="og:description" content="Book your table at EATO in moments. Reserve a date, time, and party size online and enjoy exceptional flavors, warm ambiance, and outstanding service.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=1200&q=80">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Reservation — EATO Fine Dining Restaurant &amp; Cafe">
-<meta name="twitter:description" content="Book your table at EATO in moments. Reserve a date, time, and party size online and enjoy exceptional flavors, warm ambiance, and outstanding service.">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=1200&q=80">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
-<style>
-  .reservation-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.6fr;
-    gap: 48px;
-    align-items: start;
-  }
-  @media (max-width: 899px) {
-    .reservation-layout { grid-template-columns: 1fr; }
-  }
-  .info-panel,
-  .form-card {
-    background: var(--color-white);
-    color: #1a1a1a;
-    --color-text-muted: #5c5c5c;
-    --color-abu-stroke: #ebebeb;
-    border: 1px solid var(--color-abu-stroke);
-    border-radius: var(--radius-lg);
-    padding: 32px;
-  }
-  .info-panel .feature-list { gap: 28px; }
-  .info-panel .feature-item .feature-icon { width: 48px; height: 48px; }
-  .form-card {
-    padding: 40px;
-  }
-  @media (max-width: 599px) {
-    .form-card { padding: 24px; }
-  }
-  .consent-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-  .consent-row input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    margin-top: 2px;
-    accent-color: var(--color-red);
-    flex-shrink: 0;
-  }
-  .consent-row label { font-weight: 500; font-size: var(--fs-body); }
-  .field.consent-field .error-message { margin-top: 4px; }
-</style>
 </head>
 <body>
-<a class="skip-link" href="#main-content" data-vi="Bỏ qua để đến nội dung chính" data-en="Skip to main content">Bỏ qua để đến nội dung chính</a>
-
-<header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="index.html" aria-label="EATO — go to homepage">
-      <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
-      EATO
-    </a>
-    <nav class="main-nav" id="main-nav" aria-label="Primary">
-      <a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a>
-      <a href="menu.html" data-vi="Thực đơn" data-en="Menu">Thực đơn</a>
-      <a href="about.html" data-vi="Về chúng tôi" data-en="About Us">Về chúng tôi</a>
-      <a href="contact.html" data-vi="Liên hệ" data-en="Contact Us">Liên hệ</a>
-      <a class="btn btn-primary" href="reservation.html" aria-current="page" data-vi="Đặt bàn" data-en="Book Reservation">Đặt bàn</a>
-    </nav>
-    <div class="lang-switch" role="group" aria-label="Language switcher">
-      <button type="button" class="lang-btn" data-lang-btn="vi" aria-pressed="true">VI</button>
-      <button type="button" class="lang-btn" data-lang-btn="en" aria-pressed="false">EN</button>
-    </div>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
+<div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+  <div style="height: 44px; padding-left: 24px; padding-right: 24px; padding-top: 12px; padding-bottom: 12px; background: #B44509; overflow: hidden; border-radius: 4px; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+    <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; word-wrap: break-word">Skip to main content</div>
   </div>
-</header>
-
-<main id="main-content">
-
-  <div class="page-hero has-media">
-    <div class="container hero-grid">
-      <div>
-      <h1 data-vi="Đặt Bàn Của Bạn, Tận Hưởng Từng Khoảnh Khắc Cùng Chúng Tôi" data-en="Reserve Your Table, Savor Every Moment with Us">Đặt Bàn Của Bạn, Tận Hưởng Từng Khoảnh Khắc Cùng Chúng Tôi</h1>
-        <p class="text-muted" style="max-width:520px; margin:16px 0 0;" data-vi="Đặt bàn dễ dàng và tận hưởng trải nghiệm ẩm thực trọn vẹn với hương vị xuất sắc, không gian ấm cúng và dịch vụ hoàn hảo." data-en="Book your table effortlessly and enjoy a delightful dining experience with exceptional flavors, warm ambiance, and outstanding service.">Đặt bàn dễ dàng và tận hưởng trải nghiệm ẩm thực trọn vẹn với hương vị xuất sắc, không gian ấm cúng và dịch vụ hoàn hảo.</p>
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a> / <span data-vi="Đặt Bàn" data-en="Reservation">Đặt Bàn</span></nav>
+  <div style="align-self: stretch; height: 742px; position: relative; background: #B44509; overflow: hidden">
+    <div style="width: 857px; height: 714px; left: -137px; top: -191px; position: absolute; background: rgba(195, 30, 38, 0.30); box-shadow: 576px 576px 576px; border-radius: 9999px; filter: blur(288px)"></div>
+    <div style="width: 651px; height: 651px; left: 977px; top: -95px; position: absolute; background: rgba(255, 255, 255, 0.12); border-radius: 9999px"></div>
+    <div style="width: 651px; height: 651px; left: -207px; top: 456px; position: absolute; background: rgba(255, 255, 255, 0.12); border-radius: 9999px"></div>
+    <div style="width: 1280px; left: 80px; top: 45px; position: absolute; justify-content: space-between; align-items: center; display: inline-flex">
+      <div style="justify-content: flex-start; align-items: center; gap: 104px; display: flex">
+        <div style="height: 44px; justify-content: flex-start; align-items: center; gap: 8px; display: flex">
+          <div style="width: 32px; height: 32px; background: var(--Red, #C31E26); border-radius: 36px; justify-content: center; align-items: center; gap: 4px; display: flex">
+            <div style="width: 24px; height: 24px; position: relative">
+              <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute"></div>
+              <div style="width: 7.59px; height: 7.59px; left: 3px; top: 13.41px; position: absolute; outline: 1.50px var(--Color, #FFC62B) solid; outline-offset: -0.75px"></div>
+              <div style="width: 8.81px; height: 8.81px; left: 12.03px; top: 3px; position: absolute; outline: 1.50px var(--Color, #FFC62B) solid; outline-offset: -0.75px"></div>
+              <div style="width: 2.84px; height: 2.84px; left: 16.23px; top: 4.77px; position: absolute; outline: 1.50px var(--Color, #FFC62B) solid; outline-offset: -0.75px"></div>
+              <div style="width: 10.86px; height: 13.20px; left: 5.07px; top: 3.95px; position: absolute; outline: 1.50px var(--Color, #FFC62B) solid; outline-offset: -0.75px"></div>
+              <div style="width: 3.54px; height: 3.54px; left: 14.46px; top: 5.84px; position: absolute; outline: 1.50px var(--Color, #FFC62B) solid; outline-offset: -0.75px"></div>
+            </div>
+          </div>
+          <div style="padding-left: 4px; padding-right: 4px; padding-top: 6px; padding-bottom: 6px; overflow: hidden; justify-content: center; align-items: center; display: flex">
+            <div style="color: white; font-size: 24px; font-family: Inter Tight; font-weight: 700; line-height: 32px; word-wrap: break-word">EATO</div>
+          </div>
+        </div>
+        <div style="justify-content: flex-start; align-items: center; gap: 32px; display: flex">
+          <div style="padding-left: 4px; padding-right: 4px; padding-top: 10px; padding-bottom: 10px; overflow: hidden; justify-content: center; align-items: center; display: flex">
+            <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Home</div>
+          </div>
+          <div style="padding-left: 4px; padding-right: 4px; padding-top: 10px; padding-bottom: 10px; overflow: hidden; justify-content: center; align-items: center; display: flex">
+            <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Menu</div>
+          </div>
+          <div style="padding-left: 4px; padding-right: 4px; padding-top: 10px; padding-bottom: 10px; overflow: hidden; justify-content: center; align-items: center; display: flex">
+            <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">About Us</div>
+          </div>
+          <div style="padding-left: 4px; padding-right: 4px; padding-top: 10px; padding-bottom: 10px; overflow: hidden; justify-content: center; align-items: center; display: flex">
+            <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Contact Us</div>
+          </div>
+        </div>
       </div>
-      <div class="hero-media-wrap">
-        <div class="hero-media">
-          <img class="ph-img" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=900&q=80" alt="Upscale EATO dining room with leather booths, ready and waiting for reserved guests">
+      <div style="height: 44px; padding-left: 24px; padding-right: 24px; padding-top: 8px; padding-bottom: 8px; background: var(--Red, #C31E26); border-radius: 8px; justify-content: center; align-items: center; gap: 4px; display: flex">
+        <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Book Reservation</div>
+      </div>
+    </div>
+    <div style="width: 1258px; left: 80px; top: 123px; position: absolute; text-align: center; color: white; font-size: 64px; font-family: Inter Tight; font-weight: 700; line-height: 72px; word-wrap: break-word">Reserve Your Table, Savor Every <br/>Moment with Us</div>
+    <div style="height: 44px; left: 572px; top: 433px; position: absolute; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex">
+      <div style="height: 44px; padding-left: 24px; padding-right: 24px; padding-top: 8px; padding-bottom: 8px; background: var(--Red, #C31E26); border-radius: 8px; justify-content: center; align-items: center; gap: 4px; display: flex">
+        <div style="width: 82px; text-align: center; color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">View Menu</div>
+      </div>
+      <div style="height: 44px; padding-left: 24px; padding-right: 24px; padding-top: 8px; padding-bottom: 8px; background: white; border-radius: 8px; justify-content: center; align-items: center; gap: 4px; display: flex">
+        <div style="color: var(--Red, #C31E26); font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Explore More</div>
+      </div>
+    </div>
+    <img style="width: 650px; height: 565px; left: 352px; top: 274px; position: absolute" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=650&h=565&fit=crop&q=80" />
+    <div style="width: 379px; left: 996px; top: 341px; position: absolute; flex-direction: column; justify-content: center; align-items: flex-start; gap: 24px; display: inline-flex">
+      <div style="align-self: stretch; color: white; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">Book your table effortlessly and enjoy a delightful dining experience with exceptional flavors, warm ambiance, and outstanding service.</div>
+      <div style="height: 44px; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex">
+        <div style="height: 44px; padding-left: 24px; padding-right: 24px; padding-top: 8px; padding-bottom: 8px; background: var(--Red, #C31E26); border-radius: 8px; justify-content: center; align-items: center; gap: 4px; display: flex">
+          <div style="width: 82px; text-align: center; color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">View Menu</div>
         </div>
-        <div class="hero-badge hero-badge-quality hide-mobile">
-          <span class="hero-badge-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><polyline points="8.5 13.5 7 22 12 19 17 22 15.5 13.5"/></svg>
-          </span>
-          <span>
-            <span class="hero-badge-title" data-vi="Chất Lượng 100%" data-en="100% High Quality">Chất Lượng 100%</span>
-            <span class="hero-badge-subtitle" data-vi="Nguyên liệu tốt nhất" data-en="Best quality raw materials">Nguyên liệu tốt nhất</span>
-          </span>
-        </div>
-        <div class="hero-badge hero-badge-award hide-mobile">
-          <span class="hero-badge-icon">
-            <svg class="icon-star" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg>
-          </span>
-          <span class="hero-badge-title" data-vi="Sao Michelin" data-en="Michelin Star">Sao Michelin</span>
+        <div style="height: 44px; padding-left: 24px; padding-right: 24px; padding-top: 8px; padding-bottom: 8px; background: white; border-radius: 8px; justify-content: center; align-items: center; gap: 4px; display: flex">
+          <div style="color: var(--Red, #C31E26); font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Explore More</div>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Reservation form -->
-  <section class="section-bg-dark section-glow" aria-labelledby="reserve-heading">
-    <div class="container">
-      <div class="text-center" style="max-width:700px; margin:0 auto 56px;">
-        <h2 id="reserve-heading" data-vi="Giữ Chỗ Của Bạn, Đắm Chìm Trong Ẩm Thực Tinh Tế" data-en="Secure Your Spot, Indulge in Culinary Delights">Giữ Chỗ Của Bạn, Đắm Chìm Trong Ẩm Thực Tinh Tế</h2>
-        <p class="text-muted" style="margin-top:16px;" data-vi="Đặt bàn ngay hôm nay để trải nghiệm những món ăn tinh tế, dịch vụ chu đáo và không gian ấm áp hoàn hảo cho mọi dịp." data-en="Make a reservation today to experience exquisite dishes, attentive service, and a welcoming atmosphere perfect for any occasion.">Đặt bàn ngay hôm nay để trải nghiệm những món ăn tinh tế, dịch vụ chu đáo và không gian ấm áp hoàn hảo cho mọi dịp.</p>
+    <div style="width: 153px; padding: 14px; left: 255px; top: 348px; position: absolute; background: white; border-radius: 12px; outline: 0.50px rgba(255, 255, 255, 0.24) solid; outline-offset: -0.50px; backdrop-filter: blur(10px); flex-direction: column; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex">
+      <div style="width: 52px; height: 52px; background: var(--Red, #C31E26); box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25) inset; border-radius: 12px; justify-content: center; align-items: center; gap: 4px; display: inline-flex">
+        <div style="width: 12.01px; height: 4px; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+        <div style="width: 8px; height: 4px; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+        <div style="width: 12px; height: 8.22px; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+        <div style="width: 1.33px; height: 3.28px; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+        <div style="width: 24.01px; height: 10.67px; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+        <div style="width: 7.83px; height: 5.34px; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+        <div style="width: 32.01px; height: 32.01px"></div>
       </div>
-
-      <div class="reservation-layout">
-        <aside class="info-panel" aria-labelledby="info-heading">
-          <h3 id="info-heading" class="h5" style="margin-bottom:24px;" data-vi="Chi Tiết Đặt Bàn" data-en="Reservation Details">Chi Tiết Đặt Bàn</h3>
-          <div class="feature-list">
-            <div class="feature-item">
-              <span class="feature-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg>
-              </span>
-              <div>
-                <h3 class="h6" data-vi="Giờ Mở Cửa" data-en="Opening Hours">Giờ Mở Cửa</h3>
-                <p data-vi-html="Thứ Hai – Chủ Nhật&lt;br&gt;11:00 – 22:00" data-en-html="Monday – Sunday&lt;br&gt;11:00 AM – 10:00 PM">Thứ Hai – Chủ Nhật<br>11:00 – 22:00</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.9-9.3-9.7A5.4 5.4 0 0 1 12 6a5.4 5.4 0 0 1 9.3 5.3C19 16.1 12 21 12 21z"/><circle cx="12" cy="11" r="2.5"/></svg>
-              </span>
-              <div>
-                <h3 class="h6" data-vi="Địa Chỉ" data-en="Address">Địa Chỉ</h3>
-                <p>123 Nguyễn Văn Linh<br>Quận 7, TP. Hồ Chí Minh</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"/></svg>
-              </span>
-              <div>
-                <h3 class="h6" data-vi="Điện Thoại" data-en="Phone">Điện Thoại</h3>
-                <p>0123 456 789</p>
-              </div>
-            </div>
-          </div>
-          <p class="text-muted" style="margin-top:32px;" data-vi="Đối với nhóm từ 8 khách trở lên, vui lòng gọi trực tiếp để sắp xếp chỗ ngồi. Chúng tôi giữ bàn trong 15 phút sau giờ đã đặt." data-en="Reservations for parties of 8 or more should call us directly to arrange seating. We hold tables for 15 minutes past the booked time.">Đối với nhóm từ 8 khách trở lên, vui lòng gọi trực tiếp để sắp xếp chỗ ngồi. Chúng tôi giữ bàn trong 15 phút sau giờ đã đặt.</p>
-        </aside>
-
-        <div class="form-card">
-          <form data-validate data-success-message-vi="Yêu cầu đặt bàn của bạn đã được ghi nhận — chúng tôi sẽ xác nhận sớm qua email." data-success-message-en="Your reservation request has been received — we'll confirm shortly by email.">
-            <div class="form-status" role="status" aria-live="polite"></div>
-
-            <div class="grid grid-2">
-              <div class="field">
-                <label for="res-name" data-vi="Họ Và Tên" data-en="Full Name">Họ Và Tên</label>
-                <input type="text" id="res-name" name="name" data-rules="required minlength:2" data-error-required-vi="Vui lòng nhập họ và tên của bạn." data-error-required-en="Please enter your full name." data-error-minlength-vi="Vui lòng nhập ít nhất 2 ký tự." data-error-minlength-en="Please enter at least 2 characters.">
-                <span class="error-message" role="alert"></span>
-              </div>
-              <div class="field">
-                <label for="res-email" data-vi="Địa Chỉ Email" data-en="Email Address">Địa Chỉ Email</label>
-                <input type="email" id="res-email" name="email" data-rules="required email" data-error-required-vi="Vui lòng nhập địa chỉ email của bạn." data-error-required-en="Please enter your email address." data-error-email-vi="Vui lòng nhập địa chỉ email hợp lệ." data-error-email-en="Please enter a valid email address.">
-                <span class="error-message" role="alert"></span>
-              </div>
-            </div>
-
-            <div class="grid grid-3">
-              <div class="field">
-                <label for="res-phone" data-vi="Số Điện Thoại" data-en="Phone Number">Số Điện Thoại</label>
-                <input type="tel" id="res-phone" name="phone" data-rules="required phone" data-error-required-vi="Vui lòng nhập số điện thoại của bạn." data-error-required-en="Please enter your phone number." data-error-phone-vi="Vui lòng nhập số điện thoại hợp lệ." data-error-phone-en="Please enter a valid phone number.">
-                <span class="error-message" role="alert"></span>
-              </div>
-              <div class="field">
-                <label for="res-date" data-vi="Ngày Đặt Bàn" data-en="Reservation Date">Ngày Đặt Bàn</label>
-                <input type="date" id="res-date" name="date" data-rules="required" data-error-required-vi="Vui lòng chọn ngày đặt bàn." data-error-required-en="Please choose a reservation date.">
-                <span class="error-message" role="alert"></span>
-              </div>
-              <div class="field">
-                <label for="res-time" data-vi="Giờ Đặt Bàn" data-en="Reservation Time">Giờ Đặt Bàn</label>
-                <input type="time" id="res-time" name="time" data-rules="required" data-error-required-vi="Vui lòng chọn giờ đặt bàn." data-error-required-en="Please choose a reservation time.">
-                <span class="error-message" role="alert"></span>
-              </div>
-            </div>
-
-            <div class="grid grid-2">
-              <div class="field">
-                <label for="res-guests" data-vi="Số Người" data-en="Number of Guests">Số Người</label>
-                <input type="number" id="res-guests" name="guests" min="1" max="20" value="2" data-rules="required" data-error-required-vi="Vui lòng nhập số lượng khách." data-error-required-en="Please enter the number of guests.">
-                <span class="error-message" role="alert"></span>
-              </div>
-              <div class="field">
-                <label for="res-special" data-vi-html="Yêu Cầu Đặc Biệt &lt;span class=&quot;text-muted&quot; style=&quot;font-weight:400;&quot;&gt;(Không bắt buộc)&lt;/span&gt;" data-en-html="Special Requests &lt;span class=&quot;text-muted&quot; style=&quot;font-weight:400;&quot;&gt;(Optional)&lt;/span&gt;">Yêu Cầu Đặc Biệt <span class="text-muted" style="font-weight:400;">(Không bắt buộc)</span></label>
-                <select id="res-special" name="special_request">
-                  <option value="" data-vi="Không có yêu cầu đặc biệt" data-en="No special requests">Không có yêu cầu đặc biệt</option>
-                  <option value="vegetarian" data-vi="Món chay" data-en="Vegetarian">Món chay</option>
-                  <option value="vegan" data-vi="Thuần chay" data-en="Vegan">Thuần chay</option>
-                  <option value="gluten-free" data-vi="Không chứa gluten" data-en="Gluten-Free">Không chứa gluten</option>
-                  <option value="nut-allergy" data-vi="Dị ứng hạt" data-en="Nut Allergy">Dị ứng hạt</option>
-                  <option value="other" data-vi="Khác" data-en="Other">Khác</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="res-notes" data-vi-html="Ghi Chú Thêm &lt;span class=&quot;text-muted&quot; style=&quot;font-weight:400;&quot;&gt;(Không bắt buộc)&lt;/span&gt;" data-en-html="Additional Notes &lt;span class=&quot;text-muted&quot; style=&quot;font-weight:400;&quot;&gt;(Optional)&lt;/span&gt;">Ghi Chú Thêm <span class="text-muted" style="font-weight:400;">(Không bắt buộc)</span></label>
-              <textarea id="res-notes" name="notes" placeholder="Vị trí ngồi ưa thích, dịp kỷ niệm hoặc bất kỳ bình luận nào khác…" data-vi-placeholder="Vị trí ngồi ưa thích, dịp kỷ niệm hoặc bất kỳ bình luận nào khác…" data-en-placeholder="Seating preferences, celebrations, or any other comments…"></textarea>
-            </div>
-
-            <div class="field consent-field">
-              <div class="consent-row">
-                <input type="checkbox" id="res-consent" name="consent" data-rules="checked" data-error-required-vi="Vui lòng xác nhận bạn đồng ý với chính sách đặt bàn của chúng tôi." data-error-required-en="Please confirm you agree to our reservation policies.">
-                <label for="res-consent" data-vi="Tôi xác nhận đặt bàn và đồng ý với chính sách của nhà hàng." data-en="I confirm my reservation and agree to the restaurant's policies.">Tôi xác nhận đặt bàn và đồng ý với chính sách của nhà hàng.</label>
-              </div>
-              <span class="error-message" role="alert"></span>
-            </div>
-
-            <button class="btn btn-primary" type="submit" data-vi="Đặt Bàn Ngay" data-en="Reserve Now">Đặt Bàn Ngay</button>
-          </form>
-        </div>
+      <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: flex">
+        <div style="text-align: center; color: #070707; font-size: 16px; font-family: Inter Tight; font-weight: 500; line-height: 24px; word-wrap: break-word">100% High Quality</div>
+        <div style="text-align: center; color: #070707; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">best quality raw materials</div>
       </div>
     </div>
-  </section>
-
-  <!-- Events & Private Dining promo -->
-  <section class="section-bg-red section-glow" aria-labelledby="events-heading">
-    <div class="container">
-      <div class="split-media-content">
-        <div>
-          <span class="tag" data-vi="Sự Kiện &amp; Tiệc Riêng" data-en="Events &amp; Private Dining">Sự Kiện &amp; Tiệc Riêng</span>
-          <h2 id="events-heading" style="margin-top:20px;" data-vi="Cùng chúng tôi tôn vinh những khoảnh khắc đặc biệt trong đời với món ăn xuất sắc và trải nghiệm khó quên!" data-en="Join us in celebrating life's special moments with exceptional food and unforgettable experiences together!">Cùng chúng tôi tôn vinh những khoảnh khắc đặc biệt trong đời với món ăn xuất sắc và trải nghiệm khó quên!</h2>
-          <p class="text-muted" style="margin-top:20px;" data-vi="Dù là sinh nhật, kỷ niệm, họp mặt doanh nghiệp hay bất kỳ dịp đặc biệt nào, nhà hàng của chúng tôi mang đến không gian hoàn hảo cho sự kiện của bạn." data-en="Whether it's a birthday, anniversary, corporate gathering, or any special occasion, our restaurant offers the perfect setting for your event.">Dù là sinh nhật, kỷ niệm, họp mặt doanh nghiệp hay bất kỳ dịp đặc biệt nào, nhà hàng của chúng tôi mang đến không gian hoàn hảo cho sự kiện của bạn.</p>
-          <a class="btn btn-outline mt-lg" href="events.html" data-vi="Xem Thêm" data-en="See More">Xem Thêm</a>
-        </div>
-        <img loading="lazy" class="ph-img" style="border-radius:24px;" src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80" alt="Guests raising a toast with wine glasses during a private celebration at EATO">
+    <div style="padding-left: 12px; padding-right: 12px; padding-top: 8px; padding-bottom: 8px; left: 935px; top: 578px; position: absolute; background: white; box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.12); border-radius: 12px; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
+      <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+        <div style="width: 8.93px; height: 5.48px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 8.93px; height: 5.48px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 7.58px; height: 8.76px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 7.58px; height: 8.76px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 7.58px; height: 8.76px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 7.58px; height: 8.76px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.46px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.46px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.67px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.67px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.67px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.67px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 8.93px; height: 5.48px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 8.93px; height: 5.48px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 7.58px; height: 8.76px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 7.58px; height: 8.76px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 7.58px; height: 8.76px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 7.58px; height: 8.76px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.46px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.46px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.67px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.67px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.67px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.67px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 8.93px; height: 5.48px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 8.93px; height: 5.48px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 7.58px; height: 8.76px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 7.58px; height: 8.76px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 7.58px; height: 8.76px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 7.58px; height: 8.76px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.46px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.46px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.67px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.67px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.67px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
+        <div style="width: 2.46px; height: 2.67px; outline: 1px var(--Red, #C31E26) solid; outline-offset: -0.50px"></div>
       </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section-bg-rust section-glow" aria-labelledby="res-faq-heading">
-    <div class="container">
-      <div class="section-head">
-        <h2 id="res-faq-heading" data-vi="Giải Đáp Mọi Thắc Mắc, Tận Hưởng Trải Nghiệm Trọn Vẹn!" data-en="Your Questions Answered, Enjoy a Seamless Experience!">Giải Đáp Mọi Thắc Mắc, Tận Hưởng Trải Nghiệm Trọn Vẹn!</h2>
-        <div>
-          <p style="margin-bottom:16px;" data-vi="Khám phá phần Câu Hỏi Thường Gặp để tìm câu trả lời cho các thắc mắc phổ biến, đảm bảo trải nghiệm ẩm thực suôn sẻ và trọn vẹn cho mọi thực khách." data-en="Explore our FAQs to find answers to common inquiries, ensuring a smooth and enjoyable dining experience for all our guests.">Khám phá phần Câu Hỏi Thường Gặp để tìm câu trả lời cho các thắc mắc phổ biến, đảm bảo trải nghiệm ẩm thực suôn sẻ và trọn vẹn cho mọi thực khách.</p>
-          <a class="btn btn-outline" href="faq.html" data-vi="Xem Thêm" data-en="See More">Xem Thêm</a>
-        </div>
-      </div>
-      <div class="split-media-content">
-        <div class="accordion" id="res-faq">
-          <div class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="rf-t1" aria-expanded="true" aria-controls="rf-p1">
-                <span data-vi="Nhà hàng mở cửa vào những giờ nào?" data-en="What are your restaurant's hours of operation?">Nhà hàng mở cửa vào những giờ nào?</span>
-                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="rf-p1" role="region" aria-labelledby="rf-t1">
-              <div class="accordion-panel-inner" data-vi="Nhà hàng chúng tôi mở cửa từ Thứ Hai đến Chủ Nhật, từ 11:00 đến 22:00." data-en="Our restaurant is open Monday to Sunday from 11:00 AM to 10:00 PM.">Nhà hàng chúng tôi mở cửa từ Thứ Hai đến Chủ Nhật, từ 11:00 đến 22:00.</div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="rf-t2" aria-expanded="false" aria-controls="rf-p2">
-                <span data-vi="Tôi có cần đặt bàn trước khi đến dùng bữa không?" data-en="Do I need a reservation to dine?">Tôi có cần đặt bàn trước khi đến dùng bữa không?</span>
-                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="rf-p2" role="region" aria-labelledby="rf-t2">
-              <div class="accordion-panel-inner" data-vi="Chúng tôi luôn chào đón khách vãng lai, nhưng khuyến khích đặt bàn trước vào cuối tuần và buổi tối để đảm bảo có chỗ." data-en="Walk-ins are always welcome, but we recommend booking ahead for weekends and evenings to guarantee your table.">Chúng tôi luôn chào đón khách vãng lai, nhưng khuyến khích đặt bàn trước vào cuối tuần và buổi tối để đảm bảo có chỗ.</div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="rf-t3" aria-expanded="false" aria-controls="rf-p3">
-                <span data-vi="Tôi có thể thay đổi đặt bàn sau khi đã đặt không?" data-en="Can I modify my reservation after booking?">Tôi có thể thay đổi đặt bàn sau khi đã đặt không?</span>
-                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="rf-p3" role="region" aria-labelledby="rf-t3">
-              <div class="accordion-panel-inner" data-vi="Có — vui lòng liên hệ với chúng tôi ít nhất 2 giờ trước giờ đặt bàn và chúng tôi sẽ hỗ trợ điều chỉnh." data-en="Yes — contact us at least 2 hours before your reservation time and we'll be happy to adjust it.">Có — vui lòng liên hệ với chúng tôi ít nhất 2 giờ trước giờ đặt bàn và chúng tôi sẽ hỗ trợ điều chỉnh.</div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="rf-t4" aria-expanded="false" aria-controls="rf-p4">
-                <span data-vi="Nhà hàng có dịch vụ mang đi hoặc giao hàng không?" data-en="Do you offer takeout or delivery services?">Nhà hàng có dịch vụ mang đi hoặc giao hàng không?</span>
-                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="rf-p4" role="region" aria-labelledby="rf-t4">
-              <div class="accordion-panel-inner" data-vi="Có, chúng tôi có dịch vụ mang đi tại chỗ và hợp tác với các nền tảng giao hàng lớn." data-en="Yes, takeout is available in-house and we partner with major delivery platforms for delivery orders.">Có, chúng tôi có dịch vụ mang đi tại chỗ và hợp tác với các nền tảng giao hàng lớn.</div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="rf-t5" aria-expanded="false" aria-controls="rf-p5">
-                <span data-vi="Nhà hàng có món chay hoặc không chứa gluten không?" data-en="Are there vegetarian or gluten-free options available?">Nhà hàng có món chay hoặc không chứa gluten không?</span>
-                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="rf-p5" role="region" aria-labelledby="rf-t5">
-              <div class="accordion-panel-inner" data-vi="Chắc chắn rồi — thực đơn của chúng tôi có ghi chú rõ ràng các món chay, thuần chay và không chứa gluten." data-en="Absolutely — our menu is clearly marked with vegetarian, vegan, and gluten-free choices.">Chắc chắn rồi — thực đơn của chúng tôi có ghi chú rõ ràng các món chay, thuần chay và không chứa gluten.</div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="rf-t6" aria-expanded="false" aria-controls="rf-p6">
-                <span data-vi="Tôi có thể tổ chức sự kiện riêng tại nhà hàng không?" data-en="Can I host a private event at your restaurant?">Tôi có thể tổ chức sự kiện riêng tại nhà hàng không?</span>
-                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="rf-p6" role="region" aria-labelledby="rf-t6">
-              <div class="accordion-panel-inner" data-vi="Có — phòng tiệc riêng của chúng tôi có thể phục vụ tới 40 khách cho các buổi kỷ niệm, sự kiện doanh nghiệp và nhiều hơn nữa." data-en="Yes — our private dining room accommodates up to 40 guests for celebrations, corporate events, and more.">Có — phòng tiệc riêng của chúng tôi có thể phục vụ tới 40 khách cho các buổi kỷ niệm, sự kiện doanh nghiệp và nhiều hơn nữa.</div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="rf-t7" aria-expanded="false" aria-controls="rf-p7">
-                <span data-vi="Nhà hàng có hỗ trợ các yêu cầu cho dịp kỷ niệm không?" data-en="Do you accommodate requests for celebrations?">Nhà hàng có hỗ trợ các yêu cầu cho dịp kỷ niệm không?</span>
-                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="rf-p7" role="region" aria-labelledby="rf-t7">
-              <div class="accordion-panel-inner" data-vi="Tất nhiên rồi — hãy cho chúng tôi biết trước và chúng tôi sẽ chuẩn bị bánh theo yêu cầu, trang trí hoặc thực đơn đặc biệt cho dịp của bạn." data-en="Of course — let us know in advance and we'll arrange a custom cake, decorations, or a special menu for your occasion.">Tất nhiên rồi — hãy cho chúng tôi biết trước và chúng tôi sẽ chuẩn bị bánh theo yêu cầu, trang trí hoặc thực đơn đặc biệt cho dịp của bạn.</div>
-            </div>
-          </div>
-        </div>
-        <img loading="lazy" class="ph-img hide-mobile" style="border-radius:24px;" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80" alt="Elegant table setting with wine glasses ready for reserved guests at EATO">
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonial quote -->
-  <section class="section-bg-dark quote-section" aria-labelledby="quote-heading">
-    <div class="container">
-      <span class="quote-mark" aria-hidden="true">&#8220;</span>
-      <h2 id="quote-heading" class="quote-text" data-vi="Đồ ăn thực sự xuất sắc, và dịch vụ thì tuyệt vời! Từng chi tiết nhỏ đều góp phần tạo nên một buổi tối khó quên. Không thể chờ để quay lại trải nghiệm thêm lần nữa." data-en="The food was absolutely outstanding, and the service was exceptional! Every detail contributed to an unforgettable evening. Can't wait to return for another amazing experience.">Đồ ăn thực sự xuất sắc, và dịch vụ thì tuyệt vời! Từng chi tiết nhỏ đều góp phần tạo nên một buổi tối khó quên. Không thể chờ để quay lại trải nghiệm thêm lần nữa.</h2>
-      <div class="carousel" data-carousel data-per-view="1" data-carousel-label="Guest testimonials">
-        <div class="carousel-viewport">
-          <ul class="carousel-track" style="justify-content:center; width:100%;">
-            <li style="list-style:none;">
-              <div class="avatar-row">
-                <img loading="lazy" class="avatar-side" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=220&q=80" alt="Portrait of a previous EATO guest">
-                <img loading="lazy" class="avatar-active" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=320&q=80" alt="Portrait of Sarah Hamilton, EATO guest">
-                <img loading="lazy" class="avatar-side" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=220&q=80" alt="Portrait of a following EATO guest">
-              </div>
-              <p class="avatar-caption">Sarah Hamilton</p>
-            </li>
-          </ul>
-        </div>
-        <div class="carousel-controls controls-center">
-          <button class="btn-icon" type="button" data-carousel-prev aria-label="Previous testimonial" style="border-color:#3a3a3a; color:#fff;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          </button>
-          <button class="btn-icon" type="button" data-carousel-next aria-label="Next testimonial" style="border-color:#3a3a3a; color:#fff;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer" id="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-about">
-        <a class="brand" href="index.html" aria-label="EATO — go to homepage" style="color:#fff;">
-          <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
-          EATO
-        </a>
-        <p data-vi="Chúng tôi mang đến giá trị thực sự — nhiều hương vị hơn, nhiều khoảnh khắc hơn và nhiều lý do hơn để bạn quay lại thưởng thức một bữa ăn khó quên." data-en="We drive real results — more flavor, more moments, and more reasons to come back for another unforgettable meal.">Chúng tôi mang đến giá trị thực sự — nhiều hương vị hơn, nhiều khoảnh khắc hơn và nhiều lý do hơn để bạn quay lại thưởng thức một bữa ăn khó quên.</p>
-        <form data-validate aria-label="Newsletter signup" data-success-message-vi="Cảm ơn — bạn đã đăng ký nhận ưu đãi và cập nhật độc quyền!" data-success-message-en="Thanks — you're subscribed for exclusive offers and updates!">
-          <div class="field newsletter-field">
-            <label class="sr-only" for="newsletter-email" data-vi="Địa chỉ email" data-en="Email address">Địa chỉ email</label>
-            <div class="newsletter-form">
-              <input type="email" id="newsletter-email" name="email" placeholder="Nhập địa chỉ email của bạn" data-vi-placeholder="Nhập địa chỉ email của bạn" data-en-placeholder="Enter your email address" data-rules="required email" data-error-email-vi="Vui lòng nhập địa chỉ email hợp lệ." data-error-email-en="Please enter a valid email address.">
-              <button class="btn-icon" type="submit" aria-label="Subscribe to newsletter">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </button>
-            </div>
-            <span class="error-message" role="alert"></span>
-          </div>
-          <p class="form-status" role="status" aria-live="polite"></p>
-        </form>
-        <p style="margin-top:24px; color:#b8b8b8;">123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</p>
-        <ul class="footer-social" style="margin-top:16px; list-style:none; padding:0;">
-          <li><a class="btn-icon" href="#" aria-label="EATO on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-3.5-.8-3-1.2-4.9-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.4 1.5 2.7 1.7.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.6.8 1.9 1 .3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg></a></li>
-          <li><a class="btn-icon" href="#" aria-label="EATO on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/></svg></a></li>
-          <li><a class="btn-icon" href="#" aria-label="EATO on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg></a></li>
-          <li><a class="btn-icon" href="#" aria-label="EATO on Twitter"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M4 4l7.5 9.1L4.3 20H6l6-6.7L16.7 20H20l-8-9.7L19.4 4H17.7l-5.6 6.2L7.3 4z"/></svg></a></li>
-        </ul>
-      </div>
-      <nav class="footer-col" aria-label="Explore">
-        <h3 data-vi="Khám Phá" data-en="Explore">Khám Phá</h3>
-        <ul>
-          <li><a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a></li>
-          <li><a href="menu.html" data-vi="Thực đơn" data-en="Menu">Thực đơn</a></li>
-          <li><a href="gallery.html" data-vi="Thư viện ảnh" data-en="Gallery">Thư viện ảnh</a></li>
-          <li><a href="blog.html" data-vi="Blog &amp; Kiến Thức" data-en="Blog &amp; Insights">Blog &amp; Kiến Thức</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-col" aria-label="About">
-        <h3 data-vi="Giới Thiệu" data-en="About">Giới Thiệu</h3>
-        <ul>
-          <li><a href="about.html" data-vi="Về chúng tôi" data-en="About Us">Về chúng tôi</a></li>
-          <li><a href="events.html" data-vi="Sự Kiện &amp; Tiệc Riêng" data-en="Events &amp; Private Dining">Sự Kiện &amp; Tiệc Riêng</a></li>
-          <li><a href="reviews.html" data-vi="Đánh Giá Khách Hàng" data-en="Customer Reviews">Đánh Giá Khách Hàng</a></li>
-          <li><a href="offers.html" data-vi="Ưu Đãi Đặc Biệt" data-en="Special Offers">Ưu Đãi Đặc Biệt</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-col" aria-label="Support">
-        <h3 data-vi="Hỗ Trợ" data-en="Support">Hỗ Trợ</h3>
-        <ul>
-          <li><a href="reservation.html" aria-current="page" data-vi="Đặt Bàn" data-en="Reservation">Đặt Bàn</a></li>
-          <li><a href="faq.html" data-vi="Câu Hỏi Thường Gặp" data-en="FAQ">Câu Hỏi Thường Gặp</a></li>
-          <li><a href="contact.html" data-vi="Liên Hệ" data-en="Contact Us">Liên Hệ</a></li>
-          <li><a href="countdown.html" data-vi="Ưu Đãi Có Hạn" data-en="Limited-Time Offer">Ưu Đãi Có Hạn</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Eato. <span data-vi="Bảo lưu mọi quyền." data-en="All rights reserved.">Bảo lưu mọi quyền.</span></p>
-      <div class="legal-links">
-        <a href="#" data-vi="Chính Sách Bảo Mật" data-en="Privacy Policy">Chính Sách Bảo Mật</a>
-        <a href="#" data-vi="Điều Khoản Dịch Vụ" data-en="Terms of Service">Điều Khoản Dịch Vụ</a>
-      </div>
+      <div style="align-self: stretch; color: #070707; font-size: 18px; font-family: Inter Tight; font-weight: 500; line-height: 26px; word-wrap: break-word">Michelin Star</div>
     </div>
   </div>
-</footer>
-
+  <div style="align-self: stretch; height: 1407px; position: relative; background: #070707; overflow: hidden">
+    <div style="width: 2015px; height: 1433px; left: -250px; top: -13px; position: absolute; overflow: hidden">
+      <div style="width: 857px; height: 714px; left: 580px; top: 360px; position: absolute; background: rgba(195, 30, 38, 0.50); box-shadow: 576px 576px 576px; border-radius: 9999px; filter: blur(288px)"></div>
+    </div>
+    <div style="left: 307px; top: 60px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 12px; display: inline-flex">
+      <div style="width: 802px; text-align: center; color: white; font-size: 48px; font-family: Inter Tight; font-weight: 600; line-height: 56px; word-wrap: break-word">Secure Your Spot, Indulge in <br/>Culinary Delights</div>
+      <div style="width: 492px; text-align: center; color: white; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">Make a reservation today to experience exquisite dishes, attentive service, and a welcoming atmosphere perfect for any occasion.</div>
+    </div>
+    <div style="width: 1277px; padding: 24px; left: 82px; top: 284px; position: absolute; background: rgba(255, 255, 255, 0.12); border-radius: 24px; flex-direction: column; justify-content: center; align-items: center; gap: 40px; display: inline-flex">
+      <div style="align-self: stretch; height: 939px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+        <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 20px; display: inline-flex">
+          <div style="width: 604px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
+            <div style="align-self: stretch; color: white; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">Full Name</div>
+            <div style="width: 606px; padding: 24px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+              <div style="text-align: center; color: white; font-size: 18px; font-family: Inter Tight; font-weight: 500; line-height: 26px; word-wrap: break-word">Darlene Robetson</div>
+            </div>
+          </div>
+          <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
+            <div style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex; flex-wrap: wrap; align-content: flex-start">
+              <div style="color: white; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">Email Address</div>
+              <div style="width: 606px; padding: 24px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; justify-content: flex-start; align-items: center; gap: 8px; display: flex">
+                <div style="text-align: center; color: white; font-size: 18px; font-family: Inter Tight; font-weight: 500; line-height: 26px; word-wrap: break-word">Darlenerobert@mail.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 20px; display: inline-flex">
+          <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
+            <div style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex; flex-wrap: wrap; align-content: flex-start">
+              <div style="color: white; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">Number of Guests</div>
+              <div style="width: 606px; padding: 24px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; justify-content: space-between; align-items: center; display: flex">
+                <div style="text-align: center; color: white; font-size: 18px; font-family: Inter Tight; font-weight: 500; line-height: 26px; word-wrap: break-word">4 Person</div>
+                <div style="width: 24px; height: 24px; position: relative">
+                  <div style="width: 8px; height: 4px; left: 8px; top: 10px; position: absolute; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+                  <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
+            <div style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex; flex-wrap: wrap; align-content: flex-start">
+              <div style="color: white; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">Time of Reservation</div>
+              <div style="width: 606px; padding: 24px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; justify-content: space-between; align-items: center; display: flex">
+                <div style="text-align: center; color: white; font-size: 18px; font-family: Inter Tight; font-weight: 500; line-height: 26px; word-wrap: break-word">11 : 00 PM</div>
+                <div style="width: 24px; height: 24px; position: relative">
+                  <div style="width: 8px; height: 4px; left: 8px; top: 10px; position: absolute; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+                  <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="align-self: stretch; position: relative; justify-content: flex-start; align-items: flex-start; gap: 20px; display: inline-flex">
+          <div style="width: 608px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
+            <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: flex">
+              <div style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex; flex-wrap: wrap; align-content: flex-start">
+                <div style="color: white; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">Preferred date/time</div>
+                <div style="width: 606px; padding: 24px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; justify-content: space-between; align-items: center; display: flex">
+                  <div style="text-align: center; color: white; font-size: 18px; font-family: Inter Tight; font-weight: 500; line-height: 26px; word-wrap: break-word">25 January 2025</div>
+                  <div style="width: 24px; height: 24px; position: relative">
+                    <div style="width: 24.01px; height: 24.01px; left: 0px; top: -0.01px; position: absolute"></div>
+                    <div style="width: 1px; height: 3px; left: 7px; top: 3px; position: absolute; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+                    <div style="width: 1px; height: 3px; left: 16px; top: 3px; position: absolute; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+                    <div style="width: 18.01px; height: 16.51px; left: 3px; top: 4.50px; position: absolute; border-radius: 3px; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+                    <div style="width: 5.50px; height: 1px; left: 7.50px; top: 15.50px; position: absolute; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+                    <div style="width: 1px; height: 1px; left: 15.88px; top: 15.50px; position: absolute; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+                    <div style="width: 5.63px; height: 1px; left: 10.88px; top: 11.50px; position: absolute; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+                    <div style="width: 1px; height: 1px; left: 7.12px; top: 11.50px; position: absolute; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="align-self: stretch; height: 468.22px; padding-top: 11.26px; background: var(--Red, #C31E26); overflow: hidden; border-radius: 12px; outline: 1px #464646 solid; outline-offset: -1px; flex-direction: column; justify-content: space-between; align-items: center; display: flex">
+              <div style="justify-content: flex-start; align-items: center; gap: 37.52px; display: inline-flex">
+                <div style="width: 37.52px; height: 37.52px; position: relative; background: var(--Green-dental-muda, #E2F6F1); border-radius: 7.50px; outline: 0.94px var(--Gray-Stroke, #EBEBEB) solid; outline-offset: -0.94px">
+                  <div style="width: 6.25px; height: 12.51px; left: 15.63px; top: 12.51px; position: absolute; outline: 2.24px var(--Red, #C31E26) solid; outline-offset: -1.12px"></div>
+                  <div style="width: 37.52px; height: 37.52px; left: 0px; top: 0px; position: absolute"></div>
+                </div>
+                <div style="color: white; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">February 2025</div>
+                <div style="width: 37.52px; height: 37.52px; position: relative; transform: rotate(-180deg); transform-origin: top left; background: var(--Green-dental-muda, #E2F6F1); border-radius: 7.50px; outline: 0.94px var(--Gray-Stroke, #EBEBEB) solid; outline-offset: -0.94px">
+                  <div style="width: 6.25px; height: 12.51px; left: 15.63px; top: 12.51px; position: absolute; outline: 2.24px var(--Red, #C31E26) solid; outline-offset: -1.12px"></div>
+                  <div style="width: 37.52px; height: 37.52px; left: 0px; top: 0px; position: absolute"></div>
+                </div>
+              </div>
+              <div style="align-self: stretch; background: #252525; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 14.01px; display: flex">
+                <div style="width: 606px; justify-content: center; align-items: center; gap: 12.26px; display: inline-flex">
+                  <div style="padding-left: 17.51px; padding-right: 17.51px; padding-top: 14.01px; padding-bottom: 14.01px; justify-content: center; align-items: center; gap: 14.01px; display: flex">
+                    <div style="color: white; font-size: 16px; font-family: Inter Tight; font-weight: 500; line-height: 24px; word-wrap: break-word">Sun</div>
+                  </div>
+                  <div style="width: 75.31px; padding-left: 15.76px; padding-right: 15.76px; padding-top: 14.01px; padding-bottom: 14.01px; justify-content: center; align-items: center; gap: 14.01px; display: flex">
+                    <div style="color: white; font-size: 16px; font-family: Inter Tight; font-weight: 500; line-height: 24px; word-wrap: break-word">Mon</div>
+                  </div>
+                  <div style="width: 75.31px; padding-left: 19.27px; padding-right: 19.27px; padding-top: 14.01px; padding-bottom: 14.01px; justify-content: center; align-items: center; gap: 14.01px; display: flex">
+                    <div style="color: white; font-size: 16px; font-family: Inter Tight; font-weight: 500; line-height: 24px; word-wrap: break-word">Tue</div>
+                  </div>
+                  <div style="padding: 14.01px; justify-content: center; align-items: center; gap: 14.01px; display: flex">
+                    <div style="color: white; font-size: 16px; font-family: Inter Tight; font-weight: 500; line-height: 24px; word-wrap: break-word">Wed</div>
+                  </div>
+                  <div style="padding-left: 17.51px; padding-right: 17.51px; padding-top: 14.01px; padding-bottom: 14.01px; justify-content: center; align-items: center; gap: 14.01px; display: flex">
+                    <div style="color: white; font-size: 16px; font-family: Inter Tight; font-weight: 500; line-height: 24px; word-wrap: break-word">Thu</div>
+                  </div>
+                  <div style="padding-left: 24.52px; padding-right: 24.52px; padding-top: 14.01px; padding-bottom: 14.01px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                    <div style="align-self: stretch; color: white; font-size: 16px; font-family: Inter Tight; font-weight: 500; line-height: 24px; word-wrap: break-word">Fri</div>
+                  </div>
+                  <div style="width: 75.31px; padding-left: 21.02px; padding-right: 21.02px; padding-top: 14.01px; padding-bottom: 14.01px; justify-content: center; align-items: center; gap: 14.01px; display: flex">
+                    <div style="color: white; font-size: 16px; font-family: Inter Tight; font-weight: 500; line-height: 24px; word-wrap: break-word">Sat</div>
+                  </div>
+                </div>
+                <div style="flex-direction: column; justify-content: center; align-items: center; gap: 21.02px; display: flex">
+                  <div style="width: 606px; justify-content: space-between; align-items: center; display: inline-flex">
+                    <div style="width: 75.31px; padding-left: 24.52px; padding-right: 24.52px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">31</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 31.53px; padding-right: 31.53px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">1</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 31.53px; padding-right: 31.53px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">2</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 31.53px; padding-right: 31.53px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">3</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 31.53px; padding-right: 31.53px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">4</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 31.53px; padding-right: 31.53px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">5</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 31.53px; padding-right: 31.53px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">6</div>
+                    </div>
+                  </div>
+                  <div style="width: 606px; height: 50.79px; position: relative">
+                    <div style="width: 75.31px; padding-left: 31.53px; padding-right: 31.53px; padding-top: 12.26px; padding-bottom: 12.26px; left: 0px; top: 0px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">7</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 31.53px; padding-right: 31.53px; padding-top: 12.26px; padding-bottom: 12.26px; left: 87.57px; top: 0px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">8</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 31.53px; padding-right: 31.53px; padding-top: 12.26px; padding-bottom: 12.26px; left: 175.15px; top: 0px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">9</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 26.27px; padding-right: 26.27px; padding-top: 12.26px; padding-bottom: 12.26px; left: 262.72px; top: 0px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">10</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 26.27px; padding-right: 26.27px; padding-top: 12.26px; padding-bottom: 12.26px; left: 350.29px; top: 0px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">11</div>
+                    </div>
+                    <div style="width: 52.41px; padding: 14.01px; left: 448.38px; top: -1.75px; position: absolute; box-shadow: 7.0057806968688965px 3.5028903484344482px 7.0057806968688965px rgba(27, 32, 19, 0.03); border-radius: 66.82px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">12</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 26.27px; padding-right: 26.27px; padding-top: 12.26px; padding-bottom: 12.26px; left: 525.44px; top: 0px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">13</div>
+                    </div>
+                  </div>
+                  <div style="width: 606px; border-radius: 7.01px; justify-content: space-between; align-items: center; display: inline-flex">
+                    <div style="width: 75.31px; padding-left: 26.27px; padding-right: 26.27px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">14</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 26.27px; padding-right: 26.27px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">15</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 26.27px; padding-right: 26.27px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">16</div>
+                    </div>
+                    <div style="padding-left: 26.27px; padding-right: 26.27px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">17</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 24.52px; padding-right: 24.52px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; text-align: center; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">18</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 24.52px; padding-right: 24.52px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; text-align: center; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">19</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 26.27px; padding-right: 26.27px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">20</div>
+                    </div>
+                  </div>
+                  <div style="width: 606px; justify-content: space-between; align-items: center; display: inline-flex">
+                    <div style="width: 75.31px; padding-left: 26.27px; padding-right: 26.27px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">21</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 26.27px; padding-right: 26.27px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">22</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 22.77px; padding-right: 22.77px; padding-top: 12.26px; padding-bottom: 12.26px; justify-content: center; align-items: center; gap: 14.01px; display: flex">
+                      <div style="color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">23</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 26.27px; padding-right: 26.27px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">24</div>
+                    </div>
+                    <div style="width: 52.41px; padding: 14.01px; background: var(--Yellow, #FFCD51); box-shadow: 7.0057806968688965px 3.5028903484344482px 7.0057806968688965px rgba(27, 32, 19, 0.03); border-radius: 66.82px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="color: #1A1A1A; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">25</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 26.27px; padding-right: 26.27px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">26</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 24.52px; padding-right: 24.52px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="width: 28.02px; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">27</div>
+                    </div>
+                  </div>
+                  <div style="width: 606px; justify-content: center; align-items: center; gap: 12.26px; display: inline-flex">
+                    <div style="width: 75.31px; padding-left: 26.27px; padding-right: 26.27px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">28</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 24.52px; padding-right: 24.52px; padding-top: 12.26px; padding-bottom: 12.26px; justify-content: center; align-items: center; gap: 14.01px; display: flex">
+                      <div style="color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">29</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 26.27px; padding-right: 26.27px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">30</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 33.28px; padding-right: 33.28px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">1</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 31.53px; padding-right: 31.53px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">2</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 31.53px; padding-right: 31.53px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">3</div>
+                    </div>
+                    <div style="width: 75.31px; padding-left: 31.53px; padding-right: 31.53px; padding-top: 12.26px; padding-bottom: 12.26px; flex-direction: column; justify-content: center; align-items: center; gap: 14.01px; display: inline-flex">
+                      <div style="align-self: stretch; color: white; font-size: 16.89px; font-family: Manrope; font-weight: 500; line-height: 24.39px; word-wrap: break-word">4</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
+            <div style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex; flex-wrap: wrap; align-content: flex-start">
+              <div style="color: white; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">Special Requests (Optional)</div>
+              <div style="width: 606px; padding: 24px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; justify-content: space-between; align-items: center; display: flex">
+                <div style="text-align: center; color: white; font-size: 18px; font-family: Inter Tight; font-weight: 500; line-height: 26px; word-wrap: break-word">Dietary Restrictions</div>
+                <div style="width: 24px; height: 24px; position: relative">
+                  <div style="width: 8px; height: 4px; left: 8px; top: 10px; position: absolute; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+                  <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="width: 604px; left: 634px; top: 132px; position: absolute; border-radius: 12px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
+            <div style="align-self: stretch; color: white; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">Additional Notes</div>
+            <div style="align-self: stretch; height: 367px; padding: 24px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; justify-content: flex-start; align-items: flex-start; gap: 8px; display: inline-flex">
+              <div style="color: white; font-size: 18px; font-family: SF Pro Display; font-weight: 400; line-height: 26px; word-wrap: break-word">Any other comments or requests</div>
+            </div>
+          </div>
+        </div>
+        <div style="width: 506px; left: 628px; top: 848px; position: absolute; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex">
+          <div style="width: 32px; height: 32px; position: relative">
+            <div style="width: 32px; height: 32px; left: 0px; top: 0px; position: absolute"></div>
+            <div style="width: 21.33px; height: 21.33px; left: 5.33px; top: 5.33px; position: absolute; background: var(--Red, #C31E26)"></div>
+            <div style="width: 10.67px; height: 6.67px; left: 10.67px; top: 13.33px; position: absolute; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+          </div>
+          <div style="color: white; font-size: 16px; font-family: Inter Tight; font-weight: 400; line-height: 24px; word-wrap: break-word">I confirm my reservation and agree to the restaurant's policies.</div>
+        </div>
+      </div>
+      <div style="height: 44px; padding-left: 24px; padding-right: 24px; padding-top: 8px; padding-bottom: 8px; background: #B44509; border-radius: 8px; justify-content: center; align-items: center; gap: 4px; display: inline-flex">
+        <div style="width: 82px; text-align: center; color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Reserve Now</div>
+      </div>
+    </div>
+  </div>
+  <div style="align-self: stretch; height: 576px; position: relative; background: var(--Red, #C31E26); overflow: hidden">
+    <div style="width: 626px; left: 82px; top: 130px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 27px; display: inline-flex">
+      <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+        <div style="padding-left: 24px; padding-right: 24px; padding-top: 8px; padding-bottom: 8px; background: rgba(255, 255, 255, 0.12); box-shadow: 0px 0px 4px 1px rgba(255, 255, 255, 0.14) inset; overflow: hidden; border-radius: 56px; backdrop-filter: blur(2px); justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+          <div style="text-align: center; color: #EBEBEB; font-size: 18px; font-family: Inter Tight; font-weight: 400; line-height: 26px; word-wrap: break-word">Events & Private Dining</div>
+        </div>
+        <div style="width: 611px; color: white; font-size: 32px; font-family: Roboto; font-weight: 600; line-height: 40px; word-wrap: break-word">Join us in celebrating life’s special moments with exceptional food and unforgettable experiences together!</div>
+      </div>
+      <div style="align-self: stretch; color: white; font-size: 14px; font-family: Inter Tight; font-weight: 400; line-height: 20px; word-wrap: break-word">Whether it’s a birthday, anniversary, corporate gathering, or any special occasion, our restaurant offers the perfect setting for your event</div>
+      <div style="padding-left: 24px; padding-right: 24px; padding-top: 8px; padding-bottom: 8px; background: var(--Color, #FFC62B); border-radius: 8px; justify-content: center; align-items: center; gap: 4px; display: inline-flex">
+        <div style="width: 82px; text-align: center; color: var(--Red, #C31E26); font-size: 14px; font-family: Roboto; font-weight: 500; line-height: 20px; word-wrap: break-word">See More</div>
+      </div>
+    </div>
+    <img style="width: 717px; height: 576px; left: 730px; top: 0px; position: absolute" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=717&h=576&fit=crop&q=80" />
+  </div>
+  <div style="width: 1440px; height: 1024px; position: relative; background: #B44509; overflow: hidden">
+    <div style="width: 651px; height: 651px; left: 978px; top: 558px; position: absolute; background: rgba(255, 255, 255, 0.12); border-radius: 9999px"></div>
+    <div style="width: 651px; height: 651px; left: -180px; top: -167px; position: absolute; background: rgba(255, 255, 255, 0.12); border-radius: 9999px"></div>
+    <div style="width: 1280px; left: 80px; top: 104.01px; position: absolute; justify-content: flex-start; align-items: center; gap: 93px; display: inline-flex">
+      <div style="width: 781px; color: white; font-size: 48px; font-family: Inter Tight; font-weight: 600; line-height: 56px; word-wrap: break-word">Your Questions Answered, Enjoy a Seamless Experience!</div>
+      <div style="width: 406px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 14px; display: inline-flex">
+        <div style="align-self: stretch; color: white; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">Explore our FAQs to find answers to common inquiries, ensuring a smooth and enjoyable dining experience for all our guests</div>
+        <div style="height: 44px; padding-left: 24px; padding-right: 24px; padding-top: 8px; padding-bottom: 8px; background: var(--Red, #C31E26); border-radius: 8px; justify-content: center; align-items: center; gap: 4px; display: inline-flex">
+          <div style="width: 82px; text-align: center; color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">See More</div>
+        </div>
+      </div>
+    </div>
+    <div style="width: 627px; left: 80px; top: 276.01px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
+      <div style="align-self: stretch; padding: 14px; background: rgba(255, 255, 255, 0.42); box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08); border-radius: 12px; outline: 1px white solid; outline-offset: -1px; justify-content: space-between; align-items: center; display: inline-flex">
+        <div style="width: 555px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
+          <div style="align-self: stretch; color: black; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">What are your restaurant’s hours of operation?</div>
+          <div style="align-self: stretch; color: black; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">Our restaurant is open Monday to Sunday from 11:00 AM to 10:00 PM.</div>
+        </div>
+        <div style="width: 40px; height: 40px; background: var(--Red, #C31E26); border-radius: 32px; justify-content: center; align-items: center; gap: 4px; display: flex">
+          <div style="width: 8px; height: 4px; outline: 1.50px var(--Green-dental-muda, #E2F6F1) solid; outline-offset: -0.75px"></div>
+          <div style="width: 24px; height: 24px"></div>
+        </div>
+      </div>
+      <div style="align-self: stretch; padding: 14px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; outline: 1px white solid; outline-offset: -1px; justify-content: space-between; align-items: center; display: inline-flex">
+        <div style="width: 555px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
+          <div style="align-self: stretch; color: black; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">Do I need a reservation to dine?</div>
+        </div>
+        <div style="width: 40px; height: 40px; transform: rotate(-180deg); transform-origin: top left; background: white; border-radius: 32px; justify-content: center; align-items: center; gap: 4px; display: flex">
+          <div style="width: 8px; height: 4px; outline: 1.50px #1B1B1B solid; outline-offset: -0.75px"></div>
+          <div style="width: 24px; height: 24px"></div>
+        </div>
+      </div>
+      <div style="align-self: stretch; padding: 14px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; outline: 1px white solid; outline-offset: -1px; justify-content: space-between; align-items: center; display: inline-flex">
+        <div style="width: 555px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
+          <div style="align-self: stretch; color: black; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">Can I modify my reservation after booking?</div>
+        </div>
+        <div style="width: 40px; height: 40px; transform: rotate(-180deg); transform-origin: top left; background: white; border-radius: 32px; justify-content: center; align-items: center; gap: 4px; display: flex">
+          <div style="width: 8px; height: 4px; outline: 1.50px #1B1B1B solid; outline-offset: -0.75px"></div>
+          <div style="width: 24px; height: 24px"></div>
+        </div>
+      </div>
+      <div style="align-self: stretch; padding: 14px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; outline: 1px white solid; outline-offset: -1px; justify-content: space-between; align-items: center; display: inline-flex">
+        <div style="width: 555px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
+          <div style="align-self: stretch; color: black; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word"> Do you offer takeout or delivery services?</div>
+        </div>
+        <div style="width: 40px; height: 40px; transform: rotate(-180deg); transform-origin: top left; background: white; border-radius: 32px; justify-content: center; align-items: center; gap: 4px; display: flex">
+          <div style="width: 8px; height: 4px; outline: 1.50px #1B1B1B solid; outline-offset: -0.75px"></div>
+          <div style="width: 24px; height: 24px"></div>
+        </div>
+      </div>
+      <div style="align-self: stretch; padding: 14px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; outline: 1px white solid; outline-offset: -1px; justify-content: space-between; align-items: center; display: inline-flex">
+        <div style="width: 555px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
+          <div style="align-self: stretch; color: black; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">Are there vegetarian or gluten-free available?</div>
+        </div>
+        <div style="width: 40px; height: 40px; transform: rotate(-180deg); transform-origin: top left; background: white; border-radius: 32px; justify-content: center; align-items: center; gap: 4px; display: flex">
+          <div style="width: 8px; height: 4px; outline: 1.50px #1B1B1B solid; outline-offset: -0.75px"></div>
+          <div style="width: 24px; height: 24px"></div>
+        </div>
+      </div>
+      <div style="align-self: stretch; padding: 14px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; outline: 1px white solid; outline-offset: -1px; justify-content: space-between; align-items: center; display: inline-flex">
+        <div style="width: 555px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
+          <div style="align-self: stretch; color: black; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">Can I host a private event at your restaurant?</div>
+        </div>
+        <div style="width: 40px; height: 40px; transform: rotate(-180deg); transform-origin: top left; background: white; border-radius: 32px; justify-content: center; align-items: center; gap: 4px; display: flex">
+          <div style="width: 8px; height: 4px; outline: 1.50px #1B1B1B solid; outline-offset: -0.75px"></div>
+          <div style="width: 24px; height: 24px"></div>
+        </div>
+      </div>
+      <div style="align-self: stretch; padding: 14px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; outline: 1px rgba(255, 255, 255, 0.30) solid; outline-offset: -1px; justify-content: space-between; align-items: center; display: inline-flex">
+        <div style="width: 555px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
+          <div style="align-self: stretch; color: black; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">Do you accommodate requests for celebrations?</div>
+        </div>
+        <div style="width: 40px; height: 40px; transform: rotate(-180deg); transform-origin: top left; background: white; border-radius: 32px; justify-content: center; align-items: center; gap: 4px; display: flex">
+          <div style="width: 8px; height: 4px; outline: 1.50px #1B1B1B solid; outline-offset: -0.75px"></div>
+          <div style="width: 24px; height: 24px"></div>
+        </div>
+      </div>
+    </div>
+    <img style="width: 679px; height: 780px; left: 761px; top: 244px; position: absolute" src="https://images.unsplash.com/photo-1544148103-0773bf10d330?w=679&h=780&fit=crop&q=80" />
+  </div>
+  <div style="align-self: stretch; height: 1024px; position: relative; background: #070707; overflow: hidden">
+    <div style="width: 1440px; height: 1024px; left: 0px; top: -32px; position: absolute; overflow: hidden">
+      <div style="width: 857px; height: 714px; left: -163px; top: -111px; position: absolute; background: rgba(195, 30, 38, 0.30); box-shadow: 576px 576px 576px; border-radius: 9999px; filter: blur(288px)"></div>
+    </div>
+    <div style="width: 1280px; left: 73px; top: 181px; position: absolute; text-align: center"><span style="color: var(--Color, #FFC62B); font-size: 48px; font-family: Roboto; font-weight: 700; line-height: 56px; word-wrap: break-word">THE FOOD WAS ABSOLUTELY OUTSTANDING, AND THE SERVICE WAS EXCEPTIONAL!</span><span style="color: white; font-size: 48px; font-family: Roboto; font-weight: 700; line-height: 56px; word-wrap: break-word"> EVERY DETAIL CONTRIBUTED TO AN UNFORGETTABLE EVENING. CAN’T WAIT TO RETURN ANOTHER AMAZING EXPERIENCE</span></div>
+    <div style="left: 80px; top: 64px; position: absolute; text-align: center; color: rgba(255, 198, 43, 0.50); font-size: 296px; font-family: Inclusive Sans; font-weight: 400; text-transform: uppercase; word-wrap: break-word">“</div>
+    <div style="left: 1353px; top: 522px; position: absolute; transform: rotate(-180deg); transform-origin: top left; text-align: center; color: rgba(255, 198, 43, 0.50); font-size: 296px; font-family: Inclusive Sans; font-weight: 400; text-transform: uppercase; word-wrap: break-word">“</div>
+    <img style="width: 280px; height: 280px; left: 872.49px; top: 509.68px; position: absolute; transform: rotate(7deg); transform-origin: top left" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=280&h=280&fit=crop&q=80" />
+    <img style="width: 280px; height: 280px; left: 273.68px; top: 536.49px; position: absolute; transform: rotate(-7deg); transform-origin: top left" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=280&h=280&fit=crop&q=80" />
+    <div style="left: 548.32px; top: 476px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: center; gap: 40px; display: inline-flex">
+      <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: center; gap: 14px; display: flex">
+        <img style="width: 355px; height: 346px" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=355&h=346&fit=crop&q=80" />
+        <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+          <div style="align-self: stretch; text-align: center; color: white; font-size: 24px; font-family: Roboto; font-weight: 500; line-height: 32px; word-wrap: break-word">    </div>
+        </div>
+      </div>
+      <div style="justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+        <div style="width: 48px; height: 48px; border-radius: 40px; outline: 1px white solid; outline-offset: -1px; justify-content: center; align-items: center; gap: 4px; display: flex">
+          <div style="width: 14px; height: 1px; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+          <div style="width: 5px; height: 5px; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+          <div style="width: 5px; height: 5px; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+          <div style="width: 24px; height: 24px"></div>
+        </div>
+        <div style="width: 48px; height: 48px; transform: rotate(-180deg); transform-origin: top left; border-radius: 40px; outline: 1px white solid; outline-offset: -1px; justify-content: center; align-items: center; gap: 4px; display: flex">
+          <div style="width: 14px; height: 1px; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+          <div style="width: 5px; height: 5px; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+          <div style="width: 5px; height: 5px; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+          <div style="width: 24px; height: 24px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="align-self: stretch; height: 548px; position: relative; background: #B44509; overflow: hidden">
+    <div style="width: 651px; height: 651px; left: -173px; top: -59px; position: absolute; background: rgba(255, 255, 255, 0.12); border-radius: 9999px"></div>
+    <div style="width: 651px; height: 651px; left: 935px; top: 549px; position: absolute; background: rgba(255, 255, 255, 0.12); border-radius: 9999px"></div>
+    <img style="width: 1527px; height: 1711px; left: 0px; top: -287px; position: absolute; border-radius: 12px" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1527&h=1711&fit=crop&q=80" />
+    <div style="width: 1380px; height: 484px; padding-left: 40px; padding-right: 40px; padding-top: 24px; padding-bottom: 24px; left: 32px; top: 32px; position: absolute; background: #070707; border-radius: 12px; justify-content: space-between; align-items: flex-start; display: inline-flex">
+      <div style="width: 255px; height: 436px; flex-direction: column; justify-content: space-between; align-items: flex-start; display: inline-flex">
+        <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+          <div style="height: 44px; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+            <div style="width: 32px; height: 32px; background: #B44509; border-radius: 36px; justify-content: center; align-items: center; gap: 4px; display: flex">
+              <div style="width: 24px; height: 24px; position: relative">
+                <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute"></div>
+                <div style="width: 7.59px; height: 7.59px; left: 3px; top: 13.41px; position: absolute; outline: 1.50px var(--Red, #C31E26) solid; outline-offset: -0.75px"></div>
+                <div style="width: 8.81px; height: 8.81px; left: 12.03px; top: 3px; position: absolute; outline: 1.50px var(--Red, #C31E26) solid; outline-offset: -0.75px"></div>
+                <div style="width: 2.84px; height: 2.84px; left: 16.23px; top: 4.77px; position: absolute; outline: 1.50px var(--Red, #C31E26) solid; outline-offset: -0.75px"></div>
+                <div style="width: 10.86px; height: 13.20px; left: 5.07px; top: 3.95px; position: absolute; outline: 1.50px var(--Red, #C31E26) solid; outline-offset: -0.75px"></div>
+                <div style="width: 3.54px; height: 3.54px; left: 14.46px; top: 5.84px; position: absolute; outline: 1.50px var(--Red, #C31E26) solid; outline-offset: -0.75px"></div>
+              </div>
+            </div>
+            <div style="padding-left: 4px; padding-right: 4px; padding-top: 6px; padding-bottom: 6px; overflow: hidden; justify-content: center; align-items: center; display: flex">
+              <div style="color: white; font-size: 24px; font-family: Inter Tight; font-weight: 700; line-height: 32px; word-wrap: break-word">EATO</div>
+            </div>
+          </div>
+          <div style="width: 257px; color: white; font-size: 16px; font-family: Inter Tight; font-weight: 500; line-height: 24px; word-wrap: break-word">We Drive Real Result, More Traffic, More Leads, more Growth!</div>
+        </div>
+        <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 84px; display: flex">
+          <div style="width: 356px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 14px; display: flex">
+            <div style="color: white; font-size: 16px; font-family: Inter Tight; font-weight: 500; line-height: 24px; word-wrap: break-word">Subscribe now for exclusive offers and the latest <br/>food updates!</div>
+            <div style="align-self: stretch; height: 44px; padding-left: 24px; padding-right: 24px; padding-top: 12px; padding-bottom: 12px; background: rgba(255, 255, 255, 0.12); border-radius: 8px; outline: 1px #EBEBEB solid; outline-offset: -1px; justify-content: flex-start; align-items: center; gap: 108px; display: inline-flex">
+              <div style="color: white; font-size: 16px; font-family: Inter Tight; font-weight: 500; line-height: 24px; word-wrap: break-word">Enter your Email Address</div>
+              <div style="width: 24px; height: 24px; position: relative">
+                <div style="width: 14px; height: 1px; left: 5px; top: 11.50px; position: absolute; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+                <div style="width: 5px; height: 5px; left: 14px; top: 12px; position: absolute; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+                <div style="width: 5px; height: 5px; left: 14px; top: 7px; position: absolute; outline: 1.50px white solid; outline-offset: -0.75px"></div>
+                <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute"></div>
+              </div>
+            </div>
+          </div>
+          <div style="justify-content: center; display: flex; flex-direction: column; color: white; font-size: 16px; font-family: Inter Tight; font-weight: 500; line-height: 24px; word-wrap: break-word">3891 Ranchview Dr. Richardson, <br/>California 62639</div>
+        </div>
+      </div>
+      <div style="width: 570px; height: 436px; flex-direction: column; justify-content: space-between; align-items: flex-end; display: inline-flex">
+        <div style="justify-content: flex-start; align-items: center; gap: 14px; display: inline-flex">
+          <div style="width: 48px; height: 48px; position: relative; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25) inset; overflow: hidden; border-radius: 8px"></div>
+          <div style="width: 48px; height: 48px; position: relative; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25) inset; overflow: hidden; border-radius: 8px"></div>
+          <div style="width: 48px; height: 48px; position: relative; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25) inset; overflow: hidden; border-radius: 8px"></div>
+          <div style="width: 48px; height: 48px; position: relative; box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25) inset; overflow: hidden; border-radius: 8px"></div>
+        </div>
+        <div style="align-self: stretch; justify-content: space-between; align-items: flex-start; display: inline-flex">
+          <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 14px; display: inline-flex">
+            <div style="padding-left: 4px; padding-right: 4px; padding-top: 6px; padding-bottom: 6px; overflow: hidden; justify-content: center; align-items: center; display: inline-flex">
+              <div style="color: white; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">Home</div>
+            </div>
+            <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Vision & Mission</div>
+            <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Vision & Mission</div>
+            <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Vision & Mission</div>
+            <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Vision & Mission</div>
+            <div style="align-self: stretch; color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Vision & Mission</div>
+          </div>
+          <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 14px; display: inline-flex">
+            <div style="padding-left: 4px; padding-right: 4px; padding-top: 6px; padding-bottom: 6px; overflow: hidden; justify-content: center; align-items: center; display: inline-flex">
+              <div style="color: white; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">About Us</div>
+            </div>
+            <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Vision & Mission</div>
+            <div style="align-self: stretch; color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Vision & Mission</div>
+            <div style="align-self: stretch; color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Vision & Mission</div>
+            <div style="align-self: stretch; color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Vision & Mission</div>
+            <div style="align-self: stretch; color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Vision & Mission</div>
+          </div>
+          <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 14px; display: inline-flex">
+            <div style="padding-left: 4px; padding-right: 4px; padding-top: 6px; padding-bottom: 6px; overflow: hidden; justify-content: center; align-items: center; display: inline-flex">
+              <div style="color: white; font-size: 24px; font-family: Inter Tight; font-weight: 500; line-height: 32px; word-wrap: break-word">Service</div>
+            </div>
+            <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Vision & Mission</div>
+            <div style="align-self: stretch; color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Vision & Mission</div>
+            <div style="align-self: stretch; color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Vision & Mission</div>
+            <div style="align-self: stretch; color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Vision & Mission</div>
+            <div style="align-self: stretch; color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Vision & Mission</div>
+          </div>
+        </div>
+        <div style="align-self: stretch; justify-content: flex-end; align-items: center; gap: 24px; display: inline-flex">
+          <div style="justify-content: center; display: flex; flex-direction: column; color: white; font-size: 16px; font-family: Inter Tight; font-weight: 400; line-height: 24px; word-wrap: break-word">Privacy Policy</div>
+          <div style="justify-content: center; display: flex; flex-direction: column; color: white; font-size: 16px; font-family: Inter Tight; font-weight: 400; line-height: 24px; word-wrap: break-word">Terms of Service</div>
+          <div style="justify-content: center; display: flex; flex-direction: column; color: white; font-size: 16px; font-family: Inter Tight; font-weight: 400; line-height: 24px; word-wrap: break-word">2025 Eato, All right reserved</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="js/main.js" defer></script>
 </body>
 </html>
