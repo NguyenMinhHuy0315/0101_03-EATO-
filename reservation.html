@@ -76,7 +76,7 @@
       <a href="menu.html" data-vi="Thực đơn" data-en="Menu">Thực đơn</a>
       <a href="about.html" data-vi="Về chúng tôi" data-en="About Us">Về chúng tôi</a>
       <a href="contact.html" data-vi="Liên hệ" data-en="Contact Us">Liên hệ</a>
-      <a class="btn btn-primary" href="reservation.html" data-vi="Đặt bàn" data-en="Book Reservation">Đặt bàn</a>
+      <a class="btn btn-primary" href="reservation.html" aria-current="page" data-vi="Đặt bàn" data-en="Book Reservation">Đặt bàn</a>
     </nav>
     <div class="lang-switch" role="group" aria-label="Language switcher">
       <button type="button" class="lang-btn" data-lang-btn="vi" aria-pressed="true">VI</button>
@@ -94,12 +94,12 @@
     <div class="container hero-grid">
       <div>
       <h1 data-vi="Đặt Bàn Của Bạn, Tận Hưởng Từng Khoảnh Khắc Cùng Chúng Tôi" data-en="Reserve Your Table, Savor Every Moment with Us">Đặt Bàn Của Bạn, Tận Hưởng Từng Khoảnh Khắc Cùng Chúng Tôi</h1>
-        <p class="text-muted" style="max-width:520px; margin:16px 0 0;" data-vi="Đặt bàn chỉ trong chốc lát và tận hưởng hương vị tuyệt vời, không gian ấm cúng và dịch vụ chu đáo." data-en="Book your table in moments and enjoy exceptional flavors, warm ambiance, and attentive service.">Đặt bàn chỉ trong chốc lát và tận hưởng hương vị tuyệt vời, không gian ấm cúng và dịch vụ chu đáo.</p>
+        <p class="text-muted" style="max-width:520px; margin:16px 0 0;" data-vi="Đặt bàn dễ dàng và tận hưởng trải nghiệm ẩm thực trọn vẹn với hương vị xuất sắc, không gian ấm cúng và dịch vụ hoàn hảo." data-en="Book your table effortlessly and enjoy a delightful dining experience with exceptional flavors, warm ambiance, and outstanding service.">Đặt bàn dễ dàng và tận hưởng trải nghiệm ẩm thực trọn vẹn với hương vị xuất sắc, không gian ấm cúng và dịch vụ hoàn hảo.</p>
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a> / <span data-vi="Đặt Bàn" data-en="Reservation">Đặt Bàn</span></nav>
       </div>
       <div class="hero-media-wrap">
         <div class="hero-media">
-          <img class="ph-img" src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=900&q=80" alt="Cheeseburger and fries combo served in a rustic metal basket">
+          <img class="ph-img" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=900&q=80" alt="Upscale EATO dining room with leather booths, ready and waiting for reserved guests">
         </div>
         <div class="hero-badge hero-badge-quality hide-mobile">
           <span class="hero-badge-icon">
@@ -180,13 +180,12 @@
               </div>
             </div>
 
-            <div class="field">
-              <label for="res-phone" data-vi="Số Điện Thoại" data-en="Phone Number">Số Điện Thoại</label>
-              <input type="tel" id="res-phone" name="phone" data-rules="required phone" data-error-required-vi="Vui lòng nhập số điện thoại của bạn." data-error-required-en="Please enter your phone number." data-error-phone-vi="Vui lòng nhập số điện thoại hợp lệ." data-error-phone-en="Please enter a valid phone number.">
-              <span class="error-message" role="alert"></span>
-            </div>
-
             <div class="grid grid-3">
+              <div class="field">
+                <label for="res-phone" data-vi="Số Điện Thoại" data-en="Phone Number">Số Điện Thoại</label>
+                <input type="tel" id="res-phone" name="phone" data-rules="required phone" data-error-required-vi="Vui lòng nhập số điện thoại của bạn." data-error-required-en="Please enter your phone number." data-error-phone-vi="Vui lòng nhập số điện thoại hợp lệ." data-error-phone-en="Please enter a valid phone number.">
+                <span class="error-message" role="alert"></span>
+              </div>
               <div class="field">
                 <label for="res-date" data-vi="Ngày Đặt Bàn" data-en="Reservation Date">Ngày Đặt Bàn</label>
                 <input type="date" id="res-date" name="date" data-rules="required" data-error-required-vi="Vui lòng chọn ngày đặt bàn." data-error-required-en="Please choose a reservation date.">
@@ -197,16 +196,30 @@
                 <input type="time" id="res-time" name="time" data-rules="required" data-error-required-vi="Vui lòng chọn giờ đặt bàn." data-error-required-en="Please choose a reservation time.">
                 <span class="error-message" role="alert"></span>
               </div>
+            </div>
+
+            <div class="grid grid-2">
               <div class="field">
                 <label for="res-guests" data-vi="Số Người" data-en="Number of Guests">Số Người</label>
-                <input type="number" id="res-guests" name="guests" min="1" max="20" data-rules="required" data-error-required-vi="Vui lòng nhập số lượng khách." data-error-required-en="Please enter the number of guests.">
+                <input type="number" id="res-guests" name="guests" min="1" max="20" value="2" data-rules="required" data-error-required-vi="Vui lòng nhập số lượng khách." data-error-required-en="Please enter the number of guests.">
                 <span class="error-message" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="res-special" data-vi-html="Yêu Cầu Đặc Biệt &lt;span class=&quot;text-muted&quot; style=&quot;font-weight:400;&quot;&gt;(Không bắt buộc)&lt;/span&gt;" data-en-html="Special Requests &lt;span class=&quot;text-muted&quot; style=&quot;font-weight:400;&quot;&gt;(Optional)&lt;/span&gt;">Yêu Cầu Đặc Biệt <span class="text-muted" style="font-weight:400;">(Không bắt buộc)</span></label>
+                <select id="res-special" name="special_request">
+                  <option value="" data-vi="Không có yêu cầu đặc biệt" data-en="No special requests">Không có yêu cầu đặc biệt</option>
+                  <option value="vegetarian" data-vi="Món chay" data-en="Vegetarian">Món chay</option>
+                  <option value="vegan" data-vi="Thuần chay" data-en="Vegan">Thuần chay</option>
+                  <option value="gluten-free" data-vi="Không chứa gluten" data-en="Gluten-Free">Không chứa gluten</option>
+                  <option value="nut-allergy" data-vi="Dị ứng hạt" data-en="Nut Allergy">Dị ứng hạt</option>
+                  <option value="other" data-vi="Khác" data-en="Other">Khác</option>
+                </select>
               </div>
             </div>
 
             <div class="field">
-              <label for="res-notes" data-vi-html="Ghi Chú Đặc Biệt &lt;span class=&quot;text-muted&quot; style=&quot;font-weight:400;&quot;&gt;(Không bắt buộc)&lt;/span&gt;" data-en-html="Special Notes &lt;span class=&quot;text-muted&quot; style=&quot;font-weight:400;&quot;&gt;(Optional)&lt;/span&gt;">Ghi Chú Đặc Biệt <span class="text-muted" style="font-weight:400;">(Không bắt buộc)</span></label>
-              <textarea id="res-notes" name="notes" placeholder="Chế độ ăn kiêng, vị trí ngồi ưa thích, dịp kỷ niệm hoặc bất kỳ ghi chú nào khác…" data-vi-placeholder="Chế độ ăn kiêng, vị trí ngồi ưa thích, dịp kỷ niệm hoặc bất kỳ ghi chú nào khác…" data-en-placeholder="Dietary restrictions, seating preferences, celebrations, or any other comments…"></textarea>
+              <label for="res-notes" data-vi-html="Ghi Chú Thêm &lt;span class=&quot;text-muted&quot; style=&quot;font-weight:400;&quot;&gt;(Không bắt buộc)&lt;/span&gt;" data-en-html="Additional Notes &lt;span class=&quot;text-muted&quot; style=&quot;font-weight:400;&quot;&gt;(Optional)&lt;/span&gt;">Ghi Chú Thêm <span class="text-muted" style="font-weight:400;">(Không bắt buộc)</span></label>
+              <textarea id="res-notes" name="notes" placeholder="Vị trí ngồi ưa thích, dịp kỷ niệm hoặc bất kỳ bình luận nào khác…" data-vi-placeholder="Vị trí ngồi ưa thích, dịp kỷ niệm hoặc bất kỳ bình luận nào khác…" data-en-placeholder="Seating preferences, celebrations, or any other comments…"></textarea>
             </div>
 
             <div class="field consent-field">
@@ -217,7 +230,7 @@
               <span class="error-message" role="alert"></span>
             </div>
 
-            <button class="btn btn-primary" type="submit" data-vi="Xác Nhận Đặt Bàn" data-en="Confirm Reservation">Xác Nhận Đặt Bàn</button>
+            <button class="btn btn-primary" type="submit" data-vi="Đặt Bàn Ngay" data-en="Reserve Now">Đặt Bàn Ngay</button>
           </form>
         </div>
       </div>
@@ -417,7 +430,7 @@
       <nav class="footer-col" aria-label="Support">
         <h3 data-vi="Hỗ Trợ" data-en="Support">Hỗ Trợ</h3>
         <ul>
-          <li><a href="reservation.html" data-vi="Đặt Bàn" data-en="Reservation">Đặt Bàn</a></li>
+          <li><a href="reservation.html" aria-current="page" data-vi="Đặt Bàn" data-en="Reservation">Đặt Bàn</a></li>
           <li><a href="faq.html" data-vi="Câu Hỏi Thường Gặp" data-en="FAQ">Câu Hỏi Thường Gặp</a></li>
           <li><a href="contact.html" data-vi="Liên Hệ" data-en="Contact Us">Liên Hệ</a></li>
           <li><a href="countdown.html" data-vi="Ưu Đãi Có Hạn" data-en="Limited-Time Offer">Ưu Đãi Có Hạn</a></li>
