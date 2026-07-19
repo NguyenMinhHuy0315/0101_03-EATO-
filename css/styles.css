@@ -71,6 +71,9 @@
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height) + 12px); }
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
   font-family: var(--font-body);
   color: var(--color-text);
   background: var(--color-bg);
@@ -80,10 +83,10 @@ body {
   animation: page-fade-in 0.4s ease both;
 }
 @keyframes page-fade-in {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
-body.is-leaving { opacity: 0; transform: translateY(-12px); transition: opacity 0.22s ease, transform 0.22s ease; }
+body.is-leaving { opacity: 0; transform: translateY(-8px) scale(1.02); transition: opacity 0.22s ease, transform 0.22s ease; }
 h1, h2, h3, h4, h5, h6, p, figure { margin: 0; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 img { max-width: 100%; display: block; }
@@ -151,18 +154,23 @@ select:focus:not(:focus-visible) {
 
 .skip-link {
   position: absolute;
-  left: 24px;
-  top: -60px;
+  top: -100px;
+  left: 0;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
   background: var(--color-red);
   color: var(--color-white);
   padding: 12px 20px;
   border-radius: var(--radius-sm);
   font-weight: 600;
-  z-index: 1000;
-  transition: top 0.2s ease;
+  transition: top 0.2s ease, opacity 0.2s ease;
 }
 .skip-link:focus {
   top: 12px;
+  left: 24px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .sr-only {
@@ -464,12 +472,16 @@ h6, .h6 { font-size: var(--fs-h6); line-height: var(--lh-h6); font-weight: 500; 
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
 }
 .main-nav a {
   padding: 10px 16px;
   border-radius: var(--radius-pill);
   font-weight: 500;
   color: var(--color-dark-stroke);
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s cubic-bezier(0.32, 0.72, 0, 1);
 }
 .main-nav a:hover { color: var(--color-red); }
 .main-nav a[aria-current="page"] {
@@ -525,6 +537,7 @@ h6, .h6 { font-size: var(--fs-h6); line-height: var(--lh-h6); font-weight: 500; 
   border: 1.5px solid var(--color-abu-stroke);
   border-radius: var(--radius-pill);
   flex-shrink: 0;
+  position: relative;
 }
 .lang-btn {
   padding: 7px 13px;
@@ -532,11 +545,44 @@ h6, .h6 { font-size: var(--fs-h6); line-height: var(--lh-h6); font-weight: 500; 
   font-weight: 700;
   font-size: var(--fs-small);
   color: var(--color-text-muted);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s cubic-bezier(0.32, 0.72, 0, 1);
 }
 .lang-btn:hover { color: var(--color-red); }
-.lang-btn[aria-pressed="true"] { background: var(--color-red); color: var(--color-white); }
+.lang-btn[aria-pressed="true"] { color: var(--color-white); }
 .lang-btn[aria-pressed="true"]:hover { color: var(--color-white); }
+.lang-switch .tab-indicator { background: var(--color-red); }
+
+/* =========================================================
+   Sliding tab indicator ("magic line")
+   A floating pill injected by JS (createTabIndicator in
+   main.js) inside any position:relative tab group. Its
+   position/size are driven entirely by JS via transform +
+   width/height, measured from the active/hovered item, so
+   the motion is a single GPU-friendly glide rather than an
+   instant background swap. Works for both a horizontal pill
+   row (.lang-switch, .menu-filters) and the vertical stacked
+   .main-nav that appears on mobile.
+   ========================================================= */
+.tab-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-abu-stroke);
+  transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1),
+              width 0.4s cubic-bezier(0.32, 0.72, 0, 1),
+              height 0.4s cubic-bezier(0.32, 0.72, 0, 1),
+              opacity 0.25s ease;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+}
+.tab-indicator.is-visible { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .tab-indicator { transition: opacity 0.25s ease; }
+}
 
 /* =========================================================
    Footer
@@ -1045,3 +1091,392 @@ legend { font-weight: 600; margin-bottom: 12px; padding: 0; }
 }
 
 .icon-chevron, .icon-arrow { width: 20px; height: 20px; }
+
+/* =========================================================
+   Homepage-specific additions (hero thumbnails/quote, a
+   full-width rounded photo banner, three-column feature
+   spotlight) — small extensions to the shared system above,
+   not one-off inline styles.
+   ========================================================= */
+.hero-thumb-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+.hero-thumb-row img {
+  width: 120px;
+  height: 90px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.hero-quote {
+  flex: 1 1 220px;
+  min-width: 220px;
+  margin: 0;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(10px);
+}
+.hero-quote .rating { color: var(--color-white); font-weight: 700; margin-bottom: 8px; }
+.hero-quote p { font-size: var(--fs-small); color: rgba(255, 255, 255, 0.85); }
+
+.rounded-banner {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  display: block;
+}
+
+.feature-spotlight {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.feature-spotlight img { width: 100%; border-radius: var(--radius-lg); aspect-ratio: 4/3; object-fit: cover; }
+.feature-spotlight .feature-list { gap: 32px; }
+@media (max-width: 1023px) {
+  .feature-spotlight { grid-template-columns: 1fr; }
+  .feature-spotlight img { order: -1; }
+}
+
+/* Countdown timer (countdown.html) — hooks match main.js initCountdown():
+   [data-countdown] wrapper, [data-cd-days/hours/minutes/seconds] digits. */
+.countdown-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+.countdown-unit {
+  min-width: 110px;
+  padding: 20px 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+.countdown-unit .countdown-number { display: block; font-size: 2.5rem; font-weight: 700; line-height: 1.2; }
+.countdown-unit .countdown-label { display: block; margin-top: 4px; font-size: var(--fs-small); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* =========================================================
+   Events page additions — bento-style photo gallery and a
+   fanned circular photo cluster, both used on events.html.
+   ========================================================= */
+.event-gallery {
+  display: grid;
+  grid-template-columns: 1.75fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.event-gallery-main { display: flex; flex-direction: column; gap: 24px; }
+.event-gallery-main > img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+.event-gallery-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.event-gallery-row img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+.event-gallery-side { display: flex; flex-direction: column; gap: 24px; }
+.event-gallery-side img {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+@media (max-width: 899px) {
+  .event-gallery { grid-template-columns: 1fr; }
+  .event-gallery-side { flex-direction: row; }
+  .event-gallery-side img { aspect-ratio: 1/1; flex: 1 1 0; }
+}
+@media (max-width: 599px) {
+  .event-gallery-row, .event-gallery-side { grid-template-columns: 1fr; flex-direction: column; }
+}
+
+.gallery-fan {
+  display: grid;
+  grid-template-columns: 0.82fr 0.92fr 1.08fr 0.92fr 0.82fr;
+  align-items: end;
+  gap: 16px;
+}
+.gallery-fan img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.gallery-fan img:nth-child(1) { transform: rotate(-7deg); margin-bottom: 30px; }
+.gallery-fan img:nth-child(2) { transform: rotate(-4deg); margin-bottom: 12px; }
+.gallery-fan img:nth-child(4) { transform: rotate(4deg); margin-bottom: 12px; }
+.gallery-fan img:nth-child(5) { transform: rotate(7deg); margin-bottom: 30px; }
+@media (max-width: 767px) {
+  .gallery-fan { grid-template-columns: repeat(3, 1fr); }
+  .gallery-fan img { transform: none !important; margin-bottom: 0 !important; }
+}
+
+/* Reservation form panel (reservation.html) — translucent rounded card
+   used to group booking fields on top of a dark/colored section theme.
+   .field inputs keep their normal light surface (from the shared .card
+   /.field override above), which stays legible against the glass panel. */
+.form-panel {
+  margin-top: 48px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-lg);
+}
+.form-panel fieldset + fieldset { margin-top: 8px; }
+@media (max-width: 599px) {
+  .form-panel { padding: 24px; }
+}
+
+/* About page hero — small circular accent photo peeking from the corner
+   of the main hero image (Figma source had two overlapping hero photos;
+   the second becomes a decorative accent rather than a duplicate
+   full-size image). Lives in .hero-media-wrap alongside .hero-badge. */
+.hero-media-accent {
+  position: absolute;
+  z-index: 2;
+  top: -28px;
+  right: -28px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid var(--color-white);
+  box-shadow: var(--shadow-card);
+}
+@media (max-width: 599px) {
+  .hero-media-accent { width: 96px; height: 96px; top: -16px; right: -16px; }
+}
+
+/* Menu/gallery category filter tabs — pill buttons wrapped and
+   centered; active state is shown by the sliding .tab-indicator
+   (see below) rather than an instant background swap, so the
+   buttons themselves only need a text-color change. */
+.menu-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 40px 0 56px;
+  position: relative;
+}
+.menu-filters button {
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s cubic-bezier(0.32, 0.72, 0, 1),
+              background-color 0.4s cubic-bezier(0.32, 0.72, 0, 1),
+              border-color 0.4s cubic-bezier(0.32, 0.72, 0, 1),
+              transform 0.4s cubic-bezier(0.32, 0.72, 0, 1),
+              box-shadow 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.menu-filters button[aria-pressed="true"] {
+  color: var(--color-white);
+  background: none;
+  border-color: transparent;
+}
+.menu-filters button[aria-pressed="true"]:hover { color: var(--color-white); }
+.menu-filters .tab-indicator { background: var(--color-red); }
+
+/* Fade + slide-up entrance for grid items shown by a filter tab
+   change. JS (initFilters in main.js) marks the container with
+   .filter-target and toggles .tab-content-visible per item. */
+.filter-target > * {
+  transition: opacity 0.4s cubic-bezier(0.32, 0.72, 0, 1),
+              transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.filter-target > *:not(.tab-content-visible) {
+  opacity: 0;
+  transform: translateY(15px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .filter-target > * { transition: opacity 0.25s ease; transform: none !important; }
+}
+
+/* Offers page additions — small translucent perk/highlight tiles used
+   beside the first-time-guest offer's split-media-content column. */
+.perk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 32px 0;
+}
+.perk-tile {
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.perk-tile .perk-icon {
+  width: 48px; height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--color-red);
+  color: var(--color-white);
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.perk-tile h3 { font-size: var(--fs-h6); margin-bottom: 8px; }
+.perk-tile p { color: var(--color-text-muted); font-size: var(--fs-body); }
+@media (max-width: 599px) {
+  .perk-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   Gallery page additions (gallery.html) — a plain responsive
+   photo wall (layered onto .grid/.grid-4), a play-button
+   overlay for the video tour photo, and a small round avatar
+   for the Instagram-style post cards.
+   ========================================================= */
+.gallery-wall {
+  margin-top: 40px;
+}
+.gallery-wall img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  transition: transform 0.4s cubic-bezier(.2,.8,.2,1);
+}
+.gallery-wall img:hover { transform: scale(1.04); }
+
+.video-tour {
+  position: relative;
+  max-width: 880px;
+  margin: 56px auto 0;
+}
+.video-tour img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16/10.4;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+.video-tour-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--color-red);
+  color: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-card);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.video-tour-play:hover { background: var(--color-red-dark); transform: translate(-50%, -50%) scale(1.06); }
+
+.mini-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Reviews page additions — a red pull-quote panel that overlaps the bottom
+   of a full-width photo (reviews.html "featured story"), and a compact
+   avatar + name/role row used inside plain .card review testimonials. */
+.quote-panel {
+  position: relative;
+  z-index: 1;
+  margin: -96px 24px 0;
+  padding: 48px 56px;
+  background: var(--color-red);
+  color: var(--color-white);
+  border-radius: var(--radius-lg);
+}
+.quote-panel p { font-size: var(--fs-h4); line-height: var(--lh-h4); font-weight: 500; }
+.quote-panel footer { margin-top: 24px; }
+.quote-panel-name { font-weight: 700; font-size: 1.25rem; }
+.quote-panel-role { color: rgba(255, 255, 255, 0.8); margin-top: 4px; max-width: 480px; }
+@media (max-width: 767px) {
+  .quote-panel { margin: -48px 12px 0; padding: 32px 24px; }
+}
+
+.review-quote { color: var(--color-text-muted); margin: 16px 0 24px; }
+.review-person { display: flex; align-items: center; gap: 12px; }
+.review-person img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.review-name { font-weight: 700; }
+.review-role { color: var(--color-text-muted); font-size: var(--fs-small); }
+
+/* Contact page additions — small solid-rust info tiles (Instagram/chat/
+   visit/call) used in a .grid.grid-4 on contact.html, and a full-width
+   photo "locator" with a translucent floating label for the Google Maps
+   section, following the same overlay pattern as .hero-badge. */
+.contact-card {
+  background: var(--color-rust);
+  color: var(--color-black);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact-card-icon {
+  width: 48px; height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--color-red);
+  color: var(--color-white);
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.contact-card h3 { margin-bottom: 8px; }
+.contact-card p { color: rgba(7, 7, 7, 0.7); }
+.contact-card-value { font-weight: 700; text-decoration: underline; color: var(--color-black); }
+
+.map-locator { position: relative; border-radius: var(--radius-lg); overflow: hidden; }
+.map-locator img {
+  width: 100%;
+  aspect-ratio: 21/9;
+  object-fit: cover;
+  display: block;
+}
+.map-locator-label {
+  position: absolute;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 0.5px solid var(--color-dark-stroke);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(8px);
+  color: var(--color-white);
+  font-weight: 500;
+  text-align: center;
+}
+@media (max-width: 599px) {
+  .map-locator-label { font-size: var(--fs-small); padding: 10px 14px; }
+}
+
+/* 404 error page — image + copy centered inside .page-hero */
+.error-page-img {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  margin: 0 auto 40px;
+}
+.error-page-text {
+  max-width: 560px;
+  margin: 20px auto 32px;
+}

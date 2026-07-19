@@ -1,59 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — EATO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<div style="width: 1440px; height: 1024px; position: relative; background: var(--Red, #C31E26); overflow: hidden">
-  <div style="height: 44px; padding-left: 24px; padding-right: 24px; padding-top: 12px; padding-bottom: 12px; left: 0px; top: 0px; position: absolute; background: #B44509; overflow: hidden; border-radius: 4px; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-    <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; word-wrap: break-word">Skip to main content</div>
+<a class="skip-link" href="#main-content" data-vi="Bỏ qua đến nội dung chính" data-en="Skip to main content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="EATO — go to homepage">
+      <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
+      EATO
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <a href="index.html" data-vi="Trang chủ" data-en="Home">Home</a>
+      <a href="menu.html" data-vi="Thực đơn" data-en="Menu">Menu</a>
+      <a href="about.html" data-vi="Về chúng tôi" data-en="About Us">About Us</a>
+      <a href="contact.html" data-vi="Liên hệ" data-en="Contact Us">Contact Us</a>
+      <a class="btn btn-primary" href="reservation.html" data-vi="Đặt bàn" data-en="Book Reservation">Book Reservation</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Language switcher">
+      <button type="button" class="lang-btn" data-lang-btn="vi" aria-pressed="false">VI</button>
+      <button type="button" class="lang-btn" data-lang-btn="en" aria-pressed="true">EN</button>
+    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </div>
-  <div style="width: 857px; height: 714px; left: -58px; top: -235px; position: absolute; background: rgba(180, 69, 9, 0.30); box-shadow: 576px 576px 576px; border-radius: 9999px; filter: blur(288px)"></div>
-  <div style="width: 651px; height: 651px; left: 977px; top: -95px; position: absolute; background: rgba(255, 255, 255, 0.12); border-radius: 9999px"></div>
-  <div style="width: 651px; height: 651px; left: -207px; top: 576px; position: absolute; background: rgba(255, 255, 255, 0.12); border-radius: 9999px"></div>
-  <div style="width: 1280px; left: 80px; top: 45px; position: absolute; justify-content: space-between; align-items: center; display: inline-flex">
-    <div style="justify-content: flex-start; align-items: center; gap: 104px; display: flex">
-      <div style="height: 44px; justify-content: flex-start; align-items: center; gap: 8px; display: flex">
-        <div style="width: 32px; height: 32px; background: #B44509; border-radius: 36px; justify-content: center; align-items: center; gap: 4px; display: flex">
-          <div style="width: 24px; height: 24px; position: relative">
-            <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute"></div>
-            <div style="width: 7.59px; height: 7.59px; left: 3px; top: 13.41px; position: absolute; outline: 1.50px var(--Red, #C31E26) solid; outline-offset: -0.75px"></div>
-            <div style="width: 8.81px; height: 8.81px; left: 12.03px; top: 3px; position: absolute; outline: 1.50px var(--Red, #C31E26) solid; outline-offset: -0.75px"></div>
-            <div style="width: 2.84px; height: 2.84px; left: 16.23px; top: 4.77px; position: absolute; outline: 1.50px var(--Red, #C31E26) solid; outline-offset: -0.75px"></div>
-            <div style="width: 10.86px; height: 13.20px; left: 5.07px; top: 3.95px; position: absolute; outline: 1.50px var(--Red, #C31E26) solid; outline-offset: -0.75px"></div>
-            <div style="width: 3.54px; height: 3.54px; left: 14.46px; top: 5.84px; position: absolute; outline: 1.50px var(--Red, #C31E26) solid; outline-offset: -0.75px"></div>
+</header>
+
+<main id="main-content">
+  <section class="page-hero">
+    <div class="container">
+      <img class="error-page-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=650&h=565&fit=crop&q=80" alt="EATO restaurant">
+      <h1 data-vi="404 Không Tìm Thấy Trang" data-en="404 Page not found">404 Page not found</h1>
+      <p class="error-page-text" data-vi="Ối! Có vẻ như trang này đã biến mất. Đừng lo lắng, bạn có thể quay lại trang chủ hoặc dùng thanh tìm kiếm để tìm nội dung bạn cần." data-en="Oops! Looks like this page has vanished.Don't worry, though! You can go back to our homepage or use the search bar to find what you're looking for.">Oops! Looks like this page has vanished.Don't worry, though! You can go back to our homepage or use the search bar to find what you're looking for.</p>
+      <a class="btn btn-primary" href="index.html" data-vi="Về Trang Chủ" data-en="Back to Home">Back to Home</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="index.html" aria-label="EATO — go to homepage">
+          <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
+          EATO
+        </a>
+        <p data-vi="Chúng Tôi Mang Đến Kết Quả Thực Sự, Nhiều Lượt Ghé Thăm, Nhiều Khách Hàng, Nhiều Tăng Trưởng!" data-en="We Drive Real Result, More Traffic, More Leads, more Growth!">We Drive Real Result, More Traffic, More Leads, more Growth!</p>
+        <form class="field newsletter-field" data-validate onsubmit="return false;">
+          <label for="newsletter-email" class="sr-only" data-vi="Địa chỉ email" data-en="Email address">Email address</label>
+          <p data-vi="Đăng ký ngay để nhận ưu đãi độc quyền và cập nhật ẩm thực mới nhất!" data-en="Subscribe now for exclusive offers and the latest food updates!">Subscribe now for exclusive offers and the latest food updates!</p>
+          <div class="newsletter-form">
+            <input id="newsletter-email" type="email" name="email" placeholder="Enter your Email Address" data-vi-placeholder="Nhập địa chỉ email của bạn" data-en-placeholder="Enter your Email Address" data-rules="required email">
+            <button class="btn-icon" type="submit" aria-label="Subscribe"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </div>
-        </div>
-        <div style="padding-left: 4px; padding-right: 4px; padding-top: 6px; padding-bottom: 6px; overflow: hidden; justify-content: center; align-items: center; display: flex">
-          <div style="color: white; font-size: 24px; font-family: Inter Tight; font-weight: 700; line-height: 32px; word-wrap: break-word">EATO</div>
-        </div>
-      </div>
-      <div style="justify-content: flex-start; align-items: center; gap: 32px; display: flex">
-        <div style="padding-left: 4px; padding-right: 4px; padding-top: 10px; padding-bottom: 10px; overflow: hidden; justify-content: center; align-items: center; display: flex">
-          <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Home</div>
-        </div>
-        <div style="padding-left: 4px; padding-right: 4px; padding-top: 10px; padding-bottom: 10px; overflow: hidden; justify-content: center; align-items: center; display: flex">
-          <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Menu</div>
-        </div>
-        <div style="padding-left: 4px; padding-right: 4px; padding-top: 10px; padding-bottom: 10px; overflow: hidden; justify-content: center; align-items: center; display: flex">
-          <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">About Us</div>
-        </div>
-        <div style="padding-left: 4px; padding-right: 4px; padding-top: 10px; padding-bottom: 10px; overflow: hidden; justify-content: center; align-items: center; display: flex">
-          <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Contact Us</div>
+        </form>
+        <p style="margin-top:24px;">123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</p>
+        <div class="footer-social" style="margin-top:20px;">
+          <button class="btn-icon" type="button" aria-label="EATO on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></button>
+          <button class="btn-icon" type="button" aria-label="EATO on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></button>
+          <button class="btn-icon" type="button" aria-label="EATO on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4l16 16M20 4 4 20"/></svg></button>
+          <button class="btn-icon" type="button" aria-label="EATO on YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></button>
         </div>
       </div>
+      <div class="footer-col">
+        <h3 data-vi="Trang Chủ" data-en="Home">Home</h3>
+        <ul><li><a href="index.html" data-vi="Trang chủ" data-en="Home">Home</a></li><li><a href="about.html" data-vi="Tầm Nhìn &amp; Sứ Mệnh" data-en="Vision &amp; Mission">Vision &amp; Mission</a></li><li><a href="menu.html" data-vi="Thực đơn" data-en="Menu">Menu</a></li><li><a href="gallery.html" data-vi="Thư viện ảnh" data-en="Gallery">Gallery</a></li><li><a href="reviews.html" data-vi="Đánh giá" data-en="Reviews">Reviews</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h3 data-vi="Về Chúng Tôi" data-en="About Us">About Us</h3>
+        <ul><li><a href="about.html" data-vi="Về chúng tôi" data-en="About Us">About Us</a></li><li><a href="events.html" data-vi="Sự kiện &amp; Tiệc riêng" data-en="Events &amp; Private Dining">Events &amp; Private Dining</a></li><li><a href="offers.html" data-vi="Ưu đãi đặc biệt" data-en="Special Offers">Special Offers</a></li><li><a href="blog.html" data-vi="Blog &amp; Chia sẻ" data-en="Blog &amp; Insights">Blog &amp; Insights</a></li><li><a href="faq.html" data-vi="Câu hỏi thường gặp" data-en="FAQ">FAQ</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h3 data-vi="Dịch Vụ" data-en="Service">Service</h3>
+        <ul><li><a href="reservation.html" data-vi="Đặt bàn" data-en="Book Reservation">Book Reservation</a></li><li><a href="contact.html" data-vi="Liên hệ" data-en="Contact Us">Contact Us</a></li><li><a href="menu.html" data-vi="Đặt hàng trực tuyến" data-en="Order Online">Order Online</a></li><li><a href="events.html" data-vi="Tiệc riêng" data-en="Private Dining">Private Dining</a></li><li><a href="offers.html" data-vi="Chương trình khách hàng thân thiết" data-en="Loyalty Program">Loyalty Program</a></li></ul>
+      </div>
     </div>
-    <div style="height: 44px; padding-left: 24px; padding-right: 24px; padding-top: 8px; padding-bottom: 8px; background: #B44509; border-radius: 8px; justify-content: center; align-items: center; gap: 4px; display: flex">
-      <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Book Reservation</div>
+    <div class="footer-bottom">
+      <span data-vi="2025 Eato, Đã đăng ký bản quyền" data-en="2025 Eato, All rights reserved">2025 Eato, All rights reserved</span>
+      <div class="legal-links"><a href="#" data-vi="Chính sách bảo mật" data-en="Privacy Policy">Privacy Policy</a><a href="#" data-vi="Điều khoản dịch vụ" data-en="Terms of Service">Terms of Service</a></div>
     </div>
   </div>
-  <div style="height: 44px; padding-left: 24px; padding-right: 24px; padding-top: 8px; padding-bottom: 8px; left: 642px; top: 910px; position: absolute; background: #B44509; border-radius: 8px; justify-content: center; align-items: center; gap: 4px; display: inline-flex">
-    <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">Back to Home</div>
-  </div>
-  <img style="width: 650px; height: 565px; left: 392px; top: 145px; position: absolute" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=650&h=565&fit=crop&q=80" />
-  <div style="left: 506px; top: 775px; position: absolute; color: white; font-size: 48px; font-family: Inter Tight; font-weight: 600; line-height: 56px; word-wrap: break-word">404 Page not found</div>
-  <div style="width: 659px; left: 383px; top: 840px; position: absolute; text-align: center; color: white; font-size: 16px; font-family: Inter Tight; font-weight: 500; line-height: 24px; word-wrap: break-word">Oops! Looks like this page has vanished.Don't worry, though! You can go back to our homepage or use the search bar to find what you're looking for.</div>
-</div>
+</footer>
 <script src="js/main.js" defer></script>
 </body>
 </html>
