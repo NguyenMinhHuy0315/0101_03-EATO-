@@ -1,72 +1,16 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menu — EATO Fine Dining Restaurant &amp; Cafe</title>
-<meta name="description" content="Browse EATO's full menu — appetizers, soups &amp; salads, main courses, sides, desserts, and beverages, crafted with premium ingredients and culinary expertise.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Menu — EATO Fine Dining Restaurant &amp; Cafe">
-<meta property="og:description" content="Browse EATO's full menu — appetizers, soups &amp; salads, main courses, sides, desserts, and beverages, crafted with premium ingredients and culinary expertise.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Menu — EATO Fine Dining Restaurant &amp; Cafe">
-<meta name="twitter:description" content="Browse EATO's full menu — appetizers, soups &amp; salads, main courses, sides, desserts, and beverages, crafted with premium ingredients and culinary expertise.">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80">
+<title>Menu — EATO</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
-<style>
-  .filter-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 48px;
-  }
-  .filter-pill {
-    padding: 10px 22px;
-    border-radius: var(--radius-pill);
-    border: 1.5px solid var(--color-abu-stroke);
-    font-weight: 600;
-    font-size: var(--fs-body);
-    color: var(--color-dark-stroke);
-    background: var(--color-white);
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-  }
-  .filter-pill:hover { border-color: var(--color-red); color: var(--color-red); }
-  .filter-pill[aria-pressed="true"] {
-    background: var(--color-red);
-    border-color: var(--color-red);
-    color: var(--color-white);
-  }
-  .menu-item[hidden] { display: none; }
-  .menu-item .card-body { display: flex; flex-direction: column; gap: 4px; }
-  .menu-item .dish-foot { margin-top: 8px; }
-  .menu-item .tag { margin-top: 8px; align-self: flex-start; }
-
-  /* Stronger hover on menu grid/carousel cards: scale + deeper shadow,
-     layered on top of the site-wide .card lift+image-zoom in styles.css. */
-  .menu-item:hover, .menu-item:focus-within,
-  .dish-card:hover, .dish-card:focus-within {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 28px 56px rgba(7, 7, 7, 0.4);
-    z-index: 2;
-  }
-
-  /* Smooth category-switch animation for the filter grid. Classes are
-     toggled by the script at the bottom of this page. */
-  .menu-item {
-    transition: opacity 0.35s cubic-bezier(.16,.84,.44,1), transform 0.35s cubic-bezier(.16,.84,.44,1), box-shadow 0.35s ease;
-  }
-  .menu-item.is-filtering-out { opacity: 0; transform: scale(0.92) translateY(10px); pointer-events: none; }
-  .menu-item.reveal.is-entering { transition: none; opacity: 0; transform: scale(0.92) translateY(10px); }
-
-  .view-details-link { margin-top: 8px; display: inline-flex; }
-</style>
 </head>
 <body>
-<a class="skip-link" href="#main-content" data-vi="Bỏ qua để đến nội dung chính" data-en="Skip to main content">Bỏ qua để đến nội dung chính</a>
+<a class="skip-link" href="#main-content" data-vi="Bỏ qua để đến nội dung chính" data-en="Skip to main content">Skip to main content</a>
 
 <header class="site-header">
   <div class="header-inner">
@@ -75,15 +19,15 @@
       EATO
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Primary">
-      <a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a>
-      <a href="menu.html" aria-current="page" data-vi="Thực đơn" data-en="Menu">Thực đơn</a>
-      <a href="about.html" data-vi="Về chúng tôi" data-en="About Us">Về chúng tôi</a>
-      <a href="contact.html" data-vi="Liên hệ" data-en="Contact Us">Liên hệ</a>
-      <a class="btn btn-primary" href="reservation.html" data-vi="Đặt bàn" data-en="Book Reservation">Đặt bàn</a>
+      <a href="index.html" data-vi="Trang chủ" data-en="Home">Home</a>
+      <a href="menu.html" aria-current="page" data-vi="Thực đơn" data-en="Menu">Menu</a>
+      <a href="about.html" data-vi="Về chúng tôi" data-en="About Us">About Us</a>
+      <a href="contact.html" data-vi="Liên hệ" data-en="Contact Us">Contact Us</a>
+      <a class="btn btn-primary" href="reservation.html" data-vi="Đặt bàn" data-en="Book Reservation">Book Reservation</a>
     </nav>
     <div class="lang-switch" role="group" aria-label="Language switcher">
-      <button type="button" class="lang-btn" data-lang-btn="vi" aria-pressed="true">VI</button>
-      <button type="button" class="lang-btn" data-lang-btn="en" aria-pressed="false">EN</button>
+      <button type="button" class="lang-btn" data-lang-btn="vi" aria-pressed="false">VI</button>
+      <button type="button" class="lang-btn" data-lang-btn="en" aria-pressed="true">EN</button>
     </div>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -93,536 +37,363 @@
 
 <main id="main-content">
 
-  <div class="page-hero has-media">
+  <!-- Hero -->
+  <section class="page-hero has-media" aria-labelledby="menu-hero-heading">
     <div class="container hero-grid">
       <div>
-      <h1 data-vi="Khám Phá, Lựa Chọn, Tận Hưởng — Sự Lựa Chọn Hoàn Hảo Đang Chờ Bạn" data-en="Discover, Select, Enjoy — Your Perfect Choice Awaits">Khám Phá, Lựa Chọn, Tận Hưởng — Sự Lựa Chọn Hoàn Hảo Đang Chờ Bạn</h1>
-        <p class="text-muted" style="max-width:520px; margin:16px 0 0;" data-vi="Khám phá thực đơn đa dạng của chúng tôi, được chọn lọc kỹ càng cho mọi khẩu vị, và đắm chìm trong trải nghiệm ẩm thực tuyệt vời." data-en="Explore our diverse menu, carefully curated for every taste, and indulge in a delightful dining experience.">Khám phá thực đơn đa dạng của chúng tôi, được chọn lọc kỹ càng cho mọi khẩu vị, và đắm chìm trong trải nghiệm ẩm thực tuyệt vời.</p>
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a> / <span data-vi="Thực đơn" data-en="Menu">Thực đơn</span></nav>
+        <h1 id="menu-hero-heading" data-vi="Khám Phá, Lựa Chọn, Thưởng Thức – Sự Lựa Chọn Hoàn Hảo Đang Chờ Bạn" data-en="Discover, Select, Enjoy – Your Perfect Choice Awaits">Discover, Select, Enjoy – Your Perfect Choice Awaits</h1>
+        <p class="lede" data-vi="Khám phá thực đơn đa dạng của chúng tôi, được chăm chút tỉ mỉ cho mọi khẩu vị. Chọn món ăn yêu thích và đắm chìm trong trải nghiệm ẩm thực tuyệt vời" data-en="Explore our diverse menu, carefully curated for every taste. Select your favorite dishes and indulge in a delightful experience">Explore our diverse menu, carefully curated for every taste. Select your favorite dishes and indulge in a delightful experience</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="menu.html" data-vi="Xem thực đơn" data-en="View Menu">View Menu</a>
+          <a class="btn btn-white" href="about.html" data-vi="Khám phá thêm" data-en="Explore More">Explore More</a>
+        </div>
       </div>
       <div class="hero-media-wrap">
         <div class="hero-media">
-          <img class="ph-img" src="https://images.unsplash.com/photo-1622021142947-da7dedc7c39a?w=900&q=80" alt="Chef preparing food in a professional restaurant kitchen">
+          <img src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?w=660&h=571&fit=crop&q=80" alt="EATO restaurant" width="660" height="571">
         </div>
-        <div class="hero-badge hero-badge-quality hide-mobile">
-          <span class="hero-badge-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><polyline points="8.5 13.5 7 22 12 19 17 22 15.5 13.5"/></svg>
+        <div class="hero-badge hero-badge-quality">
+          <span class="hero-badge-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>
           </span>
-          <span>
-            <span class="hero-badge-title" data-vi="Chất Lượng 100%" data-en="100% High Quality">Chất Lượng 100%</span>
-            <span class="hero-badge-subtitle" data-vi="Nguyên liệu tốt nhất" data-en="Best quality raw materials">Nguyên liệu tốt nhất</span>
+          <span><span class="hero-badge-title" data-vi="100% Chất Lượng Cao" data-en="100% High Quality">100% High Quality</span><span class="hero-badge-subtitle" data-vi="nguyên liệu chất lượng tốt nhất" data-en="best quality raw materials">best quality raw materials</span></span>
+        </div>
+        <div class="hero-badge hero-badge-award">
+          <span class="hero-badge-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg>
           </span>
-        </div>
-        <div class="hero-badge hero-badge-award hide-mobile">
-          <span class="hero-badge-icon">
-            <svg class="icon-star" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg>
-          </span>
-          <span class="hero-badge-title" data-vi="Sao Michelin" data-en="Michelin Star">Sao Michelin</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Signature dishes carousel -->
-  <section class="section-bg-dark section-glow" aria-labelledby="signature-heading">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2 id="signature-heading" data-vi="Thực Đơn Đặc Trưng" data-en="Our Signature Menu">Thực Đơn Đặc Trưng</h2>
-          <p data-vi="Trải nghiệm thực đơn đặc trưng của chúng tôi, một kiệt tác hương vị được chế biến từ nguyên liệu cao cấp, kỹ năng ẩm thực điêu luyện và sự tinh tế đầy nghệ thuật." data-en="Experience our signature menu, a masterpiece of flavors crafted with premium ingredients, culinary expertise, and an artistic touch to delight.">Trải nghiệm thực đơn đặc trưng của chúng tôi, một kiệt tác hương vị được chế biến từ nguyên liệu cao cấp, kỹ năng ẩm thực điêu luyện và sự tinh tế đầy nghệ thuật.</p>
-        </div>
-        <div class="carousel-controls" style="margin-bottom:0;" data-carousel-controls="signature-carousel">
-          <button class="btn-icon" type="button" data-carousel-prev aria-label="Previous dish">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          </button>
-          <button class="btn-icon" type="button" data-carousel-next aria-label="Next dish">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
-        </div>
-      </div>
-
-      <div class="carousel" data-carousel data-per-view="4" data-carousel-label="Signature menu dishes" id="signature-carousel">
-        <div class="carousel-viewport">
-          <ul class="carousel-track">
-            <li class="dish-card card">
-              <div class="card-media"><img class="ph-img" loading="lazy" src="https://images.unsplash.com/photo-1432139509613-5c4255815697?w=700&q=80" alt="Seared Wagyu ribeye steak with red wine jus and charred broccolini"></div>
-              <div class="card-body">
-                <h3 class="h6">Truffle-infused Wagyu Delight</h3>
-                <p data-vi="Wagyu bít tết áp chảo hoàn thiện với sốt truffle đen, hành tím om rượu vang và bông cải xanh nướng." data-en="Seared Wagyu ribeye finished with black truffle jus, wine-braised shallots, and charred broccolini.">Wagyu bít tết áp chảo hoàn thiện với sốt truffle đen, hành tím om rượu vang và bông cải xanh nướng.</p>
-                <div class="dish-foot">
-                  <span class="rating" aria-label="Rated 5 out of 5">
-                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg>
-                  </span>
-                  <span class="dish-price">$46.00</span>
-                </div>
-                <a class="btn-link view-details-link" href="product-detail.html">
-                  <span data-vi="Xem Chi Tiết" data-en="View Details">Xem Chi Tiết</span>
-                  <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-              </div>
-            </li>
-            <li class="dish-card card">
-              <div class="card-media"><img loading="lazy" class="ph-img" src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?w=700&q=80" alt="Ocean Symphony Risotto, creamy risotto plated with shaved truffle and fresh herbs"></div>
-              <div class="card-body">
-                <h3 class="h6">Ocean Symphony Risotto</h3>
-                <p data-vi="Risotto kem béo thấm hương nghệ tây, hòa quyện tôm hùm, sò điệp và tôm tươi, hoàn thiện với phô mai parmesan và thảo mộc." data-en="Creamy saffron-infused risotto with fresh lobster, scallops, and prawns, finished with parmesan and herbs.">Risotto kem béo thấm hương nghệ tây, hòa quyện tôm hùm, sò điệp và tôm tươi, hoàn thiện với phô mai parmesan và thảo mộc.</p>
-                <div class="dish-foot">
-                  <span class="rating" aria-label="Rated 5 out of 5">
-                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg>
-                  </span>
-                  <span class="dish-price">$38.00</span>
-                </div>
-              </div>
-            </li>
-            <li class="dish-card card">
-              <div class="card-media"><img loading="lazy" class="ph-img" src="https://images.unsplash.com/photo-1580554530778-ca36943938b2?w=700&q=80" alt="Golden crispy-skin duck confit plated with fondant potato and seasonal greens"></div>
-              <div class="card-body">
-                <h3 class="h6">Golden Crispy Duck Confit</h3>
-                <p data-vi="Đùi vịt confit ninh chậm với lớp da giòn rụm, dùng kèm khoai nghiền củ quả và rau xanh theo mùa." data-en="Slow-cooked duck leg confit with crackling skin, served over root vegetable purée and seasonal greens.">Đùi vịt confit ninh chậm với lớp da giòn rụm, dùng kèm khoai nghiền củ quả và rau xanh theo mùa.</p>
-                <div class="dish-foot">
-                  <span class="rating" aria-label="Rated 5 out of 5">
-                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg>
-                  </span>
-                  <span class="dish-price">$34.00</span>
-                </div>
-              </div>
-            </li>
-            <li class="dish-card card">
-              <div class="card-media"><img loading="lazy" class="ph-img" src="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?w=700&q=80" alt="Warm chocolate lava cake with molten center and dark chocolate ganache"></div>
-              <div class="card-body">
-                <h3 class="h6">Velvet Chocolate Lava Cake</h3>
-                <p data-vi="Bánh chocolate tan chảy ấm nóng với nhân socola lỏng mềm mịn, rưới sốt ganache đậm đà ngay tại bàn." data-en="Warm chocolate cake with a molten center, finished tableside with silky dark chocolate ganache.">Bánh chocolate tan chảy ấm nóng với nhân socola lỏng mềm mịn, rưới sốt ganache đậm đà ngay tại bàn.</p>
-                <div class="dish-foot">
-                  <span class="rating" aria-label="Rated 5 out of 5">
-                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg>
-                  </span>
-                  <span class="dish-price">$14.00</span>
-                </div>
-              </div>
-            </li>
-          </ul>
+          <span><span class="hero-badge-title" data-vi="Sao Michelin" data-en="Michelin Star">Michelin Star</span></span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Full menu with category filters -->
-  <section class="section-bg-dark section-glow" aria-labelledby="full-menu-heading">
+  <!-- Our Signature Menu (teaser carousel) -->
+  <section class="section-bg-dark">
     <div class="container">
-      <div class="text-center" style="max-width:750px; margin:0 auto 48px;">
-        <h2 id="full-menu-heading" data-vi="Đậm Đà Hương Vị, Thích Thú Từng Miếng Ăn!" data-en="Savor the Flavor, Delight in Every Bite!">Đậm Đà Hương Vị, Thích Thú Từng Miếng Ăn!</h2>
-        <p class="text-muted" style="margin-top:16px;" data-vi="Khám phá thực đơn của chúng tôi với những món ăn hấp dẫn, được chế biến bằng đam mê và nguyên liệu tươi ngon nhất để thỏa mãn mọi cơn thèm ăn." data-en="Explore our menu filled with mouthwatering dishes, crafted with passion and the freshest ingredients to satisfy every craving.">Khám phá thực đơn của chúng tôi với những món ăn hấp dẫn, được chế biến bằng đam mê và nguyên liệu tươi ngon nhất để thỏa mãn mọi cơn thèm ăn.</p>
+      <div class="section-head">
+        <div>
+          <h2 data-vi="Thực Đơn Đặc Trưng" data-en="Our Signature Menu">Our Signature Menu</h2>
+          <p data-vi="Trải nghiệm thực đơn đặc trưng của chúng tôi – một kiệt tác hương vị được chế biến từ nguyên liệu cao cấp, kỹ thuật ẩm thực tinh tế và nét nghệ thuật đầy cảm hứng" data-en="Experience our signature menu, a masterpiece of flavors crafted with premium ingredients, culinary expertise, and an artistic touch to delight">Experience our signature menu, a masterpiece of flavors crafted with premium ingredients, culinary expertise, and an artistic touch to delight</p>
+        </div>
+        <div class="carousel-controls" data-carousel-controls="menu-teaser-carousel">
+          <button class="btn-icon" data-carousel-prev aria-label="Previous dish"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="transform:rotate(180deg)"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn-icon" data-carousel-next aria-label="Next dish"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
       </div>
 
-      <div class="filter-bar" role="group" aria-label="Filter menu by category">
-        <button class="filter-pill" type="button" data-filter="all" aria-pressed="true" data-vi="Tất Cả" data-en="All">Tất Cả</button>
-        <button class="filter-pill" type="button" data-filter="appetizers" aria-pressed="false" data-vi="Khai Vị" data-en="Appetizers">Khai Vị</button>
-        <button class="filter-pill" type="button" data-filter="soups-salads" aria-pressed="false" data-vi="Súp &amp; Salad" data-en="Soups &amp; Salads">Súp &amp; Salad</button>
-        <button class="filter-pill" type="button" data-filter="main-course" aria-pressed="false" data-vi="Món Chính" data-en="Main Course">Món Chính</button>
-        <button class="filter-pill" type="button" data-filter="side-dishes" aria-pressed="false" data-vi="Món Phụ" data-en="Side Dishes">Món Phụ</button>
-        <button class="filter-pill" type="button" data-filter="desserts" aria-pressed="false" data-vi="Tráng Miệng" data-en="Desserts">Tráng Miệng</button>
-        <button class="filter-pill" type="button" data-filter="beverages" aria-pressed="false" data-vi="Đồ Uống" data-en="Beverages">Đồ Uống</button>
+      <div class="carousel" id="menu-teaser-carousel" data-carousel data-per-view="4">
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <article class="card dish-card" data-category="dessert">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?w=302&h=430&fit=crop&q=80" alt="Molten Chocolate Bundt Cake" loading="lazy"></div>
+              <div class="card-body">
+                <h3 data-vi="Bánh Chocolate Tan Chảy" data-en="Molten Chocolate Bundt Cake">Molten Chocolate Bundt Cake</h3>
+                <p data-vi="Bánh chocolate đậm đà phủ lớp sốt ganache chocolate ấm nóng, bóng mịn — ngọt ngào và khó cưỡng." data-en="Rich chocolate bundt cake draped in warm, glossy chocolate ganache — decadent and irresistibly indulgent.">Rich chocolate bundt cake draped in warm, glossy chocolate ganache — decadent and irresistibly indulgent.</p>
+              <div class="dish-foot"><span class="dish-price">$14.00</span></div>
+              </div>
+            </article>
+            <article class="card dish-card" data-category="main">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=302&h=430&fit=crop&q=80" alt="EATO dish" loading="lazy"></div>
+              <div class="card-body">
+                <h3 data-vi="Sò Điệp Áp Chảo Với Rau Thơm" data-en="Pan-Seared Scallop & Herb Salad">Pan-Seared Scallop & Herb Salad</h3>
+                <p data-vi="Sò điệp áp chảo tinh tế trên nền rau thơm tươi mát, hoàn thiện với sốt giấm balsamic cho một khởi đầu thanh nhã." data-en="Delicately seared scallop atop a fresh herb salad, finished with a balsamic reduction for a light, elegant start.">Delicately seared scallop atop a fresh herb salad, finished with a balsamic reduction for a light, elegant start.</p>
+                <div class="dish-foot"><span class="dish-price">$18.00</span></div>
+              </div>
+            </article>
+            <article class="card dish-card" data-category="main">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?w=302&h=430&fit=crop&q=80" alt="EATO dish" loading="lazy"></div>
+              <div class="card-body">
+                <h3 data-vi="Cá Hồi Da Giòn" data-en="Crispy Skin Salmon">Crispy Skin Salmon</h3>
+                <p data-vi="Phi lê cá hồi áp chảo với lớp da giòn rụm, dùng kèm cơm rau thơm và sốt bơ chanh." data-en="Pan-seared salmon fillet with irresistibly crispy skin, served over herbed rice with a citrus beurre blanc.">Pan-seared salmon fillet with irresistibly crispy skin, served over herbed rice with a citrus beurre blanc.</p>
+              <div class="dish-foot"><span class="dish-price">$32.00</span></div>
+              </div>
+            </article>
+            <article class="card dish-card" data-category="main">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?w=302&h=430&fit=crop&q=80" alt="Pan-Seared Wagyu Steak" loading="lazy"></div>
+              <div class="card-body">
+                <h3 data-vi="Bò Wagyu Áp Chảo Sốt Vang Đỏ" data-en="Pan-Seared Wagyu Steak">Pan-Seared Wagyu Steak</h3>
+                <p data-vi="Bò Wagyu mềm mọng được áp chảo hoàn hảo, rưới sốt vang đỏ đậm đà, dùng kèm bông cải xanh nướng và khoai tây nướng." data-en="Tender Wagyu steak seared to perfection, drizzled with a rich red wine reduction and served with charred broccolini and roasted potatoes.">Tender Wagyu steak seared to perfection, drizzled with a rich red wine reduction and served with charred broccolini and roasted potatoes.</p>
+              <div class="dish-foot"><span class="dish-price">$48.00</span></div>
+              </div>
+            </article>
+            <article class="card dish-card" data-category="main">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1580554530778-ca36943938b2?w=302&h=430&fit=crop&q=80" alt="Golden Duck Breast" loading="lazy"></div>
+              <div class="card-body">
+                <h3 data-vi="Ức Vịt Áp Chảo Vàng Giòn" data-en="Golden Duck Breast">Golden Duck Breast</h3>
+                <p data-vi="Ức vịt áp chảo vàng giòn, thái lát trên bánh khoai tây rösti giòn, dùng kèm cải xoăn om và rau củ nướng." data-en="Golden pan-seared duck breast, sliced and fanned over a crispy potato rösti with braised kale and roasted root vegetables.">Golden pan-seared duck breast, sliced and fanned over a crispy potato rösti with braised kale and roasted root vegetables.</p>
+              <div class="dish-foot"><span class="dish-price">$36.00</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full menu, with category filters -->
+  <section class="section-bg-dark">
+    <div class="container">
+      <div class="text-center" style="max-width:550px;margin-inline:auto;">
+        <h2 data-vi="Đắm Chìm Trong Hương Vị, Thích Thú Từng Miếng Ăn!" data-en="Savor the Flavor, Delight in Every Bite!">Savor the Flavor, Delight in Every Bite!</h2>
+        <p data-vi="Khám phá thực đơn với những món ăn hấp dẫn, được chế biến bằng cả đam mê và nguyên liệu tươi ngon nhất để thỏa mãn mọi cơn thèm ăn" data-en="Explore our menu filled with mouthwatering dishes, crafted with passion and the freshest ingredients to satisfy every craving">Explore our menu filled with mouthwatering dishes, crafted with passion and the freshest ingredients to satisfy every craving</p>
       </div>
 
-      <ul class="grid grid-4" id="menu-grid" aria-live="polite">
-        <li class="card menu-item" data-category="appetizers">
-          <div class="card-media"><img loading="lazy" class="ph-img" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500&q=80" alt="Basket of parmesan truffle fries with fresh herbs"></div>
+      <div class="menu-filters" role="group" aria-label="Filter menu by category" data-filter-group="#menu-grid">
+        <button type="button" class="btn btn-outline" aria-pressed="true" data-filter="all" data-vi="Tất cả" data-en="All">All</button>
+        <button type="button" class="btn btn-outline" aria-pressed="false" data-filter="main" data-vi="Món Chính" data-en="Main Course">Main Course</button>
+        </div>
+
+      <div class="grid grid-4" id="menu-grid">
+        <article class="card dish-card" data-category="main">
+          <div class="card-media"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=302&h=430&fit=crop&q=80" alt="EATO dish" loading="lazy"></div>
           <div class="card-body">
-            <h3 class="h6">Truffle Herb Fries</h3>
-            <p data-vi="Khoai tây chiên phủ phô mai parmesan, dầu truffle thơm và rau thơm tươi." data-en="Golden fries tossed in truffle oil with parmesan and fresh herbs.">Khoai tây chiên phủ phô mai parmesan, dầu truffle thơm và rau thơm tươi.</p>
-            <span class="tag tag-mint" data-vi="Món Chay" data-en="Vegetarian">Món Chay</span>
-            <div class="dish-foot"><span class="dish-price">$9.50</span></div>
+            <h3 data-vi="Sò Điệp Áp Chảo Với Rau Thơm" data-en="Pan-Seared Scallop & Herb Salad">Pan-Seared Scallop & Herb Salad</h3>
+            <p data-vi="Sò điệp áp chảo tinh tế trên nền rau thơm tươi mát, hoàn thiện với sốt giấm balsamic cho một khởi đầu thanh nhã." data-en="Delicately seared scallop atop a fresh herb salad, finished with a balsamic reduction for a light, elegant start.">Delicately seared scallop atop a fresh herb salad, finished with a balsamic reduction for a light, elegant start.</p>
+          <div class="dish-foot"><span class="dish-price">$18.00</span></div>
           </div>
-        </li>
-        <li class="card menu-item" data-category="appetizers">
-          <div class="card-media"><img loading="lazy" class="ph-img" src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=500&q=80" alt="Crispy golden French fries on a dark plate"></div>
+        </article>
+        <article class="card dish-card" data-category="main">
+          <div class="card-media"><img src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?w=302&h=430&fit=crop&q=80" alt="EATO dish" loading="lazy"></div>
           <div class="card-body">
-            <h3 class="h6">Golden French Fries</h3>
-            <p data-vi="Khoai tây chiên vàng giòn, nóng hổi, ăn kèm nước chấm yêu thích của bạn." data-en="Crispy golden French fries, served hot with your favorite dip.">Khoai tây chiên vàng giòn, nóng hổi, ăn kèm nước chấm yêu thích của bạn.</p>
-            <span class="tag tag-mint" data-vi="Không Gluten" data-en="Gluten-Free">Không Gluten</span>
-            <div class="dish-foot"><span class="dish-price">$14.00</span></div>
+            <h3 data-vi="Cá Hồi Da Giòn" data-en="Crispy Skin Salmon">Crispy Skin Salmon</h3>
+            <p data-vi="Phi lê cá hồi áp chảo với lớp da giòn rụm, dùng kèm cơm rau thơm và sốt bơ chanh." data-en="Pan-seared salmon fillet with irresistibly crispy skin, served over herbed rice with a citrus beurre blanc.">Pan-seared salmon fillet with irresistibly crispy skin, served over herbed rice with a citrus beurre blanc.</p>
+            <div class="dish-foot"><span class="dish-price">$32.00</span></div>
           </div>
-        </li>
-        <li class="card menu-item" data-category="soups-salads">
-          <div class="card-media"><img loading="lazy" class="ph-img" src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=500&q=80" alt="Grilled chicken breast plated with roasted vegetables and lemon"></div>
+        </article>
+        <article class="card dish-card" data-category="main">
+          <div class="card-media"><img src="https://images.unsplash.com/photo-1580554530778-ca36943938b2?w=302&h=430&fit=crop&q=80" alt="EATO dish" loading="lazy"></div>
           <div class="card-body">
-            <h3 class="h6">Grilled Lemon Chicken Breast</h3>
-            <p data-vi="Ức gà nướng mềm ngọt ăn kèm rau củ nướng và chanh tươi thanh mát." data-en="Grilled chicken breast plated with roasted vegetables and fresh lemon.">Ức gà nướng mềm ngọt ăn kèm rau củ nướng và chanh tươi thanh mát.</p>
-            <div class="dish-foot"><span class="dish-price">$8.00</span></div>
+            <h3 data-vi="Ức Vịt Áp Chảo Vàng Giòn" data-en="Golden Duck Breast">Golden Duck Breast</h3>
+            <p data-vi="Ức vịt áp chảo vàng giòn, thái lát trên bánh khoai tây rösti giòn, dùng kèm cải xoăn om và rau củ nướng." data-en="Golden pan-seared duck breast, sliced and fanned over a crispy potato rösti with braised kale and roasted root vegetables.">Golden pan-seared duck breast, sliced and fanned over a crispy potato rösti with braised kale and roasted root vegetables.</p>
+          <div class="dish-foot"><span class="dish-price">$36.00</span></div>
           </div>
-        </li>
-        <li class="card menu-item" data-category="soups-salads">
-          <div class="card-media"><img loading="lazy" class="ph-img" src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=500&q=80" alt="Whole roasted chicken in a cast iron skillet"></div>
+        </article>
+        <article class="card dish-card" data-category="main">
+          <div class="card-media"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=302&h=430&fit=crop&q=80" alt="EATO dish" loading="lazy"></div>
           <div class="card-body">
-            <h3 class="h6">Roasted Herb Chicken</h3>
-            <p data-vi="Gà nguyên con quay thảo mộc, da giòn vàng ươm, nướng trong chảo gang." data-en="Whole herb-roasted chicken with crispy golden skin, cooked in a cast iron skillet.">Gà nguyên con quay thảo mộc, da giòn vàng ươm, nướng trong chảo gang.</p>
-            <div class="dish-foot"><span class="dish-price">$12.00</span></div>
+            <h3 data-vi="Sò Điệp Áp Chảo Với Rau Thơm" data-en="Pan-Seared Scallop & Herb Salad">Pan-Seared Scallop & Herb Salad</h3>
+            <p data-vi="Sò điệp áp chảo tinh tế trên nền rau thơm tươi mát, hoàn thiện với sốt giấm balsamic cho một khởi đầu thanh nhã." data-en="Delicately seared scallop atop a fresh herb salad, finished with a balsamic reduction for a light, elegant start.">Delicately seared scallop atop a fresh herb salad, finished with a balsamic reduction for a light, elegant start.</p>
+          <div class="dish-foot"><span class="dish-price">$18.00</span></div>
           </div>
-        </li>
-        <li class="card menu-item" data-category="main-course">
-          <div class="card-media"><img class="ph-img" loading="lazy" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=700&q=80" alt="Double smash cheeseburger with pickles and onions stacked on a wooden board"></div>
+        </article>
+        <article class="card dish-card" data-category="main">
+          <div class="card-media"><img src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?w=302&h=430&fit=crop&q=80" alt="EATO dish" loading="lazy"></div>
           <div class="card-body">
-            <h3 class="h6">Classic Smash Burger</h3>
-            <p data-vi="Bánh burger bò smash kép giòn cạnh, phô mai tan chảy, ăn kèm dưa chua và hành tây tươi." data-en="Double smash beef patties with melted cheese, crisp pickles, and fresh onions.">Bánh burger bò smash kép giòn cạnh, phô mai tan chảy, ăn kèm dưa chua và hành tây tươi.</p>
-            <div class="dish-foot">
-              <span class="rating" aria-label="Rated 5 out of 5">
-                <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg>
-              </span>
-              <span class="dish-price">$42.00</span>
-            </div>
-            <a class="btn-link view-details-link" href="product-detail.html">
-              <span data-vi="Xem Chi Tiết" data-en="View Details">Xem Chi Tiết</span>
-              <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
+            <h3 data-vi="Cá Hồi Da Giòn" data-en="Crispy Skin Salmon">Crispy Skin Salmon</h3>
+            <p data-vi="Phi lê cá hồi áp chảo với lớp da giòn rụm, dùng kèm cơm rau thơm và sốt bơ chanh." data-en="Pan-seared salmon fillet with irresistibly crispy skin, served over herbed rice with a citrus beurre blanc.">Pan-seared salmon fillet with irresistibly crispy skin, served over herbed rice with a citrus beurre blanc.</p>
+          <div class="dish-foot"><span class="dish-price">$32.00</span></div>
           </div>
-        </li>
-        <li class="card menu-item" data-category="main-course">
-          <div class="card-media"><img loading="lazy" class="ph-img" src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=700&q=80" alt="Cheeseburger and fries combo served in a rustic metal basket"></div>
+        </article>
+        <article class="card dish-card" data-category="main">
+          <div class="card-media"><img src="https://images.unsplash.com/photo-1580554530778-ca36943938b2?w=302&h=430&fit=crop&q=80" alt="EATO dish" loading="lazy"></div>
           <div class="card-body">
-            <h3 class="h6">Bacon Cheeseburger Combo</h3>
-            <p data-vi="Burger phô mai thịt bò nướng kèm khoai tây chiên giòn, phục vụ trong giỏ sắt kiểu mộc mạc." data-en="Grilled beef cheeseburger served with crispy fries in a rustic metal basket.">Burger phô mai thịt bò nướng kèm khoai tây chiên giòn, phục vụ trong giỏ sắt kiểu mộc mạc.</p>
-            <div class="dish-foot">
-              <span class="rating" aria-label="Rated 5 out of 5">
-                <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.4 1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg>
-              </span>
-              <span class="dish-price">$12.00</span>
-            </div>
+            <h3 data-vi="Ức Vịt Áp Chảo Vàng Giòn" data-en="Golden Duck Breast">Golden Duck Breast</h3>
+            <p data-vi="Ức vịt áp chảo vàng giòn, thái lát trên bánh khoai tây rösti giòn, dùng kèm cải xoăn om và rau củ nướng." data-en="Golden pan-seared duck breast, sliced and fanned over a crispy potato rösti with braised kale and roasted root vegetables.">Golden pan-seared duck breast, sliced and fanned over a crispy potato rösti with braised kale and roasted root vegetables.</p>
+          <div class="dish-foot"><span class="dish-price">$36.00</span></div>
           </div>
-        </li>
-        <li class="card menu-item" data-category="main-course">
-          <div class="card-media"><img loading="lazy" class="ph-img" src="https://images.unsplash.com/photo-1562967914-608f82629710?w=700&q=80" alt="Platter of crispy fried chicken tenders with dipping sauce"></div>
+        </article>
+        <article class="card dish-card" data-category="main">
+          <div class="card-media"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=302&h=430&fit=crop&q=80" alt="EATO dish" loading="lazy"></div>
           <div class="card-body">
-            <h3 class="h6">Crispy Chicken Tenders</h3>
-            <p data-vi="Gà chiên giòn tan phục vụ cùng sốt chấm đậm đà, lớp vỏ vàng ươm hấp dẫn." data-en="Crispy golden chicken tenders served with a rich dipping sauce.">Gà chiên giòn tan phục vụ cùng sốt chấm đậm đà, lớp vỏ vàng ươm hấp dẫn.</p>
-            <div class="dish-foot"><span class="dish-price">$28.00</span></div>
+            <h3 data-vi="Sò Điệp Áp Chảo Với Rau Thơm" data-en="Pan-Seared Scallop & Herb Salad">Pan-Seared Scallop & Herb Salad</h3>
+            <p data-vi="Sò điệp áp chảo tinh tế trên nền rau thơm tươi mát, hoàn thiện với sốt giấm balsamic cho một khởi đầu thanh nhã." data-en="Delicately seared scallop atop a fresh herb salad, finished with a balsamic reduction for a light, elegant start.">Delicately seared scallop atop a fresh herb salad, finished with a balsamic reduction for a light, elegant start.</p>
+          <div class="dish-foot"><span class="dish-price">$18.00</span></div>
           </div>
-        </li>
-        <li class="card menu-item" data-category="side-dishes">
-          <div class="card-media"><img loading="lazy" class="ph-img" src="https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500&q=80" alt="Bowl of seasoned French fries served overhead"></div>
+        </article>
+        <article class="card dish-card" data-category="main">
+          <div class="card-media"><img src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?w=302&h=430&fit=crop&q=80" alt="EATO dish" loading="lazy"></div>
           <div class="card-body">
-            <h3 class="h6">Classic Seasoned Fries</h3>
-            <p data-vi="Khoai tây chiên tẩm gia vị đậm đà, giòn rụm trong từng miếng." data-en="Classic seasoned fries, crispy and full of flavor.">Khoai tây chiên tẩm gia vị đậm đà, giòn rụm trong từng miếng.</p>
-            <span class="tag tag-mint" data-vi="Món Chay" data-en="Vegetarian">Món Chay</span>
-            <div class="dish-foot"><span class="dish-price">$7.50</span></div>
+            <h3 data-vi="Cá Hồi Da Giòn" data-en="Crispy Skin Salmon">Crispy Skin Salmon</h3>
+            <p data-vi="Phi lê cá hồi áp chảo với lớp da giòn rụm, dùng kèm cơm rau thơm và sốt bơ chanh." data-en="Pan-seared salmon fillet with irresistibly crispy skin, served over herbed rice with a citrus beurre blanc.">Pan-seared salmon fillet with irresistibly crispy skin, served over herbed rice with a citrus beurre blanc.</p>
+          <div class="dish-foot"><span class="dish-price">$32.00</span></div>
           </div>
-        </li>
-        <li class="card menu-item" data-category="side-dishes">
-          <div class="card-media"><img loading="lazy" class="ph-img" src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&q=80" alt="Golden fried chicken drumsticks fresh from the fryer"></div>
+        </article>
+        <article class="card dish-card" data-category="main">
+          <div class="card-media"><img src="https://images.unsplash.com/photo-1580554530778-ca36943938b2?w=302&h=430&fit=crop&q=80" alt="EATO dish" loading="lazy"></div>
           <div class="card-body">
-            <h3 class="h6">Golden Chicken Drumsticks</h3>
-            <p data-vi="Đùi gà chiên vàng giòn, nóng hổi ngay khi vừa ra chảo." data-en="Golden fried chicken drumsticks, fresh and crispy from the fryer.">Đùi gà chiên vàng giòn, nóng hổi ngay khi vừa ra chảo.</p>
-            <div class="dish-foot"><span class="dish-price">$6.50</span></div>
+            <h3 data-vi="Ức Vịt Áp Chảo Vàng Giòn" data-en="Golden Duck Breast">Golden Duck Breast</h3>
+            <p data-vi="Ức vịt áp chảo vàng giòn, thái lát trên bánh khoai tây rösti giòn, dùng kèm cải xoăn om và rau củ nướng." data-en="Golden pan-seared duck breast, sliced and fanned over a crispy potato rösti with braised kale and roasted root vegetables.">Golden pan-seared duck breast, sliced and fanned over a crispy potato rösti with braised kale and roasted root vegetables.</p>
+          <div class="dish-foot"><span class="dish-price">$36.00</span></div>
           </div>
-        </li>
-        <li class="card menu-item" data-category="desserts">
-          <div class="card-media"><img loading="lazy" class="ph-img" src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=700&q=80" alt="Bacon cheeseburger with fresh lettuce and melted cheese"></div>
+        </article>
+        <article class="card dish-card" data-category="main">
+          <div class="card-media"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=302&h=430&fit=crop&q=80" alt="EATO dish" loading="lazy"></div>
           <div class="card-body">
-            <h3 class="h6">BBQ Bacon Cheeseburger</h3>
-            <p data-vi="Burger thịt bò phô mai tan chảy, thịt xông khói giòn, rau xà lách tươi mát." data-en="Bacon cheeseburger with melted cheese and fresh crisp lettuce.">Burger thịt bò phô mai tan chảy, thịt xông khói giòn, rau xà lách tươi mát.</p>
-            <div class="dish-foot"><span class="dish-price">$9.00</span></div>
+            <h3 data-vi="Sò Điệp Áp Chảo Với Rau Thơm" data-en="Pan-Seared Scallop & Herb Salad">Pan-Seared Scallop & Herb Salad</h3>
+            <p data-vi="Sò điệp áp chảo tinh tế trên nền rau thơm tươi mát, hoàn thiện với sốt giấm balsamic cho một khởi đầu thanh nhã." data-en="Delicately seared scallop atop a fresh herb salad, finished with a balsamic reduction for a light, elegant start.">Delicately seared scallop atop a fresh herb salad, finished with a balsamic reduction for a light, elegant start.</p>
+          <div class="dish-foot"><span class="dish-price">$18.00</span></div>
           </div>
-        </li>
-        <li class="card menu-item" data-category="desserts">
-          <div class="card-media"><img loading="lazy" class="ph-img" src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=500&q=80" alt="Fresh cheeseburger with lettuce, tomato, and a grilled beef patty"></div>
+        </article>
+        <article class="card dish-card" data-category="main">
+          <div class="card-media"><img src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?w=302&h=430&fit=crop&q=80" alt="EATO dish" loading="lazy"></div>
           <div class="card-body">
-            <h3 class="h6">Classic Beef Burger</h3>
-            <p data-vi="Burger bò nướng cổ điển với xà lách tươi, cà chua và phô mai tan chảy." data-en="Classic grilled beef burger with fresh lettuce, tomato, and melted cheese.">Burger bò nướng cổ điển với xà lách tươi, cà chua và phô mai tan chảy.</p>
-            <div class="dish-foot"><span class="dish-price">$8.00</span></div>
+            <h3 data-vi="Cá Hồi Da Giòn" data-en="Crispy Skin Salmon">Crispy Skin Salmon</h3>
+            <p data-vi="Phi lê cá hồi áp chảo với lớp da giòn rụm, dùng kèm cơm rau thơm và sốt bơ chanh." data-en="Pan-seared salmon fillet with irresistibly crispy skin, served over herbed rice with a citrus beurre blanc.">Pan-seared salmon fillet with irresistibly crispy skin, served over herbed rice with a citrus beurre blanc.</p>
+          <div class="dish-foot"><span class="dish-price">$32.00</span></div>
           </div>
-        </li>
-        <li class="card menu-item" data-category="beverages">
-          <div class="card-media"><img loading="lazy" class="ph-img" src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=500&q=80" alt="Crispy golden French fries served alongside a cold drink"></div>
+        </article>
+        <article class="card dish-card" data-category="main">
+          <div class="card-media"><img src="https://images.unsplash.com/photo-1580554530778-ca36943938b2?w=302&h=430&fit=crop&q=80" alt="EATO dish" loading="lazy"></div>
           <div class="card-body">
-            <h3 class="h6">Golden French Fries</h3>
-            <p data-vi="Khoai tây chiên vàng giòn, nóng hổi, ăn kèm nước chấm yêu thích của bạn." data-en="Crispy golden French fries, served hot with your favorite dip.">Khoai tây chiên vàng giòn, nóng hổi, ăn kèm nước chấm yêu thích của bạn.</p>
-            <span class="tag tag-mint" data-vi="Thuần Chay" data-en="Vegan">Thuần Chay</span>
-            <div class="dish-foot"><span class="dish-price">$6.00</span></div>
+            <h3 data-vi="Ức Vịt Áp Chảo Vàng Giòn" data-en="Golden Duck Breast">Golden Duck Breast</h3>
+            <p data-vi="Ức vịt áp chảo vàng giòn, thái lát trên bánh khoai tây rösti giòn, dùng kèm cải xoăn om và rau củ nướng." data-en="Golden pan-seared duck breast, sliced and fanned over a crispy potato rösti with braised kale and roasted root vegetables.">Golden pan-seared duck breast, sliced and fanned over a crispy potato rösti with braised kale and roasted root vegetables.</p>
+          <div class="dish-foot"><span class="dish-price">$36.00</span></div>
           </div>
-        </li>
-        <li class="card menu-item" data-category="beverages">
-          <div class="card-media"><img loading="lazy" class="ph-img" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=500&q=80" alt="Grilled steak served with a side of crispy fries"></div>
-          <div class="card-body">
-            <h3 class="h6">Grilled Steak &amp; Fries</h3>
-            <p data-vi="Bò bít tết nướng mềm ngọt, ăn kèm khoai tây chiên giòn tan." data-en="Grilled steak served with a side of crispy golden fries.">Bò bít tết nướng mềm ngọt, ăn kèm khoai tây chiên giòn tan.</p>
-            <div class="dish-foot"><span class="dish-price">$11.00</span></div>
-          </div>
-        </li>
-      </ul>
-      <p id="menu-empty-message" class="text-center text-muted" style="margin-top:32px; display:none;" data-vi="Không tìm thấy món ăn nào trong danh mục này." data-en="No dishes found in this category.">Không tìm thấy món ăn nào trong danh mục này.</p>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section-bg-rust section-glow" aria-labelledby="menu-faq-heading">
+  <section class="section-bg-rust">
     <div class="container">
       <div class="section-head">
-        <h2 id="menu-faq-heading" data-vi="Giải Đáp Mọi Thắc Mắc, Tận Hưởng Trải Nghiệm Trọn Vẹn!" data-en="Your Questions Answered, Enjoy a Seamless Experience!">Giải Đáp Mọi Thắc Mắc, Tận Hưởng Trải Nghiệm Trọn Vẹn!</h2>
+        <h2 style="max-width:780px;" data-vi="Giải Đáp Mọi Thắc Mắc, Tận Hưởng Trải Nghiệm Trọn Vẹn!" data-en="Your Questions Answered, Enjoy a Seamless Experience!">Your Questions Answered, Enjoy a Seamless Experience!</h2>
         <div>
-          <p style="margin-bottom:16px;" data-vi="Khám phá phần Câu Hỏi Thường Gặp để tìm câu trả lời cho các thắc mắc phổ biến, đảm bảo trải nghiệm ẩm thực suôn sẻ và trọn vẹn cho mọi thực khách." data-en="Explore our FAQs to find answers to common inquiries, ensuring a smooth and enjoyable dining experience for all our guests.">Khám phá phần Câu Hỏi Thường Gặp để tìm câu trả lời cho các thắc mắc phổ biến, đảm bảo trải nghiệm ẩm thực suôn sẻ và trọn vẹn cho mọi thực khách.</p>
-          <a class="btn btn-outline" href="faq.html" data-vi="Xem Thêm" data-en="See More">Xem Thêm</a>
+          <p data-vi="Khám phá các câu hỏi thường gặp để tìm câu trả lời cho những thắc mắc phổ biến, mang đến trải nghiệm dùng bữa suôn sẻ và trọn vẹn cho mọi thực khách" data-en="Explore our FAQs to find answers to common inquiries, ensuring a smooth and enjoyable dining experience for all our guests">Explore our FAQs to find answers to common inquiries, ensuring a smooth and enjoyable dining experience for all our guests</p>
+          <a class="btn btn-primary" href="faq.html" style="margin-top:16px;" data-vi="Xem thêm" data-en="See More">See More</a>
         </div>
       </div>
+
       <div class="split-media-content">
         <div class="accordion" id="menu-faq">
           <div class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="mf-t1" aria-expanded="true" aria-controls="mf-p1">
-                <span data-vi="Nhà hàng mở cửa vào những giờ nào?" data-en="What are your restaurant's hours of operation?">Nhà hàng mở cửa vào những giờ nào?</span>
-                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="mf-p1" role="region" aria-labelledby="mf-t1">
-              <div class="accordion-panel-inner" data-vi="Nhà hàng chúng tôi mở cửa từ Thứ Hai đến Chủ Nhật, từ 11:00 đến 22:00." data-en="Our restaurant is open Monday to Sunday from 11:00 AM to 10:00 PM.">Nhà hàng chúng tôi mở cửa từ Thứ Hai đến Chủ Nhật, từ 11:00 đến 22:00.</div>
-            </div>
+            <h3><button class="accordion-trigger" aria-expanded="true" aria-controls="menu-faq-panel-1" data-vi-html="Nhà hàng mở cửa vào những giờ nào? <svg class=&quot;icon-chevron&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;><path d=&quot;m6 9 6 6 6-6&quot;/></svg>" data-en-html="What are your restaurant’s hours of operation? <svg class=&quot;icon-chevron&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;><path d=&quot;m6 9 6 6 6-6&quot;/></svg>">
+              What are your restaurant’s hours of operation?
+              <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button></h3>
+            <div class="accordion-panel" id="menu-faq-panel-1"><div class="accordion-panel-inner" data-vi="Nhà hàng mở cửa từ Thứ Hai đến Chủ Nhật, từ 11:00 sáng đến 22:00 tối." data-en="Our restaurant is open Monday to Sunday from 11:00 AM to 10:00 PM.">Our restaurant is open Monday to Sunday from 11:00 AM to 10:00 PM.</div></div>
           </div>
           <div class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="mf-t2" aria-expanded="false" aria-controls="mf-p2">
-                <span data-vi="Tôi có cần đặt bàn trước khi đến dùng bữa không?" data-en="Do I need a reservation to dine?">Tôi có cần đặt bàn trước khi đến dùng bữa không?</span>
-                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="mf-p2" role="region" aria-labelledby="mf-t2">
-              <div class="accordion-panel-inner" data-vi="Chúng tôi luôn chào đón khách vãng lai, nhưng khuyến khích đặt bàn trước vào cuối tuần và buổi tối để đảm bảo có chỗ." data-en="Walk-ins are always welcome, but we recommend booking ahead for weekends and evenings to guarantee your table.">Chúng tôi luôn chào đón khách vãng lai, nhưng khuyến khích đặt bàn trước vào cuối tuần và buổi tối để đảm bảo có chỗ.</div>
-            </div>
+            <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="menu-faq-panel-2" data-vi-html="Tôi có cần đặt bàn trước khi đến dùng bữa không? <svg class=&quot;icon-chevron&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;><path d=&quot;m6 9 6 6 6-6&quot;/></svg>" data-en-html="Do I need a reservation to dine? <svg class=&quot;icon-chevron&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;><path d=&quot;m6 9 6 6 6-6&quot;/></svg>">
+              Do I need a reservation to dine?
+              <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button></h3>
+            <div class="accordion-panel" id="menu-faq-panel-2"><div class="accordion-panel-inner" data-vi="Chúng tôi hoan nghênh khách vãng lai, nhưng khuyến khích đặt bàn trước vào cuối tuần và buổi tối." data-en="Walk-ins are welcome, but we recommend booking ahead for weekends and evenings.">Walk-ins are welcome, but we recommend booking ahead for weekends and evenings.</div></div>
           </div>
           <div class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="mf-t3" aria-expanded="false" aria-controls="mf-p3">
-                <span data-vi="Tôi có thể thay đổi đặt bàn sau khi đã đặt không?" data-en="Can I modify my reservation after booking?">Tôi có thể thay đổi đặt bàn sau khi đã đặt không?</span>
-                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="mf-p3" role="region" aria-labelledby="mf-t3">
-              <div class="accordion-panel-inner" data-vi="Có — vui lòng liên hệ với chúng tôi ít nhất 2 giờ trước giờ đặt bàn và chúng tôi sẽ hỗ trợ điều chỉnh." data-en="Yes — contact us at least 2 hours before your reservation time and we'll be happy to adjust it.">Có — vui lòng liên hệ với chúng tôi ít nhất 2 giờ trước giờ đặt bàn và chúng tôi sẽ hỗ trợ điều chỉnh.</div>
-            </div>
+            <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="menu-faq-panel-3" data-vi-html="Tôi có thể thay đổi đặt bàn sau khi đã đặt không? <svg class=&quot;icon-chevron&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;><path d=&quot;m6 9 6 6 6-6&quot;/></svg>" data-en-html="Can I modify my reservation after booking? <svg class=&quot;icon-chevron&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;><path d=&quot;m6 9 6 6 6-6&quot;/></svg>">
+              Can I modify my reservation after booking?
+              <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button></h3>
+            <div class="accordion-panel" id="menu-faq-panel-3"><div class="accordion-panel-inner" data-vi="Có, vui lòng liên hệ với chúng tôi trước 24 giờ để thay đổi ngày, giờ hoặc số lượng khách." data-en="Yes, contact us up to 24 hours in advance to change your date, time, or party size.">Yes, contact us up to 24 hours in advance to change your date, time, or party size.</div></div>
           </div>
           <div class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="mf-t4" aria-expanded="false" aria-controls="mf-p4">
-                <span data-vi="Nhà hàng có dịch vụ mang đi hoặc giao hàng không?" data-en="Do you offer takeout or delivery services?">Nhà hàng có dịch vụ mang đi hoặc giao hàng không?</span>
-                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="mf-p4" role="region" aria-labelledby="mf-t4">
-              <div class="accordion-panel-inner" data-vi="Có, chúng tôi có dịch vụ mang đi tại chỗ và hợp tác với các nền tảng giao hàng lớn." data-en="Yes, takeout is available in-house and we partner with major delivery platforms for delivery orders.">Có, chúng tôi có dịch vụ mang đi tại chỗ và hợp tác với các nền tảng giao hàng lớn.</div>
-            </div>
+            <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="menu-faq-panel-4" data-vi-html="Nhà hàng có dịch vụ mang đi hoặc giao hàng không? <svg class=&quot;icon-chevron&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;><path d=&quot;m6 9 6 6 6-6&quot;/></svg>" data-en-html="Do you offer takeout or delivery services? <svg class=&quot;icon-chevron&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;><path d=&quot;m6 9 6 6 6-6&quot;/></svg>">
+              Do you offer takeout or delivery services?
+              <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button></h3>
+            <div class="accordion-panel" id="menu-faq-panel-4"><div class="accordion-panel-inner" data-vi="Có, chúng tôi có dịch vụ mang đi và hợp tác với các nền tảng giao hàng lớn." data-en="Yes, takeout is available and we partner with major delivery platforms.">Yes, takeout is available and we partner with major delivery platforms.</div></div>
           </div>
           <div class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="mf-t5" aria-expanded="false" aria-controls="mf-p5">
-                <span data-vi="Nhà hàng có món chay hoặc không chứa gluten không?" data-en="Are there vegetarian or gluten-free options available?">Nhà hàng có món chay hoặc không chứa gluten không?</span>
-                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="mf-p5" role="region" aria-labelledby="mf-t5">
-              <div class="accordion-panel-inner" data-vi="Chắc chắn rồi — thực đơn của chúng tôi có ghi chú rõ ràng các món chay, thuần chay và không chứa gluten." data-en="Absolutely — our menu is clearly marked with vegetarian, vegan, and gluten-free choices.">Chắc chắn rồi — thực đơn của chúng tôi có ghi chú rõ ràng các món chay, thuần chay và không chứa gluten.</div>
-            </div>
+            <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="menu-faq-panel-5" data-vi-html="Nhà hàng có món chay hoặc không chứa gluten không? <svg class=&quot;icon-chevron&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;><path d=&quot;m6 9 6 6 6-6&quot;/></svg>" data-en-html="Are there vegetarian or gluten-free available? <svg class=&quot;icon-chevron&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;><path d=&quot;m6 9 6 6 6-6&quot;/></svg>">
+              Are there vegetarian or gluten-free available?
+              <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button></h3>
+            <div class="accordion-panel" id="menu-faq-panel-5"><div class="accordion-panel-inner" data-vi="Có, thực đơn của chúng tôi có các món chay và không chứa gluten được ghi chú rõ ràng." data-en="Yes, our menu includes clearly marked vegetarian and gluten-free dishes.">Yes, our menu includes clearly marked vegetarian and gluten-free dishes.</div></div>
           </div>
           <div class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="mf-t6" aria-expanded="false" aria-controls="mf-p6">
-                <span data-vi="Tôi có thể tổ chức sự kiện riêng tại nhà hàng không?" data-en="Can I host a private event at your restaurant?">Tôi có thể tổ chức sự kiện riêng tại nhà hàng không?</span>
-                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="mf-p6" role="region" aria-labelledby="mf-t6">
-              <div class="accordion-panel-inner" data-vi="Có — phòng tiệc riêng của chúng tôi có thể phục vụ tới 40 khách cho các buổi kỷ niệm, sự kiện doanh nghiệp và nhiều hơn nữa." data-en="Yes — our private dining room accommodates up to 40 guests for celebrations, corporate events, and more.">Có — phòng tiệc riêng của chúng tôi có thể phục vụ tới 40 khách cho các buổi kỷ niệm, sự kiện doanh nghiệp và nhiều hơn nữa.</div>
-            </div>
+            <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="menu-faq-panel-6" data-vi-html="Tôi có thể tổ chức sự kiện riêng tại nhà hàng không? <svg class=&quot;icon-chevron&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;><path d=&quot;m6 9 6 6 6-6&quot;/></svg>" data-en-html="Can I host a private event at your restaurant? <svg class=&quot;icon-chevron&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;><path d=&quot;m6 9 6 6 6-6&quot;/></svg>">
+              Can I host a private event at your restaurant?
+              <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button></h3>
+            <div class="accordion-panel" id="menu-faq-panel-6"><div class="accordion-panel-inner" data-vi="Chắc chắn rồi — hãy truy cập trang Sự Kiện &amp; Tiệc Riêng để xem các gói dịch vụ và tình trạng còn chỗ." data-en="Absolutely — visit our Events &amp; Private Dining page for packages and availability.">Absolutely — visit our Events &amp; Private Dining page for packages and availability.</div></div>
           </div>
           <div class="accordion-item">
-            <h3>
-              <button class="accordion-trigger" id="mf-t7" aria-expanded="false" aria-controls="mf-p7">
-                <span data-vi="Nhà hàng có hỗ trợ các yêu cầu cho dịp kỷ niệm không?" data-en="Do you accommodate requests for celebrations?">Nhà hàng có hỗ trợ các yêu cầu cho dịp kỷ niệm không?</span>
-                <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-            </h3>
-            <div class="accordion-panel" id="mf-p7" role="region" aria-labelledby="mf-t7">
-              <div class="accordion-panel-inner" data-vi="Tất nhiên rồi — hãy cho chúng tôi biết trước và chúng tôi sẽ chuẩn bị bánh theo yêu cầu, trang trí hoặc thực đơn đặc biệt cho dịp của bạn." data-en="Of course — let us know in advance and we'll arrange a custom cake, decorations, or a special menu for your occasion.">Tất nhiên rồi — hãy cho chúng tôi biết trước và chúng tôi sẽ chuẩn bị bánh theo yêu cầu, trang trí hoặc thực đơn đặc biệt cho dịp của bạn.</div>
-            </div>
+            <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="menu-faq-panel-7" data-vi-html="Nhà hàng có hỗ trợ các yêu cầu cho dịp lễ kỷ niệm không? <svg class=&quot;icon-chevron&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;><path d=&quot;m6 9 6 6 6-6&quot;/></svg>" data-en-html="Do you accommodate requests for celebrations? <svg class=&quot;icon-chevron&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;><path d=&quot;m6 9 6 6 6-6&quot;/></svg>">
+              Do you accommodate requests for celebrations?
+              <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button></h3>
+            <div class="accordion-panel" id="menu-faq-panel-7"><div class="accordion-panel-inner" data-vi="Có, hãy cho chúng tôi biết trước để chúng tôi giúp buổi lễ của bạn thêm đặc biệt." data-en="Yes, let us know in advance and we'll help make the occasion special.">Yes, let us know in advance and we'll help make the occasion special.</div></div>
           </div>
         </div>
-        <img loading="lazy" class="ph-img hide-mobile" style="border-radius:24px;" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80" alt="Elegant table setting with wine glasses where guests browse the EATO menu">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=679&h=780&fit=crop&q=80" alt="EATO restaurant" loading="lazy">
       </div>
     </div>
   </section>
 
-  <!-- Testimonial quote -->
-  <section class="section-bg-dark quote-section" aria-labelledby="quote-heading">
+  <!-- Testimonial -->
+  <section class="section-bg-dark section-glow quote-section">
     <div class="container">
-      <span class="quote-mark" aria-hidden="true">&#8220;</span>
-      <h2 id="quote-heading" class="quote-text" data-vi="Đồ ăn thực sự xuất sắc, và dịch vụ thì tuyệt vời! Từng chi tiết nhỏ đều góp phần tạo nên một buổi tối khó quên. Không thể chờ để quay lại trải nghiệm thêm lần nữa." data-en="The food was absolutely outstanding, and the service was exceptional! Every detail contributed to an unforgettable evening. Can't wait to return for another amazing experience.">Đồ ăn thực sự xuất sắc, và dịch vụ thì tuyệt vời! Từng chi tiết nhỏ đều góp phần tạo nên một buổi tối khó quên. Không thể chờ để quay lại trải nghiệm thêm lần nữa.</h2>
-      <div class="carousel" data-carousel data-per-view="1" data-carousel-label="Guest testimonials">
+      <div class="carousel" id="menu-testimonial-carousel" data-carousel data-per-view="1" data-carousel-label="Customer testimonials">
         <div class="carousel-viewport">
-          <ul class="carousel-track" style="justify-content:center; width:100%;">
-            <li style="list-style:none;">
+          <ul class="carousel-track is-full-slide">
+            <li>
+              <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+              <p class="quote-text" data-vi="MÓN ĂN THẬT SỰ XUẤT SẮC, VÀ DỊCH VỤ THÌ TUYỆT VỜI! TỪNG CHI TIẾT NHỎ ĐÃ TẠO NÊN MỘT BUỔI TỐI KHÓ QUÊN. NÓNG LÒNG ĐƯỢC QUAY LẠI ĐỂ TRẢI NGHIỆM THÊM LẦN NỮA" data-en="THE FOOD WAS ABSOLUTELY OUTSTANDING, AND THE SERVICE WAS EXCEPTIONAL! EVERY DETAIL CONTRIBUTED TO AN UNFORGETTABLE EVENING. CAN’T WAIT TO RETURN ANOTHER AMAZING EXPERIENCE">THE FOOD WAS ABSOLUTELY OUTSTANDING, AND THE SERVICE WAS EXCEPTIONAL! EVERY DETAIL CONTRIBUTED TO AN UNFORGETTABLE EVENING. CAN’T WAIT TO RETURN ANOTHER AMAZING EXPERIENCE</p>
               <div class="avatar-row">
-                <img loading="lazy" class="avatar-side" src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=220&q=80" alt="Portrait of a previous EATO guest">
-                <img loading="lazy" class="avatar-active" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=320&q=80" alt="Portrait of Sarah Hamilton, EATO guest">
-                <img loading="lazy" class="avatar-side" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=220&q=80" alt="Portrait of a following EATO guest">
+        <img class="avatar-side" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=280&h=280&fit=crop&q=80" alt="EATO customer" loading="lazy">
+        <img class="avatar-active" src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=355&h=346&fit=crop&q=80" alt="EATO restaurant" loading="lazy">
+        <img class="avatar-side" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=280&h=280&fit=crop&q=80" alt="EATO customer" loading="lazy">
+      </div>
+            </li>
+            <li>
+              <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+              <p class="quote-text" data-vi="Khi một công ty công nghệ hàng đầu tìm đến chúng tôi để tổ chức chuyến nghỉ dưỡng thường niên cho toàn công ty, họ mong muốn tạo ra một sự kiện khơi nguồn sáng tạo và gắn kết tinh thần đồng đội. Đội ngũ của chúng tôi đã phối hợp chặt chẽ với ban tổ chức của họ để thấu hiểu mục tiêu và tầm nhìn của họ." data-en="When a leading tech company approached us to host their annual corporate retreat, they wanted to create an event that would inspire creativity and strengthen team bonds. Our team worked closely with their organizers to understand their goals and vision.">When a leading tech company approached us to host their annual corporate retreat, they wanted to create an event that would inspire creativity and strengthen team bonds. Our team worked closely with their organizers to understand their goals and vision.</p>
+              <div class="avatar-row">
+                <img class="avatar-active" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=355&h=346&fit=crop&q=80" alt="Michael Richard Klein, EATO customer" loading="lazy">
               </div>
-              <p class="avatar-caption">Sarah Hamilton</p>
+              <p class="avatar-caption">Michael Richard Klein</p>
             </li>
           </ul>
         </div>
         <div class="carousel-controls controls-center">
-          <button class="btn-icon" type="button" data-carousel-prev aria-label="Previous testimonial" style="border-color:#3a3a3a; color:#fff;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          </button>
-          <button class="btn-icon" type="button" data-carousel-next aria-label="Next testimonial" style="border-color:#3a3a3a; color:#fff;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
+          <button class="btn-icon" data-carousel-prev aria-label="Previous testimonial"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="transform:rotate(180deg)"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn-icon" data-carousel-next aria-label="Next testimonial"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </div>
-      </div>
-      <div class="text-center mt-lg">
-        <a class="btn btn-primary" href="reservation.html" data-vi="Đặt Bàn Của Bạn" data-en="Reserve Your Table">Đặt Bàn Của Bạn</a>
       </div>
     </div>
   </section>
 
+  <img class="rounded-banner" style="margin:0 24px;width:calc(100% - 48px);" src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?w=1527&h=1711&fit=crop&q=80" alt="EATO restaurant" loading="lazy">
+
 </main>
 
-<footer class="site-footer" id="footer">
+<footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-about">
-        <a class="brand" href="index.html" aria-label="EATO — go to homepage" style="color:#fff;">
+        <a class="brand" href="index.html" aria-label="EATO — go to homepage">
           <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
           EATO
         </a>
-        <p data-vi="Chúng tôi mang đến giá trị thực sự — nhiều hương vị hơn, nhiều khoảnh khắc hơn và nhiều lý do hơn để bạn quay lại thưởng thức một bữa ăn khó quên." data-en="We drive real results — more flavor, more moments, and more reasons to come back for another unforgettable meal.">Chúng tôi mang đến giá trị thực sự — nhiều hương vị hơn, nhiều khoảnh khắc hơn và nhiều lý do hơn để bạn quay lại thưởng thức một bữa ăn khó quên.</p>
-        <form data-validate aria-label="Newsletter signup" data-success-message-vi="Cảm ơn — bạn đã đăng ký nhận ưu đãi và cập nhật độc quyền!" data-success-message-en="Thanks — you're subscribed for exclusive offers and updates!">
-          <div class="field newsletter-field">
-            <label class="sr-only" for="newsletter-email" data-vi="Địa chỉ email" data-en="Email address">Địa chỉ email</label>
-            <div class="newsletter-form">
-              <input type="email" id="newsletter-email" name="email" placeholder="Nhập địa chỉ email của bạn" data-vi-placeholder="Nhập địa chỉ email của bạn" data-en-placeholder="Enter your email address" data-rules="required email" data-error-email-vi="Vui lòng nhập địa chỉ email hợp lệ." data-error-email-en="Please enter a valid email address.">
-              <button class="btn-icon" type="submit" aria-label="Subscribe to newsletter">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </button>
-            </div>
-            <span class="error-message" role="alert"></span>
+        <p data-vi="Chúng Tôi Mang Đến Kết Quả Thực Sự, Nhiều Lượt Ghé Thăm, Nhiều Khách Hàng, Nhiều Tăng Trưởng!" data-en="We Drive Real Result, More Traffic, More Leads, more Growth!">We Drive Real Result, More Traffic, More Leads, more Growth!</p>
+        <form class="field newsletter-field" data-validate onsubmit="return false;">
+          <label for="newsletter-email" class="sr-only" data-vi="Địa chỉ email" data-en="Email address">Email address</label>
+          <p data-vi="Đăng ký ngay để nhận ưu đãi độc quyền và cập nhật ẩm thực mới nhất!" data-en="Subscribe now for exclusive offers and the latest food updates!">Subscribe now for exclusive offers and the latest food updates!</p>
+          <div class="newsletter-form">
+            <input id="newsletter-email" type="email" name="email" placeholder="Enter your Email Address" data-vi-placeholder="Nhập địa chỉ email của bạn" data-en-placeholder="Enter your Email Address" data-rules="required email">
+            <button class="btn-icon" type="submit" aria-label="Subscribe"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </div>
-          <p class="form-status" role="status" aria-live="polite"></p>
         </form>
-        <p style="margin-top:24px; color:#b8b8b8;">123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</p>
-        <ul class="footer-social" style="margin-top:16px; list-style:none; padding:0;">
-          <li><a class="btn-icon" href="#" aria-label="EATO on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-3.5-.8-3-1.2-4.9-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.4 1.5 2.7 1.7.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.6.8 1.9 1 .3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg></a></li>
-          <li><a class="btn-icon" href="#" aria-label="EATO on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/></svg></a></li>
-          <li><a class="btn-icon" href="#" aria-label="EATO on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg></a></li>
-          <li><a class="btn-icon" href="#" aria-label="EATO on Twitter"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M4 4l7.5 9.1L4.3 20H6l6-6.7L16.7 20H20l-8-9.7L19.4 4H17.7l-5.6 6.2L7.3 4z"/></svg></a></li>
-        </ul>
+        <p style="margin-top:24px;">123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</p>
+        <div class="footer-social" style="margin-top:20px;">
+          <button class="btn-icon" type="button" aria-label="EATO on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></button>
+          <button class="btn-icon" type="button" aria-label="EATO on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></button>
+          <button class="btn-icon" type="button" aria-label="EATO on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4l16 16M20 4 4 20"/></svg></button>
+          <button class="btn-icon" type="button" aria-label="EATO on YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></button>
+        </div>
       </div>
-      <nav class="footer-col" aria-label="Explore">
-        <h3 data-vi="Khám Phá" data-en="Explore">Khám Phá</h3>
-        <ul>
-          <li><a href="index.html" data-vi="Trang chủ" data-en="Home">Trang chủ</a></li>
-          <li><a href="menu.html" data-vi="Thực đơn" data-en="Menu">Thực đơn</a></li>
-          <li><a href="gallery.html" data-vi="Thư viện ảnh" data-en="Gallery">Thư viện ảnh</a></li>
-          <li><a href="blog.html" data-vi="Blog &amp; Kiến Thức" data-en="Blog &amp; Insights">Blog &amp; Kiến Thức</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-col" aria-label="About">
-        <h3 data-vi="Giới Thiệu" data-en="About">Giới Thiệu</h3>
-        <ul>
-          <li><a href="about.html" data-vi="Về chúng tôi" data-en="About Us">Về chúng tôi</a></li>
-          <li><a href="events.html" data-vi="Sự Kiện &amp; Tiệc Riêng" data-en="Events &amp; Private Dining">Sự Kiện &amp; Tiệc Riêng</a></li>
-          <li><a href="reviews.html" data-vi="Đánh Giá Khách Hàng" data-en="Customer Reviews">Đánh Giá Khách Hàng</a></li>
-          <li><a href="offers.html" data-vi="Ưu Đãi Đặc Biệt" data-en="Special Offers">Ưu Đãi Đặc Biệt</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-col" aria-label="Support">
-        <h3 data-vi="Hỗ Trợ" data-en="Support">Hỗ Trợ</h3>
-        <ul>
-          <li><a href="reservation.html" data-vi="Đặt Bàn" data-en="Reservation">Đặt Bàn</a></li>
-          <li><a href="faq.html" data-vi="Câu Hỏi Thường Gặp" data-en="FAQ">Câu Hỏi Thường Gặp</a></li>
-          <li><a href="contact.html" data-vi="Liên Hệ" data-en="Contact Us">Liên Hệ</a></li>
-          <li><a href="countdown.html" data-vi="Ưu Đãi Có Hạn" data-en="Limited-Time Offer">Ưu Đãi Có Hạn</a></li>
-        </ul>
-      </nav>
+      <div class="footer-col">
+        <h3 data-vi="Trang Chủ" data-en="Home">Home</h3>
+        <ul><li><a href="index.html" data-vi="Trang chủ" data-en="Home">Home</a></li><li><a href="about.html" data-vi="Tầm Nhìn &amp; Sứ Mệnh" data-en="Vision &amp; Mission">Vision &amp; Mission</a></li><li><a href="menu.html" data-vi="Thực đơn" data-en="Menu">Menu</a></li><li><a href="gallery.html" data-vi="Thư viện ảnh" data-en="Gallery">Gallery</a></li><li><a href="reviews.html" data-vi="Đánh giá" data-en="Reviews">Reviews</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h3 data-vi="Về Chúng Tôi" data-en="About Us">About Us</h3>
+        <ul><li><a href="about.html" data-vi="Về chúng tôi" data-en="About Us">About Us</a></li><li><a href="events.html" data-vi="Sự kiện &amp; Tiệc riêng" data-en="Events &amp; Private Dining">Events &amp; Private Dining</a></li><li><a href="offers.html" data-vi="Ưu đãi đặc biệt" data-en="Special Offers">Special Offers</a></li><li><a href="blog.html" data-vi="Blog &amp; Chia sẻ" data-en="Blog &amp; Insights">Blog &amp; Insights</a></li><li><a href="faq.html" data-vi="Câu hỏi thường gặp" data-en="FAQ">FAQ</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h3 data-vi="Dịch Vụ" data-en="Service">Service</h3>
+        <ul><li><a href="reservation.html" data-vi="Đặt bàn" data-en="Book Reservation">Book Reservation</a></li><li><a href="contact.html" data-vi="Liên hệ" data-en="Contact Us">Contact Us</a></li><li><a href="menu.html" data-vi="Đặt hàng trực tuyến" data-en="Order Online">Order Online</a></li><li><a href="events.html" data-vi="Tiệc riêng" data-en="Private Dining">Private Dining</a></li><li><a href="offers.html" data-vi="Chương trình khách hàng thân thiết" data-en="Loyalty Program">Loyalty Program</a></li></ul>
+      </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Eato. <span data-vi="Bảo lưu mọi quyền." data-en="All rights reserved.">Bảo lưu mọi quyền.</span></p>
-      <div class="legal-links">
-        <a href="#" data-vi="Chính Sách Bảo Mật" data-en="Privacy Policy">Chính Sách Bảo Mật</a>
-        <a href="#" data-vi="Điều Khoản Dịch Vụ" data-en="Terms of Service">Điều Khoản Dịch Vụ</a>
-      </div>
+      <span data-vi="2025 Eato, Đã đăng ký bản quyền" data-en="2025 Eato, All rights reserved">2025 Eato, All rights reserved</span>
+      <div class="legal-links"><a href="#" data-vi="Chính sách bảo mật" data-en="Privacy Policy">Privacy Policy</a><a href="#" data-vi="Điều khoản dịch vụ" data-en="Terms of Service">Terms of Service</a></div>
     </div>
   </div>
 </footer>
-
 <script src="js/main.js" defer></script>
-<script>
-(function () {
-  "use strict";
-  var filterBar = document.querySelector(".filter-bar");
-  if (!filterBar) return;
-  var buttons = Array.prototype.slice.call(filterBar.querySelectorAll("[data-filter]"));
-  var items = Array.prototype.slice.call(document.querySelectorAll(".menu-item"));
-  var emptyMessage = document.getElementById("menu-empty-message");
-  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  buttons.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      buttons.forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
-      btn.setAttribute("aria-pressed", "true");
-      var filter = btn.dataset.filter;
-      var visibleCount = 0;
-      var toShow = [];
-
-      items.forEach(function (item) {
-        var show = filter === "all" || item.dataset.category === filter;
-        if (show) visibleCount++;
-
-        if (reduceMotion) {
-          item.hidden = !show;
-          return;
-        }
-
-        if (show) {
-          // Cancel any pending hide from a filter clicked moments ago —
-          // otherwise that stale timeout can hide this item again after
-          // it's already been shown under the new filter.
-          if (item._hideTimer) {
-            window.clearTimeout(item._hideTimer);
-            item._hideTimer = null;
-          }
-          toShow.push(item);
-        } else if (!item.hidden) {
-          // Still on screen from the previous filter — fade it out, then hide it.
-          item.classList.add("is-filtering-out");
-          if (item._hideTimer) window.clearTimeout(item._hideTimer);
-          item._hideTimer = window.setTimeout(function () {
-            item.hidden = true;
-            item.classList.remove("is-filtering-out");
-            item._hideTimer = null;
-          }, 320);
-        } else {
-          item.hidden = true;
-        }
-      });
-
-      if (!reduceMotion) {
-        toShow.forEach(function (item, i) {
-          item.hidden = false;
-          item.classList.remove("is-filtering-out");
-          item.classList.add("is-entering");
-          var img = item.querySelector(".card-media img");
-          if (img) img.style.transitionDelay = "";
-          // Force layout so the browser registers the "entering" starting
-          // state before we remove it — otherwise the two class changes
-          // collapse into one and nothing animates.
-          void item.offsetWidth;
-          var delay = (i % 8) * 35;
-          item.style.transitionDelay = delay + "ms";
-          item.classList.remove("is-entering");
-          window.setTimeout(function () { item.style.transitionDelay = ""; }, delay + 500);
-        });
-      }
-
-      if (emptyMessage) emptyMessage.style.display = visibleCount === 0 ? "block" : "none";
-    });
-  });
-})();
-</script>
 </body>
 </html>

@@ -49,6 +49,16 @@
       var allowMultiple = accordion.dataset.allowMultiple === "true";
       var triggers = accordion.querySelectorAll(".accordion-trigger");
 
+      // Panels start at max-height:0 in CSS regardless of markup, so any
+      // trigger authored as aria-expanded="true" needs its panel opened here
+      // on load -- otherwise it renders visually collapsed until first click.
+      triggers.forEach(function (trigger) {
+        if (trigger.getAttribute("aria-expanded") === "true") {
+          var initialPanel = document.getElementById(trigger.getAttribute("aria-controls"));
+          if (initialPanel) initialPanel.style.maxHeight = initialPanel.scrollHeight + "px";
+        }
+      });
+
       triggers.forEach(function (trigger) {
         trigger.addEventListener("click", function () {
           var panelId = trigger.getAttribute("aria-controls");
@@ -156,8 +166,9 @@
         var offset = index * (slideWidth + gap);
         track.style.transform = "translateX(-" + offset + "px)";
 
-        if (prevBtn) prevBtn.disabled = index === 0;
-        if (nextBtn) nextBtn.disabled = index >= maxIndex();
+        // Looping carousel: arrows always stay enabled, wrapping past either end.
+        if (prevBtn) prevBtn.disabled = false;
+        if (nextBtn) nextBtn.disabled = false;
 
         dots.forEach(function (dot, i) {
           dot.setAttribute("aria-current", i === index ? "true" : "false");
@@ -165,7 +176,8 @@
       }
 
       function goTo(newIndex) {
-        index = Math.max(0, Math.min(newIndex, maxIndex()));
+        var span = maxIndex() + 1;
+        index = ((newIndex % span) + span) % span;
         update();
       }
 
@@ -577,11 +589,162 @@
     update();
   }
 
+  /* -------------------------------------------------------
+     Category filters (menu.html / gallery.html pill tabs)
+     Structure expected:
+     <div class="menu-filters">
+       <button data-filter="all">All</button>
+       <button data-filter="dessert">Desserts</button>
+     </div>
+     <div class="grid" data-filter-target>
+       <article data-category="main">...</article>
+       <article data-category="dessert">...</article>
+     </div>
+     Active state is shown by the sliding .tab-indicator (see
+     initFilterIndicators) rather than a class swap on the button
+     itself; matching grid items fade + slide up back in on every
+     change via .filter-target / .tab-content-visible (see CSS).
+     ------------------------------------------------------- */
+  function initFilters() {
+    var groups = document.querySelectorAll(".menu-filters[data-filter-group]");
+
+    groups.forEach(function (group) {
+      var targetSelector = group.dataset.filterGroup;
+      var target = document.querySelector(targetSelector);
+      if (!target) return;
+      var buttons = Array.prototype.slice.call(group.querySelectorAll("[data-filter]"));
+      var items = Array.prototype.slice.call(target.children);
+
+      target.classList.add("filter-target");
+      // Everything matches "all", so show it immediately with no
+      // animation -- only later clicks should animate the change.
+      items.forEach(function (item) { item.classList.add("tab-content-visible"); });
+
+      function apply(filterValue) {
+        var staggerDelay = 0;
+        items.forEach(function (item) {
+          var match = filterValue === "all" || item.dataset.category === filterValue;
+          if (match) {
+            item.style.display = "";
+            item.classList.remove("tab-content-visible");
+            void item.offsetWidth; // force reflow so the transition re-triggers
+            (function (el, delay) {
+              window.setTimeout(function () { el.classList.add("tab-content-visible"); }, delay);
+            })(item, staggerDelay);
+            staggerDelay += 40;
+          } else {
+            item.classList.remove("tab-content-visible");
+            item.style.display = "none";
+          }
+        });
+        buttons.forEach(function (btn) {
+          btn.setAttribute("aria-pressed", String(btn.dataset.filter === filterValue));
+        });
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () { apply(btn.dataset.filter); });
+      });
+    });
+  }
+
+  /* -------------------------------------------------------
+     Sliding tab indicator ("magic line")
+     A floating pill injected as the first child of a
+     position:relative tab group. moveTo(el) reads the target's
+     real box (relative to the container) and animates the
+     indicator on top of it via transform + width/height, so the
+     motion is a single glide driven by actual DOM measurements
+     rather than hardcoded per-item positions. Works for a
+     horizontal pill row or the vertical stacked mobile nav.
+     ------------------------------------------------------- */
+  function createTabIndicator(container) {
+    var indicator = document.createElement("div");
+    indicator.className = "tab-indicator";
+    indicator.setAttribute("aria-hidden", "true");
+    container.insertBefore(indicator, container.firstChild);
+
+    function moveTo(el) {
+      if (!el) {
+        indicator.classList.remove("is-visible");
+        return;
+      }
+      var cRect = container.getBoundingClientRect();
+      var eRect = el.getBoundingClientRect();
+      indicator.style.transform = "translate(" + (eRect.left - cRect.left) + "px, " + (eRect.top - cRect.top) + "px)";
+      indicator.style.width = eRect.width + "px";
+      indicator.style.height = eRect.height + "px";
+      indicator.classList.add("is-visible");
+    }
+
+    return { el: indicator, moveTo: moveTo };
+  }
+
+  function initNavIndicator() {
+    var nav = document.querySelector(".main-nav");
+    if (!nav) return;
+    var indicator = createTabIndicator(nav);
+    var links = Array.prototype.slice.call(nav.querySelectorAll("a")).filter(function (a) {
+      return !a.classList.contains("btn");
+    });
+    if (!links.length) return;
+
+    function rest() {
+      indicator.moveTo(nav.querySelector('a[aria-current="page"]:not(.btn)'));
+    }
+
+    links.forEach(function (link) {
+      link.addEventListener("mouseenter", function () { indicator.moveTo(link); });
+      link.addEventListener("focus", function () { indicator.moveTo(link); });
+    });
+    nav.addEventListener("mouseleave", rest);
+
+    window.addEventListener("resize", debounce(rest, 150));
+    // Defer the first measurement a tick so fonts/layout have settled.
+    window.setTimeout(rest, 50);
+  }
+
+  function initLangIndicator() {
+    var switcher = document.querySelector(".lang-switch");
+    if (!switcher) return;
+    var indicator = createTabIndicator(switcher);
+
+    function update() {
+      indicator.moveTo(switcher.querySelector('[aria-pressed="true"]'));
+    }
+
+    Array.prototype.slice.call(switcher.querySelectorAll("[data-lang-btn]")).forEach(function (btn) {
+      btn.addEventListener("click", function () { window.setTimeout(update, 0); });
+    });
+    window.addEventListener("resize", debounce(update, 150));
+    window.setTimeout(update, 50);
+  }
+
+  function initFilterIndicators() {
+    Array.prototype.slice.call(document.querySelectorAll(".menu-filters")).forEach(function (group) {
+      var indicator = createTabIndicator(group);
+
+      function update() {
+        indicator.moveTo(group.querySelector('[aria-pressed="true"]'));
+      }
+
+      Array.prototype.slice.call(group.querySelectorAll("[data-filter]")).forEach(function (btn) {
+        btn.addEventListener("click", function () { window.setTimeout(update, 0); });
+      });
+      window.addEventListener("resize", debounce(update, 150));
+      window.setTimeout(update, 50);
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initI18n();
     initNavToggle();
     initAccordions();
     initCarousels();
+    initFilters();
+    initNavIndicator();
+    initLangIndicator();
+    initFilterIndicators();
     initFormValidation();
     initCountdown();
     initScrollReveal();
