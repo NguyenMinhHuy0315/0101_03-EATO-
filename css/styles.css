@@ -80,7 +80,14 @@ body {
   font-size: var(--fs-body-lg);
   line-height: var(--lh-body-lg);
   -webkit-font-smoothing: antialiased;
-  animation: page-fade-in 0.4s ease both;
+  /* No fill-mode (so it defaults to "none"): once this finishes, `transform`
+     must fully let go of body rather than settle on a lingering identity
+     matrix. Any non-"none" transform on body -- even scale(1) -- makes body
+     the containing block for every position:fixed/sticky descendant instead
+     of the viewport, which is exactly what broke the dish modal's centering
+     (and would silently break the sticky header too) after this animation
+     "finished" with fill-mode: both. */
+  animation: page-fade-in 0.4s ease;
 }
 @keyframes page-fade-in {
   from { opacity: 0; transform: translateY(12px) scale(0.98); }
@@ -538,15 +545,16 @@ h6, .h6 { font-size: var(--fs-h6); line-height: var(--lh-h6); font-weight: 500; 
     align-items: stretch;
     padding: 24px;
     gap: 4px;
-    transform: translateY(-8px);
+    transform: translateY(-14px) scale(0.98);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    transition: opacity 0.35s cubic-bezier(.22,.85,.4,1), transform 0.35s cubic-bezier(.22,.85,.4,1), visibility 0.35s;
+    transform-origin: top center;
     overflow-y: auto;
   }
   .main-nav.is-open {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
     visibility: visible;
   }
   .main-nav a { padding: 14px 16px; font-size: 1.125rem; }
@@ -1536,4 +1544,255 @@ legend { font-weight: 600; margin-bottom: 12px; padding: 0; }
 .error-page-text {
   max-width: 560px;
   margin: 20px auto 32px;
+}
+
+/* =========================================================
+   Premium dish-card interactions (menu.html / index.html)
+   Layers on top of the shared .card hover rules -- same
+   specificity, wins on source order since it's declared later.
+   ========================================================= */
+.dish-card {
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(.22,.85,.4,1), box-shadow 0.3s cubic-bezier(.22,.85,.4,1);
+}
+.dish-card:hover, .dish-card:focus-within {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 32px 64px rgba(7, 7, 7, 0.24);
+}
+.dish-card .card-media { position: relative; }
+.dish-card:hover .card-media img, .dish-card:focus-within .card-media img {
+  transform: scale(1.05);
+}
+.dish-card .dish-price {
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s cubic-bezier(.22,.85,.4,1);
+}
+.dish-card:hover .dish-price, .dish-card:focus-within .dish-price {
+  color: var(--color-red-dark);
+  transform: scale(1.1);
+}
+
+/* Overlay + "Xem Chi Tiết" CTA that appears over the dish photo on
+   hover/focus. Sits inside .card-media (position:relative above), so
+   it's clipped to the same rounded corners as the image. */
+.dish-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top, rgba(7, 7, 7, 0.78) 0%, rgba(7, 7, 7, 0.2) 55%, rgba(7, 7, 7, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(.22,.85,.4,1);
+}
+.dish-card:hover .dish-card-overlay,
+.dish-card:focus-within .dish-card-overlay {
+  opacity: 1;
+}
+.dish-card-cta {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  background: var(--color-white);
+  color: var(--color-black);
+  font-weight: 600;
+  font-size: var(--fs-body);
+  transform: translateY(14px);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(.22,.85,.4,1) 40ms, opacity 0.3s ease 40ms, background-color 0.2s ease, color 0.2s ease;
+}
+.dish-card:hover .dish-card-cta,
+.dish-card:focus-within .dish-card-cta {
+  transform: translateY(0);
+  opacity: 1;
+}
+.dish-card-cta:hover, .dish-card-cta:focus-visible {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+@media (prefers-reduced-motion: reduce) {
+  .dish-card, .dish-card .card-media img, .dish-card-overlay, .dish-card-cta, .dish-card .dish-price {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   Dish detail modal
+   Injected once into <body> by initDishModal() in main.js and
+   reused for every .dish-card. A fixed, centered overlay + card,
+   independent of any page section theme.
+
+   IMPORTANT: position:fixed only centers on the true viewport if
+   no ancestor (including <body>) has a transform. body's own
+   page-fade-in keyframes used to leave a lingering non-"none"
+   transform on body after the animation finished (fill-mode:
+   both), which silently made body the containing block for every
+   fixed-position element -- the modal was centering itself against
+   the whole (tall) page instead of the screen. Fixed at the source
+   (see body's animation rule), not worked around here.
+   ========================================================= */
+body.dish-modal-open { overflow: hidden; }
+
+.dish-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(.22,.85,.4,1), visibility 0.3s;
+}
+.dish-modal-overlay.is-open { opacity: 1; visibility: visible; }
+
+.dish-modal {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  max-height: 88vh;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  background: #1a1a1a;
+  color: var(--color-white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 48px 100px rgba(0, 0, 0, 0.55);
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(.22,.85,.4,1), opacity 0.3s cubic-bezier(.22,.85,.4,1);
+}
+.dish-modal-overlay.is-open .dish-modal { transform: scale(1); opacity: 1; }
+
+/* Explicit grid-column/row on both: the close button is DOM child #1
+   but position:absolute, and an absolutely-positioned grid item with
+   no explicit placement still occupies an auto-placement slot for
+   the purpose of resolving its own static position -- that silently
+   pushed media/body into the wrong cells (body wrapped to a hidden
+   second row) when placement was left to "auto". Pinning both here
+   removes any dependency on sibling/DOM order. */
+.dish-modal-media {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  background: var(--color-bg-muted);
+}
+.dish-modal-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.dish-modal-body {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  max-height: 88vh;
+}
+.dish-modal-name { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 700; padding-right: 32px; }
+.dish-modal-rating-wrap .rating { color: var(--color-gold); }
+.dish-modal-rating-wrap .icon-star { width: 18px; height: 18px; }
+.dish-modal-rating-wrap .rating-value { color: rgba(255, 255, 255, 0.75); font-weight: 600; }
+.dish-modal-price { font-size: 2.25rem; font-weight: 700; color: #c31e26; }
+.dish-modal-divider { border: none; border-top: 1px solid rgba(255, 255, 255, 0.14); margin: 4px 0; }
+.dish-modal-desc { color: rgba(255, 255, 255, 0.82); }
+.dish-modal-ingredients-heading {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 6px;
+}
+.dish-modal-ingredients { display: flex; flex-direction: column; gap: 10px; }
+.dish-modal-ingredients li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--fs-body);
+  color: rgba(255, 255, 255, 0.92);
+}
+.dish-modal-ingredients li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  flex-shrink: 0;
+}
+.dish-modal-actions { display: flex; gap: 16px; margin-top: 12px; flex-wrap: wrap; }
+.dish-modal-actions .btn { flex: 1 1 auto; }
+.dish-modal-actions .btn-primary { background: #c31e26; border-color: #c31e26; }
+.dish-modal-actions .btn-primary:hover { background: var(--color-red-dark); border-color: var(--color-red-dark); }
+.dish-modal-actions .btn-outline { color: var(--color-white); border-color: rgba(255, 255, 255, 0.3); }
+.dish-modal-actions .btn-outline:hover { border-color: var(--color-white); background: rgba(255, 255, 255, 0.08); }
+
+.dish-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.3s cubic-bezier(.22,.85,.4,1);
+}
+.dish-modal-close:hover, .dish-modal-close:focus-visible {
+  background: #c31e26;
+  transform: rotate(90deg);
+}
+
+@media (max-width: 767px) {
+  .dish-modal { grid-template-columns: 1fr; grid-template-rows: auto 1fr; max-height: 92vh; }
+  .dish-modal-media { grid-column: 1; grid-row: 1; min-height: 220px; }
+  .dish-modal-body { grid-column: 1; grid-row: 2; padding: 32px 24px; max-height: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dish-modal-overlay, .dish-modal, .dish-modal-close { transition-duration: 0.01ms !important; }
+}
+
+/* =========================================================
+   Button ripple effect
+   .ripple spans are appended by initRipple() in main.js at the
+   click coordinates; background: currentColor means one rule
+   works whether the button is light or dark, since the span
+   inherits whatever text color its own button already has.
+   ========================================================= */
+.btn, .btn-icon, .dish-card-cta {
+  position: relative;
+  overflow: hidden;
+}
+/* .dish-modal-close is already position:absolute (its own rule, above) --
+   that's already a valid containing block for the ripple span, so it only
+   needs overflow:hidden here. Adding `position: relative` again at equal
+   specificity would win by source order and silently clobber its
+   top/right offsets (this exact bug shipped once already: the close
+   button rendered bottom-left instead of top-right). */
+.lang-btn, .menu-filters button, .dish-modal-close { overflow: hidden; }
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.32;
+  transform: scale(0);
+  animation: ripple-effect 0.6s ease-out;
+  pointer-events: none;
+}
+@keyframes ripple-effect {
+  to { transform: scale(2.6); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ripple { display: none; }
 }

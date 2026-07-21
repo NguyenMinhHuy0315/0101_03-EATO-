@@ -623,6 +623,208 @@
   }
 
   /* -------------------------------------------------------
+     Dish detail modal (menu.html / index.html)
+     Any .dish-card (data-rating + data-ingredients-vi/en set in
+     markup, everything else read straight off the card's own
+     h3/p/.dish-price/img) opens a single shared modal built once
+     and reused. Closes on the X, an outside click, or Escape.
+     ------------------------------------------------------- */
+  function buildStarRating(rating) {
+    var wrap = document.createElement("span");
+    wrap.className = "rating dish-modal-rating";
+    var full = Math.round(rating);
+    for (var i = 0; i < 5; i++) {
+      var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("class", "icon-star");
+      svg.setAttribute("viewBox", "0 0 24 24");
+      svg.setAttribute("fill", i < full ? "currentColor" : "none");
+      svg.setAttribute("stroke", "currentColor");
+      svg.setAttribute("stroke-width", "1.6");
+      svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2.5l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.4l-6.2 3.4 1.6-6.8-5.2-4.6 6.9-.6z"/>';
+      wrap.appendChild(svg);
+    }
+    var value = document.createElement("span");
+    value.className = "rating-value";
+    value.textContent = rating.toFixed(1);
+    wrap.appendChild(value);
+    return wrap;
+  }
+
+  function initDishModal() {
+    var cards = document.querySelectorAll(".dish-card");
+    if (!cards.length) return;
+
+    var overlay = document.createElement("div");
+    overlay.className = "dish-modal-overlay";
+    overlay.setAttribute("aria-hidden", "true");
+    overlay.innerHTML =
+      '<div class="dish-modal" role="dialog" aria-modal="true" aria-labelledby="dish-modal-title">' +
+        '<button type="button" class="dish-modal-close" aria-label="Close" data-vi-aria="Đóng" data-en-aria="Close">' +
+          '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>' +
+        "</button>" +
+        '<div class="dish-modal-media"><img alt=""></div>' +
+        '<div class="dish-modal-body">' +
+          '<h2 class="dish-modal-name" id="dish-modal-title"></h2>' +
+          '<div class="dish-modal-rating-wrap"></div>' +
+          '<p class="dish-modal-price"></p>' +
+          '<hr class="dish-modal-divider">' +
+          '<p class="dish-modal-desc"></p>' +
+          '<h3 class="dish-modal-ingredients-heading" data-vi="Nguyên Liệu Chính" data-en="Key Ingredients">Nguyên Liệu Chính</h3>' +
+          '<ul class="dish-modal-ingredients"></ul>' +
+          '<div class="dish-modal-actions">' +
+            '<a class="btn btn-primary" href="reservation.html" data-vi="Đặt Bàn Ngay" data-en="Reserve Now">Đặt Bàn Ngay</a>' +
+            '<button type="button" class="btn btn-outline dish-modal-close-btn" data-vi="Đóng" data-en="Close">Đóng</button>' +
+          "</div>" +
+        "</div>" +
+      "</div>";
+    document.body.appendChild(overlay);
+
+    var img = overlay.querySelector(".dish-modal-media img");
+    var nameEl = overlay.querySelector(".dish-modal-name");
+    var ratingWrap = overlay.querySelector(".dish-modal-rating-wrap");
+    var priceEl = overlay.querySelector(".dish-modal-price");
+    var descEl = overlay.querySelector(".dish-modal-desc");
+    var ingredientsEl = overlay.querySelector(".dish-modal-ingredients");
+    var closeBtn = overlay.querySelector(".dish-modal-close");
+    var closeBtn2 = overlay.querySelector(".dish-modal-close-btn");
+    var lastTrigger = null;
+
+    function openFromCard(card) {
+      var lang = currentLang();
+      var h3 = card.querySelector(".card-body h3");
+      var desc = card.querySelector(".card-body p");
+      var priceSpan = card.querySelector(".dish-price");
+      var cardImg = card.querySelector(".card-media img");
+      var rating = parseFloat(card.dataset.rating || "4.8");
+      var ingredientsRaw = (lang === "vi" ? card.dataset.ingredientsVi : card.dataset.ingredientsEn) || "";
+      var ingredients = ingredientsRaw.split(",").map(function (s) { return s.trim(); }).filter(Boolean);
+
+      nameEl.textContent = h3 ? (lang === "vi" ? h3.dataset.vi : h3.dataset.en) || h3.textContent : "";
+      descEl.textContent = desc ? (lang === "vi" ? desc.dataset.vi : desc.dataset.en) || desc.textContent : "";
+      priceEl.textContent = priceSpan ? priceSpan.textContent : "";
+      if (cardImg) {
+        img.src = cardImg.src;
+        img.alt = cardImg.alt || "";
+      }
+
+      ratingWrap.innerHTML = "";
+      ratingWrap.appendChild(buildStarRating(rating));
+
+      ingredientsEl.innerHTML = "";
+      ingredients.forEach(function (item) {
+        var li = document.createElement("li");
+        li.textContent = item;
+        ingredientsEl.appendChild(li);
+      });
+
+      lastTrigger = card;
+      document.body.classList.add("dish-modal-open");
+      overlay.classList.add("is-open");
+      overlay.setAttribute("aria-hidden", "false");
+      window.setTimeout(function () { closeBtn.focus(); }, 50);
+    }
+
+    function close() {
+      overlay.classList.remove("is-open");
+      overlay.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("dish-modal-open");
+      if (lastTrigger) {
+        var focusTarget = lastTrigger.querySelector(".dish-card-cta") || lastTrigger;
+        focusTarget.focus();
+      }
+    }
+
+    cards.forEach(function (card) {
+      card.addEventListener("click", function (e) {
+        // Let real navigation (if a card ever contains a plain link) behave normally.
+        if (e.target.closest("a")) return;
+        openFromCard(card);
+      });
+    });
+
+    closeBtn.addEventListener("click", close);
+    closeBtn2.addEventListener("click", close);
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && overlay.classList.contains("is-open")) close();
+    });
+  }
+
+  /* -------------------------------------------------------
+     Number counter animation (stat blocks — "1000+ customers"
+     etc.). Counts up from 0 to the number embedded in the
+     stat's own text the first time it scrolls into view,
+     preserving whatever suffix follows it (+, %, ...).
+     ------------------------------------------------------- */
+  function initCounterAnimation() {
+    var stats = document.querySelectorAll(".stat-number");
+    if (!stats.length) return;
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function animate(el) {
+      var match = el.textContent.match(/^(\d+)(.*)$/);
+      if (!match) return;
+      var target = parseInt(match[1], 10);
+      var suffix = match[2] || "";
+      if (reduceMotion) { el.textContent = target + suffix; return; }
+
+      var duration = 1600;
+      var start = null;
+      function ease(t) { return 1 - Math.pow(1 - t, 3); }
+      function step(ts) {
+        if (start === null) start = ts;
+        var progress = Math.min(1, (ts - start) / duration);
+        var value = Math.round(target * ease(progress));
+        el.textContent = value + suffix;
+        if (progress < 1) window.requestAnimationFrame(step);
+      }
+      window.requestAnimationFrame(step);
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      stats.forEach(animate);
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        animate(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.4 });
+    stats.forEach(function (el) { observer.observe(el); });
+  }
+
+  /* -------------------------------------------------------
+     Button ripple effect
+     Delegated so it covers every button variant sitewide,
+     including ones injected later (dish modal, auth nav).
+     The ripple span inherits `color` from its button, so a
+     single rule works whether the button is light or dark.
+     ------------------------------------------------------- */
+  function initRipple() {
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var selector = ".btn, .btn-icon, .btn-outline, .btn-outline-red, .btn-primary, .btn-white, .btn-dark, .btn-rust, .dish-card-cta, .lang-btn, .menu-filters button, .dish-modal-close";
+
+    document.addEventListener("click", function (e) {
+      var btn = e.target.closest(selector);
+      if (!btn || btn.disabled) return;
+
+      var rect = btn.getBoundingClientRect();
+      var size = Math.max(rect.width, rect.height);
+      var ripple = document.createElement("span");
+      ripple.className = "ripple";
+      ripple.style.width = ripple.style.height = size + "px";
+      ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
+      ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
+      btn.appendChild(ripple);
+      ripple.addEventListener("animationend", function () { ripple.remove(); });
+    });
+  }
+
+  /* -------------------------------------------------------
      Countdown timer (Special Offer / Countdown page)
      ------------------------------------------------------- */
   function initCountdown() {
@@ -836,6 +1038,11 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    // initDishModal must run before initI18n: it injects new
+    // data-vi/data-en elements (modal labels), and initI18n's
+    // initial language sweep only ever touches what's already
+    // in the DOM at the moment it runs.
+    initDishModal();
     initI18n();
     initAuthNav();
     initNavToggle();
@@ -852,5 +1059,7 @@
     initScrollReveal();
     initPageTransitions();
     initHeroParallax();
+    initCounterAnimation();
+    initRipple();
   });
 })();

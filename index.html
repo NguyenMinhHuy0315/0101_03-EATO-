@@ -11,11 +11,11 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to main content</a>
+<a class="skip-link" href="#main-content" data-vi="Bỏ qua đến nội dung chính" data-en="Skip to main content">Skip to main content</a>
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="index.html" aria-label="EATO — go to homepage">
+    <a class="brand" href="index.html" aria-label="EATO — go to homepage" data-vi-aria="EATO — về trang chủ" data-en-aria="EATO — go to homepage">
       <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
       EATO
     </a>
@@ -31,7 +31,7 @@
       <button type="button" class="lang-btn" data-lang-btn="vi" aria-pressed="false">VI</button>
       <button type="button" class="lang-btn" data-lang-btn="en" aria-pressed="true">EN</button>
     </div>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu" data-vi-aria="Bật/tắt menu điều hướng" data-en-aria="Toggle navigation menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
   </div>
@@ -123,48 +123,48 @@
           <p data-vi="Trải nghiệm thực đơn đặc trưng của chúng tôi, một kiệt tác hương vị được chế biến từ nguyên liệu cao cấp, sự tinh thông ẩm thực và nét nghệ thuật đầy cuốn hút." data-en="Experience our signature menu, a masterpiece of flavors crafted with premium ingredients, culinary expertise, and an artistic touch to delight.">Experience our signature menu, a masterpiece of flavors crafted with premium ingredients, culinary expertise, and an artistic touch to delight.</p>
         </div>
         <div class="carousel-controls" data-carousel-controls="menu-carousel">
-          <button class="btn-icon" data-carousel-prev aria-label="Previous dish"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="transform:rotate(180deg)"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-          <button class="btn-icon" data-carousel-next aria-label="Next dish"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn-icon" data-carousel-prev aria-label="Previous dish" data-vi-aria="Món trước" data-en-aria="Previous dish"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="transform:rotate(180deg)"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn-icon" data-carousel-next aria-label="Next dish" data-vi-aria="Món tiếp theo" data-en-aria="Next dish"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </div>
       </div>
 
       <div class="carousel" id="menu-carousel" data-carousel data-per-view="4">
         <div class="carousel-viewport">
           <div class="carousel-track">
-            <article class="card dish-card">
-              <div class="card-media"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=302&h=430&fit=crop&q=80" alt="Ocean Symphony Risotto" loading="lazy"></div>
+            <article class="card dish-card" data-rating="4.7" data-ingredients-vi="Sò điệp tươi,Rau thơm hỗn hợp,Giấm balsamic,Dầu ô liu,Chanh tươi" data-ingredients-en="Fresh scallops,Mixed herbs,Balsamic reduction,Olive oil,Fresh lemon">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=302&h=430&fit=crop&q=80" alt="Ocean Symphony Risotto" loading="lazy"><div class="dish-card-overlay"><button type="button" class="dish-card-cta" data-vi="Xem Chi Tiết" data-en="View Details">Xem Chi Tiết</button></div></div>
               <div class="card-body">
                 <h3 data-vi="Sò Điệp Áp Chảo Với Rau Thơm" data-en="Pan-Seared Scallop & Herb Salad">Pan-Seared Scallop & Herb Salad</h3>
                 <p data-vi="Sò điệp áp chảo tinh tế trên nền rau thơm tươi mát, hoàn thiện với sốt giấm balsamic cho một khởi đầu thanh nhã." data-en="Delicately seared scallop atop a fresh herb salad, finished with a balsamic reduction for a light, elegant start.">Delicately seared scallop atop a fresh herb salad, finished with a balsamic reduction for a light, elegant start.</p>
                 <div class="dish-foot"><span class="dish-price">$18.00</span></div>
               </div>
             </article>
-            <article class="card dish-card">
-              <div class="card-media"><img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?w=302&h=430&fit=crop&q=80" alt="Truffle-infused Wagyu Delight" loading="lazy"></div>
+            <article class="card dish-card" data-rating="5.0" data-ingredients-vi="Bò Wagyu A5,Sốt vang đỏ,Bông cải xanh nướng,Khoai tây nướng,Bơ thảo mộc" data-ingredients-en="A5 Wagyu beef,Red wine reduction,Charred broccolini,Roasted potatoes,Herb butter">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?w=302&h=430&fit=crop&q=80" alt="Truffle-infused Wagyu Delight" loading="lazy"><div class="dish-card-overlay"><button type="button" class="dish-card-cta" data-vi="Xem Chi Tiết" data-en="View Details">Xem Chi Tiết</button></div></div>
               <div class="card-body">
                 <h3 data-vi="Bò Wagyu Áp Chảo Sốt Vang Đỏ" data-en="Pan-Seared Wagyu Steak">Pan-Seared Wagyu Steak</h3>
                 <p data-vi="Bò Wagyu mềm mọng được áp chảo hoàn hảo, rưới sốt vang đỏ đậm đà, dùng kèm bông cải xanh nướng và khoai tây nướng." data-en="Tender Wagyu steak seared to perfection, drizzled with a rich red wine reduction and served with charred broccolini and roasted potatoes.">Tender Wagyu steak seared to perfection, drizzled with a rich red wine reduction and served with charred broccolini and roasted potatoes.</p>
               <div class="dish-foot"><span class="dish-price">$48.00</span></div>
               </div>
             </article>
-            <article class="card dish-card">
-              <div class="card-media"><img src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?w=302&h=430&fit=crop&q=80" alt="Golden Crispy Duck Confit" loading="lazy"></div>
+            <article class="card dish-card" data-rating="4.8" data-ingredients-vi="Phi lê cá hồi Na Uy,Cơm rau thơm,Sốt bơ chanh,Rau chân vịt,Muối biển" data-ingredients-en="Norwegian salmon fillet,Herbed rice,Citrus beurre blanc,Baby spinach,Sea salt">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?w=302&h=430&fit=crop&q=80" alt="Golden Crispy Duck Confit" loading="lazy"><div class="dish-card-overlay"><button type="button" class="dish-card-cta" data-vi="Xem Chi Tiết" data-en="View Details">Xem Chi Tiết</button></div></div>
               <div class="card-body">
                 <h3 data-vi="Cá Hồi Da Giòn" data-en="Crispy Skin Salmon">Crispy Skin Salmon</h3>
                 <p data-vi="Phi lê cá hồi áp chảo với lớp da giòn rụm, dùng kèm cơm rau thơm và sốt bơ chanh." data-en="Pan-seared salmon fillet with irresistibly crispy skin, served over herbed rice with a citrus beurre blanc.">Pan-seared salmon fillet with irresistibly crispy skin, served over herbed rice with a citrus beurre blanc.</p>
               <div class="dish-foot"><span class="dish-price">$32.00</span></div>
               </div>
             </article>
-            <article class="card dish-card">
-              <div class="card-media"><img src="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?w=302&h=430&fit=crop&q=80" alt="Velvet Chocolate Lava Cake" loading="lazy"></div>
+            <article class="card dish-card" data-rating="4.9" data-ingredients-vi="Bột ca cao nguyên chất,Bơ Pháp,Chocolate đen 70%,Trứng gà tươi,Đường mía" data-ingredients-en="Dark cocoa powder,French butter,70% dark chocolate,Fresh eggs,Cane sugar">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?w=302&h=430&fit=crop&q=80" alt="Velvet Chocolate Lava Cake" loading="lazy"><div class="dish-card-overlay"><button type="button" class="dish-card-cta" data-vi="Xem Chi Tiết" data-en="View Details">Xem Chi Tiết</button></div></div>
               <div class="card-body">
                 <h3 data-vi="Bánh Chocolate Tan Chảy" data-en="Molten Chocolate Bundt Cake">Molten Chocolate Bundt Cake</h3>
                 <p data-vi="Bánh chocolate đậm đà phủ lớp sốt ganache chocolate ấm nóng, bóng mịn — ngọt ngào và khó cưỡng." data-en="Rich chocolate bundt cake draped in warm, glossy chocolate ganache — decadent and irresistibly indulgent.">Rich chocolate bundt cake draped in warm, glossy chocolate ganache — decadent and irresistibly indulgent.</p>
               <div class="dish-foot"><span class="dish-price">$14.00</span></div>
               </div>
             </article>
-            <article class="card dish-card">
-              <div class="card-media"><img src="https://images.unsplash.com/photo-1580554530778-ca36943938b2?w=302&h=430&fit=crop&q=80" alt="Golden Duck Breast" loading="lazy"></div>
+            <article class="card dish-card" data-rating="4.6" data-ingredients-vi="Ức vịt Pháp,Bánh khoai tây rösti,Cải xoăn om,Rau củ nướng,Sốt mật ong cam" data-ingredients-en="French duck breast,Potato rösti,Braised kale,Roasted root vegetables,Orange honey glaze">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1580554530778-ca36943938b2?w=302&h=430&fit=crop&q=80" alt="Golden Duck Breast" loading="lazy"><div class="dish-card-overlay"><button type="button" class="dish-card-cta" data-vi="Xem Chi Tiết" data-en="View Details">Xem Chi Tiết</button></div></div>
               <div class="card-body">
                 <h3 data-vi="Ức Vịt Áp Chảo Vàng Giòn" data-en="Golden Duck Breast">Golden Duck Breast</h3>
                 <p data-vi="Ức vịt áp chảo vàng giòn, thái lát trên bánh khoai tây rösti giòn, dùng kèm cải xoăn om và rau củ nướng." data-en="Golden pan-seared duck breast, sliced and fanned over a crispy potato rösti with braised kale and roasted root vegetables.">Golden pan-seared duck breast, sliced and fanned over a crispy potato rösti with braised kale and roasted root vegetables.</p>
@@ -251,43 +251,43 @@
             <article class="card person-card">
               <div class="card-media"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=414&h=497&fit=crop&q=80" alt="John Smith, Senior Partner" loading="lazy"></div>
               <div class="card-body text-center">
-                <p class="person-name">John Smith</p>
+                <p class="person-name" data-vi="John Smith" data-en="John Smith">John Smith</p>
                 <p class="person-role" data-vi="Đối Tác Cấp Cao" data-en="Senior Partner">Senior Partner</p>
               </div>
             </article>
             <article class="card person-card">
               <div class="card-media"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=411&h=503&fit=crop&q=80" alt="James Carter, Head Chef" loading="lazy"></div>
               <div class="card-body text-center">
-                <p class="person-name">James Carter</p>
+                <p class="person-name" data-vi="James Carter" data-en="James Carter">James Carter</p>
                 <p class="person-role" data-vi="Bếp Trưởng" data-en="Head Chef">Head Chef</p>
               </div>
             </article>
             <article class="card person-card">
               <div class="card-media"><img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=411&h=503&fit=crop&q=80" alt="Bill Yosses, Pastry Chef" loading="lazy"></div>
               <div class="card-body text-center">
-                <p class="person-name">Bill Yosses</p>
+                <p class="person-name" data-vi="Bill Yosses" data-en="Bill Yosses">Bill Yosses</p>
                 <p class="person-role" data-vi="Bếp Trưởng Bánh Ngọt" data-en="Pastry Chef">Pastry Chef</p>
               </div>
             </article>
             <article class="card person-card">
               <div class="card-media"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=411&h=503&fit=crop&q=80" alt="Marco Pierre White, Head Chef" loading="lazy"></div>
               <div class="card-body text-center">
-                <p class="person-name">Marco Pierre White</p>
+                <p class="person-name" data-vi="Marco Pierre White" data-en="Marco Pierre White">Marco Pierre White</p>
                 <p class="person-role" data-vi="Bếp Trưởng" data-en="Head Chef">Head Chef</p>
               </div>
             </article>
             <article class="card person-card">
               <div class="card-media"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=411&h=503&fit=crop&q=80" alt="Jonathan White, Restaurant Manager" loading="lazy"></div>
               <div class="card-body text-center">
-                <p class="person-name">Jonathan White</p>
+                <p class="person-name" data-vi="Jonathan White" data-en="Jonathan White">Jonathan White</p>
                 <p class="person-role" data-vi="Quản Lý Nhà Hàng" data-en="Restaurant Manager">Restaurant Manager</p>
               </div>
             </article>
           </div>
         </div>
         <div class="carousel-controls controls-center">
-          <button class="btn-icon" data-carousel-prev aria-label="Previous team member"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="transform:rotate(180deg)"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-          <button class="btn-icon" data-carousel-next aria-label="Next team member"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn-icon" data-carousel-prev aria-label="Previous team member" data-vi-aria="Thành viên trước" data-en-aria="Previous team member"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="transform:rotate(180deg)"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn-icon" data-carousel-next aria-label="Next team member" data-vi-aria="Thành viên tiếp theo" data-en-aria="Next team member"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </div>
       </div>
 
@@ -317,8 +317,8 @@
         </div>
 
         <div class="carousel-controls controls-center">
-          <button class="btn-icon" data-carousel-prev aria-label="Previous moment"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="transform:rotate(180deg)"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-          <button class="btn-icon" data-carousel-next aria-label="Next moment"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn-icon" data-carousel-prev aria-label="Previous moment" data-vi-aria="Khoảnh khắc trước" data-en-aria="Previous moment"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="transform:rotate(180deg)"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn-icon" data-carousel-next aria-label="Next moment" data-vi-aria="Khoảnh khắc tiếp theo" data-en-aria="Next moment"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </div>
       </div>
 
@@ -337,7 +337,7 @@
         <form class="search-bar" role="search" data-validate onsubmit="return false;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
           <input type="search" name="blog-search" placeholder="What do you want to know?" aria-label="Search the blog" data-vi-placeholder="Bạn muốn tìm hiểu điều gì?" data-en-placeholder="What do you want to know?">
-          <button class="btn-icon" type="submit" aria-label="Search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn-icon" type="submit" aria-label="Search" data-vi-aria="Tìm kiếm" data-en-aria="Search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </form>
       </div>
 
@@ -483,13 +483,13 @@
               <div class="avatar-row">
                 <img class="avatar-active" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=355&h=346&fit=crop&q=80" alt="Michael Richard Klein, EATO customer" loading="lazy">
               </div>
-              <p class="avatar-caption">Michael Richard Klein</p>
+              <p class="avatar-caption" data-vi="Michael Richard Klein" data-en="Michael Richard Klein">Michael Richard Klein</p>
             </li>
           </ul>
         </div>
         <div class="carousel-controls controls-center">
-          <button class="btn-icon" data-carousel-prev aria-label="Previous testimonial"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="transform:rotate(180deg)"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-          <button class="btn-icon" data-carousel-next aria-label="Next testimonial"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn-icon" data-carousel-prev aria-label="Previous testimonial" data-vi-aria="Đánh giá trước" data-en-aria="Previous testimonial"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="transform:rotate(180deg)"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn-icon" data-carousel-next aria-label="Next testimonial" data-vi-aria="Đánh giá tiếp theo" data-en-aria="Next testimonial"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </div>
       </div>
     </div>
@@ -503,28 +503,28 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-about">
-        <a class="brand" href="index.html" aria-label="EATO — go to homepage">
+        <a class="brand" href="index.html" aria-label="EATO — go to homepage" data-vi-aria="EATO — về trang chủ" data-en-aria="EATO — go to homepage">
           <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
           EATO
         </a>
         <p data-vi="Chúng Tôi Mang Đến Kết Quả Thực Sự, Nhiều Lượt Ghé Thăm, Nhiều Khách Hàng, Nhiều Tăng Trưởng!" data-en="We Drive Real Result, More Traffic, More Leads, more Growth!">We Drive Real Result, More Traffic, More Leads, more Growth!</p>
 
         <form class="field newsletter-field" data-validate onsubmit="return false;">
-          <label for="newsletter-email">Email address</label>
+          <label for="newsletter-email" data-vi="Địa chỉ email" data-en="Email address">Email address</label>
           <p data-vi="Đăng ký ngay để nhận ưu đãi độc quyền và cập nhật ẩm thực mới nhất!" data-en="Subscribe now for exclusive offers and the latest food updates!">Subscribe now for exclusive offers and the latest food updates!</p>
           <div class="newsletter-form">
             <input id="newsletter-email" type="email" name="email" placeholder="Enter your Email Address" data-rules="required email" data-vi-placeholder="Nhập địa chỉ email của bạn" data-en-placeholder="Enter your Email Address">
-            <button class="btn-icon" type="submit" aria-label="Subscribe"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <button class="btn-icon" type="submit" aria-label="Subscribe" data-vi-aria="Đăng ký nhận tin" data-en-aria="Subscribe"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </div>
         </form>
 
-        <p style="margin-top:24px;">123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</p>
+        <p style="margin-top:24px;" data-vi="123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh" data-en="123 Nguyen Van Linh Street, District 7, Ho Chi Minh City">123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</p>
 
         <div class="footer-social" style="margin-top:20px;">
-          <button class="btn-icon" type="button" aria-label="EATO on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></button>
-          <button class="btn-icon" type="button" aria-label="EATO on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></button>
-          <button class="btn-icon" type="button" aria-label="EATO on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4l16 16M20 4 4 20"/></svg></button>
-          <button class="btn-icon" type="button" aria-label="EATO on YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></button>
+          <button class="btn-icon" type="button" aria-label="EATO on Facebook" data-vi-aria="EATO trên Facebook" data-en-aria="EATO on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></button>
+          <button class="btn-icon" type="button" aria-label="EATO on Instagram" data-vi-aria="EATO trên Instagram" data-en-aria="EATO on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></button>
+          <button class="btn-icon" type="button" aria-label="EATO on X" data-vi-aria="EATO trên X" data-en-aria="EATO on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4l16 16M20 4 4 20"/></svg></button>
+          <button class="btn-icon" type="button" aria-label="EATO on YouTube" data-vi-aria="EATO trên YouTube" data-en-aria="EATO on YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></button>
         </div>
       </div>
 
