@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile — EATO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script>
+  // Guard this page: bounce straight to login.html if there's no signed-in
+  // user. Runs synchronously (not deferred) so it fires before the profile
+  // content ever paints.
+  (function () {
+    try {
+      if (!localStorage.getItem("eato_user")) {
+        window.location.replace("login.html");
+      }
+    } catch (err) {}
+  })();
+</script>
+<style>
+  /* Scoped to profile.html — avatar upload, profile card, reservation
+     history status badges, and the toast are not in the shared stylesheet. */
+  .profile-card {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 48px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+  .profile-avatar-wrap {
+    position: relative;
+    width: 112px;
+    height: 112px;
+    margin: 0 auto 40px;
+  }
+  .profile-avatar {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .profile-avatar-upload {
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-red);
+    color: var(--color-white);
+    border: 3px solid var(--color-black);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  .profile-avatar-upload:hover { background: var(--color-red-dark); transform: scale(1.06); }
+  .profile-form { text-align: left; margin-top: 8px; }
+  .profile-form .field input:disabled {
+    background: var(--color-bg-muted);
+    color: var(--color-text-muted);
+    cursor: not-allowed;
+  }
+  .profile-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .profile-actions .btn { flex: 1; min-width: 180px; }
+
+  .history-grid { margin-top: 40px; }
+  .history-card .card-body { display: flex; flex-direction: column; gap: 10px; }
+  .history-row { display: flex; align-items: center; justify-content: space-between; }
+  .history-label { color: var(--color-text-muted); font-size: var(--fs-small); }
+  .history-value { font-weight: 600; }
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 14px;
+    border-radius: var(--radius-pill);
+    font-size: var(--fs-small);
+    font-weight: 600;
+  }
+  .status-confirmed { background: rgba(30, 122, 76, 0.14); color: var(--color-success); }
+  .status-completed { background: rgba(7, 7, 7, 0.08); color: var(--color-black); }
+  .status-cancelled { background: var(--color-error-bg); color: var(--color-error); }
+
+  .toast {
+    position: fixed;
+    left: 50%;
+    bottom: 32px;
+    transform: translate(-50%, 16px);
+    background: var(--color-black);
+    color: var(--color-white);
+    padding: 16px 28px;
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-card);
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 500;
+  }
+  .toast.is-visible { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content" data-vi="Bỏ qua đến nội dung chính" data-en="Skip to main content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="EATO — go to homepage" data-vi-aria="EATO — về trang chủ" data-en-aria="EATO — go to homepage">
+      <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
+      EATO
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <a href="index.html" data-vi="Trang chủ" data-en="Home">Home</a>
+      <a href="menu.html" data-vi="Thực đơn" data-en="Menu">Menu</a>
+      <a href="about.html" data-vi="Về chúng tôi" data-en="About Us">About Us</a>
+      <a href="contact.html" data-vi="Liên hệ" data-en="Contact Us">Contact Us</a>
+      <a href="countdown.html" data-vi="Đếm Ngược" data-en="Countdown">Countdown</a>
+      <a class="btn btn-primary" href="reservation.html" data-vi="Đặt bàn" data-en="Book Reservation">Book Reservation</a>
+      <a class="btn btn-outline-red" href="login.html" data-vi="Đăng Nhập" data-en="Login">Login</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Language switcher">
+      <button type="button" class="lang-btn" data-lang-btn="vi" aria-pressed="false">VI</button>
+      <button type="button" class="lang-btn" data-lang-btn="en" aria-pressed="true">EN</button>
+    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu" data-vi-aria="Bật/tắt menu điều hướng" data-en-aria="Toggle navigation menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- Profile hero -->
+  <section class="page-hero" aria-labelledby="profile-heading">
+    <div class="container text-center">
+      <h1 id="profile-heading" data-vi="Hồ Sơ Của Tôi / My Profile" data-en="Hồ Sơ Của Tôi / My Profile">Hồ Sơ Của Tôi / My Profile</h1>
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="justify-content:center;">
+        <a href="index.html" data-vi="Trang chủ" data-en="Home">Home</a>
+        <span aria-hidden="true">→</span>
+        <span aria-current="page" data-vi="Hồ sơ" data-en="Profile">Profile</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Profile card -->
+  <section class="section-bg-dark">
+    <div class="container">
+      <div class="profile-card">
+        <div class="profile-avatar-wrap">
+          <img class="profile-avatar" id="profile-avatar-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112 112'%3E%3Ccircle cx='56' cy='56' r='56' fill='%23333333'/%3E%3Ccircle cx='56' cy='44' r='20' fill='%23555555'/%3E%3Cellipse cx='56' cy='104' rx='36' ry='28' fill='%23555555'/%3E%3C/svg%3E" alt="Profile avatar" data-vi-alt="Ảnh đại diện" data-en-alt="Profile avatar">
+          <button type="button" class="profile-avatar-upload" id="avatar-upload-btn" aria-label="Upload profile photo" data-vi-aria="Tải ảnh đại diện" data-en-aria="Upload profile photo">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          </button>
+          <input type="file" id="avatar-file-input" accept="image/*" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;">
+        </div>
+
+        <form class="profile-form" id="profile-form" onsubmit="return false;">
+          <p class="form-status" role="status" aria-live="polite"></p>
+
+          <div class="grid grid-2">
+            <div class="field">
+              <label for="profile-name" data-vi="Họ và Tên / Full Name" data-en="Họ và Tên / Full Name">Họ và Tên / Full Name</label>
+              <input type="text" id="profile-name" name="fullName" autocomplete="name" data-vi-placeholder="Nguyễn Văn A" data-en-placeholder="Nguyễn Văn A" placeholder="Nguyễn Văn A">
+            </div>
+            <div class="field">
+              <label for="profile-email" data-vi="Email" data-en="Email">Email</label>
+              <input type="email" id="profile-email" name="email" disabled autocomplete="email">
+            </div>
+          </div>
+
+          <div class="grid grid-2">
+            <div class="field">
+              <label for="profile-phone" data-vi="Số điện thoại / Phone Number" data-en="Số điện thoại / Phone Number">Số điện thoại / Phone Number</label>
+              <input type="tel" id="profile-phone" name="phone" autocomplete="tel" placeholder="+84 123 456 789" data-rules="phone">
+              <span class="error-message" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="profile-dob" data-vi="Ngày sinh / Date of Birth" data-en="Ngày sinh / Date of Birth">Ngày sinh / Date of Birth</label>
+              <input type="date" id="profile-dob" name="dob">
+            </div>
+          </div>
+
+          <div class="grid grid-2">
+            <div class="field">
+              <label for="profile-gender" data-vi="Giới tính / Gender" data-en="Giới tính / Gender">Giới tính / Gender</label>
+              <select id="profile-gender" name="gender">
+                <option value="" data-vi="Chọn giới tính" data-en="Select gender">Chọn giới tính</option>
+                <option value="nam" data-vi="Nam" data-en="Nam">Nam</option>
+                <option value="nu" data-vi="Nữ" data-en="Nữ">Nữ</option>
+                <option value="khac" data-vi="Khác" data-en="Khác">Khác</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="profile-address" data-vi="Địa chỉ / Address" data-en="Địa chỉ / Address">Địa chỉ / Address</label>
+              <textarea id="profile-address" name="address" style="min-height:44px;" placeholder="123 Nguyễn Văn Linh, Quận 7"></textarea>
+            </div>
+          </div>
+
+          <div class="profile-actions">
+            <button class="btn btn-primary" type="submit" id="profile-save-btn" data-vi="Lưu Thay Đổi / Save Changes" data-en="Lưu Thay Đổi / Save Changes">Lưu Thay Đổi / Save Changes</button>
+            <button class="btn btn-outline" type="button" id="profile-logout-btn" data-vi="Đăng Xuất / Logout" data-en="Đăng Xuất / Logout">Đăng Xuất / Logout</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Reservation history -->
+      <div style="max-width:900px;margin:80px auto 0;">
+        <h2 class="text-center" data-vi="Lịch Sử Đặt Bàn" data-en="Reservation History">Reservation History</h2>
+        <div class="grid grid-3 history-grid">
+          <article class="card history-card">
+            <div class="card-body">
+              <div class="history-row">
+                <span class="history-label" data-vi="Ngày" data-en="Date">Date</span>
+                <span class="history-value">12/08/2026</span>
+              </div>
+              <div class="history-row">
+                <span class="history-label" data-vi="Giờ" data-en="Time">Time</span>
+                <span class="history-value">19:30</span>
+              </div>
+              <div class="history-row">
+                <span class="history-label" data-vi="Số khách" data-en="Guests">Guests</span>
+                <span class="history-value" data-vi="4 Khách" data-en="4 Guests">4 Guests</span>
+              </div>
+              <div class="history-row">
+                <span class="history-label" data-vi="Trạng thái" data-en="Status">Status</span>
+                <span class="status-badge status-confirmed" data-vi="Đã xác nhận" data-en="Confirmed">Confirmed</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card history-card">
+            <div class="card-body">
+              <div class="history-row">
+                <span class="history-label" data-vi="Ngày" data-en="Date">Date</span>
+                <span class="history-value">02/07/2026</span>
+              </div>
+              <div class="history-row">
+                <span class="history-label" data-vi="Giờ" data-en="Time">Time</span>
+                <span class="history-value">18:00</span>
+              </div>
+              <div class="history-row">
+                <span class="history-label" data-vi="Số khách" data-en="Guests">Guests</span>
+                <span class="history-value" data-vi="2 Khách" data-en="2 Guests">2 Guests</span>
+              </div>
+              <div class="history-row">
+                <span class="history-label" data-vi="Trạng thái" data-en="Status">Status</span>
+                <span class="status-badge status-completed" data-vi="Hoàn tất" data-en="Completed">Completed</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card history-card">
+            <div class="card-body">
+              <div class="history-row">
+                <span class="history-label" data-vi="Ngày" data-en="Date">Date</span>
+                <span class="history-value">18/06/2026</span>
+              </div>
+              <div class="history-row">
+                <span class="history-label" data-vi="Giờ" data-en="Time">Time</span>
+                <span class="history-value">20:00</span>
+              </div>
+              <div class="history-row">
+                <span class="history-label" data-vi="Số khách" data-en="Guests">Guests</span>
+                <span class="history-value" data-vi="6 Khách" data-en="6 Guests">6 Guests</span>
+              </div>
+              <div class="history-row">
+                <span class="history-label" data-vi="Trạng thái" data-en="Status">Status</span>
+                <span class="status-badge status-cancelled" data-vi="Đã hủy" data-en="Cancelled">Cancelled</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="toast" id="profile-toast" role="status" aria-live="polite"></div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="index.html" aria-label="EATO — go to homepage" data-vi-aria="EATO — về trang chủ" data-en-aria="EATO — go to homepage">
+          <svg class="icon-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v7a2 2 0 0 0 2 2v11"/><path d="M6 2v6"/><path d="M9 2v6"/><path d="M17 2c-1.6 0-3 1.6-3 4.5S15.4 11 17 11v11"/></svg>
+          EATO
+        </a>
+        <p data-vi="Chúng Tôi Mang Đến Kết Quả Thực Sự, Nhiều Lượt Ghé Thăm, Nhiều Khách Hàng, Nhiều Tăng Trưởng!" data-en="We Drive Real Result, More Traffic, More Leads, more Growth!">We Drive Real Result, More Traffic, More Leads, more Growth!</p>
+        <form class="field newsletter-field" data-validate onsubmit="return false;">
+          <label for="newsletter-email" data-vi="Địa chỉ email" data-en="Email address">Email address</label>
+          <p data-vi="Đăng ký ngay để nhận ưu đãi độc quyền và cập nhật ẩm thực mới nhất!" data-en="Subscribe now for exclusive offers and the latest food updates!">Subscribe now for exclusive offers and the latest food updates!</p>
+          <div class="newsletter-form">
+            <input id="newsletter-email" type="email" name="email" placeholder="Enter your Email Address" data-vi-placeholder="Nhập địa chỉ email của bạn" data-en-placeholder="Enter your Email Address" data-rules="required email">
+            <button class="btn-icon" type="submit" aria-label="Subscribe" data-vi-aria="Đăng ký nhận tin" data-en-aria="Subscribe"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </form>
+        <p style="margin-top:24px;" data-vi="123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh" data-en="123 Nguyen Van Linh Street, District 7, Ho Chi Minh City">123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</p>
+        <div class="footer-social" style="margin-top:20px;">
+          <button class="btn-icon" type="button" aria-label="EATO on Facebook" data-vi-aria="EATO trên Facebook" data-en-aria="EATO on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></button>
+          <button class="btn-icon" type="button" aria-label="EATO on Instagram" data-vi-aria="EATO trên Instagram" data-en-aria="EATO on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></button>
+          <button class="btn-icon" type="button" aria-label="EATO on X" data-vi-aria="EATO trên X" data-en-aria="EATO on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4l16 16M20 4 4 20"/></svg></button>
+          <button class="btn-icon" type="button" aria-label="EATO on YouTube" data-vi-aria="EATO trên YouTube" data-en-aria="EATO on YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></button>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h2 data-vi="Trang Chủ" data-en="Home">Home</h2>
+        <ul><li><a href="index.html" data-vi="Trang chủ" data-en="Home">Home</a></li><li><a href="about.html" data-vi="Tầm Nhìn &amp; Sứ Mệnh" data-en="Vision &amp; Mission">Vision &amp; Mission</a></li><li><a href="menu.html" data-vi="Thực đơn" data-en="Menu">Menu</a></li><li><a href="gallery.html" data-vi="Thư viện ảnh" data-en="Gallery">Gallery</a></li><li><a href="reviews.html" data-vi="Đánh giá" data-en="Reviews">Reviews</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h2 data-vi="Về Chúng Tôi" data-en="About Us">About Us</h2>
+        <ul><li><a href="about.html" data-vi="Về chúng tôi" data-en="About Us">About Us</a></li><li><a href="events.html" data-vi="Sự kiện &amp; Tiệc riêng" data-en="Events &amp; Private Dining">Events &amp; Private Dining</a></li><li><a href="offers.html" data-vi="Ưu đãi đặc biệt" data-en="Special Offers">Special Offers</a></li><li><a href="blog.html" data-vi="Blog &amp; Chia sẻ" data-en="Blog &amp; Insights">Blog &amp; Insights</a></li><li><a href="faq.html" data-vi="Câu hỏi thường gặp" data-en="FAQ">FAQ</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h2 data-vi="Dịch Vụ" data-en="Service">Service</h2>
+        <ul><li><a href="reservation.html" data-vi="Đặt bàn" data-en="Book Reservation">Book Reservation</a></li><li><a href="contact.html" data-vi="Liên hệ" data-en="Contact Us">Contact Us</a></li><li><a href="menu.html" data-vi="Đặt hàng trực tuyến" data-en="Order Online">Order Online</a></li><li><a href="events.html" data-vi="Tiệc riêng" data-en="Private Dining">Private Dining</a></li><li><a href="offers.html" data-vi="Chương trình khách hàng thân thiết" data-en="Loyalty Program">Loyalty Program</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-vi="2025 Eato, Đã đăng ký bản quyền" data-en="2025 Eato, All rights reserved">2025 Eato, All rights reserved</span>
+      <div class="legal-links"><a href="#" data-vi="Chính sách bảo mật" data-en="Privacy Policy">Privacy Policy</a><a href="#" data-vi="Điều khoản dịch vụ" data-en="Terms of Service">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js" defer></script>
+</body>
+</html>

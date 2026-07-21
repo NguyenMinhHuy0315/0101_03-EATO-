@@ -588,6 +588,117 @@
   }
 
   /* -------------------------------------------------------
+     Profile page (profile.html)
+     No real backend: profile fields are persisted as a JSON blob
+     under "eato_profile" in localStorage, separate from the
+     "eato_user" display-name flag that drives the navbar greeting
+     (see initAuthNav). Redirect-if-signed-out is handled by an
+     inline guard script in profile.html itself, since it must run
+     before this deferred script even loads.
+     ------------------------------------------------------- */
+  function initProfilePage() {
+    var form = document.getElementById("profile-form");
+    if (!form) return;
+
+    var nameInput = document.getElementById("profile-name");
+    var emailInput = document.getElementById("profile-email");
+    var phoneInput = document.getElementById("profile-phone");
+    var dobInput = document.getElementById("profile-dob");
+    var genderInput = document.getElementById("profile-gender");
+    var addressInput = document.getElementById("profile-address");
+    var avatarImg = document.getElementById("profile-avatar-img");
+    var uploadBtn = document.getElementById("avatar-upload-btn");
+    var fileInput = document.getElementById("avatar-file-input");
+    var logoutBtn = document.getElementById("profile-logout-btn");
+    var toast = document.getElementById("profile-toast");
+
+    function readProfile() {
+      try {
+        var raw = localStorage.getItem("eato_profile");
+        return raw ? JSON.parse(raw) : {};
+      } catch (err) { return {}; }
+    }
+
+    function writeProfile(profile) {
+      try { localStorage.setItem("eato_profile", JSON.stringify(profile)); } catch (err) {}
+    }
+
+    function showToast(vi, en) {
+      if (!toast) return;
+      toast.textContent = currentLang() === "vi" ? vi : en;
+      toast.classList.add("is-visible");
+      window.clearTimeout(showToast._t);
+      showToast._t = window.setTimeout(function () {
+        toast.classList.remove("is-visible");
+      }, 3000);
+    }
+
+    // Populate fields from any saved profile, falling back to the
+    // "eato_user" flag (which may hold either a name or an email,
+    // depending on whether the user registered or logged in).
+    var user = null;
+    try { user = localStorage.getItem("eato_user"); } catch (err) {}
+    var profile = readProfile();
+
+    nameInput.value = profile.name || user || "";
+    emailInput.value = profile.email || (user && user.indexOf("@") > -1 ? user : "");
+    phoneInput.value = profile.phone || "";
+    dobInput.value = profile.dob || "";
+    genderInput.value = profile.gender || "";
+    addressInput.value = profile.address || "";
+    if (profile.avatar) avatarImg.src = profile.avatar;
+
+    // Avatar upload: pick a file -> FileReader -> base64 -> localStorage
+    if (uploadBtn && fileInput) {
+      uploadBtn.addEventListener("click", function () { fileInput.click(); });
+      fileInput.addEventListener("change", function () {
+        var file = fileInput.files && fileInput.files[0];
+        if (!file || file.type.indexOf("image/") !== 0) return;
+
+        var reader = new FileReader();
+        reader.onload = function () {
+          avatarImg.src = reader.result;
+          var current = readProfile();
+          current.avatar = reader.result;
+          writeProfile(current);
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // Save Changes
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var current = readProfile();
+      current.name = nameInput.value.trim();
+      current.email = emailInput.value.trim();
+      current.phone = phoneInput.value.trim();
+      current.dob = dobInput.value;
+      current.gender = genderInput.value;
+      current.address = addressInput.value.trim();
+      writeProfile(current);
+
+      // Keep the navbar greeting ("Xin chào, X") in sync with the edited name.
+      if (current.name) {
+        try { localStorage.setItem("eato_user", current.name); } catch (err) {}
+      }
+
+      showToast("Cập nhật thành công!", "Updated successfully!");
+    });
+
+    // Logout
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", function () {
+        try {
+          localStorage.removeItem("eato_user");
+          localStorage.removeItem("eato_profile");
+        } catch (err) {}
+        window.location.href = "index.html";
+      });
+    }
+  }
+
+  /* -------------------------------------------------------
      Auth-aware navbar
      If "eato_user" is present in localStorage, swap the navbar's
      Login button for a greeting + Logout button. Runs on every
@@ -602,8 +713,9 @@
     try { user = localStorage.getItem("eato_user"); } catch (err) {}
     if (!user) return;
 
-    var greeting = document.createElement("span");
+    var greeting = document.createElement("a");
     greeting.className = "nav-greeting";
+    greeting.href = "profile.html";
     greeting.setAttribute("data-vi", "Xin chào, " + user);
     greeting.setAttribute("data-en", "Hello, " + user);
     greeting.textContent = currentLang() === "vi" ? ("Xin chào, " + user) : ("Hello, " + user);
@@ -611,12 +723,15 @@
     var logoutBtn = document.createElement("button");
     logoutBtn.type = "button";
     logoutBtn.className = "btn btn-outline-red";
-    logoutBtn.setAttribute("data-vi", "Đăng xuất");
+    logoutBtn.setAttribute("data-vi", "Đăng Xuất");
     logoutBtn.setAttribute("data-en", "Logout");
-    logoutBtn.textContent = currentLang() === "vi" ? "Đăng xuất" : "Logout";
+    logoutBtn.textContent = currentLang() === "vi" ? "Đăng Xuất" : "Logout";
     logoutBtn.addEventListener("click", function () {
-      try { localStorage.removeItem("eato_user"); } catch (err) {}
-      window.location.reload();
+      try {
+        localStorage.removeItem("eato_user");
+        localStorage.removeItem("eato_profile");
+      } catch (err) {}
+      window.location.href = "index.html";
     });
 
     loginLink.replaceWith(greeting, logoutBtn);
@@ -1055,6 +1170,7 @@
     initFormValidation();
     initLoginForm();
     initRegisterForm();
+    initProfilePage();
     initCountdown();
     initScrollReveal();
     initPageTransitions();
