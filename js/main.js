@@ -524,6 +524,105 @@
   }
 
   /* -------------------------------------------------------
+     Fake auth (login.html / register.html)
+     No real backend: any non-empty email/password "succeeds".
+     The signed-in name/email is kept in localStorage under
+     "eato_user" purely so the navbar (initAuthNav) can reflect
+     a signed-in state across pages.
+     ------------------------------------------------------- */
+  function initLoginForm() {
+    var form = document.getElementById("login-form");
+    if (!form) return;
+    var status = form.querySelector(".form-status");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var lang = currentLang();
+      var email = form.querySelector("#login-email").value.trim();
+      var password = form.querySelector("#login-password").value.trim();
+
+      if (!email || !password) {
+        status.textContent = lang === "vi" ? "Vui lòng điền đầy đủ thông tin" : "Please fill in all fields.";
+        status.className = "form-status is-error";
+        return;
+      }
+
+      try { localStorage.setItem("eato_user", email); } catch (err) {}
+      status.textContent = lang === "vi" ? "Đăng nhập thành công! Đang chuyển hướng..." : "Login successful! Redirecting...";
+      status.className = "form-status is-success";
+      window.location.href = "index.html";
+    });
+  }
+
+  function initRegisterForm() {
+    var form = document.getElementById("register-form");
+    if (!form) return;
+    var status = form.querySelector(".form-status");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var lang = currentLang();
+      var name = form.querySelector("#register-name").value.trim();
+      var email = form.querySelector("#register-email").value.trim();
+      var password = form.querySelector("#register-password").value;
+      var confirmPassword = form.querySelector("#register-confirm-password").value;
+
+      if (!name || !email || !password || !confirmPassword) {
+        status.textContent = lang === "vi" ? "Vui lòng điền đầy đủ thông tin" : "Please fill in all fields.";
+        status.className = "form-status is-error";
+        return;
+      }
+      if (password !== confirmPassword) {
+        status.textContent = lang === "vi" ? "Mật khẩu không khớp" : "Passwords do not match.";
+        status.className = "form-status is-error";
+        return;
+      }
+
+      try { localStorage.setItem("eato_user", name); } catch (err) {}
+      status.textContent = lang === "vi" ? "Đăng ký thành công!" : "Registration successful!";
+      status.className = "form-status is-success";
+      window.setTimeout(function () {
+        window.location.href = "index.html";
+      }, 2000);
+    });
+  }
+
+  /* -------------------------------------------------------
+     Auth-aware navbar
+     If "eato_user" is present in localStorage, swap the navbar's
+     Login button for a greeting + Logout button. Runs on every
+     page (main.js is shared), so it applies sitewide without
+     per-page markup changes.
+     ------------------------------------------------------- */
+  function initAuthNav() {
+    var loginLink = document.querySelector(".main-nav a.btn-outline-red");
+    if (!loginLink) return;
+
+    var user = null;
+    try { user = localStorage.getItem("eato_user"); } catch (err) {}
+    if (!user) return;
+
+    var greeting = document.createElement("span");
+    greeting.className = "nav-greeting";
+    greeting.setAttribute("data-vi", "Xin chào, " + user);
+    greeting.setAttribute("data-en", "Hello, " + user);
+    greeting.textContent = currentLang() === "vi" ? ("Xin chào, " + user) : ("Hello, " + user);
+
+    var logoutBtn = document.createElement("button");
+    logoutBtn.type = "button";
+    logoutBtn.className = "btn btn-outline-red";
+    logoutBtn.setAttribute("data-vi", "Đăng xuất");
+    logoutBtn.setAttribute("data-en", "Logout");
+    logoutBtn.textContent = currentLang() === "vi" ? "Đăng xuất" : "Logout";
+    logoutBtn.addEventListener("click", function () {
+      try { localStorage.removeItem("eato_user"); } catch (err) {}
+      window.location.reload();
+    });
+
+    loginLink.replaceWith(greeting, logoutBtn);
+  }
+
+  /* -------------------------------------------------------
      Countdown timer (Special Offer / Countdown page)
      ------------------------------------------------------- */
   function initCountdown() {
@@ -738,6 +837,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     initI18n();
+    initAuthNav();
     initNavToggle();
     initAccordions();
     initCarousels();
@@ -746,6 +846,8 @@
     initLangIndicator();
     initFilterIndicators();
     initFormValidation();
+    initLoginForm();
+    initRegisterForm();
     initCountdown();
     initScrollReveal();
     initPageTransitions();

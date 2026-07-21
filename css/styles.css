@@ -152,6 +152,14 @@ select:focus:not(:focus-visible) {
   outline: none;
 }
 
+input, textarea, select {
+  color: #070707 !important;
+  background-color: #ffffff !important;
+}
+input::placeholder, textarea::placeholder, select::placeholder {
+  color: #666666 !important;
+}
+
 .skip-link {
   position: absolute;
   top: -100px;
@@ -387,6 +395,13 @@ h6, .h6 { font-size: var(--fs-h6); line-height: var(--lh-h6); font-weight: 500; 
 }
 .btn-outline:hover { border-color: var(--color-red); color: var(--color-red); }
 
+.btn-outline-red {
+  background: transparent;
+  color: var(--color-red);
+  border: 2px solid var(--color-red);
+}
+.btn-outline-red:hover { background: var(--color-red); color: var(--color-white); }
+
 .btn-dark {
   background: var(--color-black);
   color: var(--color-white);
@@ -491,6 +506,16 @@ h6, .h6 { font-size: var(--fs-h6); line-height: var(--lh-h6); font-weight: 500; 
 }
 .main-nav .btn-primary { margin-left: 8px; }
 
+.nav-greeting {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 4px 10px 16px;
+  font-weight: 600;
+  font-size: var(--fs-small);
+  color: var(--color-black);
+  white-space: nowrap;
+}
+
 .nav-toggle {
   display: none;
   width: 44px;
@@ -524,6 +549,8 @@ h6, .h6 { font-size: var(--fs-h6); line-height: var(--lh-h6); font-weight: 500; 
   }
   .main-nav a { padding: 14px 16px; font-size: 1.125rem; }
   .main-nav .btn-primary { margin-left: 0; margin-top: 12px; width: 100%; }
+  .main-nav .btn-outline-red { margin-top: 8px; width: 100%; }
+  .nav-greeting { padding: 14px 16px 0; font-size: 1.05rem; }
 }
 
 /* =========================================================
