@@ -14,7 +14,7 @@
 [Xem website tại đây](https://eato-website.baothai6114.workers.dev)
 
 ## 📋 Mô tả
-Website nhà hàng EATO được thiết kế theo tiêu chuẩn WCAG 2.1 Double-A, gồm 15 trang hoàn chỉnh.
+Website nhà hàng EATO được thiết kế theo tiêu chuẩn WCAG 2.1 Double-A, gồm 16 trang hoàn chỉnh.
 
 ## ✅ Tính năng
 - 13 trang website hoàn chỉnh
