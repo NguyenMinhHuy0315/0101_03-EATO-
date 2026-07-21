@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Not Found — EATO</title>
+<title>Register — EATO</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -37,14 +37,50 @@
 </header>
 
 <main id="main-content">
-  <section class="page-hero">
-    <div class="container">
-      <img class="error-page-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=650&h=565&fit=crop&q=80" alt="EATO restaurant">
-      <h1 data-vi="404 Không Tìm Thấy Trang" data-en="404 Page not found">404 Page not found</h1>
-      <p class="error-page-text" data-vi="Ối! Có vẻ như trang này đã biến mất. Đừng lo lắng, bạn có thể quay lại trang chủ hoặc dùng thanh tìm kiếm để tìm nội dung bạn cần." data-en="Oops! Looks like this page has vanished.Don't worry, though! You can go back to our homepage or use the search bar to find what you're looking for.">Oops! Looks like this page has vanished.Don't worry, though! You can go back to our homepage or use the search bar to find what you're looking for.</p>
-      <a class="btn btn-primary" href="index.html" data-vi="Về Trang Chủ" data-en="Back to Home">Back to Home</a>
+
+  <!-- Register -->
+  <section class="section-bg-dark" style="padding-block:80px;" aria-labelledby="register-heading">
+    <div class="container text-center">
+      <div style="max-width:440px;margin-inline:auto;">
+        <h1 id="register-heading" data-vi="Đăng Ký" data-en="Register">Register</h1>
+
+        <form id="register-form" onsubmit="return false;" style="text-align:left;margin-top:40px;">
+          <p class="form-status" role="status" aria-live="polite"></p>
+
+          <div class="field">
+            <label for="register-name" data-vi="Họ và Tên" data-en="Full Name">Full Name</label>
+            <input type="text" id="register-name" name="fullName" placeholder="Darlene Robetson" autocomplete="name" data-vi-placeholder="Nguyễn Văn A" data-en-placeholder="Darlene Robetson">
+            <span class="error-message" role="alert"></span>
+          </div>
+
+          <div class="field">
+            <label for="register-email" data-vi="Địa chỉ Email" data-en="Email Address">Email Address</label>
+            <input type="email" id="register-email" name="email" placeholder="Darlenerobert@mail.com" autocomplete="email" data-vi-placeholder="nguyenvana@email.com" data-en-placeholder="Darlenerobert@mail.com">
+            <span class="error-message" role="alert"></span>
+          </div>
+
+          <div class="field">
+            <label for="register-password" data-vi="Mật khẩu" data-en="Password">Password</label>
+            <input type="password" id="register-password" name="password" placeholder="••••••••" autocomplete="new-password" data-vi-placeholder="••••••••" data-en-placeholder="••••••••">
+            <span class="error-message" role="alert"></span>
+          </div>
+
+          <div class="field">
+            <label for="register-confirm-password" data-vi="Xác nhận mật khẩu" data-en="Confirm Password">Confirm Password</label>
+            <input type="password" id="register-confirm-password" name="confirmPassword" placeholder="••••••••" autocomplete="new-password" data-vi-placeholder="••••••••" data-en-placeholder="••••••••">
+            <span class="error-message" role="alert"></span>
+          </div>
+
+          <button class="btn btn-primary" type="submit" style="width:100%;background:#c31e26;border-color:#c31e26;" data-vi="Đăng Ký" data-en="Register">Register</button>
+
+          <p class="text-muted text-center" style="margin-top:20px;" data-vi="Đã có tài khoản?" data-en="Already have an account?">Already have an account?
+            <a class="btn-link" href="login.html" data-vi="Đăng nhập" data-en="Sign in">Sign in</a>
+          </p>
+        </form>
+      </div>
     </div>
   </section>
+
 </main>
 
 <footer class="site-footer">
