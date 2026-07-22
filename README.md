@@ -26,5 +26,6 @@ Website nhà hàng EATO được thiết kế theo tiêu chuẩn WCAG 2.1 Double
 - Gallery hình ảnh
 
 ## 🛠️ Công nghệ
-- HTML5 , CSS3, JavaScript
+- HTML5, CSS3, JavaScript
 - Figma (UI Design)
+ 
